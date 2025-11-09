@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chord Dock — Chord Progression Timeline & Circle of Fifths</title>
+    <meta name="description" content="Design chord progressions fast with timeline editing [Free] and a Circle of Fifths guide [Extended]. Drag-and-drop MIDI to any DAW, save presets, and share across environments." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: 'class' };
+    </script>
+    <script>
+      // Auto-language redirect with preference support
+      (function(){
+        var KEY = 'lang';
+        var current = 'en';
+        var pref = null;
+        try { pref = localStorage.getItem(KEY); } catch (e) {}
+        if (pref === 'ja') { location.replace('chord_dock_lp_git_hub_pages_index.html'); return; }
+        if (pref === 'en') { return; }
+        var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+        var isJa = /^ja/i.test(lang || '');
+        if (isJa) location.replace('chord_dock_lp_git_hub_pages_index.html');
+      })();
+    </script>
+    <style>
+      :root { color-scheme: dark; }
+      html { scroll-behavior: smooth; }
+      body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji'; }
+      .container { max-width: 1100px; }
+      .badge { border: 1px solid rgb(229 231 235/1); }
+      .kbd { border: 1px solid rgb(229 231 235/1); border-bottom-width: 3px; border-radius: 0.375rem; padding: 0.1rem 0.33rem; }
+      .section { scroll-margin-top: 80px; }
+      /* Paragraph line length for readability */
+      p { max-width: 66ch; }
+    </style>
+    <!-- Open Graph -->
+    <meta property="og:title" content="Chord Dock — Chord Progression Timeline & Circle of Fifths" />
+    <meta property="og:description" content="Design fast, save as presets, and share across DAWs. Circle of Fifths [Extended]." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.github.io/chord-dock-site/en" />
+    <meta property="og:image" content="https://placehold.co/1200x630/png?text=Chord+Dock" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body class="bg-white text-gray-900 dark:bg-neutral-950 dark:text-neutral-100">
+    <!-- Header -->
+    <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 dark:bg-neutral-950/80 border-b border-gray-200/60 dark:border-neutral-800">
+      <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-2 font-extrabold text-xl tracking-tight">
+          <span class="inline-block w-6 h-6 rounded-lg bg-indigo-600"></span>
+          Chord Dock
+        </a>
+        <div class="hidden sm:flex items-center gap-4 text-sm">
+          <a href="#features" class="hover:opacity-80">Features</a>
+          <a href="#comparison" class="hover:opacity-80">Comparison</a>
+          <a href="#presets" class="hover:opacity-80">Presets</a>
+          <a href="#daw" class="hover:opacity-80">DAW Support</a>
+          <a href="#download" class="hover:opacity-80">Download</a>
+          <a href="#faq" class="hover:opacity-80">FAQ</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <a id="langJP" href="chord_dock_lp_git_hub_pages_index.html" class="inline-flex items-center rounded-xl px-3 py-2 text-sm font-medium border border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800">JP</a>
+          <a href="#download" class="inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-sm font-semibold bg-indigo-600 text-white shadow hover:bg-indigo-500">Try Now</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="section" id="home">
+      <div class="container mx-auto px-4 py-16 sm:py-20">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight">
+              Shape chord progressions <span class="text-indigo-600">fast</span><br />
+              Turn past songs into your library — save and share with ease
+            </h1>
+            <p class="mt-5 text-lg text-gray-600 dark:text-neutral-300">
+              Chord Dock helps you design progressions with timeline editing
+              <span class="align-middle badge rounded-lg px-2 py-1 text-xs">Free</span>
+              and a Circle of Fifths guide
+              <span class="align-middle badge rounded-lg px-2 py-1 text-xs">Extended</span>, then drag-and-drop MIDI to any DAW. Toggle Triad/Tetrad, tensions and slash chords intuitively, and share progressions across DAWs.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="#download" class="rounded-xl px-5 py-3 text-base font-semibold bg-indigo-600 text-white shadow hover:bg-indigo-500">Download Free</a>
+              <a href="#buy" class="rounded-xl px-5 py-3 text-base font-semibold bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 hover:bg-gray-50 dark:hover:bg-neutral-800">Buy Extended (Coming Soon)</a>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs text-gray-600 dark:text-neutral-400">
+              <span class="badge rounded-lg px-2 py-1">VST3</span>
+              <span class="badge rounded-lg px-2 py-1">AU</span>
+              <span class="badge rounded-lg px-2 py-1">AAX (Soon)</span>
+              <span class="badge rounded-lg px-2 py-1">macOS / Windows</span>
+            </div>
+          </div>
+          <div>
+            <!-- Static screenshot during design iteration -->
+            <div class="aspect-video w-full overflow-hidden rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800 shadow bg-white dark:bg-neutral-900">
+              <img src="assets/タイムライン.png" alt="Chord Dock UI screenshot" class="w-full h-full object-cover select-none" loading="eager" />
+            </div>
+            <p class="mt-2 text-xs text-gray-500">Video demo coming soon.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section" id="features">
+      <div class="container mx-auto px-4 py-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">Key Features</h2>
+        <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
+            <h3 class="font-semibold">DAW‑agnostic progression format</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">Edit → audition → drag MIDI. Keep the same progression across any DAW.</p>
+          </div>
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
+            <h3 class="font-semibold">Timeline editing × Circle of Fifths</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">Drag/move/resize. Quick inversions and tensions. Diatonic suggestions speed up drafting.</p>
+          </div>
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
+            <h3 class="font-semibold">Tensions & slash chords</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">Visualize 9/11/13, set the bass for on‑chords. Clear superscript display.</p>
+          </div>
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
+            <h3 class="font-semibold">Lightweight MIDI export</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">Prioritize editing speed. Hand off to your favorite sound plugins anytime.</p>
+          </div>
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
+            <h3 class="font-semibold">Start fast with presets</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">Free includes 10 editable presets. Extended unlocks 20 user presets and external sharing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Details -->
+    <section class="section" id="feature-details">
+      <div class="container mx-auto px-4 py-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">Feature Tour</h2>
+
+        <!-- Row 1: image left / text right -->
+        <div class="grid items-center mt-8 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:auto_minmax(0,1fr)]">
+          <div class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72">
+            <img src="assets/タイムライン.png" alt="Timeline editor screenshot" class="w-full h-full object-cover" />
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Draft quickly with the timeline</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">Drag/move/resize to build progressions intuitively. Snap to bars/beats, transpose and invert instantly. Shorten your loop: edit → audition → drag MIDI.</p>
+          </div>
+        </div>
+
+        <!-- Row 2: text left / image right -->
+        <div class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:minmax(0,1fr)_auto]">
+          <div class="md:ml-auto max-w-xl">
+            <h3 class="text-xl font-semibold">Stay oriented with the Circle of Fifths</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">See key centers and relationships. Pick diatonic/relative options quickly to keep consistency while adding variation.</p>
+          </div>
+          <div class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72">
+            <img src="assets/五度圏.png" alt="Circle of Fifths screenshot" class="w-full h-full object-cover" />
+          </div>
+        </div>
+
+        <!-- Row 3: image left / text right -->
+        <div class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:auto_minmax(0,1fr)]" id="presets">
+          <div class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72">
+            <img src="assets/プリセット.png" alt="Preset management screenshot" class="w-full h-full object-cover" />
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Save, reuse, and share presets</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">Save up to 20 user presets with Extended, and export/import as files to share across environments and projects.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="section" id="comparison">
+      <div class="container mx-auto px-4 py-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">Product Comparison</h2>
+        <p class="mt-2 text-sm text-gray-600 dark:text-neutral-300">Compared by workflow, portability, and editing UX (for reference).</p>
+        <div class="mt-6 overflow-x-auto rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800">
+          <table class="min-w-full text-sm">
+            <thead class="bg-gray-50 dark:bg-neutral-900">
+              <tr>
+                <th class="p-3 text-left font-semibold">Category</th>
+                <th class="p-3 text-left font-semibold">Chord Dock (Extended)</th>
+                <th class="p-3 text-left font-semibold">Scaler 3</th>
+                <th class="p-3 text-left font-semibold">InstaChord</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-neutral-800">
+              <tr><td class="p-3">Primary focus</td><td class="p-3">Visualization/editing, cross‑DAW portability</td><td class="p-3">AI suggestions/detection, performance tools</td><td class="p-3">Chord triggers/strums, basic progressions</td></tr>
+              <tr><td class="p-3">Timeline editor</td><td class="p-3">Yes (free editing, transpose, snap)</td><td class="p-3">Yes (pattern/section oriented)</td><td class="p-3">Basic patterns</td></tr>
+              <tr><td class="p-3">Circle of Fifths</td><td class="p-3">Integrated (key/relations visualized)</td><td class="p-3">Limited (scale info available)</td><td class="p-3">No</td></tr>
+              <tr><td class="p-3">Tensions</td><td class="p-3">9/11/13, masking, superscripts</td><td class="p-3">Yes</td><td class="p-3">Limited</td></tr>
+              <tr><td class="p-3">Slash chords</td><td class="p-3">Yes (set bass)</td><td class="p-3">Yes</td><td class="p-3">Limited</td></tr>
+              <tr><td class="p-3">Cross‑DAW portability</td><td class="p-3">High (symbol‑based, independent MIDI)</td><td class="p-3">Medium</td><td class="p-3">Limited</td></tr>
+              <tr><td class="p-3">UI</td><td class="p-3">Flat, legible</td><td class="p-3">Dense, complex</td><td class="p-3">Simple</td></tr>
+              <tr><td class="p-3">Price (ref.)</td><td class="p-3">$39</td><td class="p-3">$79–$99</td><td class="p-3">~$69</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download / Buy -->
+    <section class="section" id="download">
+      <div class="container mx-auto px-4 py-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">Download</h2>
+        <div class="mt-6 grid md:grid-cols-2 gap-6 text-sm">
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto h-full min-h-[16rem] flex flex-col w-full md:w-96">
+            <h3 class="text-lg md:text-xl font-semibold">Free</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">
+              Core timeline editing for chord tracks
+              <br />Flexible chord palette for transpose, inversions, and octave adjustments
+              <br />MIDI drag & drop
+              <br />Export and import chord progressions as files
+              <br />Includes 10 editable factory presets
+            </p>
+            <a href="#" class="mt-auto self-start inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">Download (Coming Soon)</a>
+          </div>
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mr-auto h-full min-h-[16rem] flex flex-col w-full md:w-96" id="buy">
+            <h3 class="text-lg md:text-xl font-semibold">Extended</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">Unlock Circle of Fifths, tensions/slash chords, and advanced visuals. Unlock 20 editable user presets.</p>
+            <div class="mt-1 text-xs text-gray-500">
+              License: up to 2 devices per account.
+              <br />
+              Deactivate any device to free a seat and activate another.
+            </div>
+            <a href="#" class="mt-auto self-start inline-flex rounded-xl px-4 py-2 bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 font-semibold hover:bg-gray-50 dark:hover:bg-neutral-800">Purchase (Coming Soon)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container mx-auto px-4 py-12 text-left">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">FAQ</h2>
+        <div class="mt-6 divide-y divide-gray-200 dark:divide-neutral-800 max-w-3xl">
+          <details class="group py-4">
+            <summary class="cursor-pointer font-semibold flex items-center gap-2 justify-start">Can it auto‑detect chords from audio/MIDI? <span class="ml-2 text-xl transition-transform group-open:rotate-45">＋</span></summary>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">Not in scope. Chord Dock focuses on portability, visualization, and editing speed. Use dedicated tools if detection is required.</p>
+          </details>
+          <details class="group py-4">
+            <summary class="cursor-pointer font-semibold flex items-center gap-2 justify-start">How many devices per license? <span class="ml-2 text-xl transition-transform group-open:rotate-45">＋</span></summary>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">Up to 2 devices per account.<br />Deactivate any device to free a seat and activate another.</p>
+          </details>
+          <details class="group py-4">
+            <summary class="cursor-pointer font-semibold flex items-center gap-2 justify-start">Offline use? <span class="ml-2 text-xl transition-transform group-open:rotate-45">＋</span></summary>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">After activation, local state persists and the app works offline.</p>
+          </details>
+          <details class="group py-4">
+            <summary class="cursor-pointer font-semibold flex items-center gap-2 justify-start">Formats supported? <span class="ml-2 text-xl transition-transform group-open:rotate-45">＋</span></summary>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">VST3 / AU. AAX is currently in preparation.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- DAW Support -->
+    <section class="section" id="daw">
+      <div class="container mx-auto px-4 py-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">DAW Hosts / Formats</h2>
+        <div class="mt-6 grid md:grid-cols-2 gap-6 text-sm">
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
+            <h3 class="font-semibold">Verified (as of 2025‑11‑09)</h3>
+            <ul class="mt-2 list-disc ml-5 space-y-1 text-gray-700 dark:text-neutral-300">
+              <li>macOS: Logic Pro (AU), FL Studio (AU/VST3)</li>
+              <li>Windows: SONAR/Cakewalk, Cubase 9.5, FL Studio 2025 (VST3)</li>
+              <li>Studio One (VST3)</li>
+            </ul>
+          </div>
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
+            <h3 class="font-semibold">Planned / Upcoming</h3>
+            <ul class="mt-2 list-disc ml-5 space-y-1 text-gray-700 dark:text-neutral-300">
+              <li>Pro Tools (AAX): validation with a developer build</li>
+            </ul>
+          </div>
+        </div>
+        <p class="mt-3 text-xs text-gray-500">Setup guides for MIDI routing in each host will be published soon.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-200 dark:border-neutral-800">
+      <div class="container mx-auto px-4 py-10 text-sm text-gray-600 dark:text-neutral-400">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <p>© <span id="y"></span> Chord Dock — All rights reserved.</p>
+          <div class="flex items-center gap-3">
+            <a href="#" class="hover:opacity-80">Terms</a>
+            <span aria-hidden>•</span>
+            <a href="#" class="hover:opacity-80">Privacy</a>
+            <span aria-hidden>•</span>
+            <a href="mailto:contact@example.com" class="hover:opacity-80">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear();
+      // Save language preference on toggle
+      (function(){
+        var jp = document.getElementById('langJP');
+        if (jp) jp.addEventListener('click', function(){
+          try { localStorage.setItem('lang','ja'); } catch(e){}
+        });
+      })();
+    </script>
+
+    <!-- JSON-LD (SoftwareApplication) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Chord Dock",
+      "applicationCategory": "MusicProductionSoftware",
+      "operatingSystem": "macOS, Windows",
+      "softwareVersion": "1.0",
+      "offers": {
+        "@type": "Offer",
+        "price": "39",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/PreOrder"
+      },
+      "description": "Design chord progressions fast with a timeline editor and a Circle of Fifths guide, then drag-and-drop MIDI to your DAW.",
+      "applicationSuite": "Chord Dock Suite",
+      "screenshot": "https://placehold.co/1200x630/png?text=Chord+Dock",
+      "inLanguage": "en"
+    }
+    </script>
+  </body>
+  </html>
