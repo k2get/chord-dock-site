@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Chord Dock — Chord Progression Timeline & Circle of Fifths</title>
-    <meta name="description" content="Design chord progressions fast with timeline editing [Free] and a Circle of Fifths guide [Extended]. Drag-and-drop MIDI to any DAW, save presets, and share across environments." />
+    <meta name="description" content="Design chord progressions fast with timeline editing [Lite] and a Circle of Fifths guide [Extended]. Drag-and-drop MIDI to any DAW, save presets, and share across environments." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -14,16 +14,28 @@
     </script>
     <script>
       // Auto-language redirect with preference support
-      (function(){
+      (function () {
         var KEY = 'lang';
         var current = 'en';
         var pref = null;
-        try { pref = localStorage.getItem(KEY); } catch (e) {}
-        if (pref === 'ja') { location.replace('chord_dock_lp_git_hub_pages_index.html'); return; }
-        if (pref === 'en') { return; }
-        var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+        try {
+          pref = localStorage.getItem(KEY);
+        } catch (e) {}
+        // Respect explicit preference first
+        if (pref === 'ja') {
+          location.replace('index.html');
+          return;
+        }
+        if (pref === 'en') {
+          return;
+        }
+        // Fallback to browser language
+        var lang =
+          (navigator.languages && navigator.languages[0]) ||
+          navigator.language ||
+          '';
         var isJa = /^ja/i.test(lang || '');
-        if (isJa) location.replace('chord_dock_lp_git_hub_pages_index.html');
+        if (isJa) location.replace('index.html');
       })();
     </script>
     <style>
@@ -62,7 +74,7 @@
           <a href="#faq" class="hover:opacity-80">FAQ</a>
         </div>
         <div class="flex items-center gap-2">
-          <a id="langJP" href="chord_dock_lp_git_hub_pages_index.html" class="inline-flex items-center rounded-xl px-3 py-2 text-sm font-medium border border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800">JP</a>
+          <a id="langJP" href="index.html" class="inline-flex items-center rounded-xl px-3 py-2 text-sm font-medium border border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800">JP</a>
           <a href="#download" class="inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-sm font-semibold bg-indigo-600 text-white shadow hover:bg-indigo-500">Try Now</a>
         </div>
       </nav>
@@ -74,17 +86,17 @@
         <div class="grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight">
-              Shape chord progressions <span class="text-indigo-600">fast</span><br />
-              Turn past songs into your library — save and share with ease
+              Get your chord progressions <span class="text-indigo-600">into shape fast</span><br />
+              Build your own library from past chord progressions — save and reuse them however you like
             </h1>
             <p class="mt-5 text-lg text-gray-600 dark:text-neutral-300">
               Chord Dock helps you design progressions with timeline editing
-              <span class="align-middle badge rounded-lg px-2 py-1 text-xs">Free</span>
+              <span class="align-middle badge rounded-lg px-2 py-1 text-xs">Lite</span>
               and a Circle of Fifths guide
               <span class="align-middle badge rounded-lg px-2 py-1 text-xs">Extended</span>, then drag-and-drop MIDI to any DAW. Toggle Triad/Tetrad, tensions and slash chords intuitively, and share progressions across DAWs.
             </p>
             <div class="mt-6 flex flex-wrap gap-3">
-              <a href="#download" class="rounded-xl px-5 py-3 text-base font-semibold bg-indigo-600 text-white shadow hover:bg-indigo-500">Download Free</a>
+              <a href="#download" class="rounded-xl px-5 py-3 text-base font-semibold bg-indigo-600 text-white shadow hover:bg-indigo-500">Download Lite</a>
               <a href="#buy" class="rounded-xl px-5 py-3 text-base font-semibold bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 hover:bg-gray-50 dark:hover:bg-neutral-800">Buy Extended (Coming Soon)</a>
             </div>
             <div class="mt-4 flex flex-wrap gap-2 text-xs text-gray-600 dark:text-neutral-400">
@@ -128,7 +140,7 @@
           </div>
           <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
             <h3 class="font-semibold">Start fast with presets</h3>
-            <p class="mt-2 text-gray-600 dark:text-neutral-300">Free includes 10 editable presets. Extended unlocks 20 user presets and external sharing.</p>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">Lite includes 10 editable presets. Extended unlocks 20 user presets and external sharing.</p>
           </div>
         </div>
       </div>
@@ -197,7 +209,7 @@
               <tr><td class="p-3">Slash chords</td><td class="p-3">Yes (set bass)</td><td class="p-3">Yes</td><td class="p-3">Limited</td></tr>
               <tr><td class="p-3">Cross‑DAW portability</td><td class="p-3">High (symbol‑based, independent MIDI)</td><td class="p-3">Medium</td><td class="p-3">Limited</td></tr>
               <tr><td class="p-3">UI</td><td class="p-3">Flat, legible</td><td class="p-3">Dense, complex</td><td class="p-3">Simple</td></tr>
-              <tr><td class="p-3">Price (ref.)</td><td class="p-3">$39</td><td class="p-3">$79–$99</td><td class="p-3">~$69</td></tr>
+              <tr><td class="p-3">Price (ref.)</td><td class="p-3">$36</td><td class="p-3">$79–$99</td><td class="p-3">~$69</td></tr>
             </tbody>
           </table>
         </div>
@@ -210,7 +222,7 @@
         <h2 class="text-2xl sm:text-3xl font-extrabold">Download</h2>
         <div class="mt-6 grid md:grid-cols-2 gap-6 text-sm">
           <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto h-full min-h-[16rem] flex flex-col w-full md:w-96">
-            <h3 class="text-lg md:text-xl font-semibold">Free</h3>
+            <h3 class="text-lg md:text-xl font-semibold">Lite</h3>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
               Core timeline editing for chord tracks
               <br />Flexible chord palette for transpose, inversions, and octave adjustments
@@ -321,7 +333,7 @@
       "softwareVersion": "1.0",
       "offers": {
         "@type": "Offer",
-        "price": "39",
+        "price": "36",
         "priceCurrency": "USD",
         "availability": "https://schema.org/PreOrder"
       },
