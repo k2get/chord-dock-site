@@ -145,7 +145,7 @@
         <div class="hidden sm:flex items-center gap-4 text-sm">
           <a href="#features" class="hover:opacity-80">機能</a>
           <a href="#comparison" class="hover:opacity-80">比較</a>
-          <a href="#presets" class="hover:opacity-80">プリセット</a>
+          <a href="#requirements" class="hover:opacity-80">動作環境</a>
           <a href="#daw" class="hover:opacity-80">対応DAW</a>
           <a href="#download" class="hover:opacity-80">ダウンロード</a>
           <a href="#faq" class="hover:opacity-80">FAQ</a>
@@ -363,6 +363,97 @@
       </div>
     </section>
 
+    <!-- Edition Comparison -->
+    <section class="section" id="edition-comparison">
+      <div class="container mx-auto px-4 py-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">
+          Lite / Extended の違い
+        </h2>
+        <p class="mt-2 text-sm text-gray-600 dark:text-neutral-300">
+          Lite と Extended で共通するコア機能と、Extended で追加される機能の違いです。
+        </p>
+        <div
+          class="mt-6 overflow-x-auto rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800"
+        >
+          <table class="min-w-full text-sm">
+            <thead class="bg-gray-50 dark:bg-neutral-900">
+              <tr>
+                <th class="p-3 text-left font-semibold">機能カテゴリ</th>
+                <th class="p-3 text-left font-semibold">Lite（無料）</th>
+                <th class="p-3 text-left font-semibold">Extended（有料）</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-neutral-800">
+              <tr>
+                <td class="p-3">タイムライン型コードエディタ</td>
+                <td class="p-3">✔</td>
+                <td class="p-3">✔</td>
+              </tr>
+              <tr>
+                <td class="p-3">コードのリサイズ / 移動 / 複製 / 転回</td>
+                <td class="p-3">✔</td>
+                <td class="p-3">✔</td>
+              </tr>
+              <tr>
+                <td class="p-3">メジャー / マイナーコード</td>
+                <td class="p-3">✔</td>
+                <td class="p-3">✔</td>
+              </tr>
+              <tr>
+                <td class="p-3">7th 系（mMaj7 / m7b5 / dim / dim7）</td>
+                <td class="p-3">✔</td>
+                <td class="p-3">✔</td>
+              </tr>
+              <tr>
+                <td class="p-3">テンション（9 / 11 / 13）</td>
+                <td class="p-3">—</td>
+                <td class="p-3">✔</td>
+              </tr>
+              <tr>
+                <td class="p-3">スラッシュコード（任意ベース）</td>
+                <td class="p-3">—</td>
+                <td class="p-3">✔</td>
+              </tr>
+              <tr>
+                <td class="p-3">五度圏ビュー</td>
+                <td class="p-3">—</td>
+                <td class="p-3">✔</td>
+              </tr>
+              <tr>
+                <td class="p-3">ext Snap（高度なスナップ）</td>
+                <td class="p-3">—</td>
+                <td class="p-3">✔</td>
+              </tr>
+              <tr>
+                <td class="p-3">ext Range（柔軟なレンジ編集）</td>
+                <td class="p-3">—</td>
+                <td class="p-3">✔</td>
+              </tr>
+              <tr>
+                <td class="p-3">ドラッグ&amp;ドロップMIDI書き出し</td>
+                <td class="p-3">✔</td>
+                <td class="p-3">✔</td>
+              </tr>
+              <tr>
+                <td class="p-3">コード進行ファイルの書き出し / 読み込み</td>
+                <td class="p-3">✔</td>
+                <td class="p-3">✔</td>
+              </tr>
+              <tr>
+                <td class="p-3">おすすめの用途</td>
+                <td class="p-3">
+                  フル尺のコード進行を素早く組み立てるための基本ワークフロー
+                </td>
+                <td class="p-3">
+                  高度なハーモニーデザインと、細かなプロダクションワークに最適
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
     <!-- Comparison -->
     <section class="section" id="comparison">
       <div class="container mx-auto px-4 py-12">
@@ -445,6 +536,39 @@
               </tr>
             </tbody>
           </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Requirements -->
+    <section class="section" id="requirements">
+      <div class="container mx-auto px-4 py-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">動作環境</h2>
+        <div class="mt-6 grid md:grid-cols-2 gap-6 text-sm">
+          <div
+            class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto"
+          >
+            <h3 class="font-semibold">Windows</h3>
+            <ul
+              class="mt-2 list-disc ml-5 space-y-1 text-gray-700 dark:text-neutral-300"
+            >
+              <li>Windows 10 / 11</li>
+              <li>VST3 対応 DAW</li>
+              <li>64-bit OS</li>
+            </ul>
+          </div>
+          <div
+            class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto"
+          >
+            <h3 class="font-semibold">macOS</h3>
+            <ul
+              class="mt-2 list-disc ml-5 space-y-1 text-gray-700 dark:text-neutral-300"
+            >
+              <li>macOS 11 以上</li>
+              <li>Apple Silicon &amp; Intel 対応</li>
+              <li>VST3 / AU 対応 DAW</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -735,8 +859,10 @@
             <span aria-hidden>•</span>
             <a href="privacy.html" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">プライバシー</a>
             <span aria-hidden>•</span>
+            <!-- 一時的に非表示：特定商取引法に基づく表記
             <a href="tokushoho.html" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">特定商取引法に基づく表記</a>
             <span aria-hidden>•</span>
+            -->
             <a href="https://forms.gle/WPgiSCxY9Mp3v9nc6" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">お問い合わせ</a>
           </div>
         </div>
