@@ -148,6 +148,7 @@
           <a href="#requirements" class="hover:opacity-80">動作環境</a>
           <a href="#daw" class="hover:opacity-80">対応DAW</a>
           <a href="#download" class="hover:opacity-80">ダウンロード</a>
+          <a href="#activation" class="hover:opacity-80">アクティベーション</a>
           <a href="#faq" class="hover:opacity-80">FAQ</a>
         </div>
         <div class="flex items-center gap-2">
@@ -619,6 +620,49 @@
       </div>
     </section>
 
+    <!-- Activation -->
+    <section class="section" id="activation">
+      <div class="container mx-auto px-4 py-12 text-left">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">アクティベーション</h2>
+        <div class="mt-6 space-y-8">
+          <div class="grid md:grid-cols-2 gap-8 items-start">
+            <div class="text-sm text-gray-700 dark:text-neutral-300 space-y-3">
+              <p>
+                ChordDock Extended は、購入後に発行されるシリアルキーでアクティベートします。
+              </p>
+              <p>
+                プラグイン右上の設定メニュー（ギアアイコン）から「ライセンス入力…」を開きます。
+              </p>
+            </div>
+            <div class="flex justify-center">
+              <img
+                src="assets/設定ウィンドウアイコン.png"
+                alt="ChordDock の設定メニュー（ライセンス入力へのアクセス）の例"
+                class="max-w-md w-full rounded-2xl shadow-md ring-1 ring-gray-200 dark:ring-neutral-700"
+              />
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-8 items-start">
+            <div class="flex justify-center">
+              <img
+                src="assets/設定ウィンドウ日本語.png"
+                alt="ChordDock のライセンス入力とオンライン認証画面の例"
+                class="max-w-sm w-full rounded-2xl shadow-md ring-1 ring-gray-200 dark:ring-neutral-700"
+              />
+            </div>
+            <div class="text-sm text-gray-700 dark:text-neutral-300 space-y-3">
+              <p>
+                シリアルキーを入力するとブラウザが立ち上がり、Chord Dock アカウントにログインしてデバイスを承認します（オンライン認証）。
+              </p>
+              <p>
+                ライセンスはアカウントに紐づき、デバイス間で管理されます。詳しい台数制限や手順は、このページ下部の FAQ をご覧ください。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FAQ -->
     <section class="section" id="faq">
       <div class="container mx-auto px-4 py-12 text-left">
@@ -652,7 +696,23 @@
           </details>
           <details>
             <summary>
-              Q3. オフラインでも使えますか？
+              Q3. 2台目の PC で Extended を使うには？
+            </summary>
+            <div>
+              <p>手順は次のとおりです：</p>
+              <ul>
+                <li>2台目の PC に Chord Dock をインストールする</li>
+                <li>2台目の Chord Dock で「設定 → ライセンス」からシリアルキーを入力する</li>
+                <li>ブラウザが開いたら、Chord Dock アカウントにログインし、その PC を承認する（オンライン認証）</li>
+              </ul>
+              <p>
+                承認が完了すると、その PC でも Extended として利用できます。すでに2台とも認証済みの場合は、不要なデバイスのアクティベーションを解除してから再度お試しください（Q8 も参照）。
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              Q4. オフラインでも使えますか？
             </summary>
             <div>
               <p>
@@ -662,7 +722,7 @@
           </details>
           <details>
             <summary>
-              Q4. 対応フォーマットは？
+              Q5. 対応フォーマットは？
             </summary>
             <div>
               <p>
@@ -671,7 +731,7 @@
             </div>
           </details>
           <details>
-            <summary>Q5. アップデートしたら Lite になってしまいました</summary>
+            <summary>Q6. アップデートしたら Lite になってしまいました</summary>
             <div>
               <p>
                 Chord Dock は Lite / Extended 共通インストーラーです。Extended として使う場合は、シリアルキーを再度入力し、オンライン認証を実行する必要があります。
@@ -682,7 +742,7 @@
             </div>
           </details>
           <details>
-            <summary>Q6. シリアルキーが見つかりません / 忘れました</summary>
+            <summary>Q7. シリアルキーが見つかりません / 忘れました</summary>
             <div>
               <p>
                 Chord Dock の「設定 → オンライン認証」を開き、ログインしてください。そこで以下が確認できます：
@@ -698,7 +758,7 @@
             </div>
           </details>
           <details>
-            <summary>Q7. Extended シリアルを入力したのに認証されません</summary>
+            <summary>Q8. Extended シリアルを入力したのに認証されません</summary>
             <div>
               <p>以下をご確認ください：</p>
               <ul>
@@ -712,7 +772,7 @@
             </div>
           </details>
           <details>
-            <summary>Q8. 古い PC / 使わなくなった PC の認証を解除したい</summary>
+            <summary>Q9. 古い PC / 使わなくなった PC の認証を解除したい</summary>
             <div>
               <p>
                 「設定 → オンライン認証」でデバイス一覧が表示されます。不要なデバイスを解除することで、新しい PC で認証できます。
@@ -720,7 +780,7 @@
             </div>
           </details>
           <details>
-            <summary>Q9. インストール後に DAW にプラグインが表示されません</summary>
+            <summary>Q10. インストール後に DAW にプラグインが表示されません</summary>
             <div>
               <p>以下を確認してください：</p>
               <ul>
@@ -736,7 +796,7 @@
             </div>
           </details>
           <details>
-            <summary>Q10. AAX（Pro Tools）が認識されません</summary>
+            <summary>Q11. AAX（Pro Tools）が認識されません</summary>
             <div>
               <p>以下をお試しください：</p>
               <ul>
@@ -752,7 +812,7 @@
             </div>
           </details>
           <details>
-            <summary>Q11. Lite として使いたいのですが、Extended シリアルは必要ですか？</summary>
+            <summary>Q12. Lite として使いたいのですが、Extended シリアルは必要ですか？</summary>
             <div>
               <p>
                 必要ありません。シリアル未入力時は自動的に Lite として動作します。
@@ -760,25 +820,23 @@
             </div>
           </details>
           <details>
-            <summary>Q12. Extended を購入したのに Lite のままです</summary>
+            <summary>Q13. Extended を購入したのに Lite のままです</summary>
             <div>
-              <p>以下を試してください：</p>
+              <p>次の点を順に確認してください：</p>
               <ul>
-                <li>DAW を完全終了し、再起動</li>
-                <li>設定 → ライセンス画面でシリアル認識を確認</li>
+                <li>「設定 → ライセンス」でステータスが「Extended」になっているか</li>
+                <li>「設定 → ライセンス管理ページを開く」からブラウザを開き、Code Dock アカウントにログインして、この PC が「認証済みデバイス」として登録されているか</li>
                 <li>
-                  認識されない場合：
-                  <ul>
-                    <li>シリアル再入力</li>
-                    <li>オンライン認証へ進む（ユーザー登録が必要）</li>
-                  </ul>
+                  すでに2台とも認証済みの場合は、不要なデバイスの認証を解除してから再度お試しください。また、2台目のアクティベーションには再度ライセンスキーが必要になります。（Q2, Q9 も参照）
                 </li>
               </ul>
-              <p>正常に認証されると Extended になります。</p>
+              <p>
+                上記を行ったあとに DAW を再起動し、もう一度プラグインを開いてください。それでも Lite のままの場合は、お手数ですがお問い合わせフォームからご連絡ください。
+              </p>
             </div>
           </details>
           <details>
-            <summary>Q13. アップデート後、プロジェクトとの互換性は大丈夫ですか？</summary>
+            <summary>Q14. アップデート後、プロジェクトとの互換性は大丈夫ですか？</summary>
             <div>
               <p>
                 基本的に後方互換です。まれに DAW 側のキャッシュの影響で、プラグインの再スキャンが必要な場合があります。
@@ -786,7 +844,7 @@
             </div>
           </details>
           <details>
-            <summary>Q14. 設定やプリセットはアップデートで消えますか？</summary>
+            <summary>Q15. 設定やプリセットはアップデートで消えますか？</summary>
             <div>
               <p>
                 消えません。ユーザー設定・プリセットは OS のユーザーデータ領域に保存されています。
@@ -794,7 +852,7 @@
             </div>
           </details>
           <details>
-            <summary>Q15. Extended はオフライン環境で使えますか？</summary>
+            <summary>Q16. Extended はオフライン環境で使えますか？</summary>
             <div>
               <p>以下のような扱いになります：</p>
               <ul>

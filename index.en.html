@@ -102,6 +102,7 @@
           <a href="#requirements" class="hover:opacity-80">System Requirements</a>
           <a href="#daw" class="hover:opacity-80">DAW Support</a>
           <a href="#download" class="hover:opacity-80">Download</a>
+          <a href="#activation" class="hover:opacity-80">Activation</a>
           <a href="#faq" class="hover:opacity-80">FAQ</a>
         </div>
         <div class="flex items-center gap-2">
@@ -455,6 +456,49 @@
       </div>
     </section>
 
+    <!-- Activation -->
+    <section class="section" id="activation">
+      <div class="container mx-auto px-4 py-12 text-left">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">Activation</h2>
+        <div class="mt-6 space-y-8">
+          <div class="grid md:grid-cols-2 gap-8 items-start">
+            <div class="text-sm text-gray-700 dark:text-neutral-300 space-y-3">
+              <p>
+                ChordDock Extended is activated with the serial key issued after purchase.
+              </p>
+              <p>
+                From the settings menu in the top-right of the plugin (gear icon), open “Enter License…”.
+              </p>
+            </div>
+            <div class="flex justify-center">
+              <img
+                src="assets/設定ウィンドウアイコン.png"
+                alt="Example of the ChordDock settings menu (gear icon) leading to license entry"
+                class="max-w-md w-full rounded-2xl shadow-md ring-1 ring-gray-200 dark:ring-neutral-700"
+              />
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-8 items-start">
+            <div class="flex justify-center">
+              <img
+                src="assets/設定ウィンドウ英語.png"
+                alt="Example of ChordDock license input and online activation"
+                class="max-w-sm w-full rounded-2xl shadow-md ring-1 ring-gray-200 dark:ring-neutral-700"
+              />
+            </div>
+            <div class="text-sm text-gray-700 dark:text-neutral-300 space-y-3">
+              <p>
+                Entering your serial key launches your browser, where you log in to your Code Dock account and approve the device (online activation).
+              </p>
+              <p>
+                Your license is linked to your account and managed across devices. For details on device limits and exact steps, see the FAQ at the bottom of this page.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FAQ -->
     <section class="section" id="faq">
       <div class="container mx-auto px-4 py-12 text-left">
@@ -483,7 +527,26 @@
             </div>
           </details>
           <details>
-            <summary>Q3. Can I use it offline?</summary>
+            <summary>Q3. How do I activate Extended on a second PC?</summary>
+            <div>
+              <p>Follow these steps:</p>
+              <ul>
+                <li>Install Chord Dock on the second PC.</li>
+                <li>On the second PC, open “Settings → License” and enter your serial key.</li>
+                <li>
+                  When your browser opens, log in to your Chord Dock account and approve that PC
+                  (online activation).
+                </li>
+              </ul>
+              <p>
+                Once approval is complete, Extended is enabled on that PC as well. If both device
+                slots are already in use, deactivate an unused device first and then try again
+                (see also Q8).
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Q4. Can I use it offline?</summary>
             <div>
               <p>
                 After activation, the local state is stored and you can use Chord Dock
@@ -492,13 +555,13 @@
             </div>
           </details>
           <details>
-            <summary>Q4. Which plugin formats are supported?</summary>
+            <summary>Q5. Which plugin formats are supported?</summary>
             <div>
               <p>VST3 / AU / AAX are supported.</p>
             </div>
           </details>
           <details>
-            <summary>Q5. After updating, it shows as Lite</summary>
+            <summary>Q6. After updating, it shows as Lite</summary>
             <div>
               <p>
                 Chord Dock uses a shared installer for Lite and Extended. To use Extended,
@@ -511,7 +574,7 @@
             </div>
           </details>
           <details>
-            <summary>Q6. I can’t find / forgot my serial key</summary>
+            <summary>Q7. I can’t find / forgot my serial key</summary>
             <div>
               <p>
                 Open “Settings → Online activation” in Chord Dock and log in. There you
@@ -529,7 +592,7 @@
             </div>
           </details>
           <details>
-            <summary>Q7. I entered an Extended serial but it won’t activate</summary>
+            <summary>Q8. I entered an Extended serial but it won’t activate</summary>
             <div>
               <p>Please check the following:</p>
               <ul>
@@ -543,7 +606,7 @@
             </div>
           </details>
           <details>
-            <summary>Q8. I want to deactivate an old / unused PC</summary>
+            <summary>Q9. I want to deactivate an old / unused PC</summary>
             <div>
               <p>
                 Open “Settings → Online activation” to see the list of devices. Deactivate
@@ -552,7 +615,7 @@
             </div>
           </details>
           <details>
-            <summary>Q9. After installing, the plugin does not appear in my DAW</summary>
+            <summary>Q10. After installing, the plugin does not appear in my DAW</summary>
             <div>
               <p>Please check the following:</p>
               <ul>
@@ -571,7 +634,7 @@
             </div>
           </details>
           <details>
-            <summary>Q10. Pro Tools does not recognize the AAX plugin</summary>
+            <summary>Q11. Pro Tools does not recognize the AAX plugin</summary>
             <div>
               <p>Please try the following:</p>
               <ul>
@@ -588,7 +651,7 @@
           </details>
           <details>
             <summary>
-              Q11. I only want to use Lite. Do I need an Extended serial?
+              Q12. I only want to use Lite. Do I need an Extended serial?
             </summary>
             <div>
               <p>
@@ -598,27 +661,26 @@
             </div>
           </details>
           <details>
-            <summary>Q12. I purchased Extended but it still shows as Lite</summary>
+            <summary>Q13. I purchased Extended but it still shows as Lite</summary>
             <div>
-              <p>Please try the following:</p>
+              <p>Please check the following in order:</p>
               <ul>
-                <li>Completely quit your DAW and restart it</li>
-                <li>Check in the license screen that your serial is recognized</li>
+                <li>In “Settings → License”, confirm that the status shows “Extended”. If not, re-enter your serial key.</li>
                 <li>
-                  If the serial is not recognized:
-                  <ul>
-                    <li>Re-enter your serial key</li>
-                    <li>Proceed to online activation (user registration required)</li>
-                  </ul>
+                  Click “Open License Management Page” to open your browser, log in to your Chord Dock account,
+                  and check that this PC is listed as an activated device.
+                </li>
+                <li>
+                  If both device slots are already in use, deactivate an unused device first and then try again. Note that activating on a second PC requires entering your serial key again (see also Q2 and Q9).
                 </li>
               </ul>
               <p>
-                Once activation completes successfully, Chord Dock switches to Extended.
+                After making these changes, restart your DAW and reopen the plugin. If it still shows Lite, please contact us via the support form.
               </p>
             </div>
           </details>
           <details>
-            <summary>Q13. Will my projects remain compatible after updating?</summary>
+            <summary>Q14. Will my projects remain compatible after updating?</summary>
             <div>
               <p>
                 In principle, updates are backward compatible. In rare cases, your DAW’s
@@ -628,7 +690,7 @@
           </details>
           <details>
             <summary>
-              Q14. Will my settings and presets be lost when updating?
+              Q15. Will my settings and presets be lost when updating?
             </summary>
             <div>
               <p>
@@ -638,7 +700,7 @@
             </div>
           </details>
           <details>
-            <summary>Q15. Can I use Extended in an offline environment?</summary>
+            <summary>Q16. Can I use Extended in an offline environment?</summary>
             <div>
               <p>It works as follows:</p>
               <ul>
