@@ -624,8 +624,10 @@
       <div class="container mx-auto px-4 py-12 text-left">
         <h2 class="text-2xl sm:text-3xl font-extrabold">アクティベーション</h2>
         <div class="mt-6 space-y-8">
-          <div class="grid md:grid-cols-2 gap-8 items-start">
-            <div class="text-sm text-gray-700 dark:text-neutral-300 space-y-3">
+          <div
+            class="grid items-center gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:minmax(0,1fr)_auto]"
+          >
+            <div class="text-sm text-gray-700 dark:text-neutral-300 space-y-3 md:ml-auto max-w-xl">
               <p>
                 ChordDock Extended は、購入後に発行されるシリアルキーでアクティベートします。
               </p>
@@ -633,7 +635,7 @@
                 プラグイン右上の設定メニュー（ギアアイコン）から「ライセンス入力…」を開きます。
               </p>
             </div>
-            <div class="flex justify-center">
+            <div class="flex justify-center md:justify-start">
               <img
                 src="assets/設定ウィンドウアイコン.png"
                 alt="ChordDock の設定メニュー（ライセンス入力へのアクセス）の例"
@@ -641,8 +643,10 @@
               />
             </div>
           </div>
-          <div class="grid md:grid-cols-2 gap-8 items-start">
-            <div class="flex justify-center">
+          <div
+            class="grid items-center gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:auto_minmax(0,1fr)]"
+          >
+            <div class="flex justify-center md:justify-start">
               <img
                 src="assets/設定ウィンドウ日本語.png"
                 alt="ChordDock のライセンス入力とオンライン認証画面の例"
