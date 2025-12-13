@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chord Tone Guide (for Chord Dock)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      body {
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+          'Segoe UI', sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background: #020617;
+        color: #e5e7eb;
+      }
+      header {
+        background: #020617;
+        color: #f9fafb;
+        padding: 1.2rem 1.5rem 0.75rem;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      }
+      .header-inner {
+        max-width: 960px;
+        margin: 0 auto;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 1.4rem;
+      }
+      header p {
+        margin: 0.3rem 0 0;
+        font-size: 0.9rem;
+        opacity: 0.85;
+      }
+      .lang-switch {
+        font-size: 0.85rem;
+        white-space: nowrap;
+      }
+      .lang-switch a {
+        color: #9ca3af;
+        text-decoration: none;
+      }
+      .lang-switch a.current {
+        color: #e5e7eb;
+        font-weight: 500;
+      }
+      .lang-switch a:hover {
+        color: #cdd2e4;
+      }
+      .lang-sep {
+        margin: 0 0.35rem;
+        color: #6b7280;
+        font-size: 0.8rem;
+      }
+      main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 1.5rem 1.2rem 3rem;
+      }
+      nav {
+        background: rgba(15, 23, 42, 0.96);
+        border-radius: 12px;
+        padding: 1rem 1.2rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(148, 163, 184, 0.25);
+      }
+      nav h2 {
+        font-size: 1rem;
+        margin-top: 0;
+      }
+      nav ul {
+        margin: 0.3rem 0 0;
+        padding-left: 1.1rem;
+        font-size: 0.9rem;
+      }
+      section {
+        background: rgba(15, 23, 42, 0.96);
+        border-radius: 12px;
+        padding: 1.2rem 1.4rem;
+        margin-bottom: 1.3rem;
+        border: 1px solid rgba(148, 163, 184, 0.2);
+      }
+      section h2 {
+        margin-top: 0;
+        font-size: 1.2rem;
+        border-left: 4px solid #6366f1;
+        padding-left: 0.5rem;
+      }
+      section h3 {
+        font-size: 1.05rem;
+        margin-top: 1.1rem;
+        border-left: 3px solid #999;
+        padding-left: 0.45rem;
+      }
+      section h4 {
+        font-size: 0.98rem;
+        margin-top: 0.9rem;
+      }
+      .badge {
+        display: inline-block;
+        font-size: 0.75rem;
+        padding: 0.15rem 0.5rem;
+        border-radius: 999px;
+        margin-left: 0.3rem;
+      }
+      .badge-lite {
+        background: rgba(191, 219, 254, 0.2);
+        color: #bfdbfe;
+      }
+      .badge-ext {
+        background: rgba(221, 214, 254, 0.2);
+        color: #ddd6fe;
+      }
+      .code-box {
+        background: rgba(15, 23, 42, 0.9);
+        border-radius: 8px;
+        padding: 0.6rem 0.75rem;
+        font-size: 0.9rem;
+        margin: 0.4rem 0 0.7rem;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+      }
+      .code-list {
+        font-size: 0.9rem;
+        padding-left: 1.2rem;
+      }
+      .small-note {
+        font-size: 0.85rem;
+        color: #9ca3af;
+      }
+      footer {
+        text-align: center;
+        font-size: 0.8rem;
+        color: #9ca3af;
+        padding: 1.5rem 0 2rem;
+      }
+      @media (min-width: 800px) {
+        main {
+          padding: 2rem 0 3rem;
+        }
+      }
+      @media (max-width: 640px) {
+        .header-inner {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <div>
+          <h1>Chord Tone Guide</h1>
+          <p>Gentle chord explanations for Chord Dock Lite / Extended users</p>
+        </div>
+        <div class="lang-switch">
+          <a href="おまけドキュメント.html" id="extraLangJP">JP</a>
+          <span class="lang-sep">/</span>
+          <a href="おまけドキュメント.en.html" class="current">EN</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- TOC -->
+      <nav>
+        <h2>Contents</h2>
+        <ul>
+          <li><a href="#intro">0. Introduction</a></li>
+          <li>
+            <a href="#basics">1. Basic Concepts</a>
+            <ul>
+              <li>
+                <a href="#triad-basic">1-1. What is a Triad (3 notes)?</a>
+              </li>
+              <li>
+                <a href="#tetrad-basic">1-2. What is a Tetrad (4 notes)?</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#lite">2. LITE Edition: Available Chords</a>
+            <ul>
+              <li><a href="#lite-triad">2-1. Triads (3‑note chords)</a></li>
+              <li><a href="#lite-sus">2-2. Suspended Chords</a></li>
+              <li><a href="#lite-tetrad">2-3. Tetrads (7th‑type chords)</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#extended">3. Extended Edition: Additional Chords</a>
+            <ul>
+              <li>
+                <a href="#ext-9th">3-1. Ninths (9th) and Add Ninths (add9)</a>
+              </li>
+              <li><a href="#ext-6th">3-2. 6th Chords</a></li>
+              <li><a href="#ext-11-13">3-3. A Brief Note on 11th / 13th</a></li>
+              <li><a href="#ext-slash">3-4. Slash Chords (On‑Chords)</a></li>
+            </ul>
+          </li>
+          <li><a href="#notation">4. Notation Guide</a></li>
+          <li><a href="#changelog">5. Change Log</a></li>
+        </ul>
+      </nav>
+
+      <!-- 0. Intro -->
+      <section id="intro">
+        <h2>0. Introduction</h2>
+        <p>
+          This page is a gentle guide to the chords shown in the
+          <strong>Chord Dock</strong> chord palette. It explains each chord’s
+          <strong>name</strong>, <strong>component tones</strong>, and
+          <strong>rough sound impression</strong> in simple terms.
+        </p>
+        <p class="small-note">
+          This is <strong>not</strong> a formal music theory textbook. It is
+          written for people who are
+          <strong>just starting out with music production</strong>. The goal is
+          not strict theory, but to help you think, “ah, so this is roughly what
+          this chord sounds like.”
+        </p>
+
+        <h3>Lite vs Extended</h3>
+        <div class="code-box">
+          <span class="badge badge-lite">Lite</span>:
+          Covers the essential chords (triads, 7th chords, etc.).<br />
+          <span class="badge badge-ext">Extended</span>:
+          Adds more colors such as 9ths, 6ths, and slash chords for richer
+          harmony.
+        </div>
+      </section>
+
+      <!-- 1. Basics -->
+      <section id="basics">
+        <h2>1. Basic Concepts</h2>
+
+        <h3 id="triad-basic">1-1. What is a Triad (3 notes)?</h3>
+        <p>
+          A <strong>Triad</strong> is a chord built from
+          <strong>three notes</strong>. It is the most basic chord shape. In
+          Chord Dock, many chords are based on a triad.
+        </p>
+        <div class="code-box">
+          Example: C (C major)<br />
+          Notes: C – E – G (3 notes)
+        </div>
+
+        <h3 id="tetrad-basic">1-2. What is a Tetrad (4 notes)?</h3>
+        <p>
+          A <strong>Tetrad</strong> is a <strong>4‑note chord</strong> formed
+          by adding one more note to a triad.<br />
+          Chords written as “◯◯7” or “◯◯maj7” are basically tetrads.
+        </p>
+        <div class="code-box">
+          Example: Cmaj7 (C major seventh)<br />
+          Notes: C – E – G – B (4 notes)
+        </div>
+      </section>
+
+      <!-- 2. Lite Edition -->
+      <section id="lite">
+        <h2>
+          2. LITE Edition: Available Chords
+          <span class="badge badge-lite">Lite</span>
+        </h2>
+        <p>
+          This section explains the chords available in
+          <strong>Chord Dock Lite</strong>.<br />
+          Even with Lite only, you get enough chords to write a large portion of
+          pop, rock, and many other genres.
+        </p>
+
+        <!-- 2-1 Triads -->
+        <h3 id="lite-triad">2-1. Triads (3‑note chords)</h3>
+
+        <h4>Major</h4>
+        <ul class="code-list">
+          <li>Example: C (C major)</li>
+          <li>Structure: Root, major 3rd, perfect 5th (R – 3 – 5)</li>
+          <li>Impression: Bright, stable</li>
+        </ul>
+
+        <h4>Minor</h4>
+        <ul class="code-list">
+          <li>Example: Cm (C minor)</li>
+          <li>Structure: Root, minor 3rd, perfect 5th (R – ♭3 – 5)</li>
+          <li>Impression: A bit dark, mellow</li>
+        </ul>
+
+        <h4>Power Chord (5)</h4>
+        <ul class="code-list">
+          <li>Example: C5</li>
+          <li>Structure: Root, perfect 5th (R – 5)</li>
+          <li>Impression: Strong and punchy, less clearly “major” or “minor”</li>
+        </ul>
+
+        <h4>Diminished (dim)</h4>
+        <ul class="code-list">
+          <li>Example: Cdim</li>
+          <li>Structure: Root, minor 3rd, diminished 5th (R – ♭3 – ♭5)</li>
+          <li>Impression: Unstable, mysterious, tense</li>
+        </ul>
+
+        <h4>Augmented (aug)</h4>
+        <ul class="code-list">
+          <li>Example: Caug</li>
+          <li>Structure: Root, major 3rd, augmented 5th (R – 3 – ♯5)</li>
+          <li>Impression: Floating, slightly strange</li>
+        </ul>
+
+        <!-- 2-2 Suspended -->
+        <h3 id="lite-sus">2-2. Suspended Chords</h3>
+
+        <h4>sus2</h4>
+        <ul class="code-list">
+          <li>Example: Csus2</li>
+          <li>Structure: Root, major 2nd, perfect 5th (R – 2 – 5)</li>
+          <li>Impression: Open, ambiguous, fresh</li>
+        </ul>
+
+        <h4>sus4</h4>
+        <ul class="code-list">
+          <li>Example: Csus4</li>
+          <li>Structure: Root, perfect 4th, perfect 5th (R – 4 – 5)</li>
+          <li>Impression: Feels like it “wants to resolve”</li>
+        </ul>
+
+        <!-- 2-3 Tetrads -->
+        <h3 id="lite-tetrad">2-3. Tetrads (7th‑type chords)</h3>
+
+        <h4>Major Seventh (maj7)</h4>
+        <ul class="code-list">
+          <li>Example: Cmaj7</li>
+          <li>Structure: R – 3 – 5 – 7</li>
+          <li>Impression: Jazzy, fresh, a bit sophisticated</li>
+        </ul>
+
+        <h4>Minor Seventh (m7)</h4>
+        <ul class="code-list">
+          <li>Example: Cm7</li>
+          <li>Structure: R – ♭3 – 5 – ♭7</li>
+          <li>Impression: Bittersweet, relaxed</li>
+        </ul>
+
+        <h4>Dominant Seventh (7)</h4>
+        <ul class="code-list">
+          <li>Example: C7</li>
+          <li>Structure: R – 3 – 5 – ♭7</li>
+          <li>Impression: Wants to move to the next chord, “bluesy”</li>
+        </ul>
+
+        <h4>Half‑diminished (m7♭5)</h4>
+        <ul class="code-list">
+          <li>Example: Cm7♭5</li>
+          <li>Structure: R – ♭3 – ♭5 – ♭7</li>
+          <li>Impression: Unstable, a bit shadowy</li>
+        </ul>
+
+        <h4>Diminished Seventh (dim7)</h4>
+        <ul class="code-list">
+          <li>Example: Cdim7</li>
+          <li>Structure: R – ♭3 – ♭5 – 𝄫7</li>
+          <li>Impression: Very unstable, maximum tension</li>
+        </ul>
+
+        <h4>Minor Major Seventh (mMaj7)</h4>
+        <ul class="code-list">
+          <li>Example: CmMaj7</li>
+          <li>Structure: R – ♭3 – 5 – 7</li>
+          <li>Impression: Dramatic, a bit cinematic and mysterious</li>
+        </ul>
+      </section>
+
+      <!-- 3. Extended Edition -->
+      <section id="extended">
+        <h2>
+          3. Extended Edition: Additional Chords
+          <span class="badge badge-ext">Extended</span>
+        </h2>
+        <p>
+          In the Extended edition, you get chords that are not in Lite, such as
+          extra “color tones” (tensions) and slash chords with different bass
+          notes. Rather than heavy theory, we focus on
+          <strong>what notes are added</strong> and <strong>how they feel</strong>.
+        </p>
+
+        <!-- 3-1 9th & add9 -->
+        <h3 id="ext-9th">3-1. Ninths (9th) and Add Ninths (add9)</h3>
+
+        <h4>What is a 9th?</h4>
+        <p>
+          A <strong>9th</strong> is an extra note added to give a chord more
+          color.<br />
+          It is written with the number <strong>9</strong>, as in C9 / Cmaj9 /
+          Cm9, etc.
+        </p>
+
+        <h4>9th as a tension on tetrads (7th chords)</h4>
+        <ul class="code-list">
+          <li>Example: Cmaj9 = Cmaj7 + 9th</li>
+          <li>Example: C9 = C7 + 9th</li>
+          <li>Example: Cm9 = Cm7 + 9th</li>
+          <li>Impression: Jazzy, deep, rich color</li>
+        </ul>
+
+        <h4>9th on a triad (add9)</h4>
+        <ul class="code-list">
+          <li>Example: Cadd9 = C + 9th (D)</li>
+          <li>Example: Cm(add9) = Cm + 9th (D)</li>
+          <li>
+            Note: These do <strong>not</strong> contain a 7th, so they’re a bit
+            different from typical “tension chords”.
+          </li>
+          <li>
+            Impression: Bright and pop‑like; very common on acoustic guitar.
+          </li>
+        </ul>
+
+        <!-- 3-2 6th -->
+        <h3 id="ext-6th">3-2. 6th Chords</h3>
+        <ul class="code-list">
+          <li>Example: C6 = C + 6th (A)</li>
+          <li>Example: Cm6 = Cm + 6th (A)</li>
+          <li>
+            Note: These also do not contain a 7th, so they feel closer to
+            “extended triads”.
+          </li>
+          <li>
+            Impression: Gentle, slightly retro; common in bossa nova and jazz.
+          </li>
+        </ul>
+
+        <!-- 3-3 11/13 -->
+        <h3 id="ext-11-13">3-3. A Brief Note on 11th / 13th</h3>
+        <p class="small-note">
+          Like 9ths, <strong>11th</strong> and <strong>13th</strong> are extra
+          tones that add color to a chord.<br />
+          In this document we skip detailed theory. When you see them in Chord
+          Dock, it is enough to recognize them as “slightly more complex tension
+          chords”.
+        </p>
+
+        <!-- 3-4 Slash -->
+        <h3 id="ext-slash">3-4. Slash Chords (On‑Chords)</h3>
+        <p>
+          A <strong>slash chord</strong> is something like <strong>C/E</strong>,
+          written with a slash.<br />
+          The part on the left is the “chord”, and the part on the right is the
+          “bass note (lowest note)”.
+        </p>
+        <ul class="code-list">
+          <li>Example: C/E → chord C with bass E</li>
+          <li>Example: G/B → chord G with bass B</li>
+          <li>
+            Impression: Makes bass lines smoother and can add a slightly
+            bittersweet mood.
+          </li>
+        </ul>
+      </section>
+
+      <!-- 4. Notation -->
+      <section id="notation">
+        <h2>4. Notation Guide</h2>
+        <p>
+          This section summarizes the chord notation and symbols used in this
+          document.
+        </p>
+
+        <h3>Basic Triad Notation</h3>
+        <ul class="code-list">
+          <li><strong>C</strong>: C major triad</li>
+          <li><strong>Cm</strong>: C minor triad</li>
+          <li><strong>Caug</strong>: C augmented triad</li>
+          <li><strong>Cdim</strong>: C diminished triad</li>
+        </ul>
+
+        <h3>7th‑type Chords</h3>
+        <ul class="code-list">
+          <li><strong>Cmaj7</strong>: C major seventh</li>
+          <li><strong>C7</strong>: C dominant seventh</li>
+          <li><strong>Cm7</strong>: C minor seventh</li>
+        </ul>
+
+        <h3>9th / add9 / 6th</h3>
+        <ul class="code-list">
+          <li><strong>C9</strong>: C7 with an added 9th</li>
+          <li><strong>Cmaj9</strong>: Cmaj7 with an added 9th</li>
+          <li><strong>Cadd9</strong>: C triad with an added 9th</li>
+          <li><strong>C6</strong>: C triad with an added 6th</li>
+        </ul>
+
+        <h3>Slash Notation</h3>
+        <ul class="code-list">
+          <li><strong>C/E</strong>: “C chord” with bass E</li>
+          <li><strong>G/B</strong>: “G chord” with bass B</li>
+        </ul>
+      </section>
+
+      <!-- 5. Change Log -->
+      <section id="changelog">
+        <h2>5. Change Log</h2>
+        <ul class="code-list">
+          <li>v1.0.0: Initial version (Chord Dock release)</li>
+          <!-- TODO: Add entries here for future updates -->
+        </ul>
+      </section>
+    </main>
+
+    <footer>&copy; Chord Dock / k2get</footer>
+
+    <script>
+      // Save language preference when switching to JP
+      (function () {
+        var jp = document.getElementById('extraLangJP');
+        if (!jp) return;
+        jp.addEventListener('click', function () {
+          try {
+            localStorage.setItem('lang', 'ja');
+          } catch (e) {}
+        });
+      })();
+    </script>
+  </body>
+</html>

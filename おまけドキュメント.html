@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ja" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <title>コード構成音ガイド（Chord Dock 用）</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      body {
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+          'Segoe UI', sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background: #020617;
+        color: #e5e7eb;
+      }
+      header {
+        background: #020617;
+        color: #f9fafb;
+        padding: 1.2rem 1.5rem 0.75rem;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      }
+      .header-inner {
+        max-width: 960px;
+        margin: 0 auto;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 1.4rem;
+      }
+      header p {
+        margin: 0.3rem 0 0;
+        font-size: 0.9rem;
+        opacity: 0.85;
+      }
+      .lang-switch {
+        font-size: 0.85rem;
+        white-space: nowrap;
+      }
+      .lang-switch a {
+        color: #9ca3af;
+        text-decoration: none;
+      }
+      .lang-switch a.current {
+        color: #e5e7eb;
+        font-weight: 500;
+      }
+      .lang-switch a:hover {
+        color: #cdd2e4;
+      }
+      .lang-sep {
+        margin: 0 0.35rem;
+        color: #6b7280;
+        font-size: 0.8rem;
+      }
+      main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 1.5rem 1.2rem 3rem;
+      }
+      nav {
+        background: rgba(15, 23, 42, 0.96);
+        border-radius: 12px;
+        padding: 1rem 1.2rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(148, 163, 184, 0.25);
+      }
+      nav h2 {
+        font-size: 1rem;
+        margin-top: 0;
+      }
+      nav ul {
+        margin: 0.3rem 0 0;
+        padding-left: 1.1rem;
+        font-size: 0.9rem;
+      }
+      section {
+        background: rgba(15, 23, 42, 0.96);
+        border-radius: 12px;
+        padding: 1.2rem 1.4rem;
+        margin-bottom: 1.3rem;
+        border: 1px solid rgba(148, 163, 184, 0.2);
+      }
+      section h2 {
+        margin-top: 0;
+        font-size: 1.2rem;
+        border-left: 4px solid #6366f1;
+        padding-left: 0.5rem;
+      }
+      section h3 {
+        font-size: 1.05rem;
+        margin-top: 1.1rem;
+        border-left: 3px solid #999;
+        padding-left: 0.45rem;
+      }
+      section h4 {
+        font-size: 0.98rem;
+        margin-top: 0.9rem;
+      }
+      .badge {
+        display: inline-block;
+        font-size: 0.75rem;
+        padding: 0.15rem 0.5rem;
+        border-radius: 999px;
+        margin-left: 0.3rem;
+      }
+      .badge-lite {
+        background: rgba(191, 219, 254, 0.2);
+        color: #bfdbfe;
+      }
+      .badge-ext {
+        background: rgba(221, 214, 254, 0.2);
+        color: #ddd6fe;
+      }
+      .code-box {
+        background: rgba(15, 23, 42, 0.9);
+        border-radius: 8px;
+        padding: 0.6rem 0.75rem;
+        font-size: 0.9rem;
+        margin: 0.4rem 0 0.7rem;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+      }
+      .code-list {
+        font-size: 0.9rem;
+        padding-left: 1.2rem;
+      }
+      .small-note {
+        font-size: 0.85rem;
+        color: #9ca3af;
+      }
+      footer {
+        text-align: center;
+        font-size: 0.8rem;
+        color: #9ca3af;
+        padding: 1.5rem 0 2rem;
+      }
+      @media (min-width: 800px) {
+        main {
+          padding: 2rem 0 3rem;
+        }
+      }
+      @media (max-width: 640px) {
+        .header-inner {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <div>
+          <h1>コード構成音ガイド</h1>
+          <p>Chord Dock（Lite / Extended）ユーザー向け・やさしいコード解説</p>
+        </div>
+        <div class="lang-switch">
+          <a href="おまけドキュメント.html" class="current">JP</a>
+          <span class="lang-sep">/</span>
+          <a href="おまけドキュメント.en.html" id="extraLangEN">EN</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- 目次 -->
+      <nav>
+        <h2>目次</h2>
+        <ul>
+          <li><a href="#intro">0. はじめに</a></li>
+          <li>
+            <a href="#basics">1. 基本の考え方</a>
+            <ul>
+              <li>
+                <a href="#triad-basic"
+                  >1-1. Triad（トライアド / 3つの音）とは？</a
+                >
+              </li>
+              <li>
+                <a href="#tetrad-basic"
+                  >1-2. Tetrad（テトラッド / 4つの音）とは？</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#lite">2. LITE Edition：使えるコード一覧</a>
+            <ul>
+              <li><a href="#lite-triad">2-1. Triad（3和音）</a></li>
+              <li><a href="#lite-sus">2-2. Suspended（サスコード）</a></li>
+              <li><a href="#lite-tetrad">2-3. Tetrad（7th 系のコード）</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#extended">3. Extended Edition：追加のコード</a>
+            <ul>
+              <li>
+                <a href="#ext-9th"
+                  >3-1. ナインス（9th）とアドナインス（add9）</a
+                >
+              </li>
+              <li><a href="#ext-6th">3-2. シックスコード（6th）</a></li>
+              <li><a href="#ext-11-13">3-3. 11th / 13th について軽く</a></li>
+              <li>
+                <a href="#ext-slash">3-4. スラッシュコード（オンコード）</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#notation">4. コード表記ガイド</a></li>
+          <li><a href="#changelog">5. 更新履歴</a></li>
+        </ul>
+      </nav>
+
+      <!-- 0. はじめに -->
+      <section id="intro">
+        <h2>0. はじめに</h2>
+        <p>
+          このページは、<strong>Chord Dock</strong>
+          のコードパレットに表示されているコードについて、
+          「名前」「構成音」「だいたいのサウンドの印象」を
+          やさしく説明するためのガイドです。
+        </p>
+        <p class="small-note">
+          音楽理論の専門書ではなく、<strong>はじめて音楽制作に触れる人</strong>
+          を想定しています。
+          難しい話はできるだけ抜きにして、「こういう響きのコードなんだな」とイメージできることを目的にしています。
+        </p>
+
+        <h3>Lite と Extended の違い</h3>
+        <div class="code-box">
+          <span class="badge badge-lite">Lite</span>：
+          基本的なコード（トライアド・7th など）が一通り使えます。<br />
+          <span class="badge badge-ext">Extended</span>：
+          ナインスやシックスなどの追加音、スラッシュコードなど、
+          さらに色々なコードが使える拡張版です。
+        </div>
+      </section>
+
+      <!-- 1. 基本の考え方 -->
+      <section id="basics">
+        <h2>1. 基本の考え方</h2>
+
+        <h3 id="triad-basic">1-1. Triad（トライアド / 3つの音）とは？</h3>
+        <p>
+          <strong>Triad（トライアド）</strong> は、<strong>3つの音</strong>
+          でできている一番基本的なコードです。<br />
+          Chord Dock では、多くのコードの土台がこのトライアドになっています。
+        </p>
+        <div class="code-box">
+          例：C（Cメジャー）<br />
+          構成音：C – E – G（3つの音）
+        </div>
+
+        <h3 id="tetrad-basic">1-2. Tetrad（テトラッド / 4つの音）とは？</h3>
+        <p>
+          <strong>Tetrad（テトラッド）</strong>
+          は、トライアドにもう1つ音を足した
+          <strong>4つの音のコード</strong> です。<br />
+          「◯◯7」「◯◯maj7」など、<strong>7 が付くコード</strong>
+          は基本的にテトラッドだと思って大丈夫です。
+        </p>
+        <div class="code-box">
+          例：Cmaj7（Cメジャーセブンス）<br />
+          構成音：C – E – G – B（4つの音）
+        </div>
+      </section>
+
+      <!-- 2. Lite Edition -->
+      <section id="lite">
+        <h2>
+          2. LITE Edition：使えるコード一覧
+          <span class="badge badge-lite">Lite</span>
+        </h2>
+        <p>
+          ここでは、<strong>Chord Dock Lite</strong>
+          で使えるコードについて説明します。<br />
+          Lite
+          だけでも、ポップスやロックなど多くの音楽が作れるだけのコードが揃っています。
+        </p>
+
+        <!-- 2-1 Triad -->
+        <h3 id="lite-triad">2-1. Triad（3和音）</h3>
+
+        <h4>メジャー（Major）</h4>
+        <ul class="code-list">
+          <li>例：C（Cメジャー）</li>
+          <li>構成音の形：ルート・長3度・完全5度（R – 3 – 5）</li>
+          <li>サウンドの印象：明るい・安定している</li>
+        </ul>
+
+        <h4>マイナー（Minor）</h4>
+        <ul class="code-list">
+          <li>例：Cm（Cマイナー）</li>
+          <li>構成音の形：ルート・短3度・完全5度（R – ♭3 – 5）</li>
+          <li>サウンドの印象：少し暗い・しっとり</li>
+        </ul>
+
+        <h4>パワーコード（PowerChord / 5）</h4>
+        <ul class="code-list">
+          <li>例：C5</li>
+          <li>構成音の形：ルート・完全5度（R – 5）</li>
+          <li>サウンドの印象：明るい／暗いの区別が弱く、力強い響き</li>
+        </ul>
+
+        <h4>ディミニッシュ（Diminished / dim）</h4>
+        <ul class="code-list">
+          <li>例：Cdim</li>
+          <li>構成音の形：ルート・短3度・減5度（R – ♭3 – ♭5）</li>
+          <li>サウンドの印象：不安定・不思議・緊張感がある</li>
+        </ul>
+
+        <h4>オーギュメント（Augmented / aug）</h4>
+        <ul class="code-list">
+          <li>例：Caug</li>
+          <li>構成音の形：ルート・長3度・増5度（R – 3 – ♯5）</li>
+          <li>サウンドの印象：浮いているような・少し不思議</li>
+        </ul>
+
+        <!-- 2-2 Suspended -->
+        <h3 id="lite-sus">2-2. Suspended（サスコード）</h3>
+
+        <h4>sus2</h4>
+        <ul class="code-list">
+          <li>例：Csus2</li>
+          <li>構成音の形：ルート・長2度・完全5度（R – 2 – 5）</li>
+          <li>サウンドの印象：ひらけた・少しあいまいで爽やか</li>
+        </ul>
+
+        <h4>sus4</h4>
+        <ul class="code-list">
+          <li>例：Csus4</li>
+          <li>構成音の形：ルート・完全4度・完全5度（R – 4 – 5）</li>
+          <li>サウンドの印象：引っ張られる感じ・解決したくなる緊張感</li>
+        </ul>
+
+        <!-- 2-3 Tetrad -->
+        <h3 id="lite-tetrad">2-3. Tetrad（7th 系のコード）</h3>
+
+        <h4>メジャーセブンス（maj7）</h4>
+        <ul class="code-list">
+          <li>例：Cmaj7</li>
+          <li>構成音の形：R – 3 – 5 – 7</li>
+          <li>サウンドの印象：おしゃれ・さわやか・少し大人っぽい</li>
+        </ul>
+
+        <h4>マイナーセブンス（m7）</h4>
+        <ul class="code-list">
+          <li>例：Cm7</li>
+          <li>構成音の形：R – ♭3 – 5 – ♭7</li>
+          <li>サウンドの印象：切ない・落ち着いた雰囲気</li>
+        </ul>
+
+        <h4>ドミナントセブンス（7）</h4>
+        <ul class="code-list">
+          <li>例：C7</li>
+          <li>構成音の形：R – 3 – 5 – ♭7</li>
+          <li>サウンドの印象：次のコードに進みたくなる・ブルース感</li>
+        </ul>
+
+        <h4>ハーフディミニッシュ（m7♭5）</h4>
+        <ul class="code-list">
+          <li>例：Cm7♭5</li>
+          <li>構成音の形：R – ♭3 – ♭5 – ♭7</li>
+          <li>サウンドの印象：不安定・少し影のある響き</li>
+        </ul>
+
+        <h4>ディミニッシュセブンス（dim7）</h4>
+        <ul class="code-list">
+          <li>例：Cdim7</li>
+          <li>構成音の形：R – ♭3 – ♭5 – 𝄫7</li>
+          <li>サウンドの印象：かなり不安定・緊張感MAX</li>
+        </ul>
+
+        <h4>マイナー・メジャーセブンス（mMaj7）</h4>
+        <ul class="code-list">
+          <li>例：CmMaj7</li>
+          <li>構成音の形：R – ♭3 – 5 – 7</li>
+          <li>サウンドの印象：不思議でドラマチック・映画音楽っぽさ</li>
+        </ul>
+      </section>
+
+      <!-- 3. Extended Edition -->
+      <section id="extended">
+        <h2>
+          3. Extended Edition：追加のコード
+          <span class="badge badge-ext">Extended</span>
+        </h2>
+        <p>
+          Extended では、Lite にはない「追加の音（テンション）」や、
+          ベース音を変えたスラッシュコードなど、もう一歩踏み込んだコードが使えます。
+          ここでは、細かい理論は置いておいて、「どんな構成音で、どんな雰囲気か」を中心に説明します。
+        </p>
+
+        <!-- 3-1 9th & add9 -->
+        <h3 id="ext-9th">3-1. ナインス（9th）とアドナインス（add9）</h3>
+
+        <h4>ナインス（9th）とは？</h4>
+        <p>
+          <strong>9th（ナインス）</strong>
+          は、コードに「少しだけ色を足す」ための追加の音です。<br />
+          記号では <strong>9</strong> と書かれ、C9 / Cmaj9 / Cm9
+          などの形で登場します。
+        </p>
+
+        <h4>Tetrad（7thコード）に付く 9th（テンションとしての9th）</h4>
+        <ul class="code-list">
+          <li>例：Cmaj9 = Cmaj7 に 9th を足したもの</li>
+          <li>例：C9 = C7 に 9th を足したもの</li>
+          <li>例：Cm9 = Cm7 に 9th を足したもの</li>
+          <li>サウンドの印象：おしゃれ・深みのある響き・ジャズ寄り</li>
+        </ul>
+
+        <h4>Triad に付く 9th（add9 / アドナインス）</h4>
+        <ul class="code-list">
+          <li>例：Cadd9 = C に 9th（D）を足したコード</li>
+          <li>例：Cm(add9) = Cm に 9th（D）を足したコード</li>
+          <li>
+            ポイント：7th を含まないので、「テンションコード」とは少し別物
+          </li>
+          <li>サウンドの印象：明るくてポップ、アコギなどでよく使われる</li>
+        </ul>
+
+        <!-- 3-2 6th -->
+        <h3 id="ext-6th">3-2. シックスコード（6th）</h3>
+        <ul class="code-list">
+          <li>例：C6 = C に 6th（A）を足したコード</li>
+          <li>例：Cm6 = Cm に 6th（A）を足したコード</li>
+          <li>
+            ポイント：こちらも 7th を含まないため、Triad の仲間に近いイメージ
+          </li>
+          <li>
+            サウンドの印象：やさしい・少しレトロ・ボサノバやジャズでよく登場
+          </li>
+        </ul>
+
+        <!-- 3-3 11/13 -->
+        <h3 id="ext-11-13">3-3. 11th / 13th について軽く</h3>
+        <p class="small-note">
+          11th や 13th も、9th と同じように「コードに色を足す追加音」です。<br />
+          このドキュメントでは、細かい理論は扱わず、 Chord Dock
+          上で見かけたときに「少し複雑めのテンションコードなんだな」と分かればOKとします。
+        </p>
+
+        <!-- 3-4 Slash -->
+        <h3 id="ext-slash">3-4. スラッシュコード（オンコード）</h3>
+        <p>
+          <strong>スラッシュコード</strong> は、<strong>C/E</strong> のように
+          「スラッシュで区切られたコード」です。<br />
+          左側が「コード」、右側が「ベース音（下の音）」を表します。
+        </p>
+        <ul class="code-list">
+          <li>例：C/E → C のコードを使いながら、ベースだけ E にした形</li>
+          <li>例：G/B → G のコード + ベース音 B</li>
+          <li>
+            サウンドの印象：ベースの動きがなめらかになったり、少し切ない雰囲気になったりする
+          </li>
+        </ul>
+      </section>
+
+      <!-- 4. 表記ガイド -->
+      <section id="notation">
+        <h2>4. コード表記ガイド</h2>
+        <p>
+          ここでは、このドキュメント内で使っているコードの書き方・記号について、
+          まとめておきます。
+        </p>
+
+        <h3>基本の表記</h3>
+        <ul class="code-list">
+          <li><strong>C</strong>：Cメジャー（三和音）</li>
+          <li><strong>Cm</strong>：Cマイナー（三和音）</li>
+          <li><strong>Caug</strong>：Cオーギュメント（三和音）</li>
+          <li><strong>Cdim</strong>：Cディミニッシュ（三和音）</li>
+        </ul>
+
+        <h3>7th 系</h3>
+        <ul class="code-list">
+          <li><strong>Cmaj7</strong>：Cメジャーセブンス</li>
+          <li><strong>C7</strong>：Cドミナントセブンス</li>
+          <li><strong>Cm7</strong>：Cマイナーセブンス</li>
+        </ul>
+
+        <h3>9th / add9 / 6th</h3>
+        <ul class="code-list">
+          <li><strong>C9</strong>：C7 に 9th を足したコード</li>
+          <li><strong>Cmaj9</strong>：Cmaj7 に 9th を足したコード</li>
+          <li><strong>Cadd9</strong>：C（三和音）に 9th を足したコード</li>
+          <li><strong>C6</strong>：C（三和音）に 6th を足したコード</li>
+        </ul>
+
+        <h3>スラッシュ記法</h3>
+        <ul class="code-list">
+          <li><strong>C/E</strong>：「C のコード」+「ベース音 E」</li>
+          <li><strong>G/B</strong>：「G のコード」+「ベース音 B」</li>
+        </ul>
+      </section>
+
+      <!-- 5. 更新履歴 -->
+      <section id="changelog">
+        <h2>5. 更新履歴</h2>
+        <ul class="code-list">
+          <li>v1.0.0：初版作成（Chord Dock リリース時）</li>
+          <!-- TODO: バージョンアップ時にここへ追記 -->
+        </ul>
+      </section>
+    </main>
+
+    <footer>&copy; Chord Dock / k2get</footer>
+
+    <script>
+      // Save language preference when switching to EN
+      (function () {
+        var en = document.getElementById('extraLangEN');
+        if (!en) return;
+        en.addEventListener('click', function () {
+          try {
+            localStorage.setItem('lang', 'en');
+          } catch (e) {}
+        });
+      })();
+    </script>
+  </body>
+</html>
