@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chord Dock オンラインマニュアル</title>
+  <meta name="description" content="Chord Dock / Chord Dock Extended のオンラインマニュアルです。製品概要、エディションの違い、クイックスタート、アクティベーション手順、画面の各部名称、よくある質問などをまとめています。" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+      background: #05060b;
+      color: #f5f5f5;
+    }
+    header {
+      padding: 2.2rem 1.5rem 1.4rem;
+      background: radial-gradient(circle at top, #202642, #050608);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    header h1 {
+      margin: 0 0 0.4rem;
+      font-size: 1.9rem;
+    }
+    header p {
+      margin: 0.25rem 0;
+      max-width: 760px;
+      color: #c6c9d3;
+      font-size: 0.95rem;
+    }
+    header .meta {
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      color: #a5a9bc;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+    nav.toc {
+      margin-bottom: 2rem;
+      padding: 0.9rem 1rem;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(13, 16, 30, 0.96);
+      font-size: 0.9rem;
+    }
+    .toc-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.35rem;
+    }
+    .toc-header h2 {
+      margin: 0;
+      font-size: 1rem;
+    }
+    nav.toc ul {
+      list-style: none;
+      margin: 0.2rem 0 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.4rem;
+    }
+    nav.toc a {
+      color: #d7defc;
+      text-decoration: none;
+    }
+    nav.toc a:hover {
+      text-decoration: underline;
+    }
+    section {
+      margin-bottom: 2.4rem;
+      padding-bottom: 1.6rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    section:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0.5rem;
+    }
+    section h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.35rem;
+    }
+    section h3 {
+      margin: 1.4rem 0 0.3rem;
+      font-size: 1.05rem;
+    }
+    p {
+      margin: 0.4rem 0;
+      font-size: 0.95rem;
+      color: #e2e5f0;
+    }
+    ul, ol {
+      margin: 0.3rem 0 0.6rem;
+      padding-left: 1.4rem;
+      font-size: 0.95rem;
+      color: #e2e5f0;
+    }
+    li {
+      margin-bottom: 0.2rem;
+    }
+    .tagline {
+      font-size: 0.9rem;
+      color: #b5b9ca;
+      margin-bottom: 0.8rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.75rem;
+      color: #e4e7f5;
+      background: rgba(20, 24, 40, 0.95);
+    }
+    .details-box details {
+      margin-bottom: 0.6rem;
+      border-radius: 0.6rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(9, 11, 20, 0.95);
+      padding: 0.55rem 0.8rem;
+    }
+    .details-box summary {
+      cursor: pointer;
+      list-style: none;
+      font-size: 0.9rem;
+    }
+    .details-box details[open] {
+      border-color: rgba(143, 157, 255, 0.8);
+    }
+    .details-box summary::before {
+      content: '▶';
+      display: inline-block;
+      margin-right: 0.45rem;
+      font-size: 0.7rem;
+      transform: translateY(-1px);
+    }
+    .details-box details[open] summary::before {
+      content: '▼';
+    }
+    .details-box details > div {
+      margin-top: 0.4rem;
+      font-size: 0.85rem;
+      color: #d3d6e3;
+    }
+    .activation-grid {
+      display: grid;
+      gap: 1.2rem;
+      margin: 0.8rem 0 1.4rem;
+    }
+    .activation-grid figure {
+      margin: 0;
+    }
+    .activation-grid img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      display: block;
+    }
+    .activation-grid figcaption {
+      margin-top: 0.35rem;
+      font-size: 0.8rem;
+      color: #aeb3c7;
+    }
+    @media (min-width: 720px) {
+      .activation-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
+      }
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+      font-size: 0.9em;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 0.05rem 0.25rem;
+      border-radius: 0.25rem;
+    }
+    a.inline-link {
+      color: #c6d3ff;
+      text-decoration: none;
+    }
+    a.inline-link:hover {
+      text-decoration: underline;
+    }
+    footer {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 1.5rem 2rem;
+      font-size: 0.8rem;
+      color: #8e93a5;
+    }
+    .lang-switch {
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      color: #b5b9ca;
+    }
+    .lang-switch-label {
+      margin-right: 0.4rem;
+    }
+    .lang-switch .lang-pill {
+      display: inline-block;
+      margin-right: 0.25rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.8rem;
+      color: #e4e7f5;
+      text-decoration: none;
+      background: transparent;
+    }
+    .lang-switch .lang-pill.active {
+      background: rgba(143, 157, 255, 0.18);
+      border-color: rgba(143, 157, 255, 0.9);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Chord Dock オンラインマニュアル</h1>
+    <p>
+      このページは、Chord Dock / Chord Dock Extended の基本的な使い方と、
+      アクティベーションを含むセットアップ手順をまとめたオンラインマニュアルです。
+    </p>
+    <p class="meta">
+      対象バージョン: v1.0 系 / 表示言語: 日本語
+    </p>
+  </header>
+  <main>
+    <nav class="toc">
+      <div class="toc-header">
+        <h2>目次</h2>
+        <p class="lang-switch">
+          <span class="lang-switch-label">表示言語:</span>
+          <span class="lang-pill active">日本語</span>
+          <a class="lang-pill" href="manual.en.html">English</a>
+        </p>
+      </div>
+      <ul>
+        <li><a href="#overview">1. 製品概要</a></li>
+        <li><a href="#editions">2. エディションとライセンス</a></li>
+        <li><a href="#quickstart">3. クイックスタート</a></li>
+        <li><a href="#activation">4. アクティベーション手順</a></li>
+        <li><a href="#ui">5. 画面構成</a></li>
+        <li><a href="#faq">6. よくある質問（抜粋）</a></li>
+        <li><a href="#support">7. サポート / 連絡先</a></li>
+      </ul>
+    </nav>
+
+    <section id="overview">
+      <h2>1. 製品概要</h2>
+      <p class="tagline">
+        Chord Dock は「コード進行をタイムラインとして編集し、五度圏ガイドを併用しながら設計できる」作曲支援プラグインです。
+      </p>
+      <ul>
+        <li>コードトラック専用のタイムラインエディタ</li>
+        <li>五度圏ビューによるキー / 機能和声ガイド（Extended）</li>
+        <li>コード進行をプリセットとして保存・再利用</li>
+        <li>MIDI ドラッグ&amp;ドロップで DAW トラックへ書き出し</li>
+      </ul>
+      <p>
+        Lite / Extended は共通インストーラーからインストールされ、
+        入力したシリアルキーとオンライン認証によって Extended 版の機能が解放されます。
+      </p>
+    </section>
+
+    <section id="editions">
+      <h2>2. エディションとライセンス</h2>
+
+      <h3>2.1 Lite（無料版）</h3>
+      <p>
+        Lite 版はシリアルキーなしで利用できる無償エディションです。
+      </p>
+      <ul>
+        <li>タイムライン上での基本的なコード編集</li>
+        <li>移調・転回・オクターブ変更が可能なコードパレット</li>
+        <li>MIDI ドラッグ&amp;ドロップ</li>
+        <li>編集可能なファクトリープリセット（約 10 種）</li>
+      </ul>
+      <p>シリアルキーを入力しない場合、Chord Dock は自動的に Lite として動作します。</p>
+
+      <h3>2.2 Extended（有料版）</h3>
+      <p>
+        Extended 版は、有料ライセンスをアクティベートすることで利用できる上位版です。
+      </p>
+      <ul>
+        <li>Lite 版のすべての機能</li>
+        <li>五度圏ビュー</li>
+        <li>テンション（9 / 11 / 13）、スラッシュコード、拡張表記</li>
+        <li>ユーザープリセット保存とプリセットの書き出し / 読み込み</li>
+        <li>一部 UI の拡張（Extended 専用スナップなど）</li>
+      </ul>
+
+      <h3>2.3 ライセンスと台数</h3>
+      <ul>
+        <li>1 アカウントにつき 2 台まで同時にアクティベーション可能です。</li>
+        <li><code>設定 → ライセンス管理ページを開く</code> から、認証済みデバイスの確認・解除が行えます。</li>
+        <li>2 台とも埋まっている状態で新しい PC を認証する場合は、不要なデバイスの認証を解除してから再度アクティベーションしてください。</li>
+      </ul>
+    </section>
+
+    <section id="quickstart">
+      <h2>3. クイックスタート（最初の 10 分）</h2>
+      <p class="tagline">
+        初回起動から「コード進行を作り、MIDI を DAW に貼り付ける」までの最短ルートです。
+      </p>
+
+      <h3>3.1 インストールとプラグイン読み込み</h3>
+      <ol>
+        <li>インストーラーを実行し、OS に応じて VST3 / AU / AAX をインストールします。</li>
+        <li>使用する DAW を起動し、プラグインスキャンを実行します。</li>
+        <li>インストルメントトラックまたは MIDI エフェクトスロットに Chord Dock を挿入します。</li>
+      </ol>
+
+      <h3>3.2 基本レイアウトを把握する</h3>
+      <ul>
+        <li><strong>上部: トップツールバー</strong> — Undo / Redo / 拍子設定 / 保存 / エクスポート / 設定（ギアアイコン）など</li>
+        <li><strong>中央: タイムラインエディタ</strong> — 小節・拍に沿ってコードイベントを並べるエリア</li>
+        <li><strong>下部:コードパレット/右サイドパネル</strong> — コードタイプ、テンション / スラッシュ、ボイシング、プリセット など</li>
+      </ul>
+
+      <h3>3.3 コード進行を入力する</h3>
+      <ol>
+        <li>タイムライン上で、コードを置きたい小節位置をクリックしてインジケーターを移動します。</li>
+        <li>コードパレットからコード種別（例: C, Am7 など）を選択し、ダブルクリックで挿入します。</li>
+        <li>タイムライン上に配置されたコードイベントの右端をクリック＆ドラッグで長さ（小節数 / 拍数）を伸縮できます。</li>
+        <li>同じ要領で数小節分の進行（例: C – Am – F – G）を並べます。</li>
+      </ol>
+
+      <h3>3.4 試聴する</h3>
+      <ol>
+        <li>DAW 側の再生を開始すると同期して内部シンセでコードが再生されます。</li>
+        <li>コードパレットをクリックする事でそのコードの響きをプレビューできます。</li>
+        <li>トップツールバーのスピーカーアイコンで、内部オーディオをミュート / 有効化できます。</li>
+      </ol>
+
+      <h3>3.5 MIDI を DAW へドラッグ&amp;ドロップ</h3>
+      <ol>
+        <li>
+          タイムライン上でコードイベントを選択します。選択方法は以下の通りです。
+          <ul>
+            <li>Ctrl（Mac は ⌘）＋クリック：複数のイベントを追加選択／解除</li>
+            <li>ドラッグで範囲選択：囲んだイベントをまとめて選択（ボックス選択）</li>
+          </ul>
+        </li>
+        <li>
+          タイムライン右端の「MIDI ドラッグ」エリアをクリックしそのままドラッグするとコード進行が
+          DAW トラック上に MIDI クリップとして貼り付けられます。
+        </li>
+      </ol>
+
+      <h3>3.6 Extended 機能を試す（お持ちの場合）</h3>
+      <ul>
+        <li>
+          中段パネルから五度圏ビューを開き、任意のキーからコードを切り替える。
+          <ul>
+            <li>右クリックしてコンテキストメニューを開き、ドラッグ&amp;ドロップでコードパレットのコードを差し替えます。</li>
+            <li>タイムラインに直接配置する事はできません。</li>
+          </ul>
+        </li>
+        <li>コードパレットのコンテキストメニューからテンション（9 / 11 / 13）やスラッシュコードを追加する。</li>
+        <li>ユーザープリセットとして進行を保存し、別プロジェクトで再利用する。</li>
+      </ul>
+    </section>
+
+    <section id="activation">
+      <h2>4. アクティベーション手順（Extended）</h2>
+
+      <div class="activation-grid">
+        <figure>
+          <img
+            src="assets/設定ウィンドウアイコン.png"
+            alt="Chord Dock の設定メニューから設定ウィンドウを開く例"
+          />
+          <figcaption>プラグイン右上のギアアイコンから設定ウィンドウを開きます。</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="assets/設定ウィンドウ日本語.png"
+            alt="Chord Dock のライセンス入力とオンライン認証画面の例"
+          />
+          <figcaption>設定ウィンドウ内の「ライセンス入力…」からシリアル入力とオンライン認証を行います。</figcaption>
+        </figure>
+      </div>
+
+      <h3>4.1 1 台目のアクティベーション</h3>
+      <ol>
+        <li>Extended を購入すると、シリアルキーが発行されます。</li>
+        <li>Chord Dock を起動し、右上のギアアイコンから設定ウィンドウを開きます。</li>
+        <li><q>ライセンス入力…</q> ボタンを押し、表示された入力画面にシリアルキーを入力します。</li>
+        <li>入力が正しい場合、ブラウザが自動で起動します。</li>
+        <li>ブラウザ上で Chord Dock アカウントにログインし、その PC を「認証済みデバイス」として承認します。</li>
+        <li>プラグインに戻り、数秒待つと Extended 機能が有効になります（必要に応じて DAW の再起動を行ってください）。</li>
+      </ol>
+
+      <h3>4.2 2 台目以降のアクティベーション</h3>
+      <ol>
+        <li>2 台目の PC に Chord Dock をインストールします。</li>
+        <li>2 台目でも 設定ウィンドウで <q>ライセンス入力…</q> ボタンを押し、同じシリアルキーを入力します。</li>
+        <li>ブラウザが開いたら、同じアカウントでログインし、その PC を認証します。</li>
+        <li>すでに 2 台とも認証済みの場合は、ライセンス管理ページで不要なデバイスを解除してから再度アクティベーションしてください。</li>
+      </ol>
+
+      <h3>4.3 オフライン利用について</h3>
+      <ul>
+        <li>アクティベーションとデバイス管理時のみオンライン接続が必要です。</li>
+        <li>一度認証が完了した環境では、通常の編集・再生・MIDI エクスポートはオフラインでも利用できます。</li>
+        <li>新しい PC での認証や、デバイス解除、シリアルキーの再取得には再度オンライン接続が必要です。</li>
+      </ul>
+    </section>
+
+    <section id="ui">
+      <h2>5. メイン画面の各部名称</h2>
+
+      <h3>5.1 トップツールバー</h3>
+      <ul>
+        <li>Undo / Redo: 直前の操作を取り消し / やり直し</li>
+        <li>拍子変更: 指定小節に拍子変更イベントを挿入</li>
+        <li>Center: 再生カーソル位置が中央に来るようスクロール</li>
+        <li>Progression: コード進行の保存 / 読み込み</li>
+        <li>Export: タイムライン全体を一括で MIDI エクスポート</li>
+        <li>内部オーディオ: 内部シンセのオン / オフ（MIDI 出力は継続）</li>
+        <li>Settings（ギア）: 設定ウィンドウ（ライセンス・オンライン認証など）を開く</li>
+        <li>Degree View: ディグリービューのオン / オフ</li>
+        <li>Timeline Only: タイムラインのみ表示モードの切り替え</li>
+      </ul>
+
+      <h3>5.2 タイムラインエディタ</h3>
+      <ul>
+        <li>水平方向に時間が流れるコードトラックです。</li>
+        <li>小節ごとにメジャーグリッド、拍ごとにサブグリッドが表示されます。</li>
+        <li>コードブロックはドラッグで移動・伸縮・コピーが可能です。</li>
+        <li>スナップ設定で、1 小節単位 / 拍単位 / Extended スナップなどを切り替えられます。</li>
+      </ul>
+
+      <h3>5.3 コードパレット</h3>
+      <ul>
+        <li>現在のキー / スケールに応じたコード候補を一覧表示します。</li>
+        <li>基本コード（トライアド / セブンス）は Lite でも利用でき、テンション / スラッシュなどの拡張は Extended で解放されます。</li>
+        <li>クリックでコードタイプを選択し、タイムラインに配置します。</li>
+      </ul>
+
+      <h3>5.4 プリセットブラウザ（Extended）</h3>
+      <ul>
+        <li>典型的なコード進行をまとめたプリセットを管理します。</li>
+        <li>進行をプリセットとして保存し、他プロジェクトや他 DAW への移行に利用できます。</li>
+        <li>外部ファイルとして書き出し / 取り込みが可能です。</li>
+      </ul>
+
+      <h3>5.5 設定ウィンドウ</h3>
+      <p>
+        <code>設定 → ライセンス</code> では、現在のライセンス状態（Lite / Extended）や、
+        認証済みデバイス、ライセンス管理ページへのリンクなどを確認できます。
+      </p>
+    </section>
+
+    <section id="faq">
+      <h2>6. よくある質問（抜粋）</h2>
+      <div class="details-box">
+        <details>
+          <summary>Q1. ライセンスは何台まで使えますか？</summary>
+          <div>
+            <p>1 アカウントにつき 2 台まで同時にアクティベーションできます。</p>
+            <p>不要になった PC の認証を解除すると、新しい PC で Extended として利用できます。</p>
+          </div>
+        </details>
+        <details>
+          <summary>Q2. Extended を購入したのに Lite のままです。</summary>
+          <div>
+            <p>次の順番で確認してください。</p>
+            <ul>
+              <li>設定ウィンドウを開き、「ライセンス入力…」からシリアルを再入力したか</li>
+              <li>ブラウザでログインして、この PC が「認証済みデバイス」になっているか</li>
+              <li>設定ウィンドウ上のステータスが Extended になっているか</li>
+              <li>2台上限に達している場合は、不要な端末を解除してから再試行したか</li>
+              <li>それでも駄目な場合、DAW を完全終了→再起動しているか</li>
+            </ul>
+          </div>
+        </details>
+        <details>
+          <summary>Q3. Extended はオフライン環境でも使えますか？</summary>
+          <div>
+            <p>はい。初回アクティベーションとデバイス管理のみオンラインが必要で、通常利用はオフラインで行えます。</p>
+          </div>
+        </details>
+        <details>
+          <summary>Q4. Lite としてだけ使いたいのですが、Extended のシリアルは必要ですか？</summary>
+          <div>
+            <p>必要ありません。シリアル未入力時は自動的に Lite として動作します。</p>
+          </div>
+        </details>
+        <details>
+          <summary>Q5. インストール後に DAW にプラグインが表示されません。</summary>
+          <div>
+            <p>以下を確認してください。</p>
+            <ul>
+              <li>DAW のプラグイン再スキャン</li>
+              <li>DAW の再起動</li>
+              <li>対応フォーマット（VST3 / AU / AAX）が正しくインストールされているか</li>
+            </ul>
+            <p>それでも解消しない場合は、お問い合わせフォームからご連絡ください。</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="support">
+      <h2>7. サポート / 連絡先</h2>
+      <p>
+        製品サイトやアップデート情報、ライセンスに関する詳細は、以下のページもあわせてご覧ください。
+      </p>
+      <ul>
+        <li>
+          製品サイト / ランディングページ:
+          <a class="inline-link" href="index.html">Chord Dock LP（日本語）</a>
+        </li>
+        <li>
+          アップデートとインストーラー:
+          <a class="inline-link" href="update.html">アップデートページ</a>
+        </li>
+        <li>
+          お問い合わせフォーム:
+          <a class="inline-link" href="https://forms.gle/WPgiSCxY9Mp3v9nc6" target="_blank" rel="noopener noreferrer">Google フォーム</a>
+        </li>
+        <li>
+          メールでのお問い合わせ:
+          <a class="inline-link" href="mailto:hitori.unicorn@gmail.com">hitori.unicorn@gmail.com</a>
+        </li>
+      </ul>
+      <p>
+        バグ報告や機能要望は、再現手順とご利用の OS / DAW / プラグイン形式（VST3 / AU / AAX）を添えてご連絡いただけると助かります。
+      </p>
+    </section>
+  </main>
+  <footer>
+    <p>© Chord Dock — Online Manual (Japanese).</p>
+  </footer>
+</body>
+</html>

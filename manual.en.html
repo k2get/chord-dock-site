@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chord Dock Online Manual (English)</title>
+  <meta
+    name="description"
+    content="Online manual for Chord Dock / Chord Dock Extended. Covers overview, editions, quick start, activation, UI layout, FAQ, and support information."
+  />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+      background: #05060b;
+      color: #f5f5f5;
+    }
+    header {
+      padding: 2.2rem 1.5rem 1.4rem;
+      background: radial-gradient(circle at top, #202642, #050608);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    header h1 {
+      margin: 0 0 0.4rem;
+      font-size: 1.9rem;
+    }
+    header p {
+      margin: 0.25rem 0;
+      max-width: 760px;
+      color: #c6c9d3;
+      font-size: 0.95rem;
+    }
+    header .meta {
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      color: #a5a9bc;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+    nav.toc {
+      margin-bottom: 2rem;
+      padding: 0.9rem 1rem;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(13, 16, 30, 0.96);
+      font-size: 0.9rem;
+    }
+    .toc-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.35rem;
+    }
+    .toc-header h2 {
+      margin: 0;
+      font-size: 1rem;
+    }
+    nav.toc ul {
+      list-style: none;
+      margin: 0.2rem 0 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.4rem;
+    }
+    nav.toc a {
+      color: #d7defc;
+      text-decoration: none;
+    }
+    nav.toc a:hover {
+      text-decoration: underline;
+    }
+    section {
+      margin-bottom: 2.4rem;
+      padding-bottom: 1.6rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    section:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0.5rem;
+    }
+    section h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.35rem;
+    }
+    section h3 {
+      margin: 1.4rem 0 0.3rem;
+      font-size: 1.05rem;
+    }
+    p {
+      margin: 0.4rem 0;
+      font-size: 0.95rem;
+      color: #e2e5f0;
+    }
+    ul, ol {
+      margin: 0.3rem 0 0.6rem;
+      padding-left: 1.4rem;
+      font-size: 0.95rem;
+      color: #e2e5f0;
+    }
+    li {
+      margin-bottom: 0.2rem;
+    }
+    .tagline {
+      font-size: 0.9rem;
+      color: #b5b9ca;
+      margin-bottom: 0.8rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.75rem;
+      color: #e4e7f5;
+      background: rgba(20, 24, 40, 0.95);
+    }
+    .details-box details {
+      margin-bottom: 0.6rem;
+      border-radius: 0.6rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(9, 11, 20, 0.95);
+      padding: 0.55rem 0.8rem;
+    }
+    .details-box summary {
+      cursor: pointer;
+      list-style: none;
+      font-size: 0.9rem;
+    }
+    .details-box details[open] {
+      border-color: rgba(143, 157, 255, 0.8);
+    }
+    .details-box summary::before {
+      content: '▶';
+      display: inline-block;
+      margin-right: 0.45rem;
+      font-size: 0.7rem;
+      transform: translateY(-1px);
+    }
+    .details-box details[open] summary::before {
+      content: '▼';
+    }
+    .details-box details > div {
+      margin-top: 0.4rem;
+      font-size: 0.85rem;
+      color: #d3d6e3;
+    }
+    .activation-grid {
+      display: grid;
+      gap: 1.2rem;
+      margin: 0.8rem 0 1.4rem;
+    }
+    .activation-grid figure {
+      margin: 0;
+    }
+    .activation-grid img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      display: block;
+    }
+    .activation-grid figcaption {
+      margin-top: 0.35rem;
+      font-size: 0.8rem;
+      color: #aeb3c7;
+    }
+    @media (min-width: 720px) {
+      .activation-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
+      }
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+      font-size: 0.9em;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 0.05rem 0.25rem;
+      border-radius: 0.25rem;
+    }
+    a.inline-link {
+      color: #c6d3ff;
+      text-decoration: none;
+    }
+    a.inline-link:hover {
+      text-decoration: underline;
+    }
+    footer {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 1.5rem 2rem;
+      font-size: 0.8rem;
+      color: #8e93a5;
+    }
+    .lang-switch {
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      color: #b5b9ca;
+    }
+    .lang-switch-label {
+      margin-right: 0.4rem;
+    }
+    .lang-switch .lang-pill {
+      display: inline-block;
+      margin-right: 0.25rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.8rem;
+      color: #e4e7f5;
+      text-decoration: none;
+      background: transparent;
+    }
+    .lang-switch .lang-pill.active {
+      background: rgba(143, 157, 255, 0.18);
+      border-color: rgba(143, 157, 255, 0.9);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Chord Dock Online Manual</h1>
+    <p>
+      This page is the online manual for Chord Dock / Chord Dock Extended. It covers basic usage,
+      setup including activation, and common troubleshooting tips.
+    </p>
+    <p class="meta">
+      Target version: v1.0 series / Language: English
+    </p>
+  </header>
+  <main>
+    <nav class="toc">
+      <div class="toc-header">
+        <h2>Contents</h2>
+        <p class="lang-switch">
+          <span class="lang-switch-label">Language:</span>
+          <a class="lang-pill" href="manual.html">日本語</a>
+          <span class="lang-pill active">English</span>
+        </p>
+      </div>
+      <ul>
+        <li><a href="#overview">1. Overview</a></li>
+        <li><a href="#editions">2. Editions &amp; Licensing</a></li>
+        <li><a href="#quickstart">3. Quick Start</a></li>
+        <li><a href="#activation">4. Activation Steps</a></li>
+        <li><a href="#ui">5. UI Layout</a></li>
+        <li><a href="#faq">6. FAQ (Excerpt)</a></li>
+        <li><a href="#support">7. Support / Contact</a></li>
+      </ul>
+    </nav>
+
+    <section id="overview">
+      <h2>1. Product Overview</h2>
+      <p class="tagline">
+        Chord Dock is a composition helper plugin that lets you edit chord progressions on a timeline
+        while using a Circle of Fifths guide in parallel.
+      </p>
+      <ul>
+        <li>Timeline editor specialized for a chord track</li>
+        <li>Circle of Fifths view for key / functional harmony guidance (Extended)</li>
+        <li>Save and reuse chord progressions as presets</li>
+        <li>Export as MIDI to any DAW track via drag-and-drop</li>
+      </ul>
+      <p>
+        Lite and Extended share the same installer. Extended features are unlocked by entering a serial key
+        and completing online activation.
+      </p>
+    </section>
+
+    <section id="editions">
+      <h2>2. Editions &amp; Licensing</h2>
+
+      <h3>2.1 Lite (Free)</h3>
+      <p>
+        The Lite edition is a free version that can be used without a serial key.
+      </p>
+      <ul>
+        <li>Basic chord editing on the timeline</li>
+        <li>Chord palette with transposition, inversions, and octave changes</li>
+        <li>MIDI drag-and-drop to your DAW</li>
+        <li>Roughly 10 editable factory presets</li>
+      </ul>
+      <p>If you do not enter a serial key, Chord Dock runs as Lite.</p>
+
+      <h3>2.2 Extended (Paid)</h3>
+      <p>
+        The Extended edition is an upgraded, paid version unlocked by activation.
+      </p>
+      <ul>
+        <li>All Lite features</li>
+        <li>Circle of Fifths view</li>
+        <li>Tensions (9 / 11 / 13), slash chords, extended notation</li>
+        <li>User presets and import/export of progression files</li>
+        <li>Additional UI options such as Extended snap, etc.</li>
+      </ul>
+
+      <h3>2.3 License &amp; device count</h3>
+      <ul>
+        <li>You can activate on up to 2 devices per account at the same time.</li>
+        <li>From the license management page you can view and deactivate registered devices.</li>
+        <li>If you have already used 2 devices, deactivate an old one before activating on a new machine.</li>
+      </ul>
+    </section>
+
+    <section id="quickstart">
+      <h2>3. Quick Start (First 10 Minutes)</h2>
+      <p class="tagline">
+        This section walks you from first launch to exporting a chord progression as MIDI into your DAW.
+      </p>
+
+      <h3>3.1 Install and load the plugin</h3>
+      <ol>
+        <li>Run the installer and install VST3 / AU / AAX as appropriate for your OS.</li>
+        <li>Launch your DAW and perform a plugin scan.</li>
+        <li>Insert Chord Dock on an instrument track or MIDI effect slot.</li>
+      </ol>
+
+      <h3>3.2 Understand the basic layout</h3>
+      <ul>
+        <li><strong>Top: Toolbar</strong> — Undo / Redo, time signature, save, export, settings (gear icon), etc.</li>
+        <li><strong>Center: Timeline Editor</strong> — Place chord events along bars and beats.</li>
+        <li><strong>Bottom: Chord palette / right side panel</strong> — chord types, tensions / slash, voicing, presets, and more.</li>
+      </ul>
+
+      <h3>3.3 Enter a chord progression</h3>
+      <ol>
+        <li>Click on the bar where you want to place a chord; this moves the timeline indicator.</li>
+        <li>Choose a chord type (e.g., C, Am7) from the chord palette and double-click to insert it.</li>
+        <li>On the timeline, drag the right edge of a chord event to adjust its length in bars / beats.</li>
+        <li>Repeat to build a few bars of progression (e.g., C – Am – F – G).</li>
+      </ol>
+
+      <h3>3.4 Audition</h3>
+      <ol>
+        <li>Start playback in your DAW; Chord Dock syncs and plays chords via its internal synth.</li>
+        <li>Click chords in the chord palette to preview their sound.</li>
+        <li>Use the speaker icon in the toolbar to mute / enable the internal audio.</li>
+      </ol>
+
+      <h3>3.5 Drag &amp; drop MIDI to your DAW</h3>
+      <ol>
+        <li>
+          Select chord events on the timeline. You can:
+          <ul>
+            <li>Ctrl (Cmd on macOS) + click to add or remove events from the selection.</li>
+            <li>Drag to create a selection box and select multiple events at once.</li>
+          </ul>
+        </li>
+        <li>
+          Click and drag from the “MIDI Drag” area at the right edge of the timeline onto a DAW track.
+          The selected progression is dropped as a MIDI clip.
+        </li>
+      </ol>
+
+      <h3>3.6 Try Extended features (if available)</h3>
+      <ul>
+        <li>
+          Open the Circle of Fifths view from the middle panel and choose chords from any key.
+          <ul>
+            <li>Right-click to open the context menu, then drag and drop to replace chords in the chord palette.</li>
+            <li>You cannot place chords directly from the Circle of Fifths onto the timeline.</li>
+          </ul>
+        </li>
+        <li>Use the chord palette context menu to add tensions (9 / 11 / 13) and slash chords.</li>
+        <li>Save frequently used progressions as user presets and reuse them in other projects.</li>
+      </ul>
+    </section>
+
+    <section id="activation">
+      <h2>4. Activation Steps (Extended)</h2>
+
+      <div class="activation-grid">
+        <figure>
+          <img
+            src="assets/設定ウィンドウアイコン.png"
+            alt="Opening the settings window from the gear icon"
+          />
+          <figcaption>Open the settings window from the gear icon in the top-right of the plugin.</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="assets/設定ウィンドウ英語.png"
+            alt="License input and online activation screen"
+          />
+          <figcaption>Use “Enter license…” in the settings window to enter the serial key and run online activation.</figcaption>
+        </figure>
+      </div>
+
+      <h3>4.1 First activation</h3>
+      <ol>
+        <li>After purchasing Extended, you receive a serial key.</li>
+        <li>Launch Chord Dock and open the settings window from the gear icon in the top-right.</li>
+        <li>Click the <q>Enter license…</q> button and enter your serial key.</li>
+        <li>If the key is valid, your browser opens automatically.</li>
+        <li>Sign in to your Chord Dock account in the browser and approve this machine as an authorized device.</li>
+        <li>Return to the plugin; after a short delay Extended features become available (you may need to restart the DAW).</li>
+      </ol>
+
+      <h3>4.2 Activating on a second machine</h3>
+      <ol>
+        <li>Install Chord Dock on the second machine.</li>
+        <li>On the second machine, open the settings window and click <q>Enter license…</q>, then enter the same serial key.</li>
+        <li>When the browser opens, log in with the same account and authorize the device.</li>
+        <li>If you have already activated 2 devices, deactivate an old device on the license management page before trying again.</li>
+      </ol>
+
+      <h3>4.3 Offline use</h3>
+      <ul>
+        <li>Online connection is required only for activation and device management.</li>
+        <li>Once activation is complete, editing, playback, and MIDI export work offline.</li>
+        <li>New machine activation, device removal, and serial key recovery require going online again.</li>
+      </ul>
+    </section>
+
+    <section id="ui">
+      <h2>5. Main UI Components</h2>
+
+      <h3>5.1 Top toolbar</h3>
+      <ul>
+        <li>Undo / Redo: revert or reapply recent actions.</li>
+        <li>Time signature: insert time signature change events at a bar.</li>
+        <li>Center: scroll so the playhead is centered.</li>
+        <li>Progression: save / load chord progressions.</li>
+        <li>Export: export the entire timeline as MIDI.</li>
+        <li>Internal audio: toggle the internal synth on / off (MIDI out continues).</li>
+        <li>Settings (gear): open the settings window (license, online activation, etc.).</li>
+        <li>Degree View: toggle degree notation view.</li>
+        <li>Timeline Only: switch to a timeline-only layout.</li>
+      </ul>
+
+      <h3>5.2 Timeline editor</h3>
+      <ul>
+        <li>Horizontal chord track where time flows from left to right.</li>
+        <li>Bar grid and beat subdivision are shown for alignment.</li>
+        <li>Chord blocks can be moved, stretched, and copied by dragging.</li>
+        <li>Snap settings let you switch between bar, beat, and Extended snap.</li>
+      </ul>
+
+      <h3>5.3 Chord palette</h3>
+      <ul>
+        <li>Shows chord suggestions based on the current key / scale.</li>
+        <li>Basic triads and 7th chords are available in Lite; tensions and slash chords are unlocked in Extended.</li>
+        <li>Click to select a chord type and place it on the timeline.</li>
+      </ul>
+
+      <h3>5.4 Preset browser (Extended)</h3>
+      <ul>
+        <li>Manage typical chord progressions as presets.</li>
+        <li>Save progressions as presets and reuse them across projects and DAWs.</li>
+        <li>Import and export preset files for backup and sharing.</li>
+      </ul>
+
+      <h3>5.5 Settings window</h3>
+      <p>
+        The settings window shows your current license state (Lite / Extended), registered devices,
+        and links to the license management page.
+      </p>
+    </section>
+
+    <section id="faq">
+      <h2>6. FAQ (Excerpt)</h2>
+      <div class="details-box">
+        <details>
+          <summary>Q1. How many machines can I activate?</summary>
+          <div>
+            <p>You can activate up to 2 machines per account at the same time.</p>
+            <p>Deactivate old machines to free up slots for new ones.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Q2. I purchased Extended but it still shows Lite.</summary>
+          <div>
+            <p>Check the following in order:</p>
+            <ul>
+              <li>Open the settings window and click “Enter license…” to re-enter your serial key.</li>
+              <li>In the browser, log in and confirm that this PC is listed as an authorized device.</li>
+              <li>Confirm that the status in the settings window shows Extended.</li>
+              <li>If you have reached the 2-device limit, deactivate an unused machine and try again.</li>
+              <li>If it still does not switch, fully quit and restart your DAW.</li>
+            </ul>
+          </div>
+        </details>
+        <details>
+          <summary>Q3. Can I use Extended offline?</summary>
+          <div>
+            <p>
+              Yes. Only activation and device management require an online connection.
+              Day-to-day use is offline.
+            </p>
+          </div>
+        </details>
+        <details>
+          <summary>Q4. I only want to use Lite. Do I need a serial key?</summary>
+          <div>
+            <p>No. Without a serial key, Chord Dock automatically runs as Lite.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Q5. The plugin does not appear in my DAW.</summary>
+          <div>
+            <p>Please check the following:</p>
+            <ul>
+              <li>Rescan plugins in your DAW.</li>
+              <li>Restart the DAW completely.</li>
+              <li>Confirm that the formats you need (VST3 / AU / AAX) were installed to the correct locations.</li>
+            </ul>
+            <p>If the issue persists, please contact us via the form or email below.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="support">
+      <h2>7. Support / Contact</h2>
+      <p>
+        For the latest product information, updates, and details about licensing, please also refer to:
+      </p>
+      <ul>
+        <li>
+          Product site / landing page:
+          <a class="inline-link" href="index.en.html">Chord Dock LP (English)</a>
+        </li>
+        <li>
+          Updates and installers:
+          <a class="inline-link" href="update.html">Update page</a>
+        </li>
+        <li>
+          Contact form:
+          <a
+            class="inline-link"
+            href="https://forms.gle/ttEAX9dSLEk7Pr5X7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Google Form</a>
+        </li>
+        <li>
+          Contact by email:
+          <a class="inline-link" href="mailto:hitori.unicorn@gmail.com">hitori.unicorn@gmail.com</a>
+        </li>
+      </ul>
+      <p>
+        When reporting bugs or requesting features, including your OS, DAW, plugin format (VST3 / AU / AAX),
+        and reproduction steps helps us respond more quickly.
+      </p>
+      <p>
+        If you prefer Japanese, you can also refer to the
+        <a class="inline-link" href="manual.html">Japanese online manual</a>.
+      </p>
+    </section>
+  </main>
+  <footer>
+    <p>© Chord Dock — Online Manual (English).</p>
+  </footer>
+</body>
+</html>
