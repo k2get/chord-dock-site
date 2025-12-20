@@ -132,12 +132,12 @@
               <a href="#download" class="rounded-xl px-5 py-3 text-base font-semibold bg-indigo-600 text-white shadow hover:bg-indigo-500">Download Lite</a>
               <a href="#buy" class="rounded-xl px-5 py-3 text-base font-semibold bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 hover:bg-gray-50 dark:hover:bg-neutral-800">Buy Extended (Coming Soon)</a>
             </div>
-            <div class="mt-4 flex flex-wrap gap-2 text-xs text-gray-600 dark:text-neutral-400">
-              <span class="badge rounded-lg px-2 py-1">VST3</span>
-              <span class="badge rounded-lg px-2 py-1">AU</span>
-              <span class="badge rounded-lg px-2 py-1">AAX</span>
-              <span class="badge rounded-lg px-2 py-1">macOS / Windows</span>
-            </div>
+	            <div class="mt-4 flex flex-wrap gap-2 text-xs text-gray-600 dark:text-neutral-400">
+	              <span class="badge rounded-lg px-2 py-1">VST3</span>
+	              <span class="badge rounded-lg px-2 py-1">AU</span>
+	              <span class="badge rounded-lg px-2 py-1">AAX (Coming soon)</span>
+	              <span class="badge rounded-lg px-2 py-1">macOS / Windows</span>
+	            </div>
           </div>
           <div>
             <div class="aspect-video w-full overflow-hidden rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800 shadow bg-white dark:bg-neutral-900">
@@ -611,12 +611,12 @@
               </p>
             </div>
           </details>
-          <details>
-            <summary>Q5. Which plugin formats are supported?</summary>
-            <div>
-              <p>VST3 / AU / AAX are supported.</p>
-            </div>
-          </details>
+	          <details>
+	            <summary>Q5. Which plugin formats are supported?</summary>
+	            <div>
+	              <p>Currently supported: VST3 / AU. AAX (Pro Tools) is coming soon.</p>
+	            </div>
+	          </details>
           <details>
             <summary>Q6. After updating, it shows as Lite</summary>
             <div>
@@ -671,41 +671,34 @@
               </p>
             </div>
           </details>
-          <details>
-            <summary>Q10. After installing, the plugin does not appear in my DAW</summary>
-            <div>
-              <p>Please check the following:</p>
-              <ul>
-                <li>VST3: supported in most major DAWs</li>
-                <li>
-                  AU: supported only in Logic Pro (GarageBand does not load AU MIDI
-                  effects, so it is not supported)
-                </li>
-                <li>AAX: for Pro Tools</li>
-              </ul>
-              <p>Additionally:</p>
-              <ul>
-                <li>Rescan plugin folders in your DAW</li>
-                <li>Restart your DAW</li>
-              </ul>
-            </div>
-          </details>
-          <details>
-            <summary>Q11. Pro Tools does not recognize the AAX plugin</summary>
-            <div>
-              <p>Please try the following:</p>
-              <ul>
-                <li>Completely quit Pro Tools and start it again</li>
-                <li>Check that the AAX file is in the correct folder</li>
-              </ul>
-              <p>Example paths:</p>
-              <ul>
-                <li>Windows: C:\Program Files\Common Files\Avid\Audio\Plug-Ins\</li>
-                <li>macOS: /Library/Application Support/Avid/Audio/Plug-Ins/</li>
-              </ul>
-              <p>Please also check that no old AAX versions are left behind.</p>
-            </div>
-          </details>
+	          <details>
+	            <summary>Q10. After installing, the plugin does not appear in my DAW</summary>
+	            <div>
+	              <p>Please check the following:</p>
+	              <ul>
+	                <li>VST3: supported in most major DAWs</li>
+	                <li>
+	                  AU: supported only in Logic Pro (GarageBand does not load AU MIDI
+	                  effects, so it is not supported)
+	                </li>
+	                <li>AAX: coming soon (Pro Tools is not supported yet)</li>
+	              </ul>
+	              <p>Additionally:</p>
+	              <ul>
+	                <li>Rescan plugin folders in your DAW</li>
+	                <li>Restart your DAW</li>
+	              </ul>
+	            </div>
+	          </details>
+	          <details>
+	            <summary>Q11. Is AAX (Pro Tools) supported?</summary>
+	            <div>
+	              <p>
+	                Not yet. AAX (Pro Tools) support is currently in development. We’ll announce availability on the <a href="update.html" class="hover:opacity-80 underline underline-offset-2">Update</a> page.
+	              </p>
+	              <p>For now, please use VST3 (and AU on macOS).</p>
+	            </div>
+	          </details>
           <details>
             <summary>
               Q12. I only want to use Lite. Do I need an Extended serial?
@@ -777,25 +770,25 @@
     </section>
 
     <!-- DAW Support -->
-    <section class="section" id="daw">
-      <div class="container mx-auto px-4 py-12">
-        <h2 class="text-2xl sm:text-3xl font-extrabold">DAW Hosts / Formats</h2>
-        <div class="mt-6 grid md:grid-cols-2 gap-6 text-sm">
+	    <section class="section" id="daw">
+	      <div class="container mx-auto px-4 py-12">
+	        <h2 class="text-2xl sm:text-3xl font-extrabold">DAW Hosts / Formats</h2>
+	        <div class="mt-6 grid md:grid-cols-2 gap-6 text-sm">
           <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
-            <h3 class="font-semibold">Plugin formats by OS</h3>
-            <ul class="mt-2 list-disc ml-5 space-y-1 text-gray-700 dark:text-neutral-300">
-              <li>macOS: VST3 / AU / AAX</li>
-              <li>Windows: VST3 / AAX</li>
-            </ul>
-          </div>
+	            <h3 class="font-semibold">Plugin formats by OS</h3>
+	            <ul class="mt-2 list-disc ml-5 space-y-1 text-gray-700 dark:text-neutral-300">
+	              <li>macOS: VST3 / AU (AAX coming soon)</li>
+	              <li>Windows: VST3 (AAX coming soon)</li>
+	            </ul>
+	          </div>
           <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
-            <h3 class="font-semibold">Representative hosts</h3>
-            <ul class="mt-2 list-disc ml-5 space-y-1 text-gray-700 dark:text-neutral-300">
-              <li>Logic Pro, SONAR / Cakewalk, Cubase, FL Studio, Live, Studio One, Pro Tools</li>
-              <li>We will add other hosts or version‑specific notes here as they are confirmed.</li>
-            </ul>
-          </div>
-        </div>
+	            <h3 class="font-semibold">Representative hosts</h3>
+	            <ul class="mt-2 list-disc ml-5 space-y-1 text-gray-700 dark:text-neutral-300">
+	              <li>Logic Pro, SONAR / Cakewalk, Cubase, FL Studio, Live, Studio One (Pro Tools support coming soon via AAX)</li>
+	              <li>We will add other hosts or version‑specific notes here as they are confirmed.</li>
+	            </ul>
+	          </div>
+	        </div>
         <p class="mt-3 text-xs text-gray-500">Setup guides for MIDI routing in each host will be published soon.</p>
       </div>
     </section>
