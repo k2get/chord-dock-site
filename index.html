@@ -260,6 +260,14 @@
           <div
             class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto"
           >
+            <h3 class="font-semibold">セクションで区間をまとめて編集</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">
+              Verse/Chorus を色付きクリップに。移動・複製は中身も追従、ダブルクリックで区間だけ集中編集。
+            </p>
+          </div>
+          <div
+            class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto"
+          >
             <h3 class="font-semibold">テンション & スラッシュ対応</h3>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
               9/11/13 等を上付き表示で可視化。オンコードの最下音選択にも対応。
@@ -361,6 +369,54 @@
             </p>
           </div>
         </div>
+
+        <!-- Row 4: テキスト左 / 画像右 -->
+        <div
+          class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:minmax(0,1fr)_auto]"
+        >
+          <div class="md:ml-auto max-w-xl">
+            <h3 class="text-xl font-semibold">セクション機能（Section Clip）</h3>
+            <p
+              class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed"
+            >
+              Verse/Chorus など曲の区間を、色付きクリップとしてまとめられます。移動・複製は中身のコードも一緒に追従。ダブルクリックでその区間だけに集中して編集できます。
+            </p>
+          </div>
+          <div
+            class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72"
+          >
+            <img
+              src="assets/セクション.png"
+              alt="セクション機能の画面"
+              class="w-full h-full object-cover object-left"
+            />
+          </div>
+        </div>
+
+        <!-- Row 5: 画像左 / テキスト右 -->
+        <div
+          class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:auto_minmax(0,1fr)]"
+        >
+          <div
+            class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-56"
+          >
+            <img
+              src="assets/フォーカス編集.png"
+              alt="フォーカス編集モードの画面"
+              class="w-full h-full object-cover object-left"
+            />
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">
+              フォーカス編集モードで安全に編集
+            </h3>
+            <p
+              class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed"
+            >
+              セクションをダブルクリックすると、その区間だけを編集できる Focus Edit Mode に入ります。範囲外はグレーアウトして誤操作を防止。Esc（または Exit）でいつでも通常表示に戻せます。
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -393,6 +449,21 @@
               <tr>
                 <td class="p-3">コードのリサイズ / 移動 / 複製 / 転回</td>
                 <td class="p-3">✔</td>
+                <td class="p-3">✔</td>
+              </tr>
+              <tr>
+                <td class="p-3">セクション（Section Clip / Focus Edit）</td>
+                <td class="p-3">✔</td>
+                <td class="p-3">✔</td>
+              </tr>
+              <tr>
+                <td class="p-3">セクション色の変更</td>
+                <td class="p-3">—</td>
+                <td class="p-3">✔</td>
+              </tr>
+              <tr>
+                <td class="p-3">コードシンボルの色（パレット/タイムライン）</td>
+                <td class="p-3">—</td>
                 <td class="p-3">✔</td>
               </tr>
               <tr>

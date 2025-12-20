@@ -472,6 +472,7 @@
         <li>Settings（ギア）: 設定ウィンドウ（ライセンス・オンライン認証など）を開く</li>
         <li>Degree View: ディグリービューのオン / オフ</li>
         <li>Timeline Only: タイムラインのみ表示モードの切り替え</li>
+        <li>一括セクション表示: 全セクションの「中身を表示」を一括で切り替え</li>
       </ul>
 
       <h3>5.2 タイムラインエディタ</h3>
@@ -501,6 +502,21 @@
         <code>設定 → ライセンス</code> では、現在のライセンス状態（Lite / Extended）や、
         認証済みデバイス、ライセンス管理ページへのリンクなどを確認できます。
       </p>
+
+      <h3>5.6 セクション（Section Clip）</h3>
+      <p>
+        Verse / Chorus など曲の一部区間を、色付きクリップとしてまとめて扱える機能です。
+      </p>
+      <ul>
+        <li>作成: 複数のコードブロックを選択して <code>Create Section</code> を実行します。</li>
+        <li>移動: クリップをドラッグすると、中身（子コード）も同じ量だけ移動します。</li>
+        <li>制約（通常モード）: セクション範囲内は占有扱いのため、コードを置けません。</li>
+        <li>複製ドラッグ: 修飾キー（Windows: Ctrl / macOS: Option ⌥）を押しながらドラッグします。</li>
+        <li>フォーカス編集: クリップをダブルクリックで Focus Edit Mode に入り、範囲外はグレーアウトして操作できません（Esc で終了）。</li>
+        <li>中身を表示（Reveal Contents）: 通常モードでもセクション内のコードをゴースト表示できます（編集は不可）。</li>
+        <li>解除（Dissolve）: クリップ表示を解除し、中身のコードを通常表示に戻します。</li>
+        <li>色の変更: Extended のみ変更可能です（Lite は購入導線が表示されます）。</li>
+      </ul>
     </section>
 
     <section id="faq">
@@ -567,10 +583,10 @@
           お問い合わせフォーム:
           <a class="inline-link" href="https://forms.gle/WPgiSCxY9Mp3v9nc6" target="_blank" rel="noopener noreferrer">Google フォーム</a>
         </li>
-        <li>
+        <!-- <li>
           メールでのお問い合わせ:
           <a class="inline-link" href="mailto:hitori.unicorn@gmail.com">hitori.unicorn@gmail.com</a>
-        </li>
+        </li> -->
       </ul>
       <p>
         バグ報告や機能要望は、再現手順とご利用の OS / DAW / プラグイン形式（VST3 / AU / AAX）を添えてご連絡いただけると助かります。

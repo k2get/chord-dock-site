@@ -476,6 +476,7 @@
         <li>Settings (gear): open the settings window (license, online activation, etc.).</li>
         <li>Degree View: toggle degree notation view.</li>
         <li>Timeline Only: switch to a timeline-only layout.</li>
+        <li>Section View: toggle “Reveal Contents” for all sections.</li>
       </ul>
 
       <h3>5.2 Timeline editor</h3>
@@ -505,6 +506,21 @@
         The settings window shows your current license state (Lite / Extended), registered devices,
         and links to the license management page.
       </p>
+
+      <h3>5.6 Sections (Section Clips)</h3>
+      <p>
+        Group a part of your song (Verse/Chorus, etc.) into a colored clip and treat it as a unit.
+      </p>
+      <ul>
+        <li>Create: select multiple chord blocks and run <code>Create Section</code>.</li>
+        <li>Move: drag the clip—its contents move by the same amount.</li>
+        <li>Constraint (normal mode): the section range is treated as occupied, so you can’t place chords inside.</li>
+        <li>Duplicate-drag: hold the modifier key (Windows: Ctrl / macOS: Option ⌥) while dragging.</li>
+        <li>Focus Edit: double‑click the clip to enter Focus Edit Mode. Everything outside is greyed out (Esc to exit).</li>
+        <li>Reveal Contents: in normal mode, you can show the section’s chords as ghost items (not editable).</li>
+        <li>Dissolve: remove the clip and return the chords to normal display.</li>
+        <li>Change color: Extended only (Lite shows an upgrade prompt).</li>
+      </ul>
     </section>
 
     <section id="faq">
@@ -554,7 +570,7 @@
               <li>Restart the DAW completely.</li>
               <li>Confirm that the formats you need (VST3 / AU / AAX) were installed to the correct locations.</li>
             </ul>
-            <p>If the issue persists, please contact us via the form or email below.</p>
+            <p>If the issue persists, please contact us via the form below.</p>
           </div>
         </details>
       </div>
@@ -579,10 +595,10 @@
             rel="noopener noreferrer"
           >Google Form</a>
         </li>
-        <li>
+        <!-- <li>
           Contact by email:
           <a class="inline-link" href="mailto:hitori.unicorn@gmail.com">hitori.unicorn@gmail.com</a>
-        </li>
+        </li> -->
       </ul>
       <p>
         When reporting bugs or requesting features, including your OS, DAW, plugin format (VST3 / AU / AAX),
