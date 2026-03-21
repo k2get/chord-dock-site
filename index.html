@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Chord Dock — コード進行タイムライン & 五度圏プラグイン</title>
+    <title>Chord Dock v1.5 — コード進行・Reharmo・MIDIドラッグ</title>
     <meta
       name="description"
-      content="Chord Dock は、五度圏ガイドとタイムライン編集でコード進行を超高速に設計し、どのDAWにもMIDIドラッグ&ドロップで運べる作曲支援プラグインです。"
+      content="Chord Dock v1.5 は、タイムライン編集、五度圏、Reharmo、Arpeggio/Bassline、拍子変更、MIDIドラッグを1つにまとめたコード進行制作プラグインです。"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -65,8 +65,17 @@
         scroll-behavior: smooth;
       }
       body {
-        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto,
-          Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+        font-family: "Noto Sans JP", system-ui, -apple-system, Segoe UI,
+          sans-serif;
+        background:
+          radial-gradient(circle at 12% 20%, rgba(99, 102, 241, 0.18), transparent 24%),
+          radial-gradient(circle at 84% 18%, rgba(45, 212, 191, 0.15), transparent 24%),
+          linear-gradient(180deg, #0a0f1c 0%, #090d18 100%);
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Space Grotesk", "Noto Sans JP", sans-serif;
       }
       .container {
         max-width: 1100px;
@@ -122,20 +131,20 @@
     <!-- Open Graph -->
     <meta
       property="og:title"
-      content="Chord Dock — コード進行タイムライン & 五度圏"
+      content="Chord Dock v1.5 — コード進行・Reharmo・MIDIドラッグ"
     />
 	    <meta
-	      property="og:description"
-	      content="進行の可搬性・可視化・編集速度を重視した作曲支援。VST3/AU 対応（AAX は準備中）。"
-	    />
+      property="og:description"
+      content="タイムライン編集、Reharmo、Arpeggio/Bassline、MIDIドラッグをつないだコード先行制作プラグイン。"
+    />
     <meta property="og:type" content="website" />
     <meta
       property="og:url"
-      content="https://example.github.io/chord-dock-site/"
+      content="https://k2get.github.io/chord-dock-site/"
     />
     <meta
       property="og:image"
-      content="https://placehold.co/1200x630/png?text=Chord+Dock"
+      content="https://k2get.github.io/chord-dock-site/assets/%E3%83%AA%E3%83%8F%E3%83%A2%E6%A9%9F%E8%83%BD%E3%81%AE%E5%85%A8%E4%BD%93%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88.png"
     />
     <meta name="twitter:card" content="summary_large_image" />
   </head>
@@ -158,8 +167,9 @@
         </a>
 	        <div class="hidden sm:flex items-center gap-4 text-sm">
 	          <a href="#features" class="hover:opacity-80">機能</a>
+	          <a href="#feature-details" class="hover:opacity-80">ワークフロー</a>
+	          <a href="#edition-comparison" class="hover:opacity-80">比較</a>
 	          <a href="#requirements" class="hover:opacity-80">動作環境</a>
-	          <a href="#daw" class="hover:opacity-80">対応DAW</a>
 	          <a href="#download" class="hover:opacity-80">ダウンロード</a>
 	          <a href="#activation" class="hover:opacity-80">アクティベーション</a>
           <a href="#faq" class="hover:opacity-80">FAQ</a>
@@ -190,40 +200,41 @@
             <h1
               class="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight"
             >
-              コード進行を<span class="text-indigo-600">最速で形</span>に<br />
-              過去のコード進行もライブラリになる
+              コード進行を<span class="text-indigo-400">組む・変える・渡す</span><br />
+              Reharmo までつながる v1.5
             </h1>
             <p class="mt-5 text-lg text-gray-600 dark:text-neutral-300">
-              Chord Dock は、【タイムライン編集
-              <span class="align-middle badge rounded-lg px-2 py-1 text-xs"
-                >Lite</span
-              >
-              】と【五度圏ガイド
+              Chord Dock v1.5 は、タイムライン編集を土台に、五度圏、Reharmo、Arpeggio / Bassline、拍子変更、MIDIドラッグまでをひとつの制作フローにまとめた作曲支援プラグインです。
+            </p>
+            <p class="mt-4 text-sm text-gray-500 dark:text-neutral-400">
+              Lite / Extended は共通インストーラーです。購入後はシリアルキーで
               <span class="align-middle badge rounded-lg px-2 py-1 text-xs"
                 >Extended</span
               >
-              】でコード進行を設計し、MIDIドラッグ&ドロップでDAWへ素早く持ち出せる作曲支援プラグインです。Triad/Tetrad・テンション・スラッシュを直感的に切替、DAWを跨いで進行を共有できます。
+              機能を有効化できます。
             </p>
             <div class="mt-6 flex flex-wrap gap-3">
               <a
-                href="#download"
+                href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="rounded-xl px-5 py-3 text-base font-semibold bg-indigo-600 text-white shadow hover:bg-indigo-500"
                 >無料版をダウンロード</a
               >
-		              <a
-		                href="#download"
-		                class="rounded-xl px-5 py-3 text-base font-semibold bg-indigo-600 text-white shadow hover:bg-indigo-500"
-		                >Extended を購入</a
-		              >
+              <a
+                href="https://k2get.gumroad.com/l/jchokk"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="rounded-xl px-5 py-3 text-base font-semibold border border-indigo-400/40 text-indigo-100 shadow hover:bg-indigo-500/10"
+                >Extended を購入</a
+              >
             </div>
-	            <div
-	              class="mt-4 flex flex-wrap gap-2 text-xs text-gray-600 dark:text-neutral-400"
-	            >
-	              <span class="badge rounded-lg px-2 py-1">VST3</span>
-	              <span class="badge rounded-lg px-2 py-1">AU</span>
-	              <span class="badge rounded-lg px-2 py-1">AAX（準備中）</span>
-	              <span class="badge rounded-lg px-2 py-1">macOS / Windows</span>
-	            </div>
+            <div
+              class="mt-4 flex flex-wrap gap-2 text-xs text-gray-600 dark:text-neutral-400"
+            >
+              <span class="badge rounded-lg px-2 py-1">VST3 / AU</span>
+              <span class="badge rounded-lg px-2 py-1">macOS / Windows</span>
+            </div>
           </div>
           <div>
             <div
@@ -233,12 +244,12 @@
                 class="w-full h-full"
                 width="560"
                 height="315"
-		                src="https://www.youtube.com/embed/P8-rqJ2jkNQ?si=xTN9mKy5SwZ4EJ7E"
-		                title="YouTube video player"
-		                frameborder="0"
-		                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-		                referrerpolicy="strict-origin-when-cross-origin"
-		                allowfullscreen
+                src="https://www.youtube.com/embed/P8-rqJ2jkNQ?si=xTN9mKy5SwZ4EJ7E"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
               ></iframe>
             </div>
             <p class="mt-2 text-xs text-gray-500">
@@ -257,49 +268,49 @@
           <div
             class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto"
           >
-            <h3 class="font-semibold">DAWに依存しない進行表現</h3>
+            <h3 class="font-semibold">進行編集から MIDI 書き出しまで一画面</h3>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
-              どのDAWでも同じ進行を再現。編集→試聴→MIDIドラッグの軽快ワークフロー。
+              タイムライン編集、試聴、ドラッグエクスポートを短いループで回し、DAW を跨いでも同じ進行を持ち運べます。
             </p>
           </div>
           <div
             class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto"
           >
-            <h3 class="font-semibold">タイムライン編集 × 五度圏ガイド</h3>
+            <h3 class="font-semibold">タイムライン編集 × 五度圏 × 拍子変更</h3>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
-              ドラッグ/移動/リサイズ、転回・テンションもワンクリック。ダイアトニック提案で下書きが速い。
+              ドラッグ/移動/リサイズに加え、拍子変更も反映。進行の骨格とハーモニーの見通しを同時に整えられます。
             </p>
           </div>
           <div
             class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto"
           >
-            <h3 class="font-semibold">セクションで区間をまとめて編集</h3>
+            <h3 class="font-semibold">Section Clip と Focus Edit</h3>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
-              Verse/Chorus を色付きクリップに。移動・複製は中身も追従、ダブルクリックで区間だけ集中編集。
+              Verse / Chorus を色付きクリップとして管理。移動・複製は中身も追従し、ダブルクリックでその区間だけに集中できます。
             </p>
           </div>
           <div
             class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto"
           >
-            <h3 class="font-semibold">テンション & スラッシュ対応</h3>
+            <h3 class="font-semibold">Reharmo で比較してから適用</h3>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
-              9/11/13 等を上付き表示で可視化。オンコードの最下音選択にも対応。
+              候補を比較しながら元の進行を壊さずにプレビュー。Chord Unit / Progression Unit を切り替えて変形できます。
             </p>
           </div>
           <div
             class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto"
           >
-            <h3 class="font-semibold">軽量で素早いMIDI出力</h3>
+            <h3 class="font-semibold">Arpeggio / Bassline 生成</h3>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
-              演奏より編集スピードを重視。必要に応じて他プラグインで音作りに繋げられます。
+              選択セクションから生成ノートを作成し、そのまま DAW へドラッグ。必要ならノート編集ウィンドウで追い込めます。
             </p>
           </div>
           <div
             class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto"
           >
-            <h3 class="font-semibold">プリセットで即スタート</h3>
+            <h3 class="font-semibold">共通インストーラーで段階解放</h3>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
-              Liteは編集可能な10種のプリセットを収録。Extendedは20件のユーザープリセット保存と外部共有に対応。
+              Lite は編集と書き出しの土台、Extended はテンション、スラッシュ、Reharmo、Arpeggio、保存系機能まで広げる構成です。
             </p>
           </div>
         </div>
@@ -340,19 +351,19 @@
           class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:minmax(0,1fr)_auto]"
         >
           <div class="md:ml-auto max-w-xl">
-            <h3 class="text-xl font-semibold">五度圏機能</h3>
+            <h3 class="text-xl font-semibold">Reharmo で候補を比較してから適用</h3>
             <p
               class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed"
             >
-              キーセンターと相対関係を可視化。ダイアトニック/近親の候補から素早く選べるので、進行の一貫性を保ちつつ変化も付けやすくなります。
+              v1.5 の大きな軸が Reharmo です。候補を比較し、元の進行を残したままプレビューし、必要なタイミングでだけ Apply できます。Chord Unit / Progression Unit の切り替えにも対応します。
             </p>
           </div>
           <div
             class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72"
           >
             <img
-              src="assets/五度圏.png"
-              alt="五度圏ガイドの画面"
+              src="assets/リハモ編集ウィンドウの進行単位生成.png"
+              alt="Reharmo の進行単位生成"
               class="w-full h-full object-cover"
             />
           </div>
@@ -367,18 +378,17 @@
             class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72"
           >
             <img
-              src="assets/プリセット.png"
-              alt="プリセット管理の画面"
+              src="assets/アルペジオ機能レイアウト.png"
+              alt="Arpeggio 機能の画面"
               class="w-full h-full object-cover"
             />
           </div>
           <div>
-            <h3 class="text-xl font-semibold">プリセットで再利用・共有</h3>
+            <h3 class="text-xl font-semibold">Arpeggio / Bassline をそのまま DAW へ</h3>
             <p
               class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed"
             >
-              よく使う進行はプリセット化して再利用。Extended
-              では最大20件のユーザープリセットを保存、外部ファイルの書き出し/読み込みで他環境とも共有できます。
+              選択セクションから生成ノートを作成し、その場でプレビュー。必要に応じてノート編集ウィンドウで調整し、最終的には MIDI として DAW へドラッグできます。
             </p>
           </div>
         </div>
@@ -470,23 +480,23 @@
                 <td class="p-3">✔</td>
               </tr>
               <tr>
-                <td class="p-3">セクション色の変更</td>
+                <td class="p-3">Progression の書き出し / 読み込み</td>
+                <td class="p-3">✔</td>
+                <td class="p-3">✔</td>
+              </tr>
+              <tr>
+                <td class="p-3">ドラッグ&amp;ドロップ MIDI 書き出し</td>
+                <td class="p-3">✔</td>
+                <td class="p-3">✔</td>
+              </tr>
+              <tr>
+                <td class="p-3">五度圏の表示</td>
                 <td class="p-3">—</td>
                 <td class="p-3">✔</td>
               </tr>
               <tr>
-                <td class="p-3">コードシンボルの色（パレット/タイムライン）</td>
+                <td class="p-3">五度圏のインタラクティブ操作</td>
                 <td class="p-3">—</td>
-                <td class="p-3">✔</td>
-              </tr>
-              <tr>
-                <td class="p-3">メジャー / マイナーコード</td>
-                <td class="p-3">✔</td>
-                <td class="p-3">✔</td>
-              </tr>
-              <tr>
-                <td class="p-3">7th 系（mMaj7 / m7b5 / dim / dim7）</td>
-                <td class="p-3">✔</td>
                 <td class="p-3">✔</td>
               </tr>
               <tr>
@@ -500,37 +510,42 @@
                 <td class="p-3">✔</td>
               </tr>
               <tr>
-                <td class="p-3">五度圏ビュー</td>
+                <td class="p-3">Arpeggio / Bassline モード</td>
                 <td class="p-3">—</td>
                 <td class="p-3">✔</td>
               </tr>
               <tr>
-                <td class="p-3">ext Snap（高度なスナップ）</td>
+                <td class="p-3">Arpeggio の詳細パラメータ / ノート編集</td>
                 <td class="p-3">—</td>
                 <td class="p-3">✔</td>
               </tr>
               <tr>
-                <td class="p-3">ext Length（柔軟なレンジ編集）</td>
+                <td class="p-3">Reharmo モード</td>
                 <td class="p-3">—</td>
                 <td class="p-3">✔</td>
               </tr>
               <tr>
-                <td class="p-3">ドラッグ&amp;ドロップMIDI書き出し</td>
-                <td class="p-3">✔</td>
+                <td class="p-3">Reharmo の詳細パラメータ / ノート編集</td>
+                <td class="p-3">—</td>
                 <td class="p-3">✔</td>
               </tr>
               <tr>
-                <td class="p-3">コード進行ファイルの書き出し / 読み込み</td>
+                <td class="p-3">ユーザープリセット保存</td>
+                <td class="p-3">—</td>
                 <td class="p-3">✔</td>
+              </tr>
+              <tr>
+                <td class="p-3">セクション色の変更 / カスタムテーマ</td>
+                <td class="p-3">—</td>
                 <td class="p-3">✔</td>
               </tr>
               <tr>
                 <td class="p-3">おすすめの用途</td>
                 <td class="p-3">
-                  フル尺のコード進行を素早く組み立てるための基本ワークフロー
+                  進行の下書き、書き出し、共有
                 </td>
                 <td class="p-3">
-                  高度なハーモニーデザインと、細かなプロダクションワークに最適
+                  変形、生成、細部調整まで含む本制作
                 </td>
               </tr>
             </tbody>
@@ -575,9 +590,9 @@
             <ul
               class="mt-2 list-disc ml-5 space-y-1 text-gray-700 dark:text-neutral-300"
             >
-              <li>Windows 10 / 11</li>
+              <li>Windows 10 以降（64-bit）</li>
               <li>VST3 対応 DAW</li>
-              <li>64-bit OS</li>
+              <li>配布パッケージにより AAX を含む場合があります</li>
             </ul>
           </div>
           <div
@@ -587,9 +602,9 @@
             <ul
               class="mt-2 list-disc ml-5 space-y-1 text-gray-700 dark:text-neutral-300"
             >
-              <li>macOS 11 以上</li>
+              <li>macOS 10.15 以上（64-bit）</li>
               <li>Apple Silicon &amp; Intel 対応</li>
-              <li>VST3 / AU 対応 DAW</li>
+              <li>VST3 / AU 対応 DAW（配布パッケージにより AAX を含む場合があります）</li>
             </ul>
           </div>
         </div>
@@ -606,11 +621,11 @@
           >
             <h3 class="text-lg md:text-xl font-semibold">Lite（無料）</h3>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
-              コードトラックとしての基本のタイムライン編集
-              <br />移調や転回、オクターブ調整が柔軟なコードパレット
+              タイムライン編集
+              <br />Progression の書き出し / 読み込み
               <br />MIDIドラッグ&ドロップ
-              <br />コード進行をファイルとして書き出し、読み込み可能
-              <br />書き換えと保存が可能な10個のファクトリープリセットを収録
+              <br />五度圏の表示
+              <br />コード進行の下書きと共有に必要な基礎機能
             </p>
             <a
               href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0"
@@ -626,8 +641,9 @@
           >
             <h3 class="text-lg md:text-xl font-semibold">Extended（有料）</h3>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
-              五度圏・テンション/スラッシュ/高度な可視化を解放
-              <br />書き換え、保存可能な20個のユーザープリセットを解放
+              テンション / スラッシュ / インタラクティブ五度圏を解放
+              <br />Arpeggio / Bassline、Reharmo、詳細パラメータを解放
+              <br />ユーザープリセット保存、色変更、カスタムテーマに対応
             </p>
             <div class="mt-1 text-xs text-gray-500">
               ライセンス：1アカウント2台まで。
@@ -703,18 +719,29 @@
         <div class="mt-6 max-w-3xl details-box">
           <details>
             <summary>
-              Q1. オーディオやMIDIから自動検出はできますか？
+              Q1. v1.5 で何が増えましたか？
             </summary>
             <div>
               <p>
-                対象外です。Chord Dock
-                は「進行の可搬性・可視化・編集速度」に特化しています。検出機能が必要な場合は他製品と併用してください。
+                v1.5 では、従来のタイムライン編集に加えて、Reharmo、Arpeggio / Bassline、
+                セクション管理、フォーカス編集、拍子変更連動、生成ノートのドラッグエクスポートが
+                制作フローとしてまとまりました。
               </p>
             </div>
           </details>
           <details>
             <summary>
-              Q2. ライセンスは何台まで使えますか？
+              Q2. オーディオやMIDIから自動検出はできますか？
+            </summary>
+            <div>
+              <p>
+                対象外です。Chord Dock は「進行の可搬性・可視化・編集速度」に特化しています。検出機能が必要な場合は他製品と併用してください。
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              Q3. ライセンスは何台まで使えますか？
             </summary>
             <div>
               <p>
@@ -726,28 +753,15 @@
           </details>
           <details>
             <summary>
-              Q3. 2台目の PC で Extended を使うには？
+              Q4. Reharmo や Arpeggio の UI が無効です
             </summary>
             <div>
-              <p>手順は次のとおりです：</p>
+              <p>次を確認してください：</p>
               <ul>
-                <li>2台目の PC に Chord Dock をインストールする</li>
-                <li>2台目の Chord Dock で「設定 → ライセンス」からシリアルキーを入力する</li>
-                <li>ブラウザが開いたら、Chord Dock アカウントにログインし、その PC を承認する（オンライン認証）</li>
+                <li>Extended が有効化されているか</li>
+                <li>対象セクションが選択されているか</li>
+                <li>セクション長が 16 小節以内か</li>
               </ul>
-              <p>
-                承認が完了すると、その PC でも Extended として利用できます。すでに2台とも認証済みの場合は、不要なデバイスのアクティベーションを解除してから再度お試しください（Q8 も参照）。
-              </p>
-            </div>
-          </details>
-          <details>
-            <summary>
-              Q4. オフラインでも使えますか？
-            </summary>
-            <div>
-              <p>
-                アクティベーション後はローカル状態を永続し、オフラインでも利用できます。
-              </p>
             </div>
           </details>
 	          <details>
@@ -756,18 +770,21 @@
 	            </summary>
 	            <div>
 	              <p>
-	                現在は VST3 / AU に対応しています。AAX（Pro Tools）は準備中です。
+	                基本は VST3 / AU 対応です。AAX を含むかどうかは、配布パッケージの内容をご確認ください。
 	              </p>
 	            </div>
 	          </details>
           <details>
-            <summary>Q6. アップデートしたら Lite になってしまいました</summary>
+            <summary>Q6. 2台目の PC で Extended を使うには？</summary>
             <div>
+              <p>手順は次のとおりです：</p>
+              <ul>
+                <li>2台目の PC に Chord Dock をインストールする</li>
+                <li>2台目の Chord Dock で「設定 → ライセンス」からシリアルキーを入力する</li>
+                <li>ブラウザが開いたら、Chord Dock アカウントにログインし、その PC を承認する（オンライン認証）</li>
+              </ul>
               <p>
-                Chord Dock は Lite / Extended 共通インストーラーです。Extended として使う場合は、シリアルキーを再度入力し、オンライン認証を実行する必要があります。
-              </p>
-              <p>
-                OS 再インストールやマシン移行時などにシリアル情報が失われると、Lite 状態に戻ることがあります。
+                承認が完了すると、その PC でも Extended として利用できます。すでに2台とも認証済みの場合は、不要なデバイスのアクティベーションを解除してから再度お試しください。
               </p>
             </div>
           </details>
@@ -814,9 +831,9 @@
 	            <div>
 	              <p>以下を確認してください：</p>
 	              <ul>
-	                <li>VST3：主要 DAW で使用可</li>
-	                <li>AU：Logic Pro のみ対応（GarageBand は AU の MIDI エフェクトを読み込めないため非対応）</li>
-	                <li>AAX：準備中（現時点では Pro Tools では使用できません）</li>
+	                <li>インストールが正常終了しているか</li>
+	                <li>VST3 / AU のプラグインファイルが標準フォルダへ配置されているか</li>
+	                <li>配布パッケージに含まれるフォーマットを使っているか</li>
 	              </ul>
 	              <p>その他：</p>
 	              <ul>
@@ -826,13 +843,10 @@
 	            </div>
 	          </details>
 	          <details>
-	            <summary>Q11. AAX（Pro Tools）は使えますか？</summary>
+	            <summary>Q11. タイムラインの一部がグレーアウトしています</summary>
 	            <div>
 	              <p>
-	                現在、AAX（Pro Tools）は準備中です。対応開始のタイミングは <a href="update.html" class="hover:opacity-80 underline underline-offset-2">更新ページ</a> で告知します。
-	              </p>
-	              <p>
-	                それまでは VST3（/ AU）をご利用ください。
+	                Focus Edit Mode に入っている可能性があります。フォーカス中は対象セクション内だけ編集可能で、外側は暗く表示されます。Esc で通常表示に戻れます。
 	              </p>
 	            </div>
 	          </details>
@@ -974,16 +988,16 @@
         "name": "Chord Dock",
         "applicationCategory": "MusicProductionSoftware",
         "operatingSystem": "macOS, Windows",
-        "softwareVersion": "1.0",
+        "softwareVersion": "1.5.0",
         "offers": {
           "@type": "Offer",
           "price": "39",
           "priceCurrency": "USD",
-          "availability": "https://schema.org/PreOrder"
+          "availability": "https://schema.org/InStock"
         },
-        "description": "五度圏ガイドとタイムライン編集でコード進行を高速に設計し、MIDIドラッグ&ドロップでDAWに運べる作曲支援プラグイン。",
+        "description": "タイムライン編集、五度圏、Reharmo、Arpeggio / Bassline、MIDIドラッグを書き出しまでつないだコード進行制作プラグイン。",
         "applicationSuite": "Chord Dock Suite",
-        "screenshot": "https://placehold.co/1200x630/png?text=Chord+Dock"
+        "screenshot": "https://k2get.github.io/chord-dock-site/assets/%E3%83%AA%E3%83%8F%E3%83%A2%E6%A9%9F%E8%83%BD%E3%81%AE%E5%85%A8%E4%BD%93%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88.png"
       }
     </script>
   </body>

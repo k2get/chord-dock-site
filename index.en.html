@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Chord Dock — Chord Progression Timeline & Circle of Fifths</title>
-    <meta name="description" content="Design chord progressions fast with timeline editing [Lite] and a Circle of Fifths guide [Extended]. Drag-and-drop MIDI to any DAW, save presets, and share across environments." />
+    <title>Chord Dock v1.5 — Chord Progressions, Reharmo, MIDI Drag</title>
+    <meta name="description" content="Chord Dock v1.5 brings timeline editing, Circle of Fifths, Reharmo, Arpeggio/Bassline, meter changes, and MIDI drag export into one chord-first composition workflow." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = { darkMode: 'class' };
@@ -55,7 +55,14 @@
     <style>
       :root { color-scheme: dark; }
       html { scroll-behavior: smooth; }
-      body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji'; }
+      body {
+        font-family: "Instrument Sans", system-ui, -apple-system, Segoe UI, sans-serif;
+        background:
+          radial-gradient(circle at 12% 20%, rgba(99, 102, 241, 0.18), transparent 24%),
+          radial-gradient(circle at 84% 18%, rgba(45, 212, 191, 0.15), transparent 24%),
+          linear-gradient(180deg, #0a0f1c 0%, #090d18 100%);
+      }
+      h1, h2, h3 { font-family: "Space Grotesk", "Instrument Sans", sans-serif; }
       .container { max-width: 1100px; }
       .badge { border: 1px solid rgb(229 231 235/1); }
       .kbd { border: 1px solid rgb(229 231 235/1); border-bottom-width: 3px; border-radius: 0.375rem; padding: 0.1rem 0.33rem; }
@@ -95,11 +102,11 @@
       }
     </style>
     <!-- Open Graph -->
-    <meta property="og:title" content="Chord Dock — Chord Progression Timeline & Circle of Fifths" />
-    <meta property="og:description" content="Design fast, save as presets, and share across DAWs. Circle of Fifths [Extended]." />
+    <meta property="og:title" content="Chord Dock v1.5 — Chord Progressions, Reharmo, MIDI Drag" />
+    <meta property="og:description" content="Timeline editing, Reharmo, Arpeggio/Bassline, and MIDI drag export in one chord-first composition plugin." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://example.github.io/chord-dock-site/en" />
-    <meta property="og:image" content="https://placehold.co/1200x630/png?text=Chord+Dock" />
+    <meta property="og:url" content="https://k2get.github.io/chord-dock-site/" />
+    <meta property="og:image" content="https://k2get.github.io/chord-dock-site/assets/%E3%83%AA%E3%83%8F%E3%83%A2%E6%A9%9F%E8%83%BD%E3%81%AE%E5%85%A8%E4%BD%93%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88.png" />
     <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body class="bg-white text-gray-900 dark:bg-neutral-950 dark:text-neutral-100">
@@ -112,8 +119,9 @@
         </a>
 	        <div class="hidden sm:flex items-center gap-4 text-sm">
 	          <a href="#features" class="hover:opacity-80">Features</a>
+	          <a href="#feature-details" class="hover:opacity-80">Workflow</a>
+	          <a href="#edition-comparison" class="hover:opacity-80">Compare</a>
 	          <a href="#requirements" class="hover:opacity-80">System Requirements</a>
-	          <a href="#daw" class="hover:opacity-80">DAW Support</a>
 	          <a href="#download" class="hover:opacity-80">Download</a>
 	          <a href="#activation" class="hover:opacity-80">Activation</a>
           <a href="#faq" class="hover:opacity-80">FAQ</a>
@@ -132,25 +140,25 @@
         <div class="grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight">
-              Get your chord progressions <span class="text-indigo-600">into shape fast</span><br />
-              Build your own library from past chord progressions — save and reuse them however you like
+              Build, reshape, and export <span class="text-indigo-400">chord progressions</span><br />
+              with the full v1.5 workflow
             </h1>
             <p class="mt-5 text-lg text-gray-600 dark:text-neutral-300">
-              Chord Dock helps you design progressions with timeline editing
-              <span class="align-middle badge rounded-lg px-2 py-1 text-xs">Lite</span>
-              and a Circle of Fifths guide
-              <span class="align-middle badge rounded-lg px-2 py-1 text-xs">Extended</span>, then drag-and-drop MIDI to any DAW. Toggle Triad/Tetrad, tensions and slash chords intuitively, and share progressions across DAWs.
+              Chord Dock v1.5 connects timeline editing, Circle of Fifths, Reharmo, Arpeggio / Bassline, meter changes, and MIDI drag export into one chord-first production workflow.
+            </p>
+            <p class="mt-4 text-sm text-gray-500 dark:text-neutral-400">
+              Lite and Extended now share the same installer. Unlock
+              <span class="align-middle badge rounded-lg px-2 py-1 text-xs">Extended</span>
+              features with your serial key after purchase.
             </p>
             <div class="mt-6 flex flex-wrap gap-3">
-              <a href="#download" class="rounded-xl px-5 py-3 text-base font-semibold bg-indigo-600 text-white shadow hover:bg-indigo-500">Download Lite</a>
-	              <a href="#download" class="rounded-xl px-5 py-3 text-base font-semibold bg-indigo-600 text-white shadow hover:bg-indigo-500">Buy Extended</a>
+              <a href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0" target="_blank" rel="noopener noreferrer" class="rounded-xl px-5 py-3 text-base font-semibold bg-indigo-600 text-white shadow hover:bg-indigo-500">Download Lite</a>
+              <a href="https://k2get.gumroad.com/l/jchokk" target="_blank" rel="noopener noreferrer" class="rounded-xl px-5 py-3 text-base font-semibold border border-indigo-400/40 text-indigo-100 shadow hover:bg-indigo-500/10">Buy Extended</a>
             </div>
-	            <div class="mt-4 flex flex-wrap gap-2 text-xs text-gray-600 dark:text-neutral-400">
-	              <span class="badge rounded-lg px-2 py-1">VST3</span>
-	              <span class="badge rounded-lg px-2 py-1">AU</span>
-	              <span class="badge rounded-lg px-2 py-1">AAX (Coming soon)</span>
-	              <span class="badge rounded-lg px-2 py-1">macOS / Windows</span>
-	            </div>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs text-gray-600 dark:text-neutral-400">
+              <span class="badge rounded-lg px-2 py-1">VST3 / AU</span>
+              <span class="badge rounded-lg px-2 py-1">macOS / Windows</span>
+            </div>
           </div>
           <div>
             <div class="aspect-video w-full overflow-hidden rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800 shadow bg-white dark:bg-neutral-900">
@@ -158,12 +166,12 @@
                 class="w-full h-full"
                 width="560"
                 height="315"
-		                src="https://www.youtube.com/embed/-qtRYyNskcM?si=S_Is77dLqB-2pM3L"
-		                title="YouTube video player"
-		                frameborder="0"
-		                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-		                referrerpolicy="strict-origin-when-cross-origin"
-		                allowfullscreen
+                src="https://www.youtube.com/embed/-qtRYyNskcM?si=S_Is77dLqB-2pM3L"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
               ></iframe>
             </div>
             <p class="mt-2 text-xs text-gray-500">
@@ -180,28 +188,28 @@
         <h2 class="text-2xl sm:text-3xl font-extrabold">Key Features</h2>
         <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
-            <h3 class="font-semibold">DAW‑agnostic progression format</h3>
-            <p class="mt-2 text-gray-600 dark:text-neutral-300">Edit → audition → drag MIDI. Keep the same progression across any DAW.</p>
+            <h3 class="font-semibold">One surface from edit to MIDI drag</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">Edit, audition, and export from the same place. Keep progression data portable across projects and DAWs.</p>
           </div>
           <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
-            <h3 class="font-semibold">Timeline editing × Circle of Fifths</h3>
-            <p class="mt-2 text-gray-600 dark:text-neutral-300">Drag/move/resize. Quick inversions and tensions. Diatonic suggestions speed up drafting.</p>
+            <h3 class="font-semibold">Timeline editing × Circle of Fifths × meter</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">Shape progression structure and harmonic direction together, with meter changes flowing into the rest of the workflow.</p>
           </div>
           <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
-            <h3 class="font-semibold">Section Clips for song parts</h3>
-            <p class="mt-2 text-gray-600 dark:text-neutral-300">Group Verse/Chorus into a colored clip. Move/duplicate as a unit, and double‑click to focus‑edit that section.</p>
+            <h3 class="font-semibold">Section Clips and Focus Edit</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">Treat Verse/Chorus as blocks, move or duplicate them as units, and focus-edit only the target section when needed.</p>
           </div>
           <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
-            <h3 class="font-semibold">Tensions & slash chords</h3>
-            <p class="mt-2 text-gray-600 dark:text-neutral-300">Visualize 9/11/13, set the bass for on‑chords. Clear superscript display.</p>
+            <h3 class="font-semibold">Reharmo preview before commit</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">Compare candidates, preview safely, and apply only the changes you want at the right level of scope.</p>
           </div>
           <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
-            <h3 class="font-semibold">Lightweight MIDI export</h3>
-            <p class="mt-2 text-gray-600 dark:text-neutral-300">Prioritize editing speed. Hand off to your favorite sound plugins anytime.</p>
+            <h3 class="font-semibold">Arpeggio / Bassline generation</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">Generate note material from a section, refine it if needed, then drag it straight into your DAW.</p>
           </div>
           <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
-            <h3 class="font-semibold">Start fast with presets</h3>
-            <p class="mt-2 text-gray-600 dark:text-neutral-300">Lite includes 10 editable presets. Extended unlocks 20 user presets and external sharing.</p>
+            <h3 class="font-semibold">Shared installer, gated feature tiers</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">Lite covers editing and export basics. Extended unlocks tensions, slash chords, Reharmo, Arpeggio, and save-related workflows.</p>
           </div>
         </div>
       </div>
@@ -226,22 +234,22 @@
         <!-- Row 2: text left / image right -->
         <div class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:minmax(0,1fr)_auto]">
           <div class="md:ml-auto max-w-xl">
-            <h3 class="text-xl font-semibold">Stay oriented with the Circle of Fifths</h3>
-            <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">See key centers and relationships. Pick diatonic/relative options quickly to keep consistency while adding variation.</p>
+            <h3 class="text-xl font-semibold">Compare Reharmo candidates before you apply them</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">Reharmo is one of the main v1.5 additions. Preview changes without destroying the original progression, then apply only the version you want. Switch between Chord Unit and Progression Unit depending on scope.</p>
           </div>
           <div class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72">
-            <img src="assets/五度圏.png" alt="Circle of Fifths screenshot" class="w-full h-full object-cover" />
+            <img src="assets/リハモ編集ウィンドウの進行単位生成.png" alt="Reharmo progression-unit screenshot" class="w-full h-full object-cover" />
           </div>
         </div>
 
         <!-- Row 3: image left / text right -->
         <div class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:auto_minmax(0,1fr)]" id="presets">
           <div class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72">
-            <img src="assets/プリセット.png" alt="Preset management screenshot" class="w-full h-full object-cover" />
+            <img src="assets/アルペジオ機能レイアウト.png" alt="Arpeggio layout screenshot" class="w-full h-full object-cover" />
           </div>
           <div>
-            <h3 class="text-xl font-semibold">Save, reuse, and share presets</h3>
-            <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">Save up to 20 user presets with Extended, and export/import as files to share across environments and projects.</p>
+            <h3 class="text-xl font-semibold">Generate Arpeggio / Bassline and drag it out</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">Generate note material from the selected section, refine it in the note editor when needed, and drag the resulting MIDI straight into your DAW.</p>
           </div>
         </div>
 
@@ -304,23 +312,23 @@
                 <td class="p-3">✔</td>
               </tr>
               <tr>
-                <td class="p-3">Change Section color</td>
+                <td class="p-3">Progression export / import</td>
+                <td class="p-3">✔</td>
+                <td class="p-3">✔</td>
+              </tr>
+              <tr>
+                <td class="p-3">Drag-and-drop MIDI export</td>
+                <td class="p-3">✔</td>
+                <td class="p-3">✔</td>
+              </tr>
+              <tr>
+                <td class="p-3">Circle of Fifths display</td>
                 <td class="p-3">—</td>
                 <td class="p-3">✔</td>
               </tr>
               <tr>
-                <td class="p-3">Custom chord colors (palette/timeline)</td>
+                <td class="p-3">Interactive Circle of Fifths actions</td>
                 <td class="p-3">—</td>
-                <td class="p-3">✔</td>
-              </tr>
-              <tr>
-                <td class="p-3">Major / Minor chords</td>
-                <td class="p-3">✔</td>
-                <td class="p-3">✔</td>
-              </tr>
-              <tr>
-                <td class="p-3">7th family (mMaj7 / m7b5 / dim / dim7)</td>
-                <td class="p-3">✔</td>
                 <td class="p-3">✔</td>
               </tr>
               <tr>
@@ -334,37 +342,42 @@
                 <td class="p-3">✔</td>
               </tr>
               <tr>
-                <td class="p-3">Circle of Fifths view</td>
+                <td class="p-3">Arpeggio / Bassline mode</td>
                 <td class="p-3">—</td>
                 <td class="p-3">✔</td>
               </tr>
               <tr>
-                <td class="p-3">ext Snap (advanced snapping)</td>
+                <td class="p-3">Arpeggio detailed parameters / note edit</td>
                 <td class="p-3">—</td>
                 <td class="p-3">✔</td>
               </tr>
               <tr>
-                <td class="p-3">ext Length (flexible Length editing)</td>
+                <td class="p-3">Reharmo mode</td>
                 <td class="p-3">—</td>
                 <td class="p-3">✔</td>
               </tr>
               <tr>
-                <td class="p-3">Drag-and-drop MIDI export</td>
-                <td class="p-3">✔</td>
+                <td class="p-3">Reharmo detailed parameters / note edit</td>
+                <td class="p-3">—</td>
                 <td class="p-3">✔</td>
               </tr>
               <tr>
-                <td class="p-3">Chord progression file export</td>
+                <td class="p-3">User preset save</td>
+                <td class="p-3">—</td>
                 <td class="p-3">✔</td>
+              </tr>
+              <tr>
+                <td class="p-3">Section recolor / custom themes</td>
+                <td class="p-3">—</td>
                 <td class="p-3">✔</td>
               </tr>
               <tr>
                 <td class="p-3">Best suited for</td>
                 <td class="p-3">
-                  Solid core workflow for building full progressions
+                  Drafting, exporting, and sharing progressions
                 </td>
                 <td class="p-3">
-                  Advanced harmony design and detailed production work
+                  Full production work including transformation and generation
                 </td>
               </tr>
             </tbody>
@@ -409,9 +422,9 @@
             <ul
               class="mt-2 list-disc ml-5 space-y-1 text-gray-700 dark:text-neutral-300"
             >
-              <li>Windows 10 / 11</li>
+              <li>Windows 10 or later (64-bit)</li>
               <li>VST3-compatible DAW</li>
-              <li>64-bit OS</li>
+              <li>Your installer package may also include AAX</li>
             </ul>
           </div>
           <div
@@ -421,9 +434,9 @@
             <ul
               class="mt-2 list-disc ml-5 space-y-1 text-gray-700 dark:text-neutral-300"
             >
-              <li>macOS 11 or later</li>
+              <li>macOS 10.15 or later (64-bit)</li>
               <li>Apple Silicon &amp; Intel supported</li>
-              <li>VST3 / AU-compatible DAW</li>
+              <li>VST3 / AU-compatible DAW (your installer package may also include AAX)</li>
             </ul>
           </div>
         </div>
@@ -438,17 +451,17 @@
           <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto h-full min-h-[16rem] flex flex-col w-full md:w-96">
             <h3 class="text-lg md:text-xl font-semibold">Lite (Free)</h3>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
-              Core timeline editing for chord tracks
-              <br />Flexible chord palette for transpose, inversions, and octave adjustments
+              Timeline editing
+              <br />Progression export / import
               <br />MIDI drag & drop
-              <br />Export and import chord progressions as files
-              <br />Includes 10 editable factory presets
+              <br />Circle of Fifths display
+              <br />Core tools for drafting and sharing progressions
             </p>
             <a href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0" target="_blank" rel="noopener noreferrer" class="mt-auto self-start inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">Download (Free)</a>
           </div>
           <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mr-auto h-full min-h-[16rem] flex flex-col w-full md:w-96" id="buy">
             <h3 class="text-lg md:text-xl font-semibold">Extended (Paid)</h3>
-            <p class="mt-2 text-gray-600 dark:text-neutral-300">Unlock Circle of Fifths, tensions/slash chords, and advanced visuals. Unlock 20 editable user presets.</p>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">Unlock tensions, slash chords, interactive Circle of Fifths, Arpeggio / Bassline, Reharmo, user preset save, and custom themes.</p>
             <div class="mt-1 text-xs text-gray-500">
               License: up to 2 devices per account.
               <br />
@@ -516,7 +529,17 @@
         </p>
         <div class="mt-6 max-w-3xl details-box">
           <details>
-            <summary>Q1. Can it auto-detect chords from audio or MIDI?</summary>
+            <summary>Q1. What is new in v1.5?</summary>
+            <div>
+              <p>
+                Version 1.5 expands the workflow with Reharmo, Arpeggio / Bassline,
+                section-based editing, Focus Edit, meter-aware generation, and drag export
+                for generated note material.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Q2. Can it auto-detect chords from audio or MIDI?</summary>
             <div>
               <p>
                 Not in scope. Chord Dock focuses on portability of progressions,
@@ -526,7 +549,7 @@
             </div>
           </details>
           <details>
-            <summary>Q2. How many devices per license?</summary>
+            <summary>Q3. How many devices per license?</summary>
             <div>
               <p>
                 Up to 2 devices per account can be activated at the same time.
@@ -535,37 +558,25 @@
             </div>
           </details>
           <details>
-            <summary>Q3. How do I activate Extended on a second PC?</summary>
+            <summary>Q4. Why do Reharmo or Arpeggio controls look disabled?</summary>
             <div>
-              <p>Follow these steps:</p>
+              <p>Check the following:</p>
               <ul>
-                <li>Install Chord Dock on the second PC.</li>
-                <li>On the second PC, open “Settings → License” and enter your serial key.</li>
-                <li>
-                  When your browser opens, log in to your Chord Dock account and approve that PC
-                  (online activation).
-                </li>
+                <li>Extended is activated.</li>
+                <li>A target section is selected.</li>
+                <li>The section length is within 16 bars.</li>
               </ul>
-              <p>
-                Once approval is complete, Extended is enabled on that PC as well. If both device
-                slots are already in use, deactivate an unused device first and then try again
-                (see also Q8).
-              </p>
-            </div>
-          </details>
-          <details>
-            <summary>Q4. Can I use it offline?</summary>
-            <div>
-              <p>
-                After activation, the local state is stored and you can use Chord Dock
-                offline in normal use.
-              </p>
             </div>
           </details>
 	          <details>
-	            <summary>Q5. Which plugin formats are supported?</summary>
+	            <summary>Q5. How do I activate Extended on a second PC?</summary>
 	            <div>
-	              <p>Currently supported: VST3 / AU. AAX (Pro Tools) is coming soon.</p>
+	              <p>Follow these steps:</p>
+	              <ul>
+	                <li>Install Chord Dock on the second PC.</li>
+	                <li>On the second PC, open “Settings → License” and enter your serial key.</li>
+	                <li>When your browser opens, log in to your Chord Dock account and approve that PC (online activation).</li>
+	              </ul>
 	            </div>
 	          </details>
           <details>
@@ -627,12 +638,9 @@
 	            <div>
 	              <p>Please check the following:</p>
 	              <ul>
-	                <li>VST3: supported in most major DAWs</li>
-	                <li>
-	                  AU: supported only in Logic Pro (GarageBand does not load AU MIDI
-	                  effects, so it is not supported)
-	                </li>
-	                <li>AAX: coming soon (Pro Tools is not supported yet)</li>
+	                <li>Installation completed successfully</li>
+	                <li>VST3 / AU plugin files were placed in the expected standard folders</li>
+	                <li>You are using a format included in the current installer package</li>
 	              </ul>
 	              <p>Additionally:</p>
 	              <ul>
@@ -642,12 +650,10 @@
 	            </div>
 	          </details>
 	          <details>
-	            <summary>Q11. Is AAX (Pro Tools) supported?</summary>
+	            <summary>Q11. Why is part of the timeline dimmed or greyed out?</summary>
 	            <div>
 	              <p>
-	                Not yet. AAX (Pro Tools) support is currently in development. We’ll announce availability on the <a href="update.html" class="hover:opacity-80 underline underline-offset-2">Update</a> page.
-	              </p>
-	              <p>For now, please use VST3 (and AU on macOS).</p>
+	                You are probably in Focus Edit Mode. While focus mode is active, only the selected section can be edited and everything outside it is dimmed. Press Esc to return to normal editing.
 	            </div>
 	          </details>
           <details>
@@ -728,14 +734,14 @@
           <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
 	            <h3 class="font-semibold">Plugin formats by OS</h3>
 	            <ul class="mt-2 list-disc ml-5 space-y-1 text-gray-700 dark:text-neutral-300">
-	              <li>macOS: VST3 / AU (AAX coming soon)</li>
-	              <li>Windows: VST3 (AAX coming soon)</li>
+	              <li>macOS: VST3 / AU, with some packages also including AAX</li>
+	              <li>Windows: VST3, with some packages also including AAX</li>
 	            </ul>
 	          </div>
           <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
 	            <h3 class="font-semibold">Representative hosts</h3>
 	            <ul class="mt-2 list-disc ml-5 space-y-1 text-gray-700 dark:text-neutral-300">
-	              <li>Logic Pro, SONAR / Cakewalk, Cubase, FL Studio, Live, Studio One (Pro Tools support coming soon via AAX)</li>
+	              <li>Logic Pro, SONAR / Cakewalk, Cubase, FL Studio, Live, Studio One, Reaper, and other common VST3 / AU / AAX hosts</li>
 	              <li>We will add other hosts or version‑specific notes here as they are confirmed.</li>
 	            </ul>
 	          </div>
@@ -783,16 +789,16 @@
       "name": "Chord Dock",
       "applicationCategory": "MusicProductionSoftware",
       "operatingSystem": "macOS, Windows",
-      "softwareVersion": "1.0",
+      "softwareVersion": "1.5.0",
       "offers": {
         "@type": "Offer",
         "price": "39",
         "priceCurrency": "USD",
-        "availability": "https://schema.org/PreOrder"
+        "availability": "https://schema.org/InStock"
       },
-      "description": "Design chord progressions fast with a timeline editor and a Circle of Fifths guide, then drag-and-drop MIDI to your DAW.",
+      "description": "Build, transform, and export chord progressions with timeline editing, Reharmo, Arpeggio / Bassline, and MIDI drag export.",
       "applicationSuite": "Chord Dock Suite",
-      "screenshot": "https://placehold.co/1200x630/png?text=Chord+Dock",
+      "screenshot": "https://k2get.github.io/chord-dock-site/assets/%E3%83%AA%E3%83%8F%E3%83%A2%E6%A9%9F%E8%83%BD%E3%81%AE%E5%85%A8%E4%BD%93%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88.png",
       "inLanguage": "en"
     }
     </script>
