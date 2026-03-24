@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Chord Dock v1.5 — コード進行・Reharmo・MIDIドラッグ</title>
+    <title>Chord Dock v1.5 — タイムラインでコード進行を可視化、リハーモナイズ、生成</title>
     <meta
       name="description"
-      content="Chord Dock v1.5 は、タイムライン編集、五度圏、Reharmo、Arpeggio/Bassline、拍子変更、MIDIドラッグを1つにまとめたコード進行制作プラグインです。"
+      content="Chord Dock v1.5 は、コードトラックのように進行全体を見渡しながら編集し、リハーモナイズやアルペジオ / ベースライン生成まで行えるコード進行制作プラグインです。"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -131,11 +131,11 @@
     <!-- Open Graph -->
     <meta
       property="og:title"
-      content="Chord Dock v1.5 — コード進行・Reharmo・MIDIドラッグ"
+      content="Chord Dock v1.5 — タイムラインでコード進行を可視化、リハーモナイズ、生成"
     />
 	    <meta
       property="og:description"
-      content="タイムライン編集、Reharmo、Arpeggio/Bassline、MIDIドラッグをつないだコード先行制作プラグイン。"
+      content="コードトラックのように進行全体を見渡しながら編集し、リハーモナイズやアルペジオ / ベースライン生成まで行えるコード進行制作プラグイン。"
     />
     <meta property="og:type" content="website" />
     <meta
@@ -183,10 +183,12 @@
             >English</a
           >
           <a
-            href="#download"
+            href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0"
+            target="_blank"
+            rel="noopener noreferrer"
             class="inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-sm font-semibold bg-indigo-600 text-white shadow hover:bg-indigo-500"
           >
-            今すぐ試す
+            無料版を試す
           </a>
         </div>
       </nav>
@@ -200,18 +202,18 @@
             <h1
               class="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight"
             >
-              コード進行を<span class="text-indigo-400">組む・変える・渡す</span><br />
-              Reharmo までつながる v1.5
+              コード進行を<span class="text-indigo-400">組み、可視化し、共有。</span><br />
+              <span class="text-indigo-400">リハーモナイズ</span>までつながる コードトラックプラグイン
             </h1>
             <p class="mt-5 text-lg text-gray-600 dark:text-neutral-300">
-              Chord Dock v1.5 は、タイムライン編集を土台に、五度圏、Reharmo、Arpeggio / Bassline、拍子変更、MIDIドラッグまでをひとつの制作フローにまとめた作曲支援プラグインです。
+              Chord Dock v1.5 は、タイムライン編集を土台に、五度圏、リハーモナイズ、アルペジオ / ベースライン、拍子変更、MIDIドラッグまでをひとつの制作フローにまとめた作曲支援プラグインです。
             </p>
             <p class="mt-4 text-sm text-gray-500 dark:text-neutral-400">
-              Lite / Extended は共通インストーラーです。購入後はシリアルキーで
+              Lite / Extended は共通インストーラーです。まずは Lite を無料で試し、必要に応じて
               <span class="align-middle badge rounded-lg px-2 py-1 text-xs"
                 >Extended</span
               >
-              機能を有効化できます。
+              の機能をそのまま解放できます。
             </p>
             <div class="mt-6 flex flex-wrap gap-3">
               <a
@@ -219,19 +221,30 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="rounded-xl px-5 py-3 text-base font-semibold bg-indigo-600 text-white shadow hover:bg-indigo-500"
-                >無料版をダウンロード</a
+                >Lite を無料で試す</a
               >
+              <a
+                href="#start-free"
+                class="rounded-xl px-5 py-3 text-base font-semibold border border-indigo-400/40 text-indigo-100 shadow hover:bg-indigo-500/10"
+                >Extendedで広がる機能</a
+              >
+            </div>
+            <p class="mt-4 text-sm text-gray-500 dark:text-neutral-400">
+              最初から拡張機能を使いたい場合は
               <a
                 href="https://k2get.gumroad.com/l/jchokk"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="rounded-xl px-5 py-3 text-base font-semibold border border-indigo-400/40 text-indigo-100 shadow hover:bg-indigo-500/10"
-                >Extended を購入</a
-              >
-            </div>
+                class="font-semibold text-indigo-300 hover:text-indigo-200 underline underline-offset-4"
+                >Extended を選べます</a
+              >。
+            </p>
             <div
               class="mt-4 flex flex-wrap gap-2 text-xs text-gray-600 dark:text-neutral-400"
             >
+              <span class="badge rounded-lg px-2 py-1">Liteはシリアル不要</span>
+              <span class="badge rounded-lg px-2 py-1">共通インストーラー</span>
+              <span class="badge rounded-lg px-2 py-1">後からアップグレード</span>
               <span class="badge rounded-lg px-2 py-1">VST3 / AU</span>
               <span class="badge rounded-lg px-2 py-1">macOS / Windows</span>
             </div>
@@ -255,6 +268,59 @@
             <p class="mt-2 text-xs text-gray-500">
               ※ Chord Dock の概要紹介動画です。
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="start-free">
+      <div class="container mx-auto px-4 py-6">
+        <div
+          class="rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800 bg-white/70 dark:bg-neutral-900/70 p-6 sm:p-8"
+        >
+          <h2 class="text-2xl sm:text-3xl font-extrabold">
+            Liteで試せて、Extendedで広がる
+          </h2>
+          <p class="mt-3 text-gray-600 dark:text-neutral-300">
+            Lite でワークフローと DAW での使い勝手を確認し、制作をさらに進めたくなったタイミングで、Extended の発展機能をそのまま解放できます。
+          </p>
+          <div class="mt-6 grid gap-6 md:grid-cols-2 text-sm">
+            <div
+              class="rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 p-6"
+            >
+              <h3 class="text-lg font-semibold">Lite: 基本ワークフローを無料で</h3>
+              <ul class="mt-3 list-disc ml-5 space-y-2 text-gray-700 dark:text-neutral-300">
+                <li>タイムラインでコード進行を作成</li>
+                <li>Sections / Focus Edit で構成を整理</li>
+                <li>MIDI をドラッグしてそのまま書き出し</li>
+                <li>進行データを保存・再利用</li>
+              </ul>
+              <a
+                href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-5 inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500"
+                >無料版をダウンロード</a
+              >
+            </div>
+            <div
+              class="rounded-2xl ring-2 ring-indigo-400/40 dark:ring-indigo-400/40 bg-white/60 dark:bg-neutral-900/60 p-6"
+            >
+              <h3 class="text-lg font-semibold">Extended: 発展と変形まで一気に</h3>
+              <ul class="mt-3 list-disc ml-5 space-y-2 text-gray-700 dark:text-neutral-300">
+                <li>リハーモナイズで候補を比較しながら適用</li>
+                <li>選択セクションからアルペジオ / ベースラインを生成</li>
+                <li>テンション、スラッシュ、五度圏ツールを解放</li>
+                <li>細かい Snap / Length で詰めた編集が可能</li>
+              </ul>
+              <a
+                href="https://k2get.gumroad.com/l/jchokk"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-5 inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500"
+                >Extended を購入</a
+              >
+            </div>
           </div>
         </div>
       </div>
@@ -315,7 +381,7 @@
           <div
             class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto"
           >
-            <h3 class="font-semibold">Reharmo で比較してから適用</h3>
+            <h3 class="font-semibold">リハーモナイズで比較してから適用</h3>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
               候補を比較しながら元の進行を壊さずにプレビュー。Chord Unit / Progression Unit を切り替えて変形できます。
             </p>
@@ -323,7 +389,7 @@
           <div
             class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto"
           >
-            <h3 class="font-semibold">Arpeggio / Bassline 生成</h3>
+            <h3 class="font-semibold">アルペジオ / ベースライン生成</h3>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
               選択セクションから生成ノートを作成し、そのまま DAW へドラッグ。必要ならノート編集ウィンドウで追い込めます。
             </p>
@@ -333,7 +399,7 @@
           >
             <h3 class="font-semibold">共通インストーラーで段階解放</h3>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
-              Lite は編集と書き出しの土台、Extended はテンション、スラッシュ、Reharmo、Arpeggio、保存系機能まで広げる構成です。
+              Lite は編集と書き出しの土台、Extended はテンション、スラッシュ、リハーモナイズ、アルペジオ、保存系機能まで広げる構成です。
             </p>
           </div>
         </div>
@@ -374,11 +440,11 @@
           class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:minmax(0,1fr)_auto]"
         >
           <div class="md:ml-auto max-w-xl">
-            <h3 class="text-xl font-semibold">Reharmo で候補を比較してから適用</h3>
+            <h3 class="text-xl font-semibold">リハーモナイズで候補を比較してから適用</h3>
             <p
               class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed"
             >
-              v1.5 の大きな軸が Reharmo です。候補を比較し、元の進行を残したままプレビューし、必要なタイミングでだけ Apply できます。Chord Unit / Progression Unit の切り替えにも対応します。
+              v1.5 の大きな軸がリハーモナイズです。候補を比較し、元の進行を残したままプレビューし、必要なタイミングでだけ Apply できます。Chord Unit / Progression Unit の切り替えにも対応します。
             </p>
           </div>
           <div
@@ -386,7 +452,7 @@
           >
             <img
               src="assets/リハモ編集ウィンドウの進行単位生成.png"
-              alt="Reharmo の進行単位生成"
+              alt="リハーモナイズの進行単位生成"
               class="w-full h-full object-cover"
             />
           </div>
@@ -407,7 +473,7 @@
             />
           </div>
           <div>
-            <h3 class="text-xl font-semibold">Arpeggio / Bassline をそのまま DAW へ</h3>
+            <h3 class="text-xl font-semibold">アルペジオ / ベースラインをそのまま DAW へ</h3>
             <p
               class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed"
             >
@@ -533,7 +599,7 @@
                 <td class="p-3">✔</td>
               </tr>
               <tr>
-                <td class="p-3">Arpeggio / Bassline モード</td>
+                <td class="p-3">アルペジオ / ベースライン モード</td>
                 <td class="p-3">—</td>
                 <td class="p-3">✔</td>
               </tr>
@@ -543,12 +609,12 @@
                 <td class="p-3">✔</td>
               </tr>
               <tr>
-                <td class="p-3">Reharmo モード</td>
+                <td class="p-3">リハーモナイズモード</td>
                 <td class="p-3">—</td>
                 <td class="p-3">✔</td>
               </tr>
               <tr>
-                <td class="p-3">Reharmo の詳細パラメータ / ノート編集</td>
+                <td class="p-3">リハーモナイズの詳細パラメータ / ノート編集</td>
                 <td class="p-3">—</td>
                 <td class="p-3">✔</td>
               </tr>
@@ -665,7 +731,7 @@
             <h3 class="text-lg md:text-xl font-semibold">Extended（有料）</h3>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
               テンション / スラッシュ / インタラクティブ五度圏を解放
-              <br />Arpeggio / Bassline、Reharmo、詳細パラメータを解放
+              <br />アルペジオ / ベースライン、リハーモナイズ、詳細パラメータを解放
               <br />ユーザープリセット保存、色変更、カスタムテーマに対応
             </p>
             <div class="mt-1 text-xs text-gray-500">
@@ -746,7 +812,7 @@
             </summary>
             <div>
               <p>
-                v1.5 では、従来のタイムライン編集に加えて、Reharmo、Arpeggio / Bassline、
+                v1.5 では、従来のタイムライン編集に加えて、リハーモナイズ、アルペジオ / ベースライン、
                 セクション管理、フォーカス編集、拍子変更連動、生成ノートのドラッグエクスポートが
                 制作フローとしてまとまりました。
               </p>
@@ -776,7 +842,7 @@
           </details>
           <details>
             <summary>
-              Q4. Reharmo や Arpeggio の UI が無効です
+              Q4. リハーモナイズやアルペジオの UI が無効です
             </summary>
             <div>
               <p>次を確認してください：</p>
@@ -1018,7 +1084,7 @@
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock"
         },
-        "description": "タイムライン編集、五度圏、Reharmo、Arpeggio / Bassline、MIDIドラッグを書き出しまでつないだコード進行制作プラグイン。",
+        "description": "タイムライン編集、五度圏、リハーモナイズ、アルペジオ / ベースライン、MIDIドラッグを書き出しまでつないだコード進行制作プラグイン。",
         "applicationSuite": "Chord Dock Suite",
         "screenshot": "https://k2get.github.io/chord-dock-site/assets/%E3%83%AA%E3%83%8F%E3%83%A2%E6%A9%9F%E8%83%BD%E3%81%AE%E5%85%A8%E4%BD%93%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88.png"
       }

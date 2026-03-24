@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Chord Dock v1.5 — Chord Progressions, Reharmo, MIDI Drag</title>
-    <meta name="description" content="Chord Dock v1.5 brings timeline editing, Circle of Fifths, Reharmo, Arpeggio/Bassline, meter changes, and MIDI drag export into one chord-first composition workflow." />
+    <title>Chord Dock v1.5 — Timeline Chord Editing, Reharmonization, and Generation</title>
+    <meta name="description" content="Chord Dock v1.5 gives you a chord-track-style workflow for DAWs without one built in. Visualize chord progressions on a timeline, then reharmonize them and generate Arpeggio / Bassline in the same flow." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -102,8 +102,8 @@
       }
     </style>
     <!-- Open Graph -->
-    <meta property="og:title" content="Chord Dock v1.5 — Chord Progressions, Reharmo, MIDI Drag" />
-    <meta property="og:description" content="Timeline editing, Reharmo, Arpeggio/Bassline, and MIDI drag export in one chord-first composition plugin." />
+    <meta property="og:title" content="Chord Dock v1.5 — Timeline Chord Editing, Reharmonization, and Generation" />
+    <meta property="og:description" content="A chord-track-style workflow for DAWs without one built in. Visualize chord progressions, reharmonize them, and generate Arpeggio / Bassline in one flow." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://k2get.github.io/chord-dock-site/" />
     <meta property="og:image" content="https://k2get.github.io/chord-dock-site/assets/%E3%83%AA%E3%83%8F%E3%83%A2%E6%A9%9F%E8%83%BD%E3%81%AE%E5%85%A8%E4%BD%93%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88.png" />
@@ -129,7 +129,7 @@
         </div>
         <div class="flex items-center gap-2">
           <a id="langJP" href="index.html" class="inline-flex items-center rounded-xl px-3 py-2 text-sm font-medium border border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover-bg-neutral-800">日本語</a>
-          <a href="#download" class="inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-sm font-semibold bg-indigo-600 text-white shadow hover:bg-indigo-500">Try Now</a>
+          <a href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-sm font-semibold bg-indigo-600 text-white shadow hover:bg-indigo-500">Start Free</a>
         </div>
       </nav>
     </header>
@@ -140,22 +140,29 @@
         <div class="grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight">
-              Build, reshape, and export <span class="text-indigo-400">chord progressions</span><br />
-              with the full v1.5 workflow
+              Build, visualize, and share <span class="text-indigo-400">chord progressions.</span><br />
+              A chord-track-style workflow with <span class="text-indigo-400">reharmonization</span>
             </h1>
             <p class="mt-5 text-lg text-gray-600 dark:text-neutral-300">
-              Chord Dock v1.5 connects timeline editing, Circle of Fifths, Reharmo, Arpeggio / Bassline, meter changes, and MIDI drag export into one chord-first production workflow.
+              Chord Dock v1.5 lets you see the whole progression on a timeline, edit it visually, then reharmonize it and generate section-based Arpeggio / Bassline from the same progression.
             </p>
             <p class="mt-4 text-sm text-gray-500 dark:text-neutral-400">
-              Lite and Extended now share the same installer. Unlock
+              Lite and Extended share the same installer. Start with Lite for free, then unlock
               <span class="align-middle badge rounded-lg px-2 py-1 text-xs">Extended</span>
-              features with your serial key after purchase.
+              whenever you need more.
             </p>
             <div class="mt-6 flex flex-wrap gap-3">
-              <a href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0" target="_blank" rel="noopener noreferrer" class="rounded-xl px-5 py-3 text-base font-semibold bg-indigo-600 text-white shadow hover:bg-indigo-500">Download Lite</a>
-              <a href="https://k2get.gumroad.com/l/jchokk" target="_blank" rel="noopener noreferrer" class="rounded-xl px-5 py-3 text-base font-semibold border border-indigo-400/40 text-indigo-100 shadow hover:bg-indigo-500/10">Buy Extended</a>
+              <a href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0" target="_blank" rel="noopener noreferrer" class="rounded-xl px-5 py-3 text-base font-semibold bg-indigo-600 text-white shadow hover:bg-indigo-500">Start Free with Lite</a>
+              <a href="#start-free" class="rounded-xl px-5 py-3 text-base font-semibold border border-indigo-400/40 text-indigo-100 shadow hover:bg-indigo-500/10">See What Extended Unlocks</a>
             </div>
+            <p class="mt-4 text-sm text-gray-500 dark:text-neutral-400">
+              Want the full feature set from the start?
+              <a href="https://k2get.gumroad.com/l/jchokk" target="_blank" rel="noopener noreferrer" class="font-semibold text-indigo-300 hover:text-indigo-200 underline underline-offset-4">Buy Extended</a>.
+            </p>
             <div class="mt-4 flex flex-wrap gap-2 text-xs text-gray-600 dark:text-neutral-400">
+              <span class="badge rounded-lg px-2 py-1">Lite: no serial</span>
+              <span class="badge rounded-lg px-2 py-1">Same installer</span>
+              <span class="badge rounded-lg px-2 py-1">Upgrade later</span>
               <span class="badge rounded-lg px-2 py-1">VST3 / AU</span>
               <span class="badge rounded-lg px-2 py-1">macOS / Windows</span>
             </div>
@@ -177,6 +184,43 @@
             <p class="mt-2 text-xs text-gray-500">
               Video overview of Chord Dock (English).
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="start-free">
+      <div class="container mx-auto px-4 py-6">
+        <div class="rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800 bg-white/70 dark:bg-neutral-900/70 p-6 sm:p-8">
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <h2 class="text-2xl sm:text-3xl font-extrabold">Start Free. Go Further with Extended.</h2>
+              <p class="mt-3 text-gray-600 dark:text-neutral-300">
+                Use Lite to confirm the core workflow, DAW routing, and MIDI export flow first. When you are ready for deeper harmonic editing and generation tools, unlock Extended without changing the way you work.
+              </p>
+            </div>
+          </div>
+          <div class="mt-6 grid gap-6 md:grid-cols-2 text-sm">
+            <div class="rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 p-6">
+              <h3 class="text-lg font-semibold">Lite: core workflow, free</h3>
+              <ul class="mt-3 list-disc ml-5 space-y-2 text-gray-700 dark:text-neutral-300">
+                <li>Build chord progressions on the timeline</li>
+                <li>Use Sections and Focus Edit for arrangement structure</li>
+                <li>Export progression MIDI with drag and drop</li>
+                <li>Save and reuse progression data across projects</li>
+              </ul>
+              <a href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">Download Lite Free</a>
+            </div>
+            <div class="rounded-2xl ring-2 ring-indigo-400/40 dark:ring-indigo-400/40 bg-white/60 dark:bg-neutral-900/60 p-6">
+              <h3 class="text-lg font-semibold">Extended: develop and transform ideas</h3>
+              <ul class="mt-3 list-disc ml-5 space-y-2 text-gray-700 dark:text-neutral-300">
+                <li>Compare and apply Reharmo ideas safely</li>
+                <li>Generate Arpeggio / Bassline from a selected section</li>
+                <li>Add tensions, slash chords, and Circle of Fifths tools</li>
+                <li>Unlock finer Snap / Length control for detailed editing</li>
+              </ul>
+              <a href="https://k2get.gumroad.com/l/jchokk" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">Buy Extended</a>
+            </div>
           </div>
         </div>
       </div>
