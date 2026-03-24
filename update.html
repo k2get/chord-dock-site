@@ -1,496 +1,638 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ChordDock アップデートページ</title>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3MCR5K6MP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag('js', new Date());
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChordDock アップデートページ</title>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-V3MCR5K6MP"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
 
-  gtag('config', 'G-V3MCR5K6MP');
-</script>
-<style>
-body.lang-en .lang-ja {
-    display: none;
-}
-body.lang-en .lang-en {
-    display: inline;
-}
-body.lang-ja .lang-en {
-    display: none;
-}
-body.lang-ja .lang-ja {
-    display: inline;
-}
-body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background: #0b0c10;
-    color: #f5f5f5;
-}
-header {
-    padding: 2.5rem 1.5rem 1.5rem;
-    background: radial-gradient(circle at top, #202642, #050608);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-header h1 {
-    margin: 0 0 0.5rem;
-    font-size: 1.8rem;
-}
-header p {
-    margin: 0.25rem 0;
-    max-width: 720px;
-    color: #c6c9d3;
-}
-.lang-switch {
-    font-size: 0.8rem;
-    color: #b5b9c8;
-}
-.lang-switch button {
-    margin-left: 0.4rem;
-    padding: 0.15rem 0.5rem;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    background: transparent;
-    color: #e4e7f5;
-    font-size: 0.8rem;
-    cursor: pointer;
-}
-.lang-switch button.active {
-    background: rgba(143, 157, 255, 0.18);
-    border-color: rgba(143, 157, 255, 0.9);
-}
-main {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 1.5rem;
-}
-nav.quick-nav {
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-}
-nav.quick-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    flex: 1 1 auto;
-}
-nav.quick-nav a {
-    display: inline-block;
-    padding: 0.4rem 0.9rem;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    background: rgba(15, 18, 30, 0.95);
-    color: #e4e7f5;
-    font-size: 0.85rem;
-    text-decoration: none;
-}
-nav.quick-nav a:hover {
-    border-color: rgba(143, 157, 255, 0.9);
-    background: rgba(22, 26, 44, 0.98);
-}
+      gtag('config', 'G-V3MCR5K6MP');
+    </script>
+    <style>
+      body.lang-en .lang-ja {
+        display: none;
+      }
+      body.lang-en .lang-en {
+        display: inline;
+      }
+      body.lang-ja .lang-en {
+        display: none;
+      }
+      body.lang-ja .lang-ja {
+        display: inline;
+      }
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background: #0b0c10;
+        color: #f5f5f5;
+      }
+      header {
+        padding: 2.5rem 1.5rem 1.5rem;
+        background: radial-gradient(circle at top, #202642, #050608);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      header h1 {
+        margin: 0 0 0.5rem;
+        font-size: 1.8rem;
+      }
+      header p {
+        margin: 0.25rem 0;
+        max-width: 720px;
+        color: #c6c9d3;
+      }
+      .lang-switch {
+        font-size: 0.8rem;
+        color: #b5b9c8;
+      }
+      .lang-switch button {
+        margin-left: 0.4rem;
+        padding: 0.15rem 0.5rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: transparent;
+        color: #e4e7f5;
+        font-size: 0.8rem;
+        cursor: pointer;
+      }
+      .lang-switch button.active {
+        background: rgba(143, 157, 255, 0.18);
+        border-color: rgba(143, 157, 255, 0.9);
+      }
+      main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      nav.quick-nav {
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      nav.quick-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        flex: 1 1 auto;
+      }
+      nav.quick-nav a {
+        display: inline-block;
+        padding: 0.4rem 0.9rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(15, 18, 30, 0.95);
+        color: #e4e7f5;
+        font-size: 0.85rem;
+        text-decoration: none;
+      }
+      nav.quick-nav a:hover {
+        border-color: rgba(143, 157, 255, 0.9);
+        background: rgba(22, 26, 44, 0.98);
+      }
 
-
-.nav-card h2 {
-    margin: 0 0 0.25rem;
-    font-size: 1rem;
-}
-.nav-card p {
-    margin: 0;
-    font-size: 0.85rem;
-    color: #b2b6c5;
-}
-section {
-    margin-bottom: 2.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-section:last-of-type {
-    border-bottom: none;
-}
-section h2 {
-    margin-top: 0;
-    font-size: 1.3rem;
-    margin-bottom: 0.75rem;
-}
-.tagline {
-    font-size: 0.85rem;
-    color: #b5b9c8;
-    margin-bottom: 1.25rem;
-}
-.os-blocks {
-    display: grid;
-    gap: 1rem;
-}
-@media (min-width: 720px) {
-    .os-blocks {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-.os-card {
-    padding: 1rem;
-    border-radius: 0.75rem;
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    background: rgba(11, 13, 22, 0.95);
-}
-.os-card h3 {
-    margin-top: 0;
-    font-size: 1rem;
-}
-.version-label {
-    font-size: 0.85rem;
-    color: #a7abc0;
-    margin-bottom: 0.5rem;
-}
-.download-button {
-    display: inline-block;
-    margin-top: 0.3rem;
-    padding: 0.6rem 1.1rem;
-    border-radius: 999px;
-    border: none;
-    background: linear-gradient(135deg, #4f8cff, #8f5dff);
-    color: #fff;
-    font-size: 0.9rem;
-    text-decoration: none;
-    font-weight: 500;
-    cursor: pointer;
-}
-.download-button:hover {
-    filter: brightness(1.08);
-}
-.note {
-    font-size: 0.8rem;
-    color: #9ca1b5;
-    margin-top: 0.6rem;
-}
-.highlight {
-    color: #cbe0ff;
-}
-.license-box {
-    padding: 1rem;
-    border-radius: 0.75rem;
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    background: rgba(11, 13, 22, 0.95);
-    font-size: 0.9rem;
-}
-.license-box ul {
-    margin-top: 0.4rem;
-    padding-left: 1.25rem;
-}
-.license-box li {
-    margin-bottom: 0.25rem;
-}
-.release-notes {
-    font-size: 0.9rem;
-}
-.release-notes h3 {
-    margin-bottom: 0.3rem;
-    font-size: 1rem;
-}
-.release-item {
-    margin-bottom: 0.75rem;
-}
-.release-date {
-    font-size: 0.8rem;
-    color: #9ca1b5;
-}
-.details-box details {
-    margin-bottom: 0.6rem;
-    border-radius: 0.6rem;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    background: rgba(9, 11, 20, 0.95);
-    padding: 0.5rem 0.75rem;
-}
-.details-box summary {
-    cursor: pointer;
-    list-style: none;
-    font-size: 0.9rem;
-}
-.details-box details[open] {
-    border-color: rgba(143, 157, 255, 0.8);
-}
-.details-box summary::before {
-    content: '▶';
-    display: inline-block;
-    margin-right: 0.5rem;
-    font-size: 0.7rem;
-    transform: translateY(-1px);
-}
-.details-box details[open] summary::before {
-    content: '▼';
-}
-details div {
-    margin-top: 0.4rem;
-    font-size: 0.85rem;
-    color: #d3d6e3;
-}
-footer {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 1.5rem 2rem;
-    font-size: 0.8rem;
-    color: #8e93a5;
-}
-</style>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    function applyLang(lang) {
-        var normalized = (lang === 'en') ? 'en' : 'ja';
-        document.documentElement.lang = normalized;
-        document.body.classList.remove('lang-ja', 'lang-en');
-        document.body.classList.add('lang-' + normalized);
-        var jaBtn = document.getElementById('lang-ja-btn');
-        var enBtn = document.getElementById('lang-en-btn');
-        if (jaBtn && enBtn) {
+      .nav-card h2 {
+        margin: 0 0 0.25rem;
+        font-size: 1rem;
+      }
+      .nav-card p {
+        margin: 0;
+        font-size: 0.85rem;
+        color: #b2b6c5;
+      }
+      section {
+        margin-bottom: 2.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      section:last-of-type {
+        border-bottom: none;
+      }
+      section h2 {
+        margin-top: 0;
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
+      }
+      .tagline {
+        font-size: 0.85rem;
+        color: #b5b9c8;
+        margin-bottom: 1.25rem;
+      }
+      .os-blocks {
+        display: grid;
+        gap: 1rem;
+      }
+      @media (min-width: 720px) {
+        .os-blocks {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .os-card {
+        padding: 1rem;
+        border-radius: 0.75rem;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        background: rgba(11, 13, 22, 0.95);
+      }
+      .os-card h3 {
+        margin-top: 0;
+        font-size: 1rem;
+      }
+      .version-label {
+        font-size: 0.85rem;
+        color: #a7abc0;
+        margin-bottom: 0.5rem;
+      }
+      .download-button {
+        display: inline-block;
+        margin-top: 0.3rem;
+        padding: 0.6rem 1.1rem;
+        border-radius: 999px;
+        border: none;
+        background: linear-gradient(135deg, #4f8cff, #8f5dff);
+        color: #fff;
+        font-size: 0.9rem;
+        text-decoration: none;
+        font-weight: 500;
+        cursor: pointer;
+      }
+      .download-button:hover {
+        filter: brightness(1.08);
+      }
+      .note {
+        font-size: 0.8rem;
+        color: #9ca1b5;
+        margin-top: 0.6rem;
+      }
+      .highlight {
+        color: #cbe0ff;
+      }
+      .license-box {
+        padding: 1rem;
+        border-radius: 0.75rem;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        background: rgba(11, 13, 22, 0.95);
+        font-size: 0.9rem;
+      }
+      .license-box ul {
+        margin-top: 0.4rem;
+        padding-left: 1.25rem;
+      }
+      .license-box li {
+        margin-bottom: 0.25rem;
+      }
+      .release-notes {
+        font-size: 0.9rem;
+      }
+      .release-notes h3 {
+        margin-bottom: 0.3rem;
+        font-size: 1rem;
+      }
+      .release-item {
+        margin-bottom: 0.75rem;
+      }
+      .release-date {
+        font-size: 0.8rem;
+        color: #9ca1b5;
+      }
+      .details-box details {
+        margin-bottom: 0.6rem;
+        border-radius: 0.6rem;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        background: rgba(9, 11, 20, 0.95);
+        padding: 0.5rem 0.75rem;
+      }
+      .details-box summary {
+        cursor: pointer;
+        list-style: none;
+        font-size: 0.9rem;
+      }
+      .details-box details[open] {
+        border-color: rgba(143, 157, 255, 0.8);
+      }
+      .details-box summary::before {
+        content: '▶';
+        display: inline-block;
+        margin-right: 0.5rem;
+        font-size: 0.7rem;
+        transform: translateY(-1px);
+      }
+      .details-box details[open] summary::before {
+        content: '▼';
+      }
+      details div {
+        margin-top: 0.4rem;
+        font-size: 0.85rem;
+        color: #d3d6e3;
+      }
+      footer {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 1.5rem 2rem;
+        font-size: 0.8rem;
+        color: #8e93a5;
+      }
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        function applyLang(lang) {
+          var normalized = lang === 'en' ? 'en' : 'ja';
+          document.documentElement.lang = normalized;
+          document.body.classList.remove('lang-ja', 'lang-en');
+          document.body.classList.add('lang-' + normalized);
+          var jaBtn = document.getElementById('lang-ja-btn');
+          var enBtn = document.getElementById('lang-en-btn');
+          if (jaBtn && enBtn) {
             jaBtn.classList.toggle('active', normalized === 'ja');
             enBtn.classList.toggle('active', normalized === 'en');
-        }
-        try {
+          }
+          try {
             localStorage.setItem('chorddockLang', normalized);
-        } catch (e) {
+          } catch (e) {
             /* ignore */
+          }
         }
-    }
 
-    var stored = null;
-    try {
-        stored = localStorage.getItem('chorddockLang');
-    } catch (e) {
-        stored = null;
-    }
+        var stored = null;
+        try {
+          stored = localStorage.getItem('chorddockLang');
+        } catch (e) {
+          stored = null;
+        }
 
-    if (stored === 'ja' || stored === 'en') {
-        applyLang(stored);
-    } else {
-        var browserLang = (navigator.language || navigator.userLanguage || 'ja').toLowerCase();
-        if (browserLang.indexOf('en') === 0) {
-            applyLang('en');
+        if (stored === 'ja' || stored === 'en') {
+          applyLang(stored);
         } else {
+          var browserLang = (
+            navigator.language ||
+            navigator.userLanguage ||
+            'ja'
+          ).toLowerCase();
+          if (browserLang.indexOf('en') === 0) {
+            applyLang('en');
+          } else {
             applyLang('ja');
+          }
         }
-    }
 
-    var jaBtnClick = document.getElementById('lang-ja-btn');
-    var enBtnClick = document.getElementById('lang-en-btn');
-    if (jaBtnClick) {
-        jaBtnClick.addEventListener('click', function () { applyLang('ja'); });
-    }
-    if (enBtnClick) {
-        enBtnClick.addEventListener('click', function () { applyLang('en'); });
-    }
-});
-</script>
-</head>
-<body>
-<header>
-    <h1>
+        var jaBtnClick = document.getElementById('lang-ja-btn');
+        var enBtnClick = document.getElementById('lang-en-btn');
+        if (jaBtnClick) {
+          jaBtnClick.addEventListener('click', function () {
+            applyLang('ja');
+          });
+        }
+        if (enBtnClick) {
+          enBtnClick.addEventListener('click', function () {
+            applyLang('en');
+          });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>
         <span class="lang-ja">ChordDock アップデートページ</span>
         <span class="lang-en">ChordDock Update Page</span>
-    </h1>
-    <p>
-        <span class="lang-ja">このページでは、ChordDock の最新版インストーラーのダウンロードと、ライセンス・認証に関するご案内を提供します。</span>
-        <span class="lang-en">On this page you can download the latest ChordDock installer and find information about licenses and activation.</span>
-    </p>
-    <p>
-        <span class="highlight lang-ja">Lite / Extended は共通インストーラー</span>
-        <span class="highlight lang-en">Lite / Extended share the same installer</span>
-        <span class="lang-ja">を使用しています。機能の違いはシリアルキーによって切り替わります。</span>
-        <span class="lang-en">. The available features are switched by your serial key.</span>
-    </p>
-</header>
-<main>
-    <nav class="quick-nav">
+      </h1>
+      <p>
+        <span class="lang-ja"
+          >このページでは、ChordDock
+          の最新版インストーラーのダウンロードと、ライセンス・認証に関するご案内を提供します。</span
+        >
+        <span class="lang-en"
+          >On this page you can download the latest ChordDock installer and find
+          information about licenses and activation.</span
+        >
+      </p>
+      <p>
+        <span class="highlight lang-ja"
+          >Lite / Extended は共通インストーラー</span
+        >
+        <span class="highlight lang-en"
+          >Lite / Extended share the same installer</span
+        >
+        <span class="lang-ja"
+          >を使用しています。機能の違いはシリアルキーによって切り替わります。</span
+        >
+        <span class="lang-en"
+          >. The available features are switched by your serial key.</span
+        >
+      </p>
+    </header>
+    <main>
+      <nav class="quick-nav">
         <ul>
-            <li><a href="#download">
-                <span class="lang-ja">最新版をダウンロード</span>
-                <span class="lang-en">Download the latest version</span>
-            </a></li>
-            <li><a href="#license">
-                <span class="lang-ja">ライセンスと認証</span>
-                <span class="lang-en">License & activation</span>
-            </a></li>
-            <li><a href="#faq">
-                <span class="lang-ja">FAQ / トラブルシューティング</span>
-                <span class="lang-en">FAQ / Troubleshooting</span>
-            </a></li>
+          <li>
+            <a href="#download">
+              <span class="lang-ja">最新版をダウンロード</span>
+              <span class="lang-en">Download the latest version</span>
+            </a>
+          </li>
+          <li>
+            <a href="#license">
+              <span class="lang-ja">ライセンスと認証</span>
+              <span class="lang-en">License & activation</span>
+            </a>
+          </li>
+          <li>
+            <a href="#faq">
+              <span class="lang-ja">FAQ / トラブルシューティング</span>
+              <span class="lang-en">FAQ / Troubleshooting</span>
+            </a>
+          </li>
         </ul>
         <p class="lang-switch">
-            <span class="lang-ja">表示言語:</span>
-            <span class="lang-en">Language:</span>
-            <button type="button" id="lang-ja-btn">日本語</button>
-            <button type="button" id="lang-en-btn">English</button>
+          <span class="lang-ja">表示言語:</span>
+          <span class="lang-en">Language:</span>
+          <button type="button" id="lang-ja-btn">日本語</button>
+          <button type="button" id="lang-en-btn">English</button>
         </p>
-    </nav>
+      </nav>
 
-    <section id="download">
+      <section id="download">
         <h2>
-            <span class="lang-ja">最新版インストーラーをダウンロード</span>
-            <span class="lang-en">Download the latest installer</span>
+          <span class="lang-ja">最新版インストーラーをダウンロード</span>
+          <span class="lang-en">Download the latest installer</span>
         </h2>
         <p class="tagline">
-            <span class="lang-ja">ChordDock は Lite / Extended 共通です。Extended 機能はシリアルキーで開放されます。</span>
-            <span class="lang-en">ChordDock uses a shared installer for Lite and Extended. Extended features are unlocked by your serial key.</span>
+          <span class="lang-ja"
+            >ChordDock は Lite / Extended 共通です。Extended
+            機能はシリアルキーで開放されます。</span
+          >
+          <span class="lang-en"
+            >ChordDock uses a shared installer for Lite and Extended. Extended
+            features are unlocked by your serial key.</span
+          >
         </p>
 
         <div class="os-blocks">
-            <article class="os-card">
-                <h3>Windows</h3>
-                <div class="version-label">
-                    <span class="lang-ja">最新版：ChordDock v1.5.0</span>
-                    <span class="lang-en">Latest: ChordDock v1.5.0</span>
-                </div>
-                <a class="download-button" href="https://github.com/k2get/chord-dock-site/releases/latest/download/Chord_Dock_1.5.0_windows.zip">
-                    <span class="lang-ja">Windows パッケージをダウンロード</span>
-                    <span class="lang-en">Download Windows package</span>
-                </a>
-                <p class="note">
-                    <span class="lang-ja">配布パッケージに含まれる形式をご確認ください。上書きで更新可能です。</span>
-                    <span class="lang-en">Please check which plugin formats are included in the current package. It can be installed over an existing version.</span>
-                </p>
-            </article>
+          <article class="os-card">
+            <h3>Windows</h3>
+            <div class="version-label">
+              <span class="lang-ja">最新版：ChordDock v1.5.2</span>
+              <span class="lang-en">Latest: ChordDock v1.5.2</span>
+            </div>
+            <a
+              class="download-button"
+              href="https://github.com/k2get/chord-dock-site/releases/latest/download/Chord_Dock_1.5.2_windows.zip"
+            >
+              <span class="lang-ja">Windows パッケージをダウンロード</span>
+              <span class="lang-en">Download Windows package</span>
+            </a>
+            <p class="note">
+              <span class="lang-ja"
+                >配布パッケージに含まれる形式をご確認ください。上書きで更新可能です。</span
+              >
+              <span class="lang-en"
+                >Please check which plugin formats are included in the current
+                package. It can be installed over an existing version.</span
+              >
+            </p>
+          </article>
 
-            <article class="os-card">
-                <h3>macOS</h3>
-                <div class="version-label">
-                    <span class="lang-ja">最新版：ChordDock v1.5.0</span>
-                    <span class="lang-en">Latest: ChordDock v1.5.0</span>
-                </div>
-                <a class="download-button" href="https://github.com/k2get/chord-dock-site/releases/latest/download/Chord_Dock_1.5.0_mac.pkg">
-                    <span class="lang-ja">macOS インストーラーをダウンロード</span>
-                    <span class="lang-en">Download macOS installer</span>
-                </a>
-	                <p class="note">
-	                    <span class="lang-ja">配布パッケージに含まれる形式をご確認ください。上書きで更新可能です。</span>
-	                    <span class="lang-en">Please check which plugin formats are included in the current package. It can be installed over an existing version.</span>
-	                </p>
-            </article>
+          <article class="os-card">
+            <h3>macOS</h3>
+            <div class="version-label">
+              <span class="lang-ja">最新版：ChordDock v1.5.2</span>
+              <span class="lang-en">Latest: ChordDock v1.5.2</span>
+            </div>
+            <a
+              class="download-button"
+              href="https://github.com/k2get/chord-dock-site/releases/latest/download/Chord_Dock_1.5.2_mac.pkg"
+            >
+              <span class="lang-ja">macOS インストーラーをダウンロード</span>
+              <span class="lang-en">Download macOS installer</span>
+            </a>
+            <p class="note">
+              <span class="lang-ja"
+                >配布パッケージに含まれる形式をご確認ください。上書きで更新可能です。</span
+              >
+              <span class="lang-en"
+                >Please check which plugin formats are included in the current
+                package. It can be installed over an existing version.</span
+              >
+            </p>
+          </article>
         </div>
-    </section>
+      </section>
 
-    <section id="license">
+      <section id="license">
         <h2>
-            <span class="lang-ja">ライセンスと認証</span>
-            <span class="lang-en">License & activation</span>
+          <span class="lang-ja">ライセンスと認証</span>
+          <span class="lang-en">License & activation</span>
         </h2>
         <div class="license-box">
-            <p>
-                <span class="lang-ja">ChordDock のライセンスは、Lite / Extended 共通のインストーラーに対してシリアルキーで機能を切り替える方式です。</span>
-                <span class="lang-en">ChordDock uses a shared installer; your serial key determines whether you run Lite or Extended.</span>
-            </p>
-            <ul>
-                <li>
-                    <span class="lang-ja">ご購入時に発行されたシリアルキーを、プラグイン内の認証画面で入力してください。</span>
-                    <span class="lang-en">Enter the serial key you received at purchase in the plugin’s activation screen.</span>
-                </li>
-                <li>
-                    <span class="lang-ja">1 ライセンスにつき、2台までアクティベーションできます。</span>
-                    <span class="lang-en">Each license can be activated on up to 2 machines.</span>
-                </li>
-                <li>
-                    <span class="lang-ja">PC の買い替えや OS 再インストール時には、事前に旧環境のライセンス解除を行ってください。</span>
-                    <span class="lang-en">Before replacing a PC or reinstalling the OS, please deactivate the license on the old environment.</span>
-                </li>
-            </ul>
+          <p>
+            <span class="lang-ja"
+              >ChordDock のライセンスは、Lite / Extended
+              共通のインストーラーに対してシリアルキーで機能を切り替える方式です。</span
+            >
+            <span class="lang-en"
+              >ChordDock uses a shared installer; your serial key determines
+              whether you run Lite or Extended.</span
+            >
+          </p>
+          <ul>
+            <li>
+              <span class="lang-ja"
+                >ご購入時に発行されたシリアルキーを、プラグイン内の認証画面で入力してください。</span
+              >
+              <span class="lang-en"
+                >Enter the serial key you received at purchase in the plugin’s
+                activation screen.</span
+              >
+            </li>
+            <li>
+              <span class="lang-ja"
+                >1 ライセンスにつき、2台までアクティベーションできます。</span
+              >
+              <span class="lang-en"
+                >Each license can be activated on up to 2 machines.</span
+              >
+            </li>
+            <li>
+              <span class="lang-ja"
+                >PC の買い替えや OS
+                再インストール時には、事前に旧環境のライセンス解除を行ってください。</span
+              >
+              <span class="lang-en"
+                >Before replacing a PC or reinstalling the OS, please deactivate
+                the license on the old environment.</span
+              >
+            </li>
+          </ul>
         </div>
-    </section>
+      </section>
 
-    <section id="faq">
+      <section id="faq">
         <h2>
-            <span class="lang-ja">FAQ / トラブルシューティング（アップデート）</span>
-            <span class="lang-en">FAQ / Troubleshooting (Updates)</span>
+          <span class="lang-ja"
+            >FAQ / トラブルシューティング（アップデート）</span
+          >
+          <span class="lang-en">FAQ / Troubleshooting (Updates)</span>
         </h2>
         <p class="note">
-            <span class="lang-ja">アップデート時によくある質問を抜粋しています。一般的な FAQ は本製品のランディングページをご確認ください。</span>
-            <span class="lang-en">This section covers update-related questions. For general FAQs, please refer to the main product landing page.</span>
+          <span class="lang-ja"
+            >アップデート時によくある質問を抜粋しています。一般的な FAQ
+            は本製品のランディングページをご確認ください。</span
+          >
+          <span class="lang-en"
+            >This section covers update-related questions. For general FAQs,
+            please refer to the main product landing page.</span
+          >
         </p>
         <div class="details-box">
-            <details>
-                <summary>
-                    <span class="lang-ja">Q1. アップデートしたら Lite になってしまいました</span>
-                    <span class="lang-en">Q1. After updating, it shows as Lite</span>
-                </summary>
-                <div>
-                    <p>
-                        <span class="lang-ja">ChordDock は Lite / Extended 共通インストーラーです。Extended として使う場合は、シリアルキーを再度入力し、オンライン認証を実行する必要があります。</span>
-                        <span class="lang-en">ChordDock uses a shared installer for Lite and Extended. To use Extended, enter your serial key again and perform online activation.</span>
-                    </p>
-                    <p>
-                        <span class="lang-ja">OS 再インストールやマシン移行時などにシリアル情報が失われると、Lite 状態に戻ることがあります。</span>
-                        <span class="lang-en">If serial information is lost when reinstalling the OS or moving to a new machine, the plugin may revert to Lite mode.</span>
-                    </p>
-                </div>
-            </details>
-            <details>
-                <summary>
-                    <span class="lang-ja">Q2. アップデート後に DAW にプラグインが表示されません</span>
-                    <span class="lang-en">Q2. After updating, the plugin does not appear in my DAW</span>
-                </summary>
-                <div>
-                    <p>
-                        <span class="lang-ja">次の点をご確認ください：</span>
-                        <span class="lang-en">Please check the following:</span>
-                    </p>
-                    <ul>
-                        <li>
-	                            <span class="lang-ja">VST3 / AU の対応状況（AAX は準備中。ホスト毎の対応はランディングページ参照）</span>
-	                            <span class="lang-en">Plugin format availability depends on the current package; see the landing page for host-specific support.</span>
-	                        </li>
-                        <li>
-                            <span class="lang-ja">DAW のプラグイン再スキャン</span>
-                            <span class="lang-en">Rescan plugin folders in your DAW</span>
-                        </li>
-                        <li>
-                            <span class="lang-ja">DAW の再起動</span>
-                            <span class="lang-en">Restart your DAW</span>
-                        </li>
-                    </ul>
-                </div>
-            </details>
-            <details>
-                <summary>
-                    <span class="lang-ja">Q3. アップデート前のプロジェクトとの互換性は大丈夫ですか？</span>
-                    <span class="lang-en">Q3. Will my existing projects remain compatible after updating?</span>
-                </summary>
-                <div>
-                    <p>
-                        <span class="lang-ja">基本的に後方互換です。まれに DAW 側のキャッシュの影響で、プラグインの再スキャンが必要な場合があります。</span>
-                        <span class="lang-en">In principle, updates are backward compatible. In rare cases, your DAW’s plugin cache may require a rescan.</span>
-                    </p>
-                </div>
-            </details>
-            <details>
-                <summary>
-                    <span class="lang-ja">Q4. 詳しい FAQ を確認したい</span>
-                    <span class="lang-en">Q4. Where can I find the full FAQ?</span>
-                </summary>
-                <div>
-                    <p>
-                        <span class="lang-ja">ChordDock のランディングページ下部に、FAQ / トラブルシューティングの詳細があります（<a href="https://k2get.github.io/chord-dock-site/">https://k2get.github.io/chord-dock-site/</a>）。</span>
-                        <span class="lang-en">You can find the full FAQ and troubleshooting section at the bottom of the main Chord Dock landing page (<a href="https://k2get.github.io/chord-dock-site/">https://k2get.github.io/chord-dock-site/</a>).</span>
-                    </p>
-                </div>
-            </details>
+          <details>
+            <summary>
+              <span class="lang-ja"
+                >Q1. アップデートしたら Lite になってしまいました</span
+              >
+              <span class="lang-en">Q1. After updating, it shows as Lite</span>
+            </summary>
+            <div>
+              <p>
+                <span class="lang-ja"
+                  >ChordDock は Lite / Extended 共通インストーラーです。Extended
+                  として使う場合は、シリアルキーを再度入力し、オンライン認証を実行する必要があります。</span
+                >
+                <span class="lang-en"
+                  >ChordDock uses a shared installer for Lite and Extended. To
+                  use Extended, enter your serial key again and perform online
+                  activation.</span
+                >
+              </p>
+              <p>
+                <span class="lang-ja"
+                  >OS
+                  再インストールやマシン移行時などにシリアル情報が失われると、Lite
+                  状態に戻ることがあります。</span
+                >
+                <span class="lang-en"
+                  >If serial information is lost when reinstalling the OS or
+                  moving to a new machine, the plugin may revert to Lite
+                  mode.</span
+                >
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span class="lang-ja"
+                >Q2. アップデート後に DAW にプラグインが表示されません</span
+              >
+              <span class="lang-en"
+                >Q2. After updating, the plugin does not appear in my DAW</span
+              >
+            </summary>
+            <div>
+              <p>
+                <span class="lang-ja">次の点をご確認ください：</span>
+                <span class="lang-en">Please check the following:</span>
+              </p>
+              <ul>
+                <li>
+                  <span class="lang-ja"
+                    >VST3 / AU の対応状況（AAX
+                    は準備中。ホスト毎の対応はランディングページ参照）</span
+                  >
+                  <span class="lang-en"
+                    >Plugin format availability depends on the current package;
+                    see the landing page for host-specific support.</span
+                  >
+                </li>
+                <li>
+                  <span class="lang-ja">DAW のプラグイン再スキャン</span>
+                  <span class="lang-en">Rescan plugin folders in your DAW</span>
+                </li>
+                <li>
+                  <span class="lang-ja">DAW の再起動</span>
+                  <span class="lang-en">Restart your DAW</span>
+                </li>
+              </ul>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span class="lang-ja"
+                >Q3.
+                アップデート前のプロジェクトとの互換性は大丈夫ですか？</span
+              >
+              <span class="lang-en"
+                >Q3. Will my existing projects remain compatible after
+                updating?</span
+              >
+            </summary>
+            <div>
+              <p>
+                <span class="lang-ja"
+                  >基本的に後方互換です。まれに DAW
+                  側のキャッシュの影響で、プラグインの再スキャンが必要な場合があります。</span
+                >
+                <span class="lang-en"
+                  >In principle, updates are backward compatible. In rare cases,
+                  your DAW’s plugin cache may require a rescan.</span
+                >
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span class="lang-ja">Q4. 詳しい FAQ を確認したい</span>
+              <span class="lang-en">Q4. Where can I find the full FAQ?</span>
+            </summary>
+            <div>
+              <p>
+                <span class="lang-ja"
+                  >ChordDock のランディングページ下部に、FAQ /
+                  トラブルシューティングの詳細があります（<a
+                    href="https://k2get.github.io/chord-dock-site/"
+                    >https://k2get.github.io/chord-dock-site/</a
+                  >）。</span
+                >
+                <span class="lang-en"
+                  >You can find the full FAQ and troubleshooting section at the
+                  bottom of the main Chord Dock landing page (<a
+                    href="https://k2get.github.io/chord-dock-site/"
+                    >https://k2get.github.io/chord-dock-site/</a
+                  >).</span
+                >
+              </p>
+            </div>
+          </details>
         </div>
-    </section>
-</main>
-<footer>
-    <p>
-        <span class="lang-ja">&copy; ChordDock Project. All rights reserved.</span>
-        <span class="lang-en">&copy; ChordDock Project. All rights reserved.</span>
-    </p>
-</footer>
-</body>
+      </section>
+    </main>
+    <footer>
+      <p>
+        <span class="lang-ja"
+          >&copy; ChordDock Project. All rights reserved.</span
+        >
+        <span class="lang-en"
+          >&copy; ChordDock Project. All rights reserved.</span
+        >
+      </p>
+    </footer>
+  </body>
+</html>
