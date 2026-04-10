@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ableton LiveでChord Dockを使う</title>
+    <meta
+      name="description"
+      content="Ableton Live にコードトラック的なワークフローを追加。Chord Dock でコード進行をタイムライン上で作成・編集し、曲全体を見渡しながら MIDI を音源トラックへ渡せます。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: 'class' };
+      (function () {
+        var KEY = 'lang';
+        var pref = null;
+        try {
+          pref = localStorage.getItem(KEY);
+        } catch (e) {}
+        if (pref === 'en') {
+          location.replace('ableton-live.en.html');
+          return;
+        }
+        if (pref === 'ja') return;
+        var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+        if (!/^ja/i.test(lang || '')) location.replace('ableton-live.en.html');
+      })();
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V3MCR5K6MP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-V3MCR5K6MP');
+    </script>
+    <style>
+      :root { color-scheme: dark; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: "Noto Sans JP", system-ui, -apple-system, Segoe UI, sans-serif;
+        background:
+          radial-gradient(circle at 12% 20%, rgba(99, 102, 241, 0.18), transparent 24%),
+          radial-gradient(circle at 84% 18%, rgba(45, 212, 191, 0.15), transparent 24%),
+          linear-gradient(180deg, #0a0f1c 0%, #090d18 100%);
+      }
+      h1, h2, h3 { font-family: "Space Grotesk", "Noto Sans JP", sans-serif; }
+      .container { max-width: 1100px; }
+      .section { scroll-margin-top: 80px; }
+      p { max-width: 68ch; }
+      .badge { border: 1px solid rgb(229 231 235 / 1); }
+    </style>
+    <meta property="og:title" content="Ableton LiveでChord Dockを使う" />
+    <meta property="og:description" content="Ableton Live の中で、コード進行をタイムライン上で作成・編集し、曲全体を見渡しながら MIDI を受け渡すための Chord Dock ガイド。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://k2get.github.io/chord-dock-site/ableton-live.html" />
+    <meta property="og:image" content="https://k2get.github.io/chord-dock-site/assets/%E3%82%BF%E3%82%A4%E3%83%A0%E3%83%A9%E3%82%A4%E3%83%B3.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body class="bg-white text-gray-900 dark:bg-neutral-950 dark:text-neutral-100">
+    <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 dark:bg-neutral-950/80 border-b border-gray-200/60 dark:border-neutral-800">
+      <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2 font-extrabold text-xl tracking-tight">
+          <span class="inline-block w-6 h-6 rounded-lg bg-indigo-600"></span>
+          Chord Dock
+        </a>
+        <div class="hidden sm:flex items-center gap-4 text-sm">
+          <a href="index.html" class="hover:opacity-80">トップ</a>
+          <a href="daw-guides.html" class="hover:opacity-80">DAW別ガイド</a>
+          <a href="manual.html" class="hover:opacity-80">オンラインマニュアル</a>
+          <a href="index.html#download" class="hover:opacity-80">ダウンロード</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <a id="langEN" href="ableton-live.en.html" class="inline-flex items-center rounded-xl px-3 py-2 text-sm font-medium border border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800">English</a>
+          <a href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-sm font-semibold bg-indigo-600 text-white shadow hover:bg-indigo-500">無料版を試す</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="section">
+      <div class="container mx-auto px-4 py-16 sm:py-20">
+        <p class="text-xs font-semibold tracking-[0.2em] uppercase text-indigo-300">For Ableton Live users</p>
+        <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight">Ableton LiveでChord Dockを使う</h1>
+        <p class="mt-5 text-lg text-gray-600 dark:text-neutral-300">Ableton Live に、コードトラック的なワークフローを追加します。コード進行をタイムライン上で作成・編集し、曲全体の流れを見渡しながら、必要なタイミングで MIDI を音源トラックへ渡せます。</p>
+        <div class="mt-5 flex flex-wrap gap-2 text-xs text-gray-600 dark:text-neutral-400">
+          <span class="badge rounded-lg px-2 py-1">タイムライン編集</span>
+          <span class="badge rounded-lg px-2 py-1">曲全体を俯瞰</span>
+          <span class="badge rounded-lg px-2 py-1">MIDIドラッグ or ルーティング</span>
+          <span class="badge rounded-lg px-2 py-1">Lite で開始可能</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container mx-auto px-4 py-6">
+        <div class="rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800 bg-white/70 dark:bg-neutral-900/70 p-6 sm:p-8">
+          <h2 class="text-2xl sm:text-3xl font-extrabold">Ableton Live ルーティング動画</h2>
+          <article class="mt-6 max-w-2xl p-5 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60">
+            <h3 class="text-lg font-semibold">Ableton Live ルーティング（日本語）</h3>
+            <div class="mt-4 video-embed" data-embed="https://www.youtube.com/embed/nCpyszcUhDg" data-title="Chord Dock Ableton Live Routing Japanese">
+              <button type="button" class="group block w-full text-left">
+                <div class="relative overflow-hidden rounded-xl ring-1 ring-gray-200 dark:ring-neutral-700 bg-neutral-950" style="aspect-ratio: 16 / 9;">
+                  <img src="https://i.ytimg.com/vi/nCpyszcUhDg/hqdefault.jpg" alt="Ableton Live ルーティング日本語動画のサムネイル" class="absolute inset-0 h-full w-full object-cover transition-transform duration-200 group-hover:scale-[1.02]" />
+                  <div class="absolute inset-0 bg-black/35"></div>
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <span class="inline-flex rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-gray-900 shadow">動画を再生</span>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container mx-auto px-4 py-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">Live での使い方は大きく2通り</h2>
+        <div class="mt-6 grid gap-6 md:grid-cols-2">
+          <article class="p-6 rounded-2xl ring-2 ring-indigo-400/40 bg-white/70 dark:bg-neutral-900/70">
+            <h3 class="text-xl font-semibold">1. まず進行を作って、MIDI をドラッグする</h3>
+            <p class="mt-3 text-gray-600 dark:text-neutral-300">いちばん短い評価方法です。Chord Dock で進行を組み、必要なイベントを選んで Live のクリップやアレンジメントへ渡します。その後の細かい編集は Live で続ければ十分です。</p>
+          </article>
+          <article class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60">
+            <h3 class="text-xl font-semibold">2. 音源トラックに聴かせながら使う</h3>
+            <p class="mt-3 text-gray-600 dark:text-neutral-300">実際の音源を鳴らしながら進行を調整したいなら、Live 側で対象トラックが Chord Dock の MIDI を受けるようにします。クリック位置はテンプレート次第ですが、考え方はシンプルで、和声設計は Chord Dock、最終的な音は Live 側の音源に任せます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container mx-auto px-4 py-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">最初の1セッションはこの流れで十分です</h2>
+        <div class="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60">
+            <p class="text-sm font-semibold text-indigo-300">Step 1</p>
+            <h3 class="mt-2 text-lg font-semibold">Chord Dock を挿す</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-neutral-300">Live セットの中で扱いやすいトラックやスロットに挿し、まずは短い進行を作ります。</p>
+          </div>
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60">
+            <p class="text-sm font-semibold text-indigo-300">Step 2</p>
+            <h3 class="mt-2 text-lg font-semibold">進行の形を先に決める</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-neutral-300">セクション長やコードの並びを調整し、曲全体として気持ちよい流れかを先に確認します。</p>
+          </div>
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60">
+            <p class="text-sm font-semibold text-indigo-300">Step 3</p>
+            <h3 class="mt-2 text-lg font-semibold">MIDI を Live へ渡す</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-neutral-300">ドラッグ書き出しでクリップ化するか、ルーティングしたまま音源トラックへ流して試します。</p>
+          </div>
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60">
+            <p class="text-sm font-semibold text-indigo-300">Step 4</p>
+            <h3 class="mt-2 text-lg font-semibold">必要になったら Extended</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-neutral-300">Lite で流れが合うと分かってから、リハモ、Arpeggio / Bassline、テンション、スラッシュコードを解放すれば十分です。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container mx-auto px-4 py-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">このページが向いている人</h2>
+        <div class="mt-6 rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800 bg-white/70 dark:bg-neutral-900/70 p-6 sm:p-8">
+          <ul class="list-disc ml-5 space-y-3 text-gray-700 dark:text-neutral-300">
+            <li>Live 上で、曲全体の和声設計を見渡しながら作りたい人</li>
+            <li>まずコード進行の比較を済ませてから、細かい MIDI ノート編集に入りたい人</li>
+            <li>進行スケッチから Live 内の使える MIDI までを、もっと短くつなぎたい人</li>
+          </ul>
+          <p class="mt-5 text-sm text-gray-500 dark:text-neutral-400">当てはまるなら、最初の判断は機能表ではなく短い Lite セッションで十分です。実際に 4〜8 小節作って Live へ渡した時の感触で決めるのがいちばん確実です。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container mx-auto px-4 py-6">
+        <div class="rounded-2xl ring-1 ring-indigo-400/30 bg-indigo-500/10 px-6 py-6 sm:px-8">
+          <h2 class="text-2xl font-extrabold">最短の試し方</h2>
+          <p class="mt-3 text-gray-600 dark:text-neutral-300">Lite を入れて 4 小節か 8 小節の進行を作り、Live に MIDI を渡してみてください。その時点でアレンジメント全体の見通しが良くなるなら、このページの役目は十分果たせています。</p>
+          <div class="mt-5 flex flex-wrap gap-3">
+            <a href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0" target="_blank" rel="noopener noreferrer" class="inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">Lite を無料でダウンロード</a>
+            <a href="manual.html#quickstart" class="inline-flex rounded-xl px-4 py-2 border border-indigo-400/40 text-indigo-100 hover:bg-indigo-500/10">クイックスタートを開く</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-gray-200 dark:border-neutral-800">
+      <div class="container mx-auto px-4 py-10 text-sm text-gray-600 dark:text-neutral-400">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <p>© <span id="y"></span> Chord Dock — All rights reserved.</p>
+          <div class="flex items-center gap-3">
+            <a href="terms.html" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">Terms</a>
+            <span aria-hidden>•</span>
+            <a href="privacy.html" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">Privacy</a>
+            <span aria-hidden>•</span>
+            <a href="https://forms.gle/ttEAX9dSLEk7Pr5X7" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear();
+      document.querySelectorAll('.video-embed').forEach(function (container) {
+        var button = container.querySelector('button');
+        if (!button) return;
+        button.addEventListener('click', function () {
+          var iframeWrap = document.createElement('div');
+          iframeWrap.className = 'overflow-hidden rounded-xl ring-1 ring-gray-200 dark:ring-neutral-700';
+          iframeWrap.style.aspectRatio = '16 / 9';
+
+          var iframe = document.createElement('iframe');
+          iframe.src = container.getAttribute('data-embed') + '?rel=0&autoplay=1';
+          iframe.title = container.getAttribute('data-title') || 'YouTube video';
+          iframe.className = 'h-full w-full';
+          iframe.loading = 'lazy';
+          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+          iframe.allowFullscreen = true;
+
+          iframeWrap.appendChild(iframe);
+          container.innerHTML = '';
+          container.appendChild(iframeWrap);
+        });
+      });
+      (function () {
+        var en = document.getElementById('langEN');
+        if (en) {
+          en.addEventListener('click', function () {
+            try {
+              localStorage.setItem('lang', 'en');
+            } catch (e) {}
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

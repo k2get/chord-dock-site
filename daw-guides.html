@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chord Dock DAW別ガイド</title>
+    <meta
+      name="description"
+      content="Chord Dock の DAW別セットアップと活用ガイド。まずは Ableton Live 向けに、コードトラック的なワークフローの導入方法をまとめています。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: 'class' };
+      (function () {
+        var KEY = 'lang';
+        var pref = null;
+        try {
+          pref = localStorage.getItem(KEY);
+        } catch (e) {}
+        if (pref === 'en') {
+          location.replace('daw-guides.en.html');
+          return;
+        }
+        if (pref === 'ja') return;
+        var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+        if (!/^ja/i.test(lang || '')) location.replace('daw-guides.en.html');
+      })();
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V3MCR5K6MP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-V3MCR5K6MP');
+    </script>
+    <style>
+      :root { color-scheme: dark; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: "Noto Sans JP", system-ui, -apple-system, Segoe UI, sans-serif;
+        background:
+          radial-gradient(circle at 12% 20%, rgba(99, 102, 241, 0.18), transparent 24%),
+          radial-gradient(circle at 84% 18%, rgba(45, 212, 191, 0.15), transparent 24%),
+          linear-gradient(180deg, #0a0f1c 0%, #090d18 100%);
+      }
+      h1, h2, h3 { font-family: "Space Grotesk", "Noto Sans JP", sans-serif; }
+      .container { max-width: 1100px; }
+      .section { scroll-margin-top: 80px; }
+      p { max-width: 68ch; }
+    </style>
+    <meta property="og:title" content="Chord Dock DAW別ガイド" />
+    <meta property="og:description" content="Chord Dock の DAW別セットアップと活用ガイド。公開済みのページは Ableton Live 向けです。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://k2get.github.io/chord-dock-site/daw-guides.html" />
+    <meta property="og:image" content="https://k2get.github.io/chord-dock-site/assets/%E3%82%BF%E3%82%A4%E3%83%A0%E3%83%A9%E3%82%A4%E3%83%B3.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body class="bg-white text-gray-900 dark:bg-neutral-950 dark:text-neutral-100">
+    <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 dark:bg-neutral-950/80 border-b border-gray-200/60 dark:border-neutral-800">
+      <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2 font-extrabold text-xl tracking-tight">
+          <span class="inline-block w-6 h-6 rounded-lg bg-indigo-600"></span>
+          Chord Dock
+        </a>
+        <div class="hidden sm:flex items-center gap-4 text-sm">
+          <a href="index.html" class="hover:opacity-80">トップ</a>
+          <a href="daw-guides.html" class="text-indigo-300 font-semibold">DAW別ガイド</a>
+          <a href="manual.html" class="hover:opacity-80">オンラインマニュアル</a>
+          <a href="index.html#download" class="hover:opacity-80">ダウンロード</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <a id="langEN" href="daw-guides.en.html" class="inline-flex items-center rounded-xl px-3 py-2 text-sm font-medium border border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800">English</a>
+          <a href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-sm font-semibold bg-indigo-600 text-white shadow hover:bg-indigo-500">無料版を試す</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="section">
+      <div class="container mx-auto px-4 py-16 sm:py-20">
+        <p class="text-xs font-semibold tracking-[0.2em] uppercase text-indigo-300">Routing and workflow</p>
+        <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight">お使いのDAWを選んでください</h1>
+        <!--
+        <p class="mt-5 text-lg text-gray-600 dark:text-neutral-300">
+          Chord Dock を各ホストでどう使うかを、セットアップ、MIDI の渡し方、制作フローの役割に絞って整理したページです。
+        </p>
+        -->
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container mx-auto px-4 py-6">
+        <div class="grid items-start gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <article class="rounded-2xl ring-2 ring-indigo-400/40 bg-white/70 dark:bg-neutral-900/70 p-5">
+            <h2 class="text-2xl font-extrabold">Ableton Live で Chord Dock を使う</h2>
+            <a href="ableton-live.html" class="mt-5 inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">Ableton Live 向けガイドを開く</a>
+          </article>
+          <article class="rounded-2xl ring-2 ring-indigo-400/20 bg-white/60 dark:bg-neutral-900/60 p-5">
+            <h2 class="text-2xl font-extrabold">Logic Pro で Chord Dock を使う</h2>
+            <a href="logic-pro.html" class="mt-5 inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">Logic Pro 向けガイドを開く</a>
+          </article>
+          <article class="rounded-2xl ring-2 ring-indigo-400/20 bg-white/60 dark:bg-neutral-900/60 p-5">
+            <h2 class="text-2xl font-extrabold">Cakewalk Sonar で Chord Dock を使う</h2>
+            <a href="sonar.html" class="mt-5 inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">Cakewalk Sonar 向けガイドを開く</a>
+          </article>
+        </div>
+        <article class="mt-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 p-5">
+          <p class="text-xs uppercase tracking-[0.18em] text-gray-500 font-semibold">今後追加</p>
+          <h2 class="mt-3 text-2xl font-extrabold">その他の対応DAW</h2>
+          <p class="mt-3 text-gray-600 dark:text-neutral-300">
+            専用ページは順次追加しますが、共通のインストール、アクティベーション、MIDIドラッグ書き出しの流れは、すでにオンラインマニュアルで確認できます。
+          </p>
+          <ul class="mt-4 list-disc ml-5 space-y-2 text-sm text-gray-700 dark:text-neutral-300">
+            <li>Cubase / Nuendo</li>
+            <li>Studio One</li>
+            <li>REAPER / Bitwig Studio / FL Studio など、一般的な VST3 / AU 対応ホスト</li>
+          </ul>
+          <div class="mt-5 flex flex-wrap gap-3">
+            <a href="manual.html" class="inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">オンラインマニュアルを開く</a>
+            <a href="index.html#daw" class="inline-flex rounded-xl px-4 py-2 border border-indigo-400/40 text-indigo-100 hover:bg-indigo-500/10">対応ホスト一覧を見る</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container mx-auto px-4 py-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">このガイドで扱うこと</h2>
+        <div class="mt-6 grid gap-6 md:grid-cols-2">
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60">
+            <h3 class="text-lg font-semibold">MIDI をどう渡すか</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-neutral-300">ルーティングを常用するのか、MIDI をドラッグしてクリップ化するのか。各ホストで迷いやすい部分を、制作の流れに沿って説明します。</p>
+          </div>
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60">
+            <h3 class="text-lg font-semibold">最初に試すべき範囲</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-neutral-300">まず Lite でコアの流れを確かめ、必要になった時だけ Extended を開放する、という見方ができるようにします。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container mx-auto px-4 py-6">
+        <div class="rounded-2xl ring-1 ring-indigo-400/30 bg-indigo-500/10 px-6 py-6 sm:px-8">
+          <h2 class="text-2xl font-extrabold">まず素早く試したい場合</h2>
+          <p class="mt-3 text-gray-600 dark:text-neutral-300">Lite を入れて短いコード進行を作り、そのまま MIDI をセッションへ渡してみるのが最短です。そこでタイムラインベースの和声ワークフローが合うかを判断できます。</p>
+          <div class="mt-5 flex flex-wrap gap-3">
+            <a href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0" target="_blank" rel="noopener noreferrer" class="inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">Lite を無料でダウンロード</a>
+            <a href="manual.html#quickstart" class="inline-flex rounded-xl px-4 py-2 border border-indigo-400/40 text-indigo-100 hover:bg-indigo-500/10">クイックスタートを開く</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-gray-200 dark:border-neutral-800">
+      <div class="container mx-auto px-4 py-10 text-sm text-gray-600 dark:text-neutral-400">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <p>© <span id="y"></span> Chord Dock — All rights reserved.</p>
+          <div class="flex items-center gap-3">
+            <a href="terms.html" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">Terms</a>
+            <span aria-hidden>•</span>
+            <a href="privacy.html" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">Privacy</a>
+            <span aria-hidden>•</span>
+            <a href="https://forms.gle/ttEAX9dSLEk7Pr5X7" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear();
+      (function () {
+        var en = document.getElementById('langEN');
+        if (en) {
+          en.addEventListener('click', function () {
+            try {
+              localStorage.setItem('lang', 'en');
+            } catch (e) {}
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

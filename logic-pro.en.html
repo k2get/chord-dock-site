@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Using Chord Dock with Logic Pro</title>
+    <meta name="description" content="A minimal Logic Pro guide for Chord Dock focused on the routing video and the fastest way to verify the setup." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: 'class' };
+      (function () {
+        var KEY = 'lang';
+        var pref = null;
+        try { pref = localStorage.getItem(KEY); } catch (e) {}
+        if (pref === 'ja') { location.replace('logic-pro.html'); return; }
+        if (pref === 'en') return;
+        var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+        if (/^ja/i.test(lang || '')) location.replace('logic-pro.html');
+      })();
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V3MCR5K6MP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-V3MCR5K6MP');
+    </script>
+    <style>
+      :root { color-scheme: dark; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: "Instrument Sans", system-ui, -apple-system, Segoe UI, sans-serif;
+        background:
+          radial-gradient(circle at 12% 20%, rgba(99, 102, 241, 0.18), transparent 24%),
+          radial-gradient(circle at 84% 18%, rgba(45, 212, 191, 0.15), transparent 24%),
+          linear-gradient(180deg, #0a0f1c 0%, #090d18 100%);
+      }
+      h1, h2, h3 { font-family: "Space Grotesk", "Instrument Sans", sans-serif; }
+      .container { max-width: 1100px; }
+      .section { scroll-margin-top: 80px; }
+      p { max-width: 68ch; }
+      .badge { border: 1px solid rgb(229 231 235 / 1); }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900 dark:bg-neutral-950 dark:text-neutral-100">
+    <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 dark:bg-neutral-950/80 border-b border-gray-200/60 dark:border-neutral-800">
+      <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="index.en.html" class="flex items-center gap-2 font-extrabold text-xl tracking-tight">
+          <span class="inline-block w-6 h-6 rounded-lg bg-indigo-600"></span>
+          Chord Dock
+        </a>
+        <div class="hidden sm:flex items-center gap-4 text-sm">
+          <a href="index.en.html" class="hover:opacity-80">Home</a>
+          <a href="daw-guides.en.html" class="hover:opacity-80">DAW Guides</a>
+          <a href="manual.en.html" class="hover:opacity-80">Manual</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <a id="langJP" href="logic-pro.html" class="inline-flex items-center rounded-xl px-3 py-2 text-sm font-medium border border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800">日本語</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="section">
+      <div class="container mx-auto px-4 py-16 sm:py-20">
+        <p class="text-xs font-semibold tracking-[0.2em] uppercase text-indigo-300">For Logic Pro users</p>
+        <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight">Using Chord Dock with Logic Pro</h1>
+        <p class="mt-5 text-lg text-gray-600 dark:text-neutral-300">A minimal Logic Pro guide focused on the routing video and the quickest way to verify the setup.</p>
+        <div class="mt-5 flex flex-wrap gap-2 text-xs text-gray-600 dark:text-neutral-400">
+          <span class="badge rounded-lg px-2 py-1">Logic Pro routing</span>
+          <span class="badge rounded-lg px-2 py-1">MIDI handoff</span>
+          <span class="badge rounded-lg px-2 py-1">Lite-friendly</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container mx-auto px-4 py-6">
+        <div class="rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800 bg-white/70 dark:bg-neutral-900/70 p-6 sm:p-8">
+          <h2 class="text-2xl sm:text-3xl font-extrabold">Logic Pro Routing Video</h2>
+          <article class="mt-6 max-w-2xl p-5 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60">
+            <h3 class="text-lg font-semibold">Logic Pro Routing (EN)</h3>
+            <div class="mt-4 video-embed" data-embed="https://www.youtube.com/embed/ZdOAL3C-2Nw" data-title="Chord Dock Logic Pro Routing English">
+              <button type="button" class="group block w-full text-left">
+                <div class="relative overflow-hidden rounded-xl ring-1 ring-gray-200 dark:ring-neutral-700 bg-neutral-950" style="aspect-ratio: 16 / 9;">
+                  <img src="https://i.ytimg.com/vi/ZdOAL3C-2Nw/hqdefault.jpg" alt="Thumbnail for the Logic Pro routing video in English" class="absolute inset-0 h-full w-full object-cover transition-transform duration-200 group-hover:scale-[1.02]" />
+                  <div class="absolute inset-0 bg-black/35"></div>
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <span class="inline-flex rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-gray-900 shadow">Load video</span>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container mx-auto px-4 py-6">
+        <div class="rounded-2xl ring-1 ring-indigo-400/30 bg-indigo-500/10 px-6 py-6 sm:px-8">
+          <p class="text-gray-600 dark:text-neutral-300">For shared information such as installation, activation, and MIDI drag export, please refer to the <a href="manual.en.html" class="font-semibold text-indigo-300 hover:text-indigo-200 underline underline-offset-4">online manual</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-gray-200 dark:border-neutral-800">
+      <div class="container mx-auto px-4 py-10 text-sm text-gray-600 dark:text-neutral-400">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <p>© <span id="y"></span> Chord Dock — All rights reserved.</p>
+          <div class="flex items-center gap-3">
+            <a href="terms.html" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">Terms</a>
+            <span aria-hidden>•</span>
+            <a href="privacy.html" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">Privacy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear();
+      document.querySelectorAll('.video-embed').forEach(function (container) {
+        var button = container.querySelector('button');
+        if (!button) return;
+        button.addEventListener('click', function () {
+          var iframeWrap = document.createElement('div');
+          iframeWrap.className = 'overflow-hidden rounded-xl ring-1 ring-gray-200 dark:ring-neutral-700';
+          iframeWrap.style.aspectRatio = '16 / 9';
+          var iframe = document.createElement('iframe');
+          iframe.src = container.getAttribute('data-embed') + '?rel=0&autoplay=1';
+          iframe.title = container.getAttribute('data-title') || 'YouTube video';
+          iframe.className = 'h-full w-full';
+          iframe.loading = 'lazy';
+          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+          iframe.allowFullscreen = true;
+          iframeWrap.appendChild(iframe);
+          container.innerHTML = '';
+          container.appendChild(iframeWrap);
+        });
+      });
+      (function () {
+        var jp = document.getElementById('langJP');
+        if (jp) {
+          jp.addEventListener('click', function () {
+            try { localStorage.setItem('lang', 'ja'); } catch (e) {}
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

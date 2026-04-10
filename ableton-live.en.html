@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Using Chord Dock with Ableton Live</title>
+    <meta
+      name="description"
+      content="Add a chord-track-style workflow to Ableton Live with Chord Dock. Build and edit chord progressions on a timeline, keep the whole song in view, and hand the MIDI off to your instruments."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Instrument+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: 'class' };
+      (function () {
+        var KEY = 'lang';
+        var pref = null;
+        try {
+          pref = localStorage.getItem(KEY);
+        } catch (e) {}
+        if (pref === 'ja') {
+          location.replace('ableton-live.html');
+          return;
+        }
+        if (pref === 'en') return;
+        var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+        if (/^ja/i.test(lang || '')) location.replace('ableton-live.html');
+      })();
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V3MCR5K6MP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-V3MCR5K6MP');
+    </script>
+    <style>
+      :root { color-scheme: dark; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: "Instrument Sans", system-ui, -apple-system, Segoe UI, sans-serif;
+        background:
+          radial-gradient(circle at 12% 20%, rgba(99, 102, 241, 0.18), transparent 24%),
+          radial-gradient(circle at 84% 18%, rgba(45, 212, 191, 0.15), transparent 24%),
+          linear-gradient(180deg, #0a0f1c 0%, #090d18 100%);
+      }
+      h1, h2, h3 { font-family: "Space Grotesk", "Instrument Sans", sans-serif; }
+      .container { max-width: 1100px; }
+      .section { scroll-margin-top: 80px; }
+      p { max-width: 68ch; }
+      .badge { border: 1px solid rgb(229 231 235 / 1); }
+    </style>
+    <meta property="og:title" content="Using Chord Dock with Ableton Live" />
+    <meta property="og:description" content="A chord-track-style workflow for Ableton Live users who want to build and edit chord progressions while keeping the whole song in view." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://k2get.github.io/chord-dock-site/ableton-live.en.html" />
+    <meta property="og:image" content="https://k2get.github.io/chord-dock-site/assets/%E3%82%BF%E3%82%A4%E3%83%A0%E3%83%A9%E3%82%A4%E3%83%B3.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body class="bg-white text-gray-900 dark:bg-neutral-950 dark:text-neutral-100">
+    <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 dark:bg-neutral-950/80 border-b border-gray-200/60 dark:border-neutral-800">
+      <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="index.en.html" class="flex items-center gap-2 font-extrabold text-xl tracking-tight">
+          <span class="inline-block w-6 h-6 rounded-lg bg-indigo-600"></span>
+          Chord Dock
+        </a>
+        <div class="hidden sm:flex items-center gap-4 text-sm">
+          <a href="index.en.html" class="hover:opacity-80">Home</a>
+          <a href="daw-guides.en.html" class="hover:opacity-80">DAW Guides</a>
+          <a href="manual.en.html" class="hover:opacity-80">Manual</a>
+          <a href="index.en.html#download" class="hover:opacity-80">Download</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <a id="langJP" href="ableton-live.html" class="inline-flex items-center rounded-xl px-3 py-2 text-sm font-medium border border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800">日本語</a>
+          <a href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-sm font-semibold bg-indigo-600 text-white shadow hover:bg-indigo-500">Start Free</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="section">
+      <div class="container mx-auto px-4 py-16 sm:py-20">
+        <p class="text-xs font-semibold tracking-[0.2em] uppercase text-indigo-300">For Ableton Live users</p>
+        <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight">Using Chord Dock with Ableton Live</h1>
+        <p class="mt-5 text-lg text-gray-600 dark:text-neutral-300">Add a chord-track-style workflow to Ableton Live. Create and edit chord progressions on a timeline, keep the whole song in view, and hand the MIDI off to your instruments when you are ready.</p>
+        <div class="mt-5 flex flex-wrap gap-2 text-xs text-gray-600 dark:text-neutral-400">
+          <span class="badge rounded-lg px-2 py-1">Timeline chord editing</span>
+          <span class="badge rounded-lg px-2 py-1">Whole-song view</span>
+          <span class="badge rounded-lg px-2 py-1">MIDI drag or routing</span>
+          <span class="badge rounded-lg px-2 py-1">Lite available</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container mx-auto px-4 py-6">
+        <div class="rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800 bg-white/70 dark:bg-neutral-900/70 p-6 sm:p-8">
+          <h2 class="text-2xl sm:text-3xl font-extrabold">Ableton Live Routing Video</h2>
+          <article class="mt-6 max-w-2xl p-5 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60">
+            <h3 class="text-lg font-semibold">Ableton Live Routing (EN)</h3>
+            <div class="mt-4 video-embed" data-embed="https://www.youtube.com/embed/H6CJLXTVePw" data-title="Chord Dock Ableton Live Routing English">
+              <button type="button" class="group block w-full text-left">
+                <div class="relative overflow-hidden rounded-xl ring-1 ring-gray-200 dark:ring-neutral-700 bg-neutral-950" style="aspect-ratio: 16 / 9;">
+                  <img src="https://i.ytimg.com/vi/H6CJLXTVePw/hqdefault.jpg" alt="Thumbnail for the Ableton Live routing video in English" class="absolute inset-0 h-full w-full object-cover transition-transform duration-200 group-hover:scale-[1.02]" />
+                  <div class="absolute inset-0 bg-black/35"></div>
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <span class="inline-flex rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-gray-900 shadow">Load video</span>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container mx-auto px-4 py-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">Two practical ways to use it in Live</h2>
+        <div class="mt-6 grid gap-6 md:grid-cols-2">
+          <article class="p-6 rounded-2xl ring-2 ring-indigo-400/40 bg-white/70 dark:bg-neutral-900/70">
+            <h3 class="text-xl font-semibold">1. Sketch, then drag the MIDI</h3>
+            <p class="mt-3 text-gray-600 dark:text-neutral-300">This is the fastest way to evaluate Chord Dock. Build a progression, select the events you want, and drag the exported MIDI into a clip or arrangement lane in Live. From there, keep editing inside Live as usual.</p>
+          </article>
+          <article class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60">
+            <h3 class="text-xl font-semibold">2. Keep an instrument listening</h3>
+            <p class="mt-3 text-gray-600 dark:text-neutral-300">If you prefer to hear your actual instrument while adjusting harmony, set up Live so the target instrument track listens to Chord Dock's MIDI. The exact clicks depend on your template, but the idea stays simple: Chord Dock plans the harmony, Live plays the sound you care about.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container mx-auto px-4 py-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">A simple first session in Live</h2>
+        <div class="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60">
+            <p class="text-sm font-semibold text-indigo-300">Step 1</p>
+            <h3 class="mt-2 text-lg font-semibold">Insert Chord Dock</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-neutral-300">Load Chord Dock on a track or slot that makes sense in your Live set and build a short progression first.</p>
+          </div>
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60">
+            <p class="text-sm font-semibold text-indigo-300">Step 2</p>
+            <h3 class="mt-2 text-lg font-semibold">Shape the progression</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-neutral-300">Set section lengths, compare a few harmonic directions, and make sure the whole-song structure feels right before you commit to detailed note editing.</p>
+          </div>
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60">
+            <p class="text-sm font-semibold text-indigo-300">Step 3</p>
+            <h3 class="mt-2 text-lg font-semibold">Hand the MIDI to Live</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-neutral-300">Either drag the progression out as MIDI or keep it routed to the instrument track you want to hear while working.</p>
+          </div>
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60">
+            <p class="text-sm font-semibold text-indigo-300">Step 4</p>
+            <h3 class="mt-2 text-lg font-semibold">Go deeper only if needed</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-neutral-300">Lite is enough to verify the workflow. When you want faster variation work, Extended adds Reharmo, Arpeggio / Bassline, tensions, and slash chords without changing the basic loop.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container mx-auto px-4 py-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">Who this page is for</h2>
+        <div class="mt-6 rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800 bg-white/70 dark:bg-neutral-900/70 p-6 sm:p-8">
+          <ul class="list-disc ml-5 space-y-3 text-gray-700 dark:text-neutral-300">
+            <li>Ableton users who want to keep the harmonic plan visible across the whole song.</li>
+            <li>Songwriters who would rather compare chord variants first and write detailed MIDI notes second.</li>
+            <li>Producers who want a faster way to move from progression sketch to usable MIDI inside Live.</li>
+          </ul>
+          <p class="mt-5 text-sm text-gray-500 dark:text-neutral-400">If that sounds right, the safest first test is a short Lite session: make one progression, move it into Live, and judge the workflow from the result instead of from feature lists.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container mx-auto px-4 py-6">
+        <div class="rounded-2xl ring-1 ring-indigo-400/30 bg-indigo-500/10 px-6 py-6 sm:px-8">
+          <h2 class="text-2xl font-extrabold">Start with the shortest path</h2>
+          <p class="mt-3 text-gray-600 dark:text-neutral-300">Download Lite, build a four- or eight-bar progression, and either drag it into Live or keep an instrument listening while you edit. If the arrangement view feels clearer that way, the page has already done its job.</p>
+          <div class="mt-5 flex flex-wrap gap-3">
+            <a href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0" target="_blank" rel="noopener noreferrer" class="inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">Download Lite Free</a>
+            <a href="manual.en.html#quickstart" class="inline-flex rounded-xl px-4 py-2 border border-indigo-400/40 text-indigo-100 hover:bg-indigo-500/10">Open quick start</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-gray-200 dark:border-neutral-800">
+      <div class="container mx-auto px-4 py-10 text-sm text-gray-600 dark:text-neutral-400">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <p>© <span id="y"></span> Chord Dock — All rights reserved.</p>
+          <div class="flex items-center gap-3">
+            <a href="terms.html" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">Terms</a>
+            <span aria-hidden>•</span>
+            <a href="privacy.html" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">Privacy</a>
+            <span aria-hidden>•</span>
+            <a href="https://forms.gle/ttEAX9dSLEk7Pr5X7" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear();
+      document.querySelectorAll('.video-embed').forEach(function (container) {
+        var button = container.querySelector('button');
+        if (!button) return;
+        button.addEventListener('click', function () {
+          var iframeWrap = document.createElement('div');
+          iframeWrap.className = 'overflow-hidden rounded-xl ring-1 ring-gray-200 dark:ring-neutral-700';
+          iframeWrap.style.aspectRatio = '16 / 9';
+
+          var iframe = document.createElement('iframe');
+          iframe.src = container.getAttribute('data-embed') + '?rel=0&autoplay=1';
+          iframe.title = container.getAttribute('data-title') || 'YouTube video';
+          iframe.className = 'h-full w-full';
+          iframe.loading = 'lazy';
+          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+          iframe.allowFullscreen = true;
+
+          iframeWrap.appendChild(iframe);
+          container.innerHTML = '';
+          container.appendChild(iframeWrap);
+        });
+      });
+      (function () {
+        var jp = document.getElementById('langJP');
+        if (jp) {
+          jp.addEventListener('click', function () {
+            try {
+              localStorage.setItem('lang', 'ja');
+            } catch (e) {}
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
