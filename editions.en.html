@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chord Dock Editions | Lite, Extended, and Upcoming Editions</title>
+    <meta
+      name="description"
+      content="Browse the Chord Dock edition lineup. This hub explains the role of Lite and Extended today while leaving room for future editions such as Performance and Full Bundle."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Instrument+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: 'class' };
+    </script>
+    <script>
+      (function () {
+        var KEY = 'lang';
+        var pref = null;
+        try {
+          pref = localStorage.getItem(KEY);
+        } catch (e) {}
+        if (pref === 'ja') {
+          location.replace('editions.html');
+          return;
+        }
+        if (pref === 'en') {
+          return;
+        }
+        var lang =
+          (navigator.languages && navigator.languages[0]) ||
+          navigator.language ||
+          '';
+        if (/^ja/i.test(lang || '')) {
+          location.replace('editions.html');
+        }
+      })();
+    </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-V3MCR5K6MP"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-V3MCR5K6MP');
+    </script>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Instrument Sans", system-ui, -apple-system, Segoe UI,
+          sans-serif;
+        background:
+          radial-gradient(circle at 10% 18%, rgba(99, 102, 241, 0.18), transparent 24%),
+          radial-gradient(circle at 88% 18%, rgba(45, 212, 191, 0.16), transparent 24%),
+          linear-gradient(180deg, #0a0f1c 0%, #090d18 100%);
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Space Grotesk", "Instrument Sans", sans-serif;
+      }
+      .container {
+        max-width: 1100px;
+      }
+      .badge {
+        border: 1px solid rgb(229 231 235 / 1);
+      }
+      .section {
+        scroll-margin-top: 88px;
+      }
+      p {
+        max-width: 68ch;
+      }
+    </style>
+    <meta
+      property="og:title"
+      content="Chord Dock Editions | Lite, Extended, and Upcoming Editions"
+    />
+    <meta
+      property="og:description"
+      content="Browse the Chord Dock edition lineup. This hub explains the role of Lite and Extended today while leaving room for future editions such as Performance and Full Bundle."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://k2get.github.io/chord-dock-site/editions.en.html"
+    />
+    <meta
+      property="og:image"
+      content="https://k2get.github.io/chord-dock-site/assets/%E3%83%AA%E3%83%8F%E3%83%A2%E6%A9%9F%E8%83%BD%E3%81%AE%E5%85%A8%E4%BD%93%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body class="bg-white text-gray-900 dark:bg-neutral-950 dark:text-neutral-100">
+    <header
+      class="sticky top-0 z-40 border-b border-gray-200/60 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:border-neutral-800 dark:bg-neutral-950/80"
+    >
+      <nav
+        class="container mx-auto flex items-center justify-between px-4 py-3"
+      >
+        <a
+          href="index.en.html"
+          class="flex items-center gap-2 text-xl font-extrabold tracking-tight"
+        >
+          <span class="inline-block h-6 w-6 rounded-lg bg-indigo-600"></span>
+          Chord Dock
+        </a>
+        <div class="hidden items-center gap-3 text-sm sm:flex">
+          <a href="index.en.html" class="hover:opacity-80">Home</a>
+          <a href="extended.en.html" class="hover:opacity-80">Extended</a>
+          <a href="index.en.html#edition-comparison" class="hover:opacity-80">Compare</a>
+          <a href="manual.en.html" class="hover:opacity-80">Manual</a>
+          <a href="daw-guides.en.html" class="hover:opacity-80">DAW Guides</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <a
+            id="langJP"
+            href="editions.html"
+            class="inline-flex items-center rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-medium hover:bg-gray-50 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+            >日本語</a
+          >
+          <a
+            href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-3.5 py-2 text-sm font-semibold text-white shadow hover:bg-indigo-500"
+            >Start Free</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container mx-auto px-4 py-16 sm:py-20">
+          <div class="max-w-3xl">
+            <div>
+              <span
+                class="badge inline-flex rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-200"
+                >Editions Hub</span
+              >
+              <h1
+                class="mt-5 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl"
+              >
+                <span class="text-indigo-400">Chord Dock Editions</span>
+              </h1>
+              <p class="mt-5 text-lg text-gray-600 dark:text-neutral-300">
+                Open the detail page for each edition.
+              </p>
+              <p class="mt-4 text-sm text-gray-500 dark:text-neutral-400">
+                For a feature-by-feature comparison, see the
+                <a
+                  href="index.en.html#edition-comparison"
+                  class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200"
+                  >comparison table on the main page</a
+                >.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="lineup">
+        <div class="container mx-auto px-4 py-6">
+          <div
+            class="rounded-3xl border border-gray-200/70 bg-white/70 p-6 dark:border-neutral-800 dark:bg-neutral-900/70 sm:p-8"
+          >
+            <div>
+              <h2 class="text-2xl font-extrabold sm:text-3xl">Edition Overview</h2>
+            </div>
+            <div class="mt-8 grid gap-6 lg:grid-cols-2">
+              <article
+                class="flex h-full flex-col rounded-3xl border border-gray-200/80 bg-white/80 p-6 dark:border-neutral-800 dark:bg-neutral-900/80"
+              >
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="text-xl font-extrabold">Lite</h3>
+                    <p class="mt-2 text-sm text-gray-600 dark:text-neutral-300">
+                      The free edition for learning the Chord Dock workflow in your own DAW.
+                    </p>
+                  </div>
+                  <span class="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-200 ring-1 ring-emerald-400/25">Free</span>
+                </div>
+                <ul class="mt-5 space-y-2 text-sm text-gray-700 dark:text-neutral-300">
+                  <li>Build chord progressions on the timeline</li>
+                  <li>Organize arrangement ideas with Sections and Focus Edit</li>
+                  <li>Export progression MIDI with drag and drop</li>
+                  <li>Move into Extended later with the same installer</li>
+                </ul>
+                <a
+                  href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mt-6 inline-flex self-start rounded-xl bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-500"
+                  >Start Free with Lite</a
+                >
+              </article>
+
+              <article
+                class="flex h-full flex-col rounded-3xl border border-indigo-400/40 bg-white/80 p-6 shadow-lg shadow-indigo-950/10 dark:border-indigo-400/35 dark:bg-neutral-900/80"
+              >
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="text-xl font-extrabold">Extended</h3>
+                    <p class="mt-2 text-sm text-gray-600 dark:text-neutral-300">
+                      The upgrade that keeps the Lite workflow and unlocks development and transformation tools.
+                    </p>
+                  </div>
+                  <span class="rounded-full bg-indigo-500/15 px-3 py-1 text-xs font-semibold text-indigo-200 ring-1 ring-indigo-400/30">Paid</span>
+                </div>
+                <ul class="mt-5 space-y-2 text-sm text-gray-700 dark:text-neutral-300">
+                  <li>Compare and apply Reharmo ideas</li>
+                  <li>Generate Arpeggio / Bassline from selected sections</li>
+                  <li>Unlock tensions, slash chords, and Circle of Fifths tools</li>
+                  <li>Gain finer edit controls and theme-side extras</li>
+                </ul>
+                <a
+                  href="extended.en.html"
+                  class="mt-6 inline-flex self-start rounded-xl bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-500"
+                  >See Extended Details</a
+                >
+              </article>
+
+              <article
+                class="rounded-3xl border border-gray-200/80 bg-white/70 p-6 dark:border-neutral-800 dark:bg-neutral-900/70"
+              >
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="text-xl font-extrabold">Performance</h3>
+                    <p class="mt-2 text-sm text-gray-600 dark:text-neutral-300">
+                      Planned as a future path for performance and live-oriented use cases.
+                    </p>
+                  </div>
+                  <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-neutral-300 ring-1 ring-white/10">Coming Soon</span>
+                </div>
+                <p class="mt-5 text-sm text-gray-700 dark:text-neutral-300">
+                  When the scope is fixed, this hub will become the entry point to its own detail page.
+                </p>
+              </article>
+
+              <article
+                class="rounded-3xl border border-gray-200/80 bg-white/70 p-6 dark:border-neutral-800 dark:bg-neutral-900/70"
+              >
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="text-xl font-extrabold">Full Bundle</h3>
+                    <p class="mt-2 text-sm text-gray-600 dark:text-neutral-300">
+                      Planned as a higher-level package that can cover multiple editions.
+                    </p>
+                  </div>
+                  <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-neutral-300 ring-1 ring-white/10">Coming Soon</span>
+                </div>
+                <p class="mt-5 text-sm text-gray-700 dark:text-neutral-300">
+                  The hub structure stays valid as the lineup expands, without overloading the main landing page.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <div class="grid gap-6 lg:grid-cols-3">
+            <div class="rounded-3xl border border-gray-200/70 bg-white/70 p-6 dark:border-neutral-800 dark:bg-neutral-900/70">
+              <span class="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-300">Step 1</span>
+              <h2 class="mt-3 text-xl font-extrabold">Start with Lite</h2>
+              <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                Check DAW compatibility, progression input, and MIDI drag export without paying upfront.
+              </p>
+            </div>
+            <div class="rounded-3xl border border-indigo-400/30 bg-indigo-500/10 p-6">
+              <span class="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-200">Step 2</span>
+              <h2 class="mt-3 text-xl font-extrabold">Upgrade to Extended when needed</h2>
+              <p class="mt-3 text-sm text-gray-700 dark:text-neutral-200">
+                Once you want reharmo, generators, and deeper editing, you can unlock only the extra capability you need.
+              </p>
+            </div>
+            <div class="rounded-3xl border border-gray-200/70 bg-white/70 p-6 dark:border-neutral-800 dark:bg-neutral-900/70">
+              <span class="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-300">Step 3</span>
+              <h2 class="mt-3 text-xl font-extrabold">Return here for future editions</h2>
+              <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                Performance and Full Bundle can later plug into this same structure without changing the top-level navigation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-12">
+          <div
+            class="rounded-3xl border border-indigo-400/25 bg-indigo-500/10 px-6 py-7 text-sm text-gray-700 dark:text-neutral-200 sm:px-8"
+          >
+            <p class="font-semibold">Need the exact Lite vs Extended breakdown?</p>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">
+              This hub is for choosing a path. For a tighter feature-by-feature breakdown, the main landing page still has the fastest comparison view.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-3">
+              <a
+                href="index.en.html#edition-comparison"
+                class="inline-flex rounded-xl bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-500"
+                >Open Comparison Section</a
+              >
+              <a
+                href="extended.en.html"
+                class="inline-flex rounded-xl border border-indigo-400/40 px-4 py-2 font-semibold text-indigo-100 hover:bg-indigo-500/10"
+                >Go to Extended Details</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-gray-200 dark:border-neutral-800">
+      <div
+        class="container mx-auto px-4 py-10 text-sm text-gray-600 dark:text-neutral-400"
+      >
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <p>© <span id="y"></span> Chord Dock — All rights reserved.</p>
+          <div class="flex items-center gap-3">
+            <a href="terms.html" class="hover:opacity-80">Terms</a>
+            <span aria-hidden>•</span>
+            <a href="privacy.html" class="hover:opacity-80">Privacy</a>
+            <span aria-hidden>•</span>
+            <a href="tokushoho.html" class="hover:opacity-80">Legal Notice (Japan)</a>
+            <span aria-hidden>•</span>
+            <a
+              href="https://forms.gle/ttEAX9dSLEk7Pr5X7"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:opacity-80"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear();
+      (function () {
+        var jp = document.getElementById('langJP');
+        if (jp) {
+          jp.addEventListener('click', function () {
+            try {
+              localStorage.setItem('lang', 'ja');
+            } catch (e) {}
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

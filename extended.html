@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ja" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chord Dock Extended | Lite の制作フローを拡張するエディション</title>
+    <meta
+      name="description"
+      content="Chord Dock Extended は、Lite の制作フローをそのままに、リハーモナイズ、アルペジオ / ベースライン生成、テンションや詳細編集を解放するアップグレードです。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: 'class' };
+    </script>
+    <script>
+      (function () {
+        var KEY = 'lang';
+        var pref = null;
+        try {
+          pref = localStorage.getItem(KEY);
+        } catch (e) {}
+        if (pref === 'en') {
+          location.replace('extended.en.html');
+          return;
+        }
+        if (pref === 'ja') {
+          return;
+        }
+        var lang =
+          (navigator.languages && navigator.languages[0]) ||
+          navigator.language ||
+          '';
+        if (!/^ja/i.test(lang || '')) {
+          location.replace('extended.en.html');
+        }
+      })();
+    </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-V3MCR5K6MP"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-V3MCR5K6MP');
+    </script>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Noto Sans JP", system-ui, -apple-system, Segoe UI,
+          sans-serif;
+        background:
+          radial-gradient(circle at 12% 18%, rgba(99, 102, 241, 0.18), transparent 24%),
+          radial-gradient(circle at 86% 20%, rgba(45, 212, 191, 0.15), transparent 24%),
+          linear-gradient(180deg, #0a0f1c 0%, #090d18 100%);
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Space Grotesk", "Noto Sans JP", sans-serif;
+      }
+      .container {
+        max-width: 1100px;
+      }
+      .badge {
+        border: 1px solid rgb(229 231 235 / 1);
+      }
+      .section {
+        scroll-margin-top: 88px;
+      }
+      p {
+        max-width: 68ch;
+      }
+    </style>
+    <meta
+      property="og:title"
+      content="Chord Dock Extended | Lite の制作フローを拡張するエディション"
+    />
+    <meta
+      property="og:description"
+      content="Chord Dock Extended は、Lite の制作フローをそのままに、リハーモナイズ、アルペジオ / ベースライン生成、テンションや詳細編集を解放するアップグレードです。"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://k2get.github.io/chord-dock-site/extended.html"
+    />
+    <meta
+      property="og:image"
+      content="https://k2get.github.io/chord-dock-site/assets/%E3%83%AA%E3%83%8F%E3%83%A2%E6%A9%9F%E8%83%BD%E3%81%AE%E5%85%A8%E4%BD%93%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body
+    class="bg-white text-gray-900 dark:bg-neutral-950 dark:text-neutral-100"
+  >
+    <header
+      class="sticky top-0 z-40 border-b border-gray-200/60 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:border-neutral-800 dark:bg-neutral-950/80"
+    >
+      <nav
+        class="container mx-auto flex items-center justify-between px-4 py-3"
+      >
+        <a
+          href="index.html"
+          class="flex items-center gap-2 text-xl font-extrabold tracking-tight"
+        >
+          <span class="inline-block h-6 w-6 rounded-lg bg-indigo-600"></span>
+          Chord Dock
+        </a>
+        <div class="hidden items-center gap-3 text-sm sm:flex">
+          <a href="index.html" class="hover:opacity-80">トップ</a>
+          <a href="editions.html" class="hover:opacity-80">エディション</a>
+          <a href="index.html#edition-comparison" class="hover:opacity-80">比較</a>
+          <a href="manual.html" class="hover:opacity-80">オンラインマニュアル</a>
+          <a href="daw-guides.html" class="hover:opacity-80">DAW別ガイド</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <a
+            id="langEN"
+            href="extended.en.html"
+            class="inline-flex items-center rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-medium hover:bg-gray-50 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+            >English</a
+          >
+          <a
+            href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-3.5 py-2 text-sm font-semibold text-white shadow hover:bg-indigo-500"
+            >Lite を無料で試す</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container mx-auto px-4 py-16 sm:py-20">
+          <div class="grid items-center gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+            <div>
+              <span
+                class="badge inline-flex rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-200"
+                >Edition Detail</span
+              >
+              <h1
+                class="mt-5 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl"
+              >
+                Lite の作業感はそのまま、<br />
+                <span class="text-indigo-400">発展機能だけを解放する</span> Extended
+              </h1>
+              <p class="mt-5 text-lg text-gray-600 dark:text-neutral-300">
+                Chord Dock Extended は、タイムライン中心の基本ワークフローを変えずに、リハーモナイズ、生成、詳細編集を追加するアップグレードです。まず Lite で掴んだ手触りを、そのまま深くできます。
+              </p>
+              <div class="mt-7">
+                <a
+                  href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorrycheckout05140531"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center rounded-xl bg-indigo-600 px-5 py-3 text-base font-semibold text-white shadow hover:bg-indigo-500"
+                  >Extended ライセンスを購入</a
+                >
+              </div>
+              <p class="mt-4 text-sm text-red-600 dark:text-red-300">
+                Lite / Extended は共通インストーラーです。購入後に発行されるライセンスキーを入力して機能を有効化します。ライセンスは 1 アカウント 2 台まで使えます。
+              </p>
+              <div class="mt-4 flex flex-wrap gap-4 text-sm">
+                <a
+                  href="editions.html"
+                  class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200"
+                  >エディション一覧へ戻る</a
+                >
+                <a
+                  href="index.html#edition-comparison"
+                  class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200"
+                  >比較セクションを見る</a
+                >
+              </div>
+            </div>
+            <div
+              class="rounded-[28px] border border-indigo-400/25 bg-white/70 p-6 shadow-2xl shadow-indigo-950/20 dark:bg-neutral-900/75"
+            >
+              <div class="flex items-center justify-between gap-3">
+                <h2 class="text-xl font-extrabold">Extended で増えること</h2>
+                <span class="rounded-full bg-indigo-500/15 px-3 py-1 text-xs font-semibold text-indigo-200 ring-1 ring-indigo-400/30">For Lite Users</span>
+              </div>
+              <div class="mt-5 space-y-3 text-sm text-gray-700 dark:text-neutral-200">
+                <div class="rounded-2xl bg-neutral-950/80 px-4 py-3 ring-1 ring-white/10">
+                  候補を見比べながら進行を変えられるリハーモナイズ
+                </div>
+                <div class="rounded-2xl bg-neutral-950/80 px-4 py-3 ring-1 ring-white/10">
+                  選択セクション起点のアルペジオ / ベースライン生成
+                </div>
+                <div class="rounded-2xl bg-neutral-950/80 px-4 py-3 ring-1 ring-white/10">
+                  テンション、スラッシュ、五度圏ツールの拡張
+                </div>
+                <div class="rounded-2xl bg-neutral-950/80 px-4 py-3 ring-1 ring-white/10">
+                  細かい Snap / Length とテーマ系のパーソナライズ
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <div
+            class="rounded-3xl border border-gray-200/70 bg-white/70 p-6 dark:border-neutral-800 dark:bg-neutral-900/70 sm:p-8"
+          >
+            <h2 class="text-2xl font-extrabold sm:text-3xl">こんな人に向いています</h2>
+            <div class="mt-6 grid gap-6 md:grid-cols-3">
+              <article class="rounded-3xl border border-gray-200/80 bg-white/80 p-5 dark:border-neutral-800 dark:bg-neutral-900/80">
+                <h3 class="text-lg font-extrabold">進行は作れるが、展開が伸びない</h3>
+                <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                  Lite の入力フローは気に入っているものの、次の展開案や色付けをもっと速く試したい場合に向いています。
+                </p>
+              </article>
+              <article class="rounded-3xl border border-gray-200/80 bg-white/80 p-5 dark:border-neutral-800 dark:bg-neutral-900/80">
+                <h3 class="text-lg font-extrabold">セクションから素材を起こしたい</h3>
+                <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                  コード進行を土台に、そのままアルペジオやベースラインへ展開したい人向けです。
+                </p>
+              </article>
+              <article class="rounded-3xl border border-gray-200/80 bg-white/80 p-5 dark:border-neutral-800 dark:bg-neutral-900/80">
+                <h3 class="text-lg font-extrabold">詳細編集まで一気に詰めたい</h3>
+                <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                  テンション、スラッシュ、細かい Snap / Length までひとつの流れで詰める用途に合います。
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <div class="grid gap-6 lg:grid-cols-2">
+            <article
+              class="rounded-3xl border border-indigo-400/30 bg-indigo-500/10 p-6"
+            >
+              <h2 class="text-2xl font-extrabold">Extended で解放される機能</h2>
+              <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                <div class="rounded-2xl bg-neutral-950/80 p-4 ring-1 ring-white/10">
+                  <h3 class="font-semibold">Reharmonize</h3>
+                  <p class="mt-2 text-sm text-neutral-300">
+                    候補を比較しながら進行を差し替え、試行錯誤を止めずに前へ進めます。
+                  </p>
+                </div>
+                <div class="rounded-2xl bg-neutral-950/80 p-4 ring-1 ring-white/10">
+                  <h3 class="font-semibold">Generate</h3>
+                  <p class="mt-2 text-sm text-neutral-300">
+                    選択したセクションからアルペジオ / ベースラインを生成して、素材出しを短縮できます。
+                  </p>
+                </div>
+                <div class="rounded-2xl bg-neutral-950/80 p-4 ring-1 ring-white/10">
+                  <h3 class="font-semibold">Harmony Tools</h3>
+                  <p class="mt-2 text-sm text-neutral-300">
+                    テンション、スラッシュ、インタラクティブ五度圏で、進行の選択肢を広げられます。
+                  </p>
+                </div>
+                <div class="rounded-2xl bg-neutral-950/80 p-4 ring-1 ring-white/10">
+                  <h3 class="font-semibold">Detail & Theme</h3>
+                  <p class="mt-2 text-sm text-neutral-300">
+                    より細かい編集パラメータに加え、ユーザープリセット保存やテーマ系の拡張も使えます。
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="rounded-3xl border border-gray-200/70 bg-white/70 p-6 dark:border-neutral-800 dark:bg-neutral-900/70"
+            >
+              <h2 class="text-2xl font-extrabold">Lite から何が変わるか</h2>
+              <div class="mt-6 space-y-5 text-sm">
+                <div>
+                  <h3 class="font-semibold text-gray-900 dark:text-neutral-100">そのまま残るもの</h3>
+                  <ul class="mt-3 space-y-2 text-gray-600 dark:text-neutral-300">
+                    <li>タイムラインでのコード進行編集</li>
+                    <li>Sections / Focus Edit による構成整理</li>
+                    <li>MIDI ドラッグによる書き出し</li>
+                    <li>進行データの保存と再利用</li>
+                  </ul>
+                </div>
+                <div class="border-t border-gray-200/70 pt-5 dark:border-neutral-800">
+                  <h3 class="font-semibold text-gray-900 dark:text-neutral-100">追加されるもの</h3>
+                  <ul class="mt-3 space-y-2 text-gray-600 dark:text-neutral-300">
+                    <li>リハーモナイズ候補の比較・適用</li>
+                    <li>アルペジオ / ベースライン生成</li>
+                    <li>テンション、スラッシュ、五度圏ツールの解放</li>
+                    <li>より細かい編集とパーソナライズ機能</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <div
+            class="rounded-3xl border border-gray-200/70 bg-white/70 p-6 dark:border-neutral-800 dark:bg-neutral-900/70 sm:p-8"
+          >
+            <h2 class="text-2xl font-extrabold sm:text-3xl">導入と有効化</h2>
+            <div class="mt-6 grid gap-6 md:grid-cols-3">
+              <div class="rounded-2xl border border-gray-200/80 bg-white/80 p-5 dark:border-neutral-800 dark:bg-neutral-900/80">
+                <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 text-sm font-bold text-white">1</span>
+                <h3 class="mt-4 text-lg font-extrabold">Lite をインストール</h3>
+                <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                  Lite / Extended は共通インストーラーです。まず Lite を導入し、いつもの環境で立ち上がることを確認します。
+                </p>
+              </div>
+              <div class="rounded-2xl border border-gray-200/80 bg-white/80 p-5 dark:border-neutral-800 dark:bg-neutral-900/80">
+                <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 text-sm font-bold text-white">2</span>
+                <h3 class="mt-4 text-lg font-extrabold">ライセンスを購入</h3>
+                <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                  購入後に発行されるライセンスキーを受け取ります。ライセンスは 1 アカウントあたり 2 台まで利用できます。
+                </p>
+              </div>
+              <div class="rounded-2xl border border-gray-200/80 bg-white/80 p-5 dark:border-neutral-800 dark:bg-neutral-900/80">
+                <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 text-sm font-bold text-white">3</span>
+                <h3 class="mt-4 text-lg font-extrabold">プラグインで有効化</h3>
+                <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                  プラグイン右上の設定メニューからライセンスを入力し、ブラウザでデバイス承認を行うと Extended 機能が解放されます。
+                </p>
+              </div>
+            </div>
+            <p class="mt-6 text-sm text-gray-500 dark:text-neutral-400">
+              画面付きの説明は
+              <a
+                href="index.html#activation"
+                class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200"
+                >トップページのアクティベーション案内</a
+              >
+              と FAQ から確認できます。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-12">
+          <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            <a
+              href="editions.html"
+              class="rounded-3xl border border-gray-200/70 bg-white/70 p-5 transition hover:-translate-y-0.5 hover:border-indigo-400/40 dark:border-neutral-800 dark:bg-neutral-900/70"
+            >
+              <h2 class="text-lg font-extrabold">エディション一覧へ</h2>
+              <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                Lite / Extended と今後のラインナップ全体に戻ります。
+              </p>
+            </a>
+            <a
+              href="index.html#edition-comparison"
+              class="rounded-3xl border border-gray-200/70 bg-white/70 p-5 transition hover:-translate-y-0.5 hover:border-indigo-400/40 dark:border-neutral-800 dark:bg-neutral-900/70"
+            >
+              <h2 class="text-lg font-extrabold">比較セクション</h2>
+              <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                Lite と Extended の差分をトップページ側で一覧できます。
+              </p>
+            </a>
+            <a
+              href="manual.html"
+              class="rounded-3xl border border-gray-200/70 bg-white/70 p-5 transition hover:-translate-y-0.5 hover:border-indigo-400/40 dark:border-neutral-800 dark:bg-neutral-900/70"
+            >
+              <h2 class="text-lg font-extrabold">オンラインマニュアル</h2>
+              <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                詳しい操作手順や機能の確認はこちらから。
+              </p>
+            </a>
+            <a
+              href="daw-guides.html"
+              class="rounded-3xl border border-gray-200/70 bg-white/70 p-5 transition hover:-translate-y-0.5 hover:border-indigo-400/40 dark:border-neutral-800 dark:bg-neutral-900/70"
+            >
+              <h2 class="text-lg font-extrabold">DAW別ガイド</h2>
+              <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                導入やルーティングをホスト別に確認できます。
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-gray-200 dark:border-neutral-800">
+      <div
+        class="container mx-auto px-4 py-10 text-sm text-gray-600 dark:text-neutral-400"
+      >
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <p>© <span id="y"></span> Chord Dock — All rights reserved.</p>
+          <div class="flex items-center gap-3">
+            <a href="terms.html" class="hover:opacity-80">利用規約</a>
+            <span aria-hidden>•</span>
+            <a href="privacy.html" class="hover:opacity-80">プライバシー</a>
+            <span aria-hidden>•</span>
+            <a href="tokushoho.html" class="hover:opacity-80">特定商取引法に基づく表記</a>
+            <span aria-hidden>•</span>
+            <a
+              href="https://forms.gle/WPgiSCxY9Mp3v9nc6"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:opacity-80"
+              >お問い合わせ</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear();
+      (function () {
+        var en = document.getElementById('langEN');
+        if (en) {
+          en.addEventListener('click', function () {
+            try {
+              localStorage.setItem('lang', 'en');
+            } catch (e) {}
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
