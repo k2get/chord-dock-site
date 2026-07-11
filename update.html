@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ChordDock アップデートページ</title>
+    <title>ChordDock v2.0 アップデートページ</title>
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -187,6 +187,19 @@
       .highlight {
         color: #cbe0ff;
       }
+      code {
+        padding: 0.08rem 0.28rem;
+        border-radius: 0.3rem;
+        background: rgba(255, 255, 255, 0.08);
+        color: #eef2ff;
+        font-family:
+          ui-monospace,
+          SFMono-Regular,
+          Consolas,
+          'Liberation Mono',
+          monospace;
+        font-size: 0.92em;
+      }
       .license-box {
         padding: 1rem;
         border-radius: 0.75rem;
@@ -214,6 +227,19 @@
       .release-date {
         font-size: 0.8rem;
         color: #9ca1b5;
+      }
+      .callout {
+        margin: 1rem 0 0;
+        padding: 0.85rem 1rem;
+        border-radius: 0.75rem;
+        border: 1px solid rgba(143, 157, 255, 0.35);
+        background: rgba(40, 48, 82, 0.55);
+        color: #dce3ff;
+        font-size: 0.9rem;
+      }
+      .callout ul {
+        margin: 0.45rem 0 0;
+        padding-left: 1.25rem;
       }
       .details-box details {
         margin-bottom: 0.6rem;
@@ -313,31 +339,32 @@
   <body>
     <header>
       <h1>
-        <span class="lang-ja">ChordDock アップデートページ</span>
-        <span class="lang-en">ChordDock Update Page</span>
+        <span class="lang-ja">ChordDock v2.0 アップデートページ</span>
+        <span class="lang-en">ChordDock v2.0 Update Page</span>
       </h1>
       <p>
         <span class="lang-ja"
           >このページでは、ChordDock
-          の最新版インストーラーのダウンロードと、ライセンス・認証に関するご案内を提供します。</span
+          v2.0 の最新版パッケージと、アップデート時の注意点をご案内します。</span
         >
         <span class="lang-en"
-          >On this page you can download the latest ChordDock installer and find
-          information about licenses and activation.</span
+          >On this page you can download the latest ChordDock v2.0 package and
+          review update notes.</span
         >
       </p>
       <p>
         <span class="highlight lang-ja"
-          >Lite / Extended は共通インストーラー</span
+          >v2.0 では Performance エディション、Arranger Mode、ChordPart が追加されました。</span
         >
         <span class="highlight lang-en"
-          >Lite / Extended share the same installer</span
+          >v2.0 adds the Performance edition, Arranger Mode, and ChordPart.</span
         >
         <span class="lang-ja"
-          >を使用しています。機能の違いはシリアルキーによって切り替わります。</span
+          >メインプラグインと ChordPart は同じバージョンの組み合わせで更新してください。</span
         >
         <span class="lang-en"
-          >. The available features are switched by your serial key.</span
+          >Update the main plugin and ChordPart together as a matching-version
+          set.</span
         >
       </p>
     </header>
@@ -384,12 +411,14 @@
         </h2>
         <p class="tagline">
           <span class="lang-ja"
-            >ChordDock は Lite / Extended 共通です。Extended
-            機能はシリアルキーで開放されます。</span
+            >v2.0 パッケージには、Chord Dock 本体と、パート別 MIDI
+            受信用の ChordPart が含まれます。ライセンス状態に応じて Lite /
+            Extended / Performance の機能が切り替わります。</span
           >
           <span class="lang-en"
-            >ChordDock uses a shared installer for Lite and Extended. Extended
-            features are unlocked by your serial key.</span
+            >The v2.0 package includes the Chord Dock main plugin and ChordPart,
+            the bundled per-part MIDI receiver. Available features depend on
+            your Lite / Extended / Performance license.</span
           >
         </p>
 
@@ -397,23 +426,26 @@
           <article class="os-card">
             <h3>Windows</h3>
             <div class="version-label">
-              <span class="lang-ja">最新版：ChordDock v1.5.3</span>
-              <span class="lang-en">Latest: ChordDock v1.5.3</span>
+              <span class="lang-ja">最新版：ChordDock v2.0</span>
+              <span class="lang-en">Latest: ChordDock v2.0</span>
             </div>
             <a
               class="download-button"
-              href="https://github.com/k2get/chord-dock-site/releases/latest/download/Chord_Dock_1.5.3_windows.zip"
+              href="https://github.com/k2get/chord-dock-site/releases/latest/download/Chord_Dock_2.0_windows.zip"
             >
               <span class="lang-ja">Windows パッケージをダウンロード</span>
               <span class="lang-en">Download Windows package</span>
             </a>
             <p class="note">
               <span class="lang-ja"
-                >配布パッケージに含まれる形式をご確認ください。上書きで更新可能です。</span
+                >ZIP 内の <code>Chord Dock.vst3</code> と
+                <code>ChordPart.vst3</code> を、どちらも VST3
+                フォルダへコピーしてください。両方を同じ v2.0 として更新する必要があります。</span
               >
               <span class="lang-en"
-                >Please check which plugin formats are included in the current
-                package. It can be installed over an existing version.</span
+                >Copy both <code>Chord Dock.vst3</code> and
+                <code>ChordPart.vst3</code> from the ZIP into your VST3 folder.
+                Both plugins must be updated together to v2.0.</span
               >
             </p>
           </article>
@@ -421,26 +453,37 @@
           <article class="os-card">
             <h3>macOS</h3>
             <div class="version-label">
-              <span class="lang-ja">最新版：ChordDock v1.5.3</span>
-              <span class="lang-en">Latest: ChordDock v1.5.3</span>
+              <span class="lang-ja">最新版：ChordDock v2.0</span>
+              <span class="lang-en">Latest: ChordDock v2.0</span>
             </div>
             <a
               class="download-button"
-              href="https://github.com/k2get/chord-dock-site/releases/latest/download/Chord_Dock_1.5.3_mac.pkg"
+              href="https://github.com/k2get/chord-dock-site/releases/latest/download/Chord_Dock_2.0_mac.pkg"
             >
               <span class="lang-ja">macOS インストーラーをダウンロード</span>
               <span class="lang-en">Download macOS installer</span>
             </a>
             <p class="note">
               <span class="lang-ja"
-                >配布パッケージに含まれる形式をご確認ください。上書きで更新可能です。</span
+                >インストーラーに従って更新してください。Chord Dock 本体と
+                ChordPart は、同じ v2.0 の組み合わせで使用してください。</span
               >
               <span class="lang-en"
-                >Please check which plugin formats are included in the current
-                package. It can be installed over an existing version.</span
+                >Run the installer and use the main Chord Dock plugin and
+                ChordPart as a matching v2.0 set.</span
               >
             </p>
           </article>
+        </div>
+        <div class="callout">
+          <span class="lang-ja"
+            >アップデート前に DAW を終了してください。更新後にプラグインが表示されない場合は、DAW
+            のプラグイン再スキャンを実行してください。</span
+          >
+          <span class="lang-en"
+            >Quit your DAW before updating. If the plugins do not appear after
+            the update, rescan your DAW's plugin folders.</span
+          >
         </div>
       </section>
 
@@ -450,6 +493,66 @@
           <span class="lang-en">Release notes</span>
         </h2>
         <div class="license-box release-notes">
+          <div class="release-item">
+            <h3>ChordDock v2.0</h3>
+            <div class="release-date">2026-07</div>
+            <ul>
+              <li>
+                <span class="lang-ja"
+                  >Performance エディションの中心機能として Arranger Mode
+                  を追加しました。セクションごとに Drums / Bass / Arp / Chord
+                  Pad の4パートを組み、パッドで演奏・予約切り替えできます。</span
+                >
+                <span class="lang-en"
+                  >Added Arranger Mode, the core Performance edition feature.
+                  Build four-part accompaniment per section and perform or queue
+                  it with pads.</span
+                >
+              </li>
+              <li>
+                <span class="lang-ja"
+                  >Performance Page と Song Page を追加しました。4パートのパッドを一覧しながら演奏したり、曲順にパターンを配置して確認できます。</span
+                >
+                <span class="lang-en"
+                  >Added Performance Page and Song Page for focused pad
+                  performance and song-order pattern layout.</span
+                >
+              </li>
+              <li>
+                <span class="lang-ja"
+                  >Drums のステップ編集、Bass の Chord-Role Sequencer / MIDI Roll、
+                  Arp / Chord Pad のロールベース編集に対応しました。</span
+                >
+                <span class="lang-en"
+                  >Added dedicated pattern editors: Drums step editing, Bass
+                  Chord-Role Sequencer / MIDI Roll, and role-based Arp / Chord
+                  Pad editing.</span
+                >
+              </li>
+              <li>
+                <span class="lang-ja"
+                  >同梱プラグイン ChordPart を追加しました。DAW 側で MIDI
+                  チャンネル分割が難しい場合でも、パート別 MIDI を別トラックへ受け渡せます。</span
+                >
+                <span class="lang-en"
+                  >Added the bundled ChordPart receiver plugin, which sends
+                  per-part MIDI to separate DAW tracks even in hosts that cannot
+                  split plugin MIDI output by channel.</span
+                >
+              </li>
+              <li>
+                <span class="lang-ja"
+                  >Lite / Extended でも Arranger Mode Demo
+                  を試せます。Performance または Full Bundle では全パッドと
+                  Arranger MIDI 書き出しが利用できます。</span
+                >
+                <span class="lang-en"
+                  >Lite and Extended can try Arranger Mode Demo. Performance or
+                  Full Bundle unlocks all pads and Arranger MIDI export.</span
+                >
+              </li>
+            </ul>
+          </div>
           <div class="release-item">
             <h3>ChordDock v1.5.3</h3>
             <div class="release-date">2026-04-05</div>
@@ -471,12 +574,12 @@
         <div class="license-box">
           <p>
             <span class="lang-ja"
-              >ChordDock のライセンスは、Lite / Extended
-              共通のインストーラーに対してシリアルキーで機能を切り替える方式です。</span
+              >ChordDock v2.0 は、同じパッケージ内で Lite / Extended /
+              Performance の機能をライセンス状態に応じて切り替えます。</span
             >
             <span class="lang-en"
-              >ChordDock uses a shared installer; your serial key determines
-              whether you run Lite or Extended.</span
+              >ChordDock v2.0 uses one package, and your license state switches
+              between Lite / Extended / Performance features.</span
             >
           </p>
           <ul>
@@ -499,12 +602,22 @@
             </li>
             <li>
               <span class="lang-ja"
-                >PC の買い替えや OS
-                再インストール時には、事前に旧環境のライセンス解除を行ってください。</span
+                >ChordPart 自体にはライセンス操作はありません。メインの Chord
+                Dock 側のエディション状態に従います。</span
               >
               <span class="lang-en"
-                >Before replacing a PC or reinstalling the OS, please deactivate
-                the license on the old environment.</span
+                >ChordPart has no separate license operation. It follows the
+                edition state of the main Chord Dock plugin.</span
+              >
+            </li>
+            <li>
+              <span class="lang-ja"
+                >PC の買い替えや OS
+                再インストール時には、必要に応じて旧環境のライセンス解除を行ってください。</span
+              >
+              <span class="lang-en"
+                >Before replacing a PC or reinstalling the OS, deactivate the
+                old environment if needed.</span
               >
             </li>
           </ul>
@@ -520,44 +633,43 @@
         </h2>
         <p class="note">
           <span class="lang-ja"
-            >アップデート時によくある質問を抜粋しています。一般的な FAQ
-            は本製品のランディングページをご確認ください。</span
+            >アップデート時によくある質問を抜粋しています。詳しい操作手順は、v2.0
+            パッケージ同梱のユーザーマニュアルをご確認ください。</span
           >
           <span class="lang-en"
-            >This section covers update-related questions. For general FAQs,
-            please refer to the main product landing page.</span
+            >This section covers update-related questions. For detailed
+            operation steps, see the user manual included in the v2.0
+            package.</span
           >
         </p>
         <div class="details-box">
           <details>
             <summary>
               <span class="lang-ja"
-                >Q1. アップデートしたら Lite になってしまいました</span
+                >Q1. v1.5 から v2.0 で何が増えましたか？</span
               >
-              <span class="lang-en">Q1. After updating, it shows as Lite</span>
+              <span class="lang-en">Q1. What is new from v1.5 to v2.0?</span>
             </summary>
             <div>
               <p>
                 <span class="lang-ja"
-                  >ChordDock は Lite / Extended 共通インストーラーです。Extended
-                  として使う場合は、シリアルキーを再度入力し、オンライン認証を実行する必要があります。</span
+                  >v2.0 では、コード進行をもとに伴奏パターンを組んで演奏する
+                  Arranger Mode、4パートを一覧できる Performance Page、曲順に配置できる
+                  Song Page、パート別 MIDI 受信用の ChordPart が追加されました。</span
                 >
                 <span class="lang-en"
-                  >ChordDock uses a shared installer for Lite and Extended. To
-                  use Extended, enter your serial key again and perform online
-                  activation.</span
+                  >v2.0 adds Arranger Mode, Performance Page, Song Page, and
+                  the bundled ChordPart receiver for per-part MIDI routing.</span
                 >
               </p>
               <p>
                 <span class="lang-ja"
-                  >OS
-                  再インストールやマシン移行時などにシリアル情報が失われると、Lite
-                  状態に戻ることがあります。</span
+                  >従来のタイムライン編集、セクション、Arpeggio / Bassline、
+                  Reharmo、MIDI ドラッグ書き出しのワークフローも引き続き利用できます。</span
                 >
                 <span class="lang-en"
-                  >If serial information is lost when reinstalling the OS or
-                  moving to a new machine, the plugin may revert to Lite
-                  mode.</span
+                  >Existing timeline editing, sections, Arpeggio / Bassline,
+                  Reharmo, and MIDI drag workflows remain available.</span
                 >
               </p>
             </div>
@@ -565,10 +677,66 @@
           <details>
             <summary>
               <span class="lang-ja"
-                >Q2. アップデート後に DAW にプラグインが表示されません</span
+                >Q2. Windows 版はどう更新すればよいですか？</span
               >
               <span class="lang-en"
-                >Q2. After updating, the plugin does not appear in my DAW</span
+                >Q2. How should I update the Windows version?</span
+              >
+            </summary>
+            <div>
+              <p>
+                <span class="lang-ja"
+                  >DAW を終了してから ZIP を展開し、<code>Chord Dock.vst3</code> と
+                  <code>ChordPart.vst3</code> の両方を VST3 フォルダへコピーしてください。</span
+                >
+                <span class="lang-en"
+                  >Quit your DAW, unzip the package, and copy both
+                  <code>Chord Dock.vst3</code> and
+                  <code>ChordPart.vst3</code> into your VST3 folder.</span
+                >
+              </p>
+              <p>
+                <span class="lang-ja"
+                  >メインプラグインと ChordPart のバージョンが違うと、ChordPart
+                  は安全のため送受信を停止します。必ず同じ v2.0
+                  の組み合わせで更新してください。</span
+                >
+                <span class="lang-en"
+                  >If the main plugin and ChordPart versions differ, ChordPart
+                  stops for safety. Update both as a matching v2.0 set.</span
+                >
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span class="lang-ja"
+                >Q3. macOS 版はどう更新すればよいですか？</span
+              >
+              <span class="lang-en"
+                >Q3. How should I update the macOS version?</span
+              >
+            </summary>
+            <div>
+              <p>
+                <span class="lang-ja"
+                  >DAW を終了してから macOS インストーラーを実行してください。更新後に
+                  DAW 側で見つからない場合は、プラグイン再スキャンを実行してください。</span
+                >
+                <span class="lang-en"
+                  >Quit your DAW, run the macOS installer, and rescan plugin
+                  folders in your DAW if the updated plugins do not appear.</span
+                >
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span class="lang-ja"
+                >Q4. アップデート後に DAW にプラグインが表示されません</span
+              >
+              <span class="lang-en"
+                >Q4. After updating, the plugin does not appear in my DAW</span
               >
             </summary>
             <div>
@@ -579,21 +747,28 @@
               <ul>
                 <li>
                   <span class="lang-ja"
-                    >VST3 / AU の対応状況（AAX
-                    は準備中。ホスト毎の対応はランディングページ参照）</span
+                    >インストールまたはコピーが正常に完了しているか</span
                   >
                   <span class="lang-en"
-                    >Plugin format availability depends on the current package;
-                    see the landing page for host-specific support.</span
+                    >Whether installation or file copying completed
+                    successfully</span
                   >
                 </li>
                 <li>
-                  <span class="lang-ja">DAW のプラグイン再スキャン</span>
-                  <span class="lang-en">Rescan plugin folders in your DAW</span>
+                  <span class="lang-ja"
+                    >Windows の場合、<code>.vst3</code> ファイルが標準の VST3
+                    フォルダにあるか</span
+                  >
+                  <span class="lang-en"
+                    >On Windows, whether the <code>.vst3</code> files are in
+                    the standard VST3 folder</span
+                  >
                 </li>
                 <li>
-                  <span class="lang-ja">DAW の再起動</span>
-                  <span class="lang-en">Restart your DAW</span>
+                  <span class="lang-ja">DAW のプラグイン再スキャンと再起動</span>
+                  <span class="lang-en"
+                    >Rescanning plugin folders and restarting the DAW</span
+                  >
                 </li>
               </ul>
             </div>
@@ -601,47 +776,167 @@
           <details>
             <summary>
               <span class="lang-ja"
-                >Q3.
+                >Q5.
                 アップデート前のプロジェクトとの互換性は大丈夫ですか？</span
               >
               <span class="lang-en"
-                >Q3. Will my existing projects remain compatible after
+                >Q5. Will my existing projects remain compatible after
                 updating?</span
               >
             </summary>
             <div>
               <p>
                 <span class="lang-ja"
-                  >基本的に後方互換です。まれに DAW
-                  側のキャッシュの影響で、プラグインの再スキャンが必要な場合があります。</span
+                  >Chord Dock の状態は基本的に DAW
+                  プロジェクトと一緒に復元されます。v2.0 では、Arranger
+                  のパターン、パッド割り当て、Song Page の配置、ChordPart
+                  の設定もプロジェクトに保存・復元されます。</span
                 >
                 <span class="lang-en"
-                  >In principle, updates are backward compatible. In rare cases,
-                  your DAW’s plugin cache may require a rescan.</span
+                  >Chord Dock state is generally restored with the DAW project.
+                  In v2.0, Arranger patterns, pad assignments, Song Page layout,
+                  and ChordPart settings are also saved and recalled.</span
+                >
+              </p>
+              <p>
+                <span class="lang-ja"
+                  >ただし、更新後に DAW のキャッシュの影響で表示や認識が不安定な場合は、プラグイン再スキャンを行ってください。</span
+                >
+                <span class="lang-en"
+                  >If your DAW cache causes recognition issues after updating,
+                  run a plugin rescan.</span
                 >
               </p>
             </div>
           </details>
           <details>
             <summary>
-              <span class="lang-ja">Q4. 詳しい FAQ を確認したい</span>
-              <span class="lang-en">Q4. Where can I find the full FAQ?</span>
+              <span class="lang-ja"
+                >Q6. Lite / Extended のままでも Arranger Mode を試せますか？</span
+              >
+              <span class="lang-en"
+                >Q6. Can I try Arranger Mode with Lite or Extended?</span
+              >
             </summary>
             <div>
               <p>
                 <span class="lang-ja"
-                  >ChordDock のランディングページ下部に、FAQ /
-                  トラブルシューティングの詳細があります（<a
-                    href="https://k2get.github.io/chord-dock-site/"
-                    >https://k2get.github.io/chord-dock-site/</a
-                  >）。</span
+                  >はい。Lite / Extended でも Arranger Mode Demo
+                  として基本操作を試せます。実再生時間は合計90秒、各パート Pad
+                  1〜3まで、Arranger MIDI 書き出しは利用できません。</span
                 >
                 <span class="lang-en"
-                  >You can find the full FAQ and troubleshooting section at the
-                  bottom of the main Chord Dock landing page (<a
-                    href="https://k2get.github.io/chord-dock-site/"
-                    >https://k2get.github.io/chord-dock-site/</a
-                  >).</span
+                  >Yes. Lite and Extended can try Arranger Mode Demo. Demo
+                  playback is capped at 90 seconds total, each part can use Pad
+                  1-3, and Arranger MIDI export is unavailable.</span
+                >
+              </p>
+              <p>
+                <span class="lang-ja"
+                  >全パッドと Arranger MIDI 書き出しを使うには、Performance
+                  または Full Bundle が必要です。</span
+                >
+                <span class="lang-en"
+                  >Performance or Full Bundle is required for all pads and
+                  Arranger MIDI export.</span
+                >
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span class="lang-ja"
+                >Q7. アップデートしたら Lite になってしまいました</span
+              >
+              <span class="lang-en">Q7. After updating, it shows as Lite</span>
+            </summary>
+            <div>
+              <p>
+                <span class="lang-ja"
+                  >ライセンス情報が失われた場合は、プラグイン内の認証画面でシリアルキーを入力し、オンライン認証を実行してください。</span
+                >
+                <span class="lang-en"
+                  >If license information was lost, enter your serial key in
+                  the plugin activation screen and complete online
+                  activation.</span
+                >
+              </p>
+              <p>
+                <span class="lang-ja"
+                  >ChordPart 側ではライセンス入力は不要です。メインの Chord Dock
+                  側の認証状態に従います。</span
+                >
+                <span class="lang-en"
+                  >ChordPart does not require license entry. It follows the
+                  activation state of the main Chord Dock plugin.</span
+                >
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span class="lang-ja"
+                >Q8. ChordPart が接続されない、または Version mismatch と表示されます</span
+              >
+              <span class="lang-en"
+                >Q8. ChordPart is not connected or shows Version mismatch</span
+              >
+            </summary>
+            <div>
+              <p>
+                <span class="lang-ja">次の点をご確認ください：</span>
+                <span class="lang-en">Please check the following:</span>
+              </p>
+              <ul>
+                <li>
+                  <span class="lang-ja"
+                    >Chord Dock 本体と ChordPart が同じ DAW
+                    プロジェクト内に読み込まれているか</span
+                  >
+                  <span class="lang-en"
+                    >Whether the main Chord Dock plugin and ChordPart are
+                    loaded in the same DAW project</span
+                  >
+                </li>
+                <li>
+                  <span class="lang-ja"
+                    >メインプラグイン側の <code>Part Send</code> がオンになっているか</span
+                  >
+                  <span class="lang-en"
+                    >Whether <code>Part Send</code> is enabled on the main
+                    plugin</span
+                  >
+                </li>
+                <li>
+                  <span class="lang-ja"
+                    >Chord Dock 本体と ChordPart が同じ v2.0
+                    の組み合わせになっているか</span
+                  >
+                  <span class="lang-en"
+                    >Whether the main plugin and ChordPart are both v2.0</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span class="lang-ja">Q9. 詳しい手順を確認したい</span>
+              <span class="lang-en"
+                >Q9. Where can I find detailed instructions?</span
+              >
+            </summary>
+            <div>
+              <p>
+                <span class="lang-ja"
+                  >v2.0 パッケージに同梱されているユーザーマニュアルをご確認ください。Arranger
+                  Mode、Performance Page、Song Page、ChordPart
+                  の設定手順までまとまっています。</span
+                >
+                <span class="lang-en"
+                  >See the user manual included in the v2.0 package. It covers
+                  Arranger Mode, Performance Page, Song Page, and ChordPart
+                  setup steps.</span
                 >
               </p>
             </div>
