@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ja" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chord Dock Performance | コード進行を演奏に変えるエディション</title>
+    <meta
+      name="description"
+      content="Chord Dock Performance は、アレンジャーモード（Drums / Bass / Arp / Chord Pad の4パート伴奏）、Performance / SONG ページ、ChordPart によるパート別MIDI出力を解放するエディションです。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: 'class' };
+    </script>
+    <script>
+      (function () {
+        var KEY = 'lang';
+        var pref = null;
+        try {
+          pref = localStorage.getItem(KEY);
+        } catch (e) {}
+        if (pref === 'en') {
+          location.replace('performance.en.html');
+          return;
+        }
+        if (pref === 'ja') {
+          return;
+        }
+        var lang =
+          (navigator.languages && navigator.languages[0]) ||
+          navigator.language ||
+          '';
+        if (!/^ja/i.test(lang || '')) {
+          location.replace('performance.en.html');
+        }
+      })();
+    </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-V3MCR5K6MP"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-V3MCR5K6MP');
+    </script>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Noto Sans JP", system-ui, -apple-system, Segoe UI,
+          sans-serif;
+        background:
+          radial-gradient(circle at 12% 18%, rgba(45, 212, 191, 0.15), transparent 24%),
+          radial-gradient(circle at 86% 20%, rgba(99, 102, 241, 0.18), transparent 24%),
+          linear-gradient(180deg, #0a0f1c 0%, #090d18 100%);
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Space Grotesk", "Noto Sans JP", sans-serif;
+      }
+      .container {
+        max-width: 1100px;
+      }
+      .badge {
+        border: 1px solid rgb(229 231 235 / 1);
+      }
+      .section {
+        scroll-margin-top: 88px;
+      }
+      p {
+        max-width: 68ch;
+      }
+    </style>
+    <meta
+      property="og:title"
+      content="Chord Dock Performance | コード進行を演奏に変えるエディション"
+    />
+    <meta
+      property="og:description"
+      content="アレンジャーモード（4パート伴奏のパッド演奏）、Performance / SONG ページ、ChordPart によるパート別MIDI出力を解放するエディション。"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://k2get.github.io/chord-dock-site/performance.html"
+    />
+    <meta
+      property="og:image"
+      content="https://k2get.github.io/chord-dock-site/assets/performance-view.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body
+    class="bg-white text-gray-900 dark:bg-neutral-950 dark:text-neutral-100"
+  >
+    <header
+      class="sticky top-0 z-40 border-b border-gray-200/60 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:border-neutral-800 dark:bg-neutral-950/80"
+    >
+      <nav
+        class="container mx-auto flex items-center justify-between px-4 py-3"
+      >
+        <a
+          href="index.html"
+          class="flex items-center gap-2 text-xl font-extrabold tracking-tight"
+        >
+          <span class="inline-block h-6 w-6 rounded-lg bg-indigo-600"></span>
+          Chord Dock
+        </a>
+        <div class="hidden items-center gap-3 text-sm sm:flex">
+          <a href="index.html" class="hover:opacity-80">トップ</a>
+          <a href="editions.html" class="hover:opacity-80">エディション</a>
+          <a href="extended.html" class="hover:opacity-80">Extended 詳細</a>
+          <a href="comparison.html" class="hover:opacity-80">比較表</a>
+          <a href="manual.html" class="hover:opacity-80">オンラインマニュアル</a>
+          <a href="daw-guides.html" class="hover:opacity-80">DAW別ガイド</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <a
+            id="langEN"
+            href="performance.en.html"
+            class="inline-flex items-center rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-medium hover:bg-gray-50 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+            >English</a
+          >
+          <a
+            href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-3.5 py-2 text-sm font-semibold text-white shadow hover:bg-indigo-500"
+            >Lite を無料で試す</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container mx-auto px-4 py-16 sm:py-20">
+          <div class="grid items-center gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+            <div>
+              <span
+                class="badge inline-flex rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-teal-200"
+                >Edition Detail</span
+              >
+              <h1
+                class="mt-5 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl"
+              >
+                進行の上に伴奏を組み、<br />
+                <span class="text-teal-400">パッドで演奏する</span> Performance
+              </h1>
+              <p class="mt-5 text-lg text-gray-600 dark:text-neutral-300">
+                Chord Dock Performance は、タイムラインで作ったコード進行の上に Drums / Bass / Arp / Chord Pad の4パート伴奏を組み、パッドで演奏できるようにするエディションです。作った進行が、そのままライブや構成スケッチの伴奏になります。
+              </p>
+              <div class="mt-7 flex flex-wrap items-center gap-4">
+                <a
+                  href="https://buy.stripe.com/9B67sEdzOelA33GbZ07N604"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center rounded-xl bg-indigo-600 px-5 py-3 text-base font-semibold text-white shadow hover:bg-indigo-500"
+                  >Performance を購入</a
+                >
+                <span class="flex items-baseline gap-2">
+                  <span class="text-sm text-gray-500 dark:text-neutral-500 line-through">$29</span>
+                  <span class="text-2xl font-extrabold text-teal-300">$19</span>
+                  <span class="text-xs text-gray-500 dark:text-neutral-400">期間限定価格・10月1日まで</span>
+                </span>
+              </div>
+              <p class="mt-4 text-sm text-red-600 dark:text-red-300">
+                すべてのエディションは共通インストーラーです。購入後に発行されるライセンスキーを入力して機能を有効化します。ライセンスは 1 アカウント 2 台まで使えます。
+              </p>
+              <p class="mt-3 text-sm text-teal-200/90">
+                購入前に、Lite / Extended のアレンジャーモードデモ（実再生90秒・各パート Pad 1–3）で操作感を試せます。
+              </p>
+              <div class="mt-4 flex flex-wrap gap-4 text-sm">
+                <a
+                  href="editions.html"
+                  class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200"
+                  >エディション一覧へ戻る</a
+                >
+                <a
+                  href="comparison.html"
+                  class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200"
+                  >完全版の比較表を見る</a
+                >
+              </div>
+            </div>
+            <div
+              class="rounded-[28px] border border-teal-400/25 bg-white/70 p-6 shadow-2xl shadow-teal-950/20 dark:bg-neutral-900/75"
+            >
+              <div class="flex items-center justify-between gap-3">
+                <h2 class="text-xl font-extrabold">Performance で増えること</h2>
+                <span class="rounded-full bg-teal-500/15 px-3 py-1 text-xs font-semibold text-teal-200 ring-1 ring-teal-400/30">NEW in 2.0</span>
+              </div>
+              <div class="mt-5 space-y-3 text-sm text-gray-700 dark:text-neutral-200">
+                <div class="rounded-2xl bg-neutral-950/80 px-4 py-3 ring-1 ring-white/10">
+                  4パート×8パッド×2セットのアレンジャーモード
+                </div>
+                <div class="rounded-2xl bg-neutral-950/80 px-4 py-3 ring-1 ring-white/10">
+                  クリック / 数字キー / MIDI で予約切り替え（セクションランチャー）
+                </div>
+                <div class="rounded-2xl bg-neutral-950/80 px-4 py-3 ring-1 ring-white/10">
+                  32パッド一望の Performance ページと曲順の SONG ページ
+                </div>
+                <div class="rounded-2xl bg-neutral-950/80 px-4 py-3 ring-1 ring-white/10">
+                  ChordPart のパート別MIDI出力とアレンジャーMIDI書き出し
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <div
+            class="rounded-3xl border border-gray-200/70 bg-white/70 p-6 dark:border-neutral-800 dark:bg-neutral-900/70 sm:p-8"
+          >
+            <h2 class="text-2xl font-extrabold sm:text-3xl">紹介動画</h2>
+            <div class="mt-6 mx-auto max-w-3xl">
+              <div class="aspect-video overflow-hidden rounded-2xl ring-1 ring-gray-200 shadow bg-black dark:ring-neutral-700">
+                <iframe
+                  class="h-full w-full"
+                  width="815"
+                  height="458"
+                  src="https://www.youtube.com/embed/XS7teZi2VOY"
+                  title="Chord Dock 2.0 紹介｜アレンジャーモードとコードトラックプラグイン"
+                  frameborder="0"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p class="mt-2 text-xs text-gray-500">
+                ※ アレンジャーモードを含む Chord Dock 2.0 の概要紹介動画です。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <h2 class="text-2xl font-extrabold sm:text-3xl">Performance の機能</h2>
+
+          <!-- アレンジャーモード -->
+          <div
+            class="grid items-center mt-8 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:minmax(0,1fr)_auto]"
+          >
+            <div class="md:ml-auto max-w-xl">
+              <h3 class="text-xl font-semibold">アレンジャーモード — セクションごとに4パートを組む</h3>
+              <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">
+                Drums / Bass / Arp / Chord Pad のパターンをセクション単位で作成し、パッドに割り当てます（各パート8パッド×2セット）。役割ベースのパターンはコード進行の変更に自動で追従。パートごとのスタイルプリセットとランダム生成で、土台を素早く作れます。
+              </p>
+            </div>
+            <div
+              class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72"
+            >
+              <img
+                src="assets/arranger-setup.png"
+                alt="アレンジャーモード（Setup ページ）の画面"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <!-- パターンエディタ -->
+          <div
+            class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:auto_minmax(0,1fr)]"
+          >
+            <div
+              class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72"
+            >
+              <img
+                src="assets/drum-editor.png"
+                alt="Drums のレーン式ステップエディタの画面"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold">パートごとの専用パターンエディタ</h3>
+              <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">
+                Drums はレーン式のステップエディタ（GM準拠・変更可）、Bass は「コードロールシーケンサー」と「MIDIロール」の2方式、Arp / Chord Pad はロールレーン式で編集できます。仕上げたパターンは、どれも MIDI としてドラッグ書き出しできます。
+              </p>
+            </div>
+          </div>
+
+          <!-- セクションランチャーと予約切り替え -->
+          <div
+            class="mt-12 rounded-3xl border border-gray-200/70 bg-white/70 p-6 dark:border-neutral-800 dark:bg-neutral-900/70 sm:p-8"
+          >
+            <h3 class="text-xl font-semibold">セクションランチャーと予約ベースの切り替え</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">
+              クリック、数字キー 1–8、MIDI ノートでセクションを予約。セクションは Launch Quantize（Next Bar / Section End）で、パッドは切り替えタイミング（Next Bar / Pattern End）と再生位置（Bar Lock / Restart）で制御します。Auto（自動進行）と Standby Pad 1、そして Sync Mode（Host / Plugin）により、DAW 追従でもプラグイン主導でも演奏できます。
+            </p>
+            <div class="mt-5 space-y-3">
+              <img
+                src="assets/section-launcher.png"
+                alt="セクションランチャー（8スロット）の画面"
+                class="w-full rounded-lg ring-1 ring-gray-200 dark:ring-neutral-700"
+              />
+              <img
+                src="assets/arranger-middle-panel.png"
+                alt="アレンジャーの中段パネルの画面"
+                class="w-full rounded-lg ring-1 ring-gray-200 dark:ring-neutral-700"
+              />
+            </div>
+          </div>
+
+          <!-- Performance ページ -->
+          <div
+            class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:minmax(0,1fr)_auto]"
+          >
+            <div class="md:ml-auto max-w-xl">
+              <h3 class="text-xl font-semibold">Performance ページ — 32パッドで演奏に集中</h3>
+              <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">
+                4パート×8パッド＝32パッドを1画面に表示する演奏用ページです。セクションを予約しながらパッドの組み合わせで展開を作り、ライブでも構成の実験でも、演奏そのものに集中できます。
+              </p>
+            </div>
+            <div
+              class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72"
+            >
+              <img
+                src="assets/performance-view.png"
+                alt="Performance ページ（4パート×8パッド）の画面"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <!-- SONG ページ -->
+          <div
+            class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:auto_minmax(0,1fr)]"
+          >
+            <div
+              class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72"
+            >
+              <img
+                src="assets/song-page.png"
+                alt="SONG ページ（曲順にパターンを配置）の画面"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold">SONG ページ — 曲順に並べて通しで確認</h3>
+              <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">
+                パッドパターンを曲順に配置して、曲全体を通しで確認できます。DAW 停止中の内部再生にも、ホスト再生への追従にも対応。クリップ編集は Undo 対応です。
+              </p>
+            </div>
+          </div>
+
+          <!-- ChordPart -->
+          <div
+            class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:auto_minmax(0,1fr)]"
+          >
+            <div
+              class="rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl p-8 flex items-center justify-center"
+            >
+              <img
+                src="assets/chordpart-ui.png"
+                alt="ChordPart プラグインの画面"
+                class="rounded-lg"
+                width="292"
+              />
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold">ChordPart — 各パートを、別トラックの好きな音源へ</h3>
+              <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">
+                同梱の小型プラグイン ChordPart（VST3）を受け側トラックに挿すだけで、アレンジャー各パートの MIDI を配線不要の自動接続で受け取れます。ホスト側の MIDI ルーティング仕様に関わらず、パートごとに音源を割り当て可能。追加レイテンシは最大1オーディオバッファで一定（推奨バッファサイズ 128–256 サンプル）です。
+              </p>
+              <img
+                src="assets/part-send-chip.png"
+                alt="本体側 Part Send チップの表示例"
+                class="mt-4 rounded-lg ring-1 ring-gray-200 dark:ring-neutral-700 max-w-full"
+                width="592"
+              />
+              <p class="mt-3 text-sm">
+                <a
+                  href="ableton-live.html"
+                  class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200"
+                  >Ableton Live でのルーティング手順を見る</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <div
+            class="rounded-3xl border border-gray-200/70 bg-white/70 p-6 dark:border-neutral-800 dark:bg-neutral-900/70 sm:p-8"
+          >
+            <h2 class="text-2xl font-extrabold sm:text-3xl">こんな人に向いています</h2>
+            <div class="mt-6 grid gap-6 md:grid-cols-3">
+              <article class="rounded-3xl border border-gray-200/80 bg-white/80 p-5 dark:border-neutral-800 dark:bg-neutral-900/80">
+                <h3 class="text-lg font-extrabold">ライブで伴奏を回したい</h3>
+                <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                  セクションランチャーと予約ベースの切り替えで、小節に合わせて安全に次の展開へ移れます。
+                </p>
+              </article>
+              <article class="rounded-3xl border border-gray-200/80 bg-white/80 p-5 dark:border-neutral-800 dark:bg-neutral-900/80">
+                <h3 class="text-lg font-extrabold">パッドで構成をスケッチしたい</h3>
+                <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                  DAW が短いループを回していても、Plugin 同期ならパッド操作で曲を先へ進められます。構成の実験に最適です。
+                </p>
+              </article>
+              <article class="rounded-3xl border border-gray-200/80 bg-white/80 p-5 dark:border-neutral-800 dark:bg-neutral-900/80">
+                <h3 class="text-lg font-extrabold">パートごとに音源を分けたい</h3>
+                <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                  ChordPart で各パートを別トラックへ。DAW 内蔵音源を含む好きな音源で、パートごとに鳴らせます。
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <div class="grid gap-6 lg:grid-cols-2">
+            <article
+              class="rounded-3xl border border-teal-400/30 bg-teal-500/10 p-6"
+            >
+              <h2 class="text-2xl font-extrabold">Performance で解放される機能</h2>
+              <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                <div class="rounded-2xl bg-neutral-950/80 p-4 ring-1 ring-white/10">
+                  <h3 class="font-semibold">Arranger Mode</h3>
+                  <p class="mt-2 text-sm text-neutral-300">
+                    4パートの伴奏パターンを、全8パッド×2セットで演奏できます。
+                  </p>
+                </div>
+                <div class="rounded-2xl bg-neutral-950/80 p-4 ring-1 ring-white/10">
+                  <h3 class="font-semibold">Performance / SONG ページ</h3>
+                  <p class="mt-2 text-sm text-neutral-300">
+                    32パッドの演奏画面と、曲順にパターンを並べる俯瞰画面。
+                  </p>
+                </div>
+                <div class="rounded-2xl bg-neutral-950/80 p-4 ring-1 ring-white/10">
+                  <h3 class="font-semibold">ChordPart</h3>
+                  <p class="mt-2 text-sm text-neutral-300">
+                    同梱プラグインで、各パートの MIDI を DAW の別トラックへ。
+                  </p>
+                </div>
+                <div class="rounded-2xl bg-neutral-950/80 p-4 ring-1 ring-white/10">
+                  <h3 class="font-semibold">Arranger MIDI Export</h3>
+                  <p class="mt-2 text-sm text-neutral-300">
+                    アレンジャーパターンを MIDI としてドラッグ書き出しできます。
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="rounded-3xl border border-gray-200/70 bg-white/70 p-6 dark:border-neutral-800 dark:bg-neutral-900/70"
+            >
+              <h2 class="text-2xl font-extrabold">デモから何が変わるか</h2>
+              <div class="mt-6 space-y-5 text-sm">
+                <div>
+                  <h3 class="font-semibold text-gray-900 dark:text-neutral-100">デモ（Lite / Extended）で試せること</h3>
+                  <ul class="mt-3 space-y-2 text-gray-600 dark:text-neutral-300">
+                    <li>Setup / Performance / SONG の各ページを開ける</li>
+                    <li>実演奏は合計90秒まで</li>
+                    <li>各パート Pad 1–3 のみ（Pad 4–8 は表示のみ）</li>
+                    <li>アレンジャーの MIDI 書き出しは不可</li>
+                  </ul>
+                </div>
+                <div class="border-t border-gray-200/70 pt-5 dark:border-neutral-800">
+                  <h3 class="font-semibold text-gray-900 dark:text-neutral-100">Performance で解放されるもの</h3>
+                  <ul class="mt-3 space-y-2 text-gray-600 dark:text-neutral-300">
+                    <li>演奏時間の制限なし</li>
+                    <li>全8パッド×2パターンセット（パートごと）</li>
+                    <li>アレンジャーパターンの MIDI ドラッグ / エクスポート</li>
+                    <li>ChordPart によるパート別MIDI出力</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <div
+            class="rounded-3xl border border-gray-200/70 bg-white/70 p-6 dark:border-neutral-800 dark:bg-neutral-900/70 sm:p-8"
+          >
+            <h2 class="text-2xl font-extrabold sm:text-3xl">導入と有効化</h2>
+            <div class="mt-6 grid gap-6 md:grid-cols-3">
+              <div class="rounded-2xl border border-gray-200/80 bg-white/80 p-5 dark:border-neutral-800 dark:bg-neutral-900/80">
+                <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 text-sm font-bold text-white">1</span>
+                <h3 class="mt-4 text-lg font-extrabold">Lite をインストール</h3>
+                <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                  すべてのエディションは共通インストーラーです。本体と一緒に ChordPart もインストールし、いつもの環境で立ち上がることを確認します。
+                </p>
+              </div>
+              <div class="rounded-2xl border border-gray-200/80 bg-white/80 p-5 dark:border-neutral-800 dark:bg-neutral-900/80">
+                <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 text-sm font-bold text-white">2</span>
+                <h3 class="mt-4 text-lg font-extrabold">ライセンスを購入</h3>
+                <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                  購入後に発行されるライセンスキーを受け取ります。ライセンスは 1 アカウントあたり 2 台まで利用できます。
+                </p>
+              </div>
+              <div class="rounded-2xl border border-gray-200/80 bg-white/80 p-5 dark:border-neutral-800 dark:bg-neutral-900/80">
+                <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 text-sm font-bold text-white">3</span>
+                <h3 class="mt-4 text-lg font-extrabold">プラグインで有効化</h3>
+                <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                  プラグイン右上の設定メニューからライセンスを入力し、ブラウザでデバイス承認を行うと Performance 機能が解放されます。
+                </p>
+              </div>
+            </div>
+            <p class="mt-6 text-sm text-gray-500 dark:text-neutral-400">
+              ChordPart は独自のライセンス操作を持たず、本体プラグインのエディションに従います。本体と同じバージョンのセットでご利用ください。画面付きの説明は
+              <a
+                href="index.html#activation"
+                class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200"
+                >トップページのアクティベーション案内</a
+              >
+              と FAQ から確認できます。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-12">
+          <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            <a
+              href="editions.html"
+              class="rounded-3xl border border-gray-200/70 bg-white/70 p-5 transition hover:-translate-y-0.5 hover:border-teal-400/40 dark:border-neutral-800 dark:bg-neutral-900/70"
+            >
+              <h2 class="text-lg font-extrabold">エディション一覧へ</h2>
+              <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                Lite / Extended / Performance / Full Bundle の全体像に戻ります。
+              </p>
+            </a>
+            <a
+              href="comparison.html"
+              class="rounded-3xl border border-gray-200/70 bg-white/70 p-5 transition hover:-translate-y-0.5 hover:border-teal-400/40 dark:border-neutral-800 dark:bg-neutral-900/70"
+            >
+              <h2 class="text-lg font-extrabold">完全版の比較表</h2>
+              <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                全エディションの機能差分を1ページで確認できます。
+              </p>
+            </a>
+            <a
+              href="manual.html"
+              class="rounded-3xl border border-gray-200/70 bg-white/70 p-5 transition hover:-translate-y-0.5 hover:border-teal-400/40 dark:border-neutral-800 dark:bg-neutral-900/70"
+            >
+              <h2 class="text-lg font-extrabold">オンラインマニュアル</h2>
+              <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                詳しい操作手順や機能の確認はこちらから。
+              </p>
+            </a>
+            <a
+              href="daw-guides.html"
+              class="rounded-3xl border border-gray-200/70 bg-white/70 p-5 transition hover:-translate-y-0.5 hover:border-teal-400/40 dark:border-neutral-800 dark:bg-neutral-900/70"
+            >
+              <h2 class="text-lg font-extrabold">DAW別ガイド</h2>
+              <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                導入やルーティングをホスト別に確認できます。
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-gray-200 dark:border-neutral-800">
+      <div
+        class="container mx-auto px-4 py-10 text-sm text-gray-600 dark:text-neutral-400"
+      >
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <p>© <span id="y"></span> Chord Dock — All rights reserved.</p>
+          <div class="flex items-center gap-3">
+            <a href="terms.html" class="hover:opacity-80">利用規約</a>
+            <span aria-hidden>•</span>
+            <a href="privacy.html" class="hover:opacity-80">プライバシー</a>
+            <span aria-hidden>•</span>
+            <a href="tokushoho.html" class="hover:opacity-80">特定商取引法に基づく表記</a>
+            <span aria-hidden>•</span>
+            <a
+              href="https://forms.gle/WPgiSCxY9Mp3v9nc6"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:opacity-80"
+              >お問い合わせ</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear();
+      (function () {
+        var en = document.getElementById('langEN');
+        if (en) {
+          en.addEventListener('click', function () {
+            try {
+              localStorage.setItem('lang', 'en');
+            } catch (e) {}
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

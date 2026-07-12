@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Chord Dock v1.5 — Timeline Chord Editing, Reharmonization, and Generation</title>
-    <meta name="description" content="Chord Dock v1.5 gives you a chord-track-style workflow for DAWs without one built in. Visualize chord progressions on a timeline, then reharmonize them and generate Arpeggio / Bassline in the same flow." />
+    <title>Chord Dock v2.0 — Timeline Chord Editing, Reharmonization, and Performance</title>
+    <meta name="description" content="Chord Dock v2.0 gives you a chord-track-style workflow for DAWs without one built in. Visualize chord progressions on a timeline, reharmonize them, generate Arpeggio / Bassline, then perform four-part accompaniment with Arranger Mode and route per-part MIDI with the bundled ChordPart plugin." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -102,11 +102,11 @@
       }
     </style>
     <!-- Open Graph -->
-    <meta property="og:title" content="Chord Dock v1.5 — Timeline Chord Editing, Reharmonization, and Generation" />
-    <meta property="og:description" content="A chord-track-style workflow for DAWs without one built in. Visualize chord progressions, reharmonize them, and generate Arpeggio / Bassline in one flow." />
+    <meta property="og:title" content="Chord Dock v2.0 — Timeline Chord Editing, Reharmonization, and Performance" />
+    <meta property="og:description" content="Edit chord progressions on a timeline, reharmonize and generate, then perform four-part accompaniment with pads and send per-part MIDI to separate tracks." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://k2get.github.io/chord-dock-site/" />
-    <meta property="og:image" content="https://k2get.github.io/chord-dock-site/assets/%E3%83%AA%E3%83%8F%E3%83%A2%E6%A9%9F%E8%83%BD%E3%81%AE%E5%85%A8%E4%BD%93%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88.png" />
+    <meta property="og:image" content="https://k2get.github.io/chord-dock-site/assets/performance-view.png" />
     <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body class="bg-white text-gray-900 dark:bg-neutral-950 dark:text-neutral-100">
@@ -142,29 +142,31 @@
         <div class="grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight">
-              Build, visualize, and share <span class="text-indigo-400">chord progressions.</span><br />
-              A chord-track-style workflow with <span class="text-indigo-400">reharmonization</span>
+              Build, visualize — <span class="text-indigo-400">and perform</span> chord progressions.<br />
+              A chord-track workflow from <span class="text-indigo-400">reharmonization</span> to four-part accompaniment
             </h1>
             <p class="mt-5 text-lg text-gray-600 dark:text-neutral-300">
-              Chord Dock v1.5 lets you see the whole progression on a timeline, edit it visually, then reharmonize it and generate section-based Arpeggio / Bassline from the same progression.
+              Chord Dock v2.0 lets you see the whole progression on a timeline, edit it visually, reharmonize it, generate Arpeggio / Bassline — and now perform four-part accompaniment (Drums / Bass / Arp / Chord Pad) with pads in Arranger Mode.
             </p>
             <p class="mt-4 text-sm text-gray-500 dark:text-neutral-400">
-              Lite and Extended share the same installer. Start with Lite for free, then unlock
-              <span class="align-middle badge rounded-lg px-2 py-1 text-xs">Extended</span>
-              whenever you need more.
+              Four editions: Lite (free) / Extended / Performance / Full Bundle. All share the same installer — start with Lite for free, then unlock the direction you need with a license key.
             </p>
             <div class="mt-6 flex flex-wrap gap-3">
               <a href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0" target="_blank" rel="noopener noreferrer" class="rounded-xl px-5 py-3 text-base font-semibold bg-indigo-600 text-white shadow hover:bg-indigo-500">Start Free with Lite</a>
-              <a href="#start-free" class="rounded-xl px-5 py-3 text-base font-semibold border border-indigo-400/40 text-indigo-100 shadow hover:bg-indigo-500/10">See What Extended Unlocks</a>
+              <a href="#start-free" class="rounded-xl px-5 py-3 text-base font-semibold border border-indigo-400/40 text-indigo-100 shadow hover:bg-indigo-500/10">See the Two Upgrade Paths</a>
             </div>
             <p class="mt-4 text-sm text-gray-500 dark:text-neutral-400">
-              Want the full feature set from the start?
-<a href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorrycheckout05140531" target="_blank" rel="noopener noreferrer" class="font-semibold text-indigo-300 hover:text-indigo-200 underline underline-offset-4">Buy Extended License</a> and enter the license key you receive after purchase to unlock Extended features.
+              Want everything unlocked from the start?
+<a href="#download" class="font-semibold text-indigo-300 hover:text-indigo-200 underline underline-offset-4">Buy an Extended / Performance / Full Bundle license</a> and enter the license key you receive after purchase.
+            </p>
+            <p class="mt-3 text-sm text-indigo-200/90">
+              Lite and Extended also include the Arranger Mode demo (90 seconds of playback, Pads 1–3 per part).
             </p>
             <div class="mt-4 flex flex-wrap gap-2 text-xs text-gray-600 dark:text-neutral-400">
               <span class="badge rounded-lg px-2 py-1">Lite: no serial</span>
               <span class="badge rounded-lg px-2 py-1">Same installer</span>
-              <span class="badge rounded-lg px-2 py-1">Upgrade later</span>
+              <span class="badge rounded-lg px-2 py-1">Unlock with a license key</span>
+              <span class="badge rounded-lg px-2 py-1">ChordPart included</span>
               <span class="badge rounded-lg px-2 py-1">VST3 / AU</span>
               <span class="badge rounded-lg px-2 py-1">macOS / Windows</span>
             </div>
@@ -175,8 +177,8 @@
                 class="w-full h-full"
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed/EoqgM5hUsR0"
-                title="Chord Dock v1.5 Official Promo | Timeline Chord Editor, Arpeggio &amp; Reharmonization"
+                src="https://www.youtube.com/embed/cPSGmZ-3fxU"
+                title="Chord Dock 2.0 Official Promo | Timeline Chord Editor, Arranger Mode &amp; Reharmonization"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin"
@@ -184,7 +186,7 @@
               ></iframe>
             </div>
             <p class="mt-2 text-xs text-gray-500">
-              Video overview of Chord Dock (English).
+              Video overview of Chord Dock 2.0 (English).
             </p>
           </div>
         </div>
@@ -196,36 +198,52 @@
         <div class="rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800 bg-white/70 dark:bg-neutral-900/70 p-6 sm:p-8">
           <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <h2 class="text-2xl sm:text-3xl font-extrabold">Start Free. Go Further with Extended.</h2>
+              <h2 class="text-2xl sm:text-3xl font-extrabold">Start Free. Then Grow in Two Directions.</h2>
               <p class="mt-3 text-gray-600 dark:text-neutral-300">
-                Use Lite to confirm the core workflow, DAW routing, and MIDI export flow first. When you are ready for deeper harmonic editing and generation tools, unlock Extended without changing the way you work.
+                Use Lite to confirm the core workflow, DAW routing, and MIDI export flow first. Then unlock the direction you need: Extended goes deeper into harmony, Performance turns your progression into accompaniment you can play. Neither one is “above” the other — they unlock different directions.
               </p>
             </div>
           </div>
-          <div class="mt-6 grid gap-6 md:grid-cols-2 text-sm">
-            <div class="rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 p-6">
+          <div class="mt-6 grid gap-6 md:grid-cols-3 text-sm">
+            <div class="rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 p-6 flex flex-col">
               <h3 class="text-lg font-semibold">Lite: core workflow, free</h3>
-              <ul class="mt-3 list-disc ml-5 space-y-2 text-gray-700 dark:text-neutral-300">
+              <ul class="mt-3 mb-5 list-disc ml-5 space-y-2 text-gray-700 dark:text-neutral-300">
                 <li>Build chord progressions on the timeline</li>
                 <li>Use Sections and Focus Edit for arrangement structure</li>
                 <li>Export progression MIDI with drag and drop</li>
-                <li>Save and reuse progression data across projects</li>
+                <li>Try the Arranger Mode demo (90 s of playback, Pads 1–3 per part)</li>
               </ul>
-              <a href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">Download Lite Free</a>
+              <a href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0" target="_blank" rel="noopener noreferrer" class="mt-auto self-start inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">Download Lite Free</a>
             </div>
-            <div class="rounded-2xl ring-2 ring-indigo-400/40 dark:ring-indigo-400/40 bg-white/60 dark:bg-neutral-900/60 p-6">
-              <h3 class="text-lg font-semibold">Extended: develop and transform ideas</h3>
-              <ul class="mt-3 list-disc ml-5 space-y-2 text-gray-700 dark:text-neutral-300">
+            <div class="rounded-2xl ring-2 ring-indigo-400/40 dark:ring-indigo-400/40 bg-white/60 dark:bg-neutral-900/60 p-6 flex flex-col">
+              <h3 class="text-lg font-semibold">Extended: go deeper into harmony</h3>
+              <ul class="mt-3 mb-5 list-disc ml-5 space-y-2 text-gray-700 dark:text-neutral-300">
                 <li>Compare and apply Reharmo ideas safely</li>
                 <li>Generate Arpeggio / Bassline from a selected section</li>
                 <li>Add tensions, slash chords, and Circle of Fifths tools</li>
                 <li>Unlock finer Snap / Length control for detailed editing</li>
               </ul>
-              <div class="mt-4 text-xs text-red-600 dark:text-red-300">
-                Lite and Extended use the same installer. Install Lite first, then enter your purchased license key to unlock Extended features.
-              </div>
-<a href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorrycheckout05140531" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">Buy Extended License</a>
+              <a href="extended.en.html" class="mt-auto self-start inline-flex rounded-xl px-4 py-2 border border-indigo-400/40 text-indigo-100 font-semibold hover:bg-indigo-500/10">See Extended Details</a>
             </div>
+            <div class="rounded-2xl ring-2 ring-teal-400/40 dark:ring-teal-400/40 bg-white/60 dark:bg-neutral-900/60 p-6 flex flex-col">
+              <h3 class="text-lg font-semibold">Performance: play your progression</h3>
+              <ul class="mt-3 mb-5 list-disc ml-5 space-y-2 text-gray-700 dark:text-neutral-300">
+                <li>Perform four-part accompaniment in Arranger Mode</li>
+                <li>Queue sections with the Section Launcher</li>
+                <li>Overview everything on the Performance / Song pages</li>
+                <li>Send per-part MIDI to separate tracks with ChordPart</li>
+              </ul>
+              <a href="performance.en.html" class="mt-auto self-start inline-flex rounded-xl px-4 py-2 border border-teal-400/40 text-teal-100 font-semibold hover:bg-teal-500/10">See Performance Details</a>
+            </div>
+          </div>
+          <div class="mt-6 rounded-2xl ring-2 ring-indigo-400/50 bg-indigo-500/10 p-6 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <h3 class="text-lg font-semibold">Full Bundle: both directions, one key</h3>
+              <p class="mt-1 text-sm text-gray-600 dark:text-neutral-300">
+                Every Extended and Performance feature with a single license key.
+              </p>
+            </div>
+            <a href="#download" class="inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">See Pricing</a>
           </div>
         </div>
       </div>
@@ -259,11 +277,12 @@
         <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
             <h3 class="font-semibold">One surface from edit to MIDI drag</h3>
-            <p class="mt-2 text-gray-600 dark:text-neutral-300">Edit, audition, and export from the same place. Keep progression data portable across projects and DAWs.</p>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">Edit, audition, and export from the same place — with Circle of Fifths and meter changes built in. Keep progression data portable across projects and DAWs.</p>
           </div>
-          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
-            <h3 class="font-semibold">Timeline editing × Circle of Fifths × meter</h3>
-            <p class="mt-2 text-gray-600 dark:text-neutral-300">Shape progression structure and harmonic direction together, with meter changes flowing into the rest of the workflow.</p>
+          <div class="p-6 rounded-2xl ring-2 ring-indigo-400/50 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
+            <span class="inline-flex items-center rounded-full bg-indigo-500/15 px-2 py-0.5 text-[11px] font-bold tracking-wide text-indigo-300 ring-1 ring-indigo-400/40">NEW in 2.0</span>
+            <h3 class="mt-2 font-semibold">Arranger Mode: perform your progression</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">Build accompaniment patterns for Drums / Bass / Arp / Chord Pad on top of your progression and play them with pads — reservation-based switching works for live sets and structure sketching alike.</p>
           </div>
           <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
             <h3 class="font-semibold">Section Clips and Focus Edit</h3>
@@ -277,9 +296,10 @@
             <h3 class="font-semibold">Arpeggio / Bassline generation</h3>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">Generate note material from a section, refine it if needed, then drag it straight into your DAW.</p>
           </div>
-          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
-            <h3 class="font-semibold">Shared installer, gated feature tiers</h3>
-            <p class="mt-2 text-gray-600 dark:text-neutral-300">Lite covers editing and export basics. Extended unlocks tensions, slash chords, Reharmo, Arpeggio, and save-related workflows.</p>
+          <div class="p-6 rounded-2xl ring-2 ring-indigo-400/50 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
+            <span class="inline-flex items-center rounded-full bg-indigo-500/15 px-2 py-0.5 text-[11px] font-bold tracking-wide text-indigo-300 ring-1 ring-indigo-400/40">NEW in 2.0</span>
+            <h3 class="mt-2 font-semibold">ChordPart: per-part MIDI output</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">The bundled ChordPart plugin delivers each part's MIDI to its own DAW track — regardless of how your host routes plugin MIDI.</p>
           </div>
         </div>
       </div>
@@ -305,7 +325,7 @@
         <div class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:minmax(0,1fr)_auto]">
           <div class="md:ml-auto max-w-xl">
             <h3 class="text-xl font-semibold">Compare Reharmo candidates before you apply them</h3>
-            <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">Reharmo is one of the main v1.5 additions. Preview changes without destroying the original progression, then apply only the version you want. Switch between Chord Unit and Progression Unit depending on scope.</p>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">Compare candidates and preview changes without destroying the original progression, then apply only the version you want. Switch between Chord Unit and Progression Unit depending on scope.</p>
           </div>
           <div class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72">
             <img src="assets/リハモ編集ウィンドウの進行単位生成.png" alt="Reharmo progression-unit screenshot" class="w-full h-full object-cover" />
@@ -344,15 +364,64 @@
             <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">Double‑click a Section Clip to enter Focus Edit Mode. Everything outside the section is greyed out to prevent mistakes. Press Esc (or click Exit) to return.</p>
           </div>
         </div>
+
+        <!-- Row 6: text left / image right (NEW: Arranger Mode) -->
+        <div class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:minmax(0,1fr)_auto]" id="arranger">
+          <div class="md:ml-auto max-w-xl">
+            <span class="inline-flex items-center rounded-full bg-indigo-500/15 px-2 py-0.5 text-[11px] font-bold tracking-wide text-indigo-300 ring-1 ring-indigo-400/40">NEW in 2.0</span>
+            <h3 class="mt-2 text-xl font-semibold">Arranger Mode — your progression becomes the accompaniment</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">Build patterns for Drums / Bass / Arp / Chord Pad per section and trigger them with pads (8 pads × 2 pattern sets per part). Role-based patterns follow chord changes automatically, and Launch Quantize switches sections cleanly on the bar.</p>
+          </div>
+          <div class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72">
+            <img src="assets/arranger-setup.png" alt="Arranger Mode (Setup page) screenshot" class="w-full h-full object-cover" />
+          </div>
+        </div>
+
+        <!-- Row 7: image left / text right (NEW: Performance page) -->
+        <div class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:auto_minmax(0,1fr)]">
+          <div class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72">
+            <img src="assets/performance-view.png" alt="Performance page (4 parts × 8 pads) screenshot" class="w-full h-full object-cover" />
+          </div>
+          <div>
+            <span class="inline-flex items-center rounded-full bg-indigo-500/15 px-2 py-0.5 text-[11px] font-bold tracking-wide text-indigo-300 ring-1 ring-indigo-400/40">NEW in 2.0</span>
+            <h3 class="mt-2 text-xl font-semibold">Performance page — 32 pads on one screen</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">A dedicated performing view: 4 parts × 8 pads at a glance. Queue sections with clicks, number keys, or MIDI notes, and choose Sync Mode (Host / Plugin) to follow the DAW timeline or let Chord Dock lead.</p>
+          </div>
+        </div>
+
+        <!-- Row 8: text left / image right (NEW: Song page) -->
+        <div class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:minmax(0,1fr)_auto]">
+          <div class="md:ml-auto max-w-xl">
+            <span class="inline-flex items-center rounded-full bg-indigo-500/15 px-2 py-0.5 text-[11px] font-bold tracking-wide text-indigo-300 ring-1 ring-indigo-400/40">NEW in 2.0</span>
+            <h3 class="mt-2 text-xl font-semibold">Song page — lay patterns out in song order</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">Arrange pad patterns along the song order and check the whole song — with internal playback while the DAW is stopped, or following host playback. Clip editing is fully undoable, and finished patterns export via MIDI drag.</p>
+          </div>
+          <div class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72">
+            <img src="assets/song-page.png" alt="Song page (patterns in song order) screenshot" class="w-full h-full object-cover" />
+          </div>
+        </div>
+
+        <!-- Row 9: image left / text right (NEW: ChordPart) -->
+        <div class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:auto_minmax(0,1fr)]" id="chordpart">
+          <div class="rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl p-8 flex items-center justify-center">
+            <img src="assets/chordpart-ui.png" alt="ChordPart plugin screenshot" class="rounded-lg" width="292" />
+          </div>
+          <div>
+            <span class="inline-flex items-center rounded-full bg-indigo-500/15 px-2 py-0.5 text-[11px] font-bold tracking-wide text-indigo-300 ring-1 ring-indigo-400/40">NEW in 2.0</span>
+            <h3 class="mt-2 text-xl font-semibold">ChordPart — every part to its own track, any instrument</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">Drop the bundled ChordPart plugin on a receiving track and it connects to the main plugin automatically — no wiring. Assign any instrument per part, regardless of how your host routes plugin MIDI. The Part Send chip on the main plugin shows the link status at a glance.</p>
+            <img src="assets/part-send-chip.png" alt="Part Send chip on the main plugin" class="mt-4 rounded-lg ring-1 ring-gray-200 dark:ring-neutral-700 max-w-full" width="592" />
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Edition Comparison -->
 	    <section class="section" id="edition-comparison">
 	      <div class="container mx-auto px-4 py-12">
-	        <h2 class="text-2xl sm:text-3xl font-extrabold">Lite vs Extended</h2>
+	        <h2 class="text-2xl sm:text-3xl font-extrabold">Edition Comparison (Summary)</h2>
 	        <p class="mt-2 text-sm text-gray-600 dark:text-neutral-300">
-	          Core features shared by both editions, and what Extended adds on top.
+	          The key differences between Lite / Extended / Performance / Full Bundle. For every feature in detail, see the full comparison table.
         </p>
         <div
           class="mt-6 overflow-x-auto rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800"
@@ -360,86 +429,69 @@
           <table class="min-w-full text-sm">
             <thead class="bg-gray-50 dark:bg-neutral-900">
               <tr>
-                <th class="p-3 text-left font-semibold">Feature Category</th>
-                <th class="p-3 text-left font-semibold">Lite Edition</th>
-                <th class="p-3 text-left font-semibold">Extended Edition</th>
+                <th class="p-3 text-left font-semibold">Feature</th>
+                <th class="p-3 text-center font-semibold">Lite (Free)</th>
+                <th class="p-3 text-center font-semibold">Extended</th>
+                <th class="p-3 text-center font-semibold">Performance</th>
+                <th class="p-3 text-center font-semibold">Full Bundle</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-200 dark:divide-neutral-800">
               <tr>
-                <td class="p-3">Timeline-based chord editor</td>
-                <td class="p-3">✔</td>
-                <td class="p-3">✔</td>
+                <td class="p-3">Timeline editing, Sections, MIDI drag export</td>
+                <td class="p-3 text-center">✔</td>
+                <td class="p-3 text-center">✔</td>
+                <td class="p-3 text-center">✔</td>
+                <td class="p-3 text-center">✔</td>
               </tr>
               <tr>
-                <td class="p-3">Resize, move, duplicate, invert chords</td>
-                <td class="p-3">✔</td>
-                <td class="p-3">✔</td>
+                <td class="p-3">Tensions / slash chords / Circle of Fifths</td>
+                <td class="p-3 text-center">—</td>
+                <td class="p-3 text-center">✔</td>
+                <td class="p-3 text-center">—</td>
+                <td class="p-3 text-center">✔</td>
               </tr>
               <tr>
-                <td class="p-3">Sections (Section Clips / Focus Edit)</td>
-                <td class="p-3">✔</td>
-                <td class="p-3">✔</td>
+                <td class="p-3">Reharmonization</td>
+                <td class="p-3 text-center">—</td>
+                <td class="p-3 text-center">✔</td>
+                <td class="p-3 text-center">—</td>
+                <td class="p-3 text-center">✔</td>
               </tr>
               <tr>
-                <td class="p-3">Progression export / import</td>
-                <td class="p-3">✔</td>
-                <td class="p-3">✔</td>
+                <td class="p-3">Arpeggio / Bassline generation</td>
+                <td class="p-3 text-center">—</td>
+                <td class="p-3 text-center">✔</td>
+                <td class="p-3 text-center">✔</td>
+                <td class="p-3 text-center">✔</td>
               </tr>
               <tr>
-                <td class="p-3">Drag-and-drop MIDI export</td>
-                <td class="p-3">✔</td>
-                <td class="p-3">✔</td>
+                <td class="p-3">Arranger Mode (four-part accompaniment, pads)</td>
+                <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                <td class="p-3 text-center">✔</td>
+                <td class="p-3 text-center">✔</td>
               </tr>
               <tr>
-                <td class="p-3">Circle of Fifths display</td>
-                <td class="p-3">—</td>
-                <td class="p-3">✔</td>
+                <td class="p-3">Performance / Song pages</td>
+                <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                <td class="p-3 text-center">✔</td>
+                <td class="p-3 text-center">✔</td>
               </tr>
               <tr>
-                <td class="p-3">Interactive Circle of Fifths actions</td>
-                <td class="p-3">—</td>
-                <td class="p-3">✔</td>
+                <td class="p-3">ChordPart (per-part MIDI output)</td>
+                <td class="p-3 text-center">—</td>
+                <td class="p-3 text-center">—</td>
+                <td class="p-3 text-center">✔</td>
+                <td class="p-3 text-center">✔</td>
               </tr>
               <tr>
-                <td class="p-3">Tensions (9 / 11 / 13)</td>
-                <td class="p-3">—</td>
-                <td class="p-3">✔</td>
-              </tr>
-              <tr>
-                <td class="p-3">Slash chords (custom bass)</td>
-                <td class="p-3">—</td>
-                <td class="p-3">✔</td>
-              </tr>
-              <tr>
-                <td class="p-3">Arpeggio / Bassline mode</td>
-                <td class="p-3">—</td>
-                <td class="p-3">✔</td>
-              </tr>
-              <tr>
-                <td class="p-3">Arpeggio detailed parameters / note edit</td>
-                <td class="p-3">—</td>
-                <td class="p-3">✔</td>
-              </tr>
-              <tr>
-                <td class="p-3">Reharmo mode</td>
-                <td class="p-3">—</td>
-                <td class="p-3">✔</td>
-              </tr>
-              <tr>
-                <td class="p-3">Reharmo detailed parameters / note edit</td>
-                <td class="p-3">—</td>
-                <td class="p-3">✔</td>
-              </tr>
-              <tr>
-                <td class="p-3">User preset save</td>
-                <td class="p-3">—</td>
-                <td class="p-3">✔</td>
-              </tr>
-              <tr>
-                <td class="p-3">Section recolor / custom themes</td>
-                <td class="p-3">—</td>
-                <td class="p-3">✔</td>
+                <td class="p-3">Arranger pattern MIDI export</td>
+                <td class="p-3 text-center">—</td>
+                <td class="p-3 text-center">—</td>
+                <td class="p-3 text-center">✔</td>
+                <td class="p-3 text-center">✔</td>
               </tr>
               <tr>
                 <td class="p-3">Best suited for</td>
@@ -447,11 +499,23 @@
                   Drafting, exporting, and sharing progressions
                 </td>
                 <td class="p-3">
-                  Full production work including transformation and generation
+                  Deep harmony work, generation, and Reharmo
+                </td>
+                <td class="p-3">
+                  Live accompaniment, pads, per-part MIDI
+                </td>
+                <td class="p-3">
+                  Everything — Extended + Performance
                 </td>
               </tr>
             </tbody>
           </table>
+        </div>
+        <p class="mt-3 text-xs text-gray-500 dark:text-neutral-400">
+          Demo = usable as the Arranger Mode demo (90 seconds of playback, Pads 1–3 per part, no Arranger MIDI export).
+        </p>
+        <div class="mt-4">
+          <a href="comparison.en.html" class="inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">See the Full Comparison Table</a>
         </div>
 	      </div>
 	    </section>
@@ -472,6 +536,7 @@
 	            <li>Timeline editing (quickly place, move, and resize chord events)</li>
 	            <li>Structure at a glance (Circle of Fifths, tension chords, slash chords)</li>
 	            <li>Use any instrument (route Chord Dock’s MIDI to your favorite VST/AU)</li>
+	            <li>Perform accompaniment on top of the progression (Arranger Mode + per-part MIDI via ChordPart)</li>
 	          </ul>
 	          <div class="mt-4 text-xs text-gray-500 dark:text-neutral-400">
 	            Note: Chord Dock is not a chord detection tool. If you need audio/MIDI chord recognition, use a dedicated analyzer alongside it.
@@ -516,31 +581,80 @@
     <!-- Download / Buy -->
     <section class="section" id="download">
       <div class="container mx-auto px-4 py-12">
-        <h2 class="text-2xl sm:text-3xl font-extrabold">Download</h2>
-        <div class="mt-6 grid md:grid-cols-2 gap-6 text-sm">
-          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto h-full min-h-[16rem] flex flex-col w-full md:w-96">
-            <h3 class="text-lg md:text-xl font-semibold">Lite (Free)</h3>
+        <h2 class="text-2xl sm:text-3xl font-extrabold">Download / Buy</h2>
+        <div class="mt-4 rounded-2xl ring-1 ring-indigo-400/40 bg-indigo-500/10 px-5 py-3 text-sm text-gray-700 dark:text-neutral-200">
+          <p>
+            <span class="font-semibold text-indigo-300">v2.0 launch:</span>
+            Limited-time pricing until October 1.
+          </p>
+        </div>
+        <div class="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-4 text-sm" id="buy">
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 h-full flex flex-col">
+            <h3 class="text-lg font-semibold">Lite</h3>
+            <p class="mt-1 text-xs text-gray-500 dark:text-neutral-400 font-semibold">Core workflow</p>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
               Timeline editing
               <br />Progression export / import
               <br />MIDI drag & drop
-              <br />Circle of Fifths display
-              <br />Core tools for drafting and sharing progressions
+              <br />Arranger Mode demo
             </p>
+            <div class="mt-3 flex items-baseline gap-2">
+              <span class="text-2xl font-extrabold">Free</span>
+            </div>
             <a href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0" target="_blank" rel="noopener noreferrer" class="mt-auto self-start inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">Download (Free)</a>
           </div>
-          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mr-auto h-full min-h-[16rem] flex flex-col w-full md:w-96" id="buy">
-            <h3 class="text-lg md:text-xl font-semibold">Extended (Paid)</h3>
-            <p class="mt-2 text-gray-600 dark:text-neutral-300">Unlock tensions, slash chords, interactive Circle of Fifths, Arpeggio / Bassline, Reharmo, user preset save, and custom themes.</p>
-            <div class="mt-1 text-xs text-red-600 dark:text-red-300">
-              License: up to 2 devices per account.
-              <br />
-              Lite and Extended use the same installer. Install Lite first, then enter your purchased license key to unlock Extended features.
-              <br />
-              Deactivate any device to free a seat and activate another.
+          <div class="p-6 rounded-2xl ring-2 ring-indigo-400/40 bg-white/60 dark:bg-neutral-900/60 h-full flex flex-col">
+            <h3 class="text-lg font-semibold">Extended</h3>
+            <p class="mt-1 text-xs text-indigo-300 font-semibold">Go deeper into harmony</p>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">
+              Tensions / slash chords / Circle of Fifths
+              <br />Reharmonization
+              <br />Arpeggio / Bassline generation
+              <br />User preset bank &amp; themes
+            </p>
+            <div class="mt-3 flex items-baseline gap-2">
+              <span class="text-sm text-gray-500 dark:text-neutral-500 line-through">$24</span>
+              <span class="text-2xl font-extrabold text-indigo-300">$19</span>
             </div>
-<a href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorrycheckout05140531" target="_blank" rel="noopener noreferrer" class="mt-auto self-start inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">Buy Extended License</a>
+            <p class="text-xs text-gray-500 dark:text-neutral-400">Limited-time price · until October 1</p>
+            <a href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601" target="_blank" rel="noopener noreferrer" class="mt-auto self-start inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">Buy Extended</a>
           </div>
+          <div class="p-6 rounded-2xl ring-2 ring-teal-400/40 bg-white/60 dark:bg-neutral-900/60 h-full flex flex-col">
+            <h3 class="text-lg font-semibold">Performance</h3>
+            <p class="mt-1 text-xs text-teal-300 font-semibold">Play your progression</p>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">
+              Arranger Mode (8 pads × 2 sets)
+              <br />Performance / Song pages
+              <br />ChordPart (per-part MIDI)
+              <br />Arranger MIDI export
+            </p>
+            <div class="mt-3 flex items-baseline gap-2">
+              <span class="text-sm text-gray-500 dark:text-neutral-500 line-through">$29</span>
+              <span class="text-2xl font-extrabold text-teal-300">$19</span>
+            </div>
+            <p class="text-xs text-gray-500 dark:text-neutral-400">Limited-time price · until October 1</p>
+            <a href="https://buy.stripe.com/9B67sEdzOelA33GbZ07N604" target="_blank" rel="noopener noreferrer" class="mt-auto self-start inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">Buy Performance</a>
+          </div>
+          <div class="p-6 rounded-2xl ring-2 ring-indigo-400/60 bg-indigo-500/10 dark:bg-indigo-500/10 h-full flex flex-col">
+            <h3 class="text-lg font-semibold">Full Bundle</h3>
+            <p class="mt-1 text-xs text-indigo-300 font-semibold">Both directions</p>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">
+              Every Extended and
+              <br />Performance feature with
+              <br />a single license key
+            </p>
+            <div class="mt-3 flex items-baseline gap-2">
+              <span class="text-sm text-gray-500 dark:text-neutral-500 line-through">$39</span>
+              <span class="text-2xl font-extrabold text-indigo-300">$29</span>
+            </div>
+            <p class="text-xs text-gray-500 dark:text-neutral-400">Limited-time price · until October 1</p>
+            <a href="https://buy.stripe.com/eVqdR27bq6T86fS1km7N605" target="_blank" rel="noopener noreferrer" class="mt-auto self-start inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">Buy Full Bundle</a>
+          </div>
+        </div>
+        <div class="mt-4 text-xs text-red-600 dark:text-red-300">
+          License: up to 2 devices per account. Deactivate any device to free a seat and activate another.
+          <br />
+          All editions share the same installer. Install first, then enter your purchased license key to unlock. Keep the main plugin and ChordPart at the same version.
         </div>
         <div class="mt-6 rounded-2xl ring-1 ring-indigo-400/30 bg-indigo-500/10 px-5 py-4 text-sm text-gray-700 dark:text-neutral-200">
           <p class="font-semibold">For Windows users</p>
@@ -562,7 +676,7 @@
           >
             <div class="text-sm text-gray-700 dark:text-neutral-300 space-y-3 md:ml-auto max-w-xl">
               <p>
-                ChordDock Extended is activated with the license key issued after purchase.
+                Chord Dock’s paid editions (Extended / Performance / Full Bundle) are activated with the license key issued after purchase.
               </p>
               <p>
                 From the settings menu in the top-right of the plugin (gear icon), open “Enter License…”.
@@ -608,17 +722,81 @@
         </p>
         <div class="mt-6 max-w-3xl details-box">
           <details>
-            <summary>Q1. What is new in v1.5?</summary>
+            <summary>Q1. What is new in v2.0?</summary>
             <div>
               <p>
-                Version 1.5 expands the workflow with Reharmo, Arpeggio / Bassline,
-                section-based editing, Focus Edit, meter-aware generation, and drag export
-                for generated note material.
+                The headline addition is Arranger Mode (Performance edition): build four-part
+                accompaniment — Drums / Bass / Arp / Chord Pad — on top of your progression and
+                perform it with pads. v2.0 also adds the Performance page (32 pads at a glance),
+                the Song page (lay patterns out in song order), and the bundled ChordPart plugin
+                for per-part MIDI output. New Performance and Full Bundle editions join the lineup,
+                and Lite / Extended include an Arranger Mode demo.
               </p>
             </div>
           </details>
           <details>
-            <summary>Q2. Can it auto-detect chords from audio or MIDI?</summary>
+            <summary>Q2. What are the limits of the Arranger Mode demo?</summary>
+            <div>
+              <p>
+                In Lite / Extended you can open the Setup / Performance / Song pages and try
+                Arranger Mode with these limits:
+              </p>
+              <ul>
+                <li>90 seconds of actual playback in total</li>
+                <li>Pads 1–3 per part (Pads 4–8 are visible but unavailable)</li>
+                <li>No Arranger MIDI export</li>
+              </ul>
+              <p>
+                Remaining demo time is not saved with the project — reopening the project resets
+                it to 90 seconds. Performance / Full Bundle removes all limits.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Q3. What is ChordPart and how do I install it?</summary>
+            <div>
+              <p>
+                A small bundled plugin (VST3) that delivers each Arranger part’s MIDI to its own
+                DAW track. It connects to the main plugin automatically within the same project —
+                no wiring.
+              </p>
+              <ul>
+                <li>macOS: the installer installs it together with the main plugin.</li>
+                <li>Windows (ZIP): copy both Chord Dock.vst3 and ChordPart.vst3 into C:\Program Files\Common Files\VST3\.</li>
+              </ul>
+            </div>
+          </details>
+          <details>
+            <summary>Q4. ChordPart shows “Version mismatch”</summary>
+            <div>
+              <p>
+                The main plugin and ChordPart are not the same version, so the link is stopped for
+                safety. Always update the main plugin and ChordPart together, as a
+                matching-version set.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Q5. I can’t use my section in Arranger Mode</summary>
+            <div>
+              <p>
+                Sections used in Arranger Mode must start and end on a bar line (at least one
+                bar). Adjust the section’s start and end to bar boundaries.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Q6. Can I split MIDI per part in Ableton Live?</summary>
+            <div>
+              <p>
+                Yes. Insert ChordPart on each receiving track — each part can drive its own
+                instrument, regardless of how your host routes plugin MIDI. See
+                the <a href="ableton-live.en.html" class="text-indigo-300 underline underline-offset-4 hover:text-indigo-200">Ableton Live guide</a> for the steps.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Q7. Can it auto-detect chords from audio or MIDI?</summary>
             <div>
               <p>
                 Not in scope. Chord Dock focuses on portability of progressions,
@@ -628,7 +806,7 @@
             </div>
           </details>
           <details>
-            <summary>Q3. How many devices per license?</summary>
+            <summary>Q8. How many devices per license?</summary>
             <div>
               <p>
                 Up to 2 devices per account can be activated at the same time.
@@ -637,7 +815,7 @@
             </div>
           </details>
           <details>
-            <summary>Q4. Why do Reharmo or Arpeggio controls look disabled?</summary>
+            <summary>Q9. Why do Reharmo or Arpeggio controls look disabled?</summary>
             <div>
               <p>Check the following:</p>
               <ul>
@@ -648,7 +826,7 @@
             </div>
           </details>
 	          <details>
-	            <summary>Q5. How do I activate Extended on a second PC?</summary>
+	            <summary>Q10. How do I activate Extended on a second PC?</summary>
 	            <div>
 	              <p>Follow these steps:</p>
 	              <ul>
@@ -659,7 +837,7 @@
 	            </div>
 	          </details>
           <details>
-            <summary>Q6. After updating, it shows as Lite</summary>
+            <summary>Q11. After updating, it shows as Lite</summary>
             <div>
               <p>
                 Chord Dock uses a shared installer for Lite and Extended. To use Extended,
@@ -672,7 +850,7 @@
             </div>
           </details>
           <details>
-            <summary>Q7. I can’t find / forgot my license key</summary>
+            <summary>Q12. I can’t find / forgot my license key</summary>
             <div>
               <p>
                 Open “Settings → Online activation” in Chord Dock and log in. There you
@@ -690,7 +868,7 @@
             </div>
           </details>
           <details>
-            <summary>Q8. I entered my Extended license key but it won’t activate</summary>
+            <summary>Q13. I entered my Extended license key but it won’t activate</summary>
             <div>
               <p>Please check the following:</p>
               <ul>
@@ -704,7 +882,7 @@
             </div>
           </details>
           <details>
-            <summary>Q9. I want to deactivate an old / unused PC</summary>
+            <summary>Q14. I want to deactivate an old / unused PC</summary>
             <div>
               <p>
                 Open “Settings → Online activation” to see the list of devices. Deactivate
@@ -713,7 +891,7 @@
             </div>
           </details>
 	          <details>
-	            <summary>Q10. After installing, the plugin does not appear in my DAW</summary>
+	            <summary>Q15. After installing, the plugin does not appear in my DAW</summary>
 	            <div>
 	              <p>Please check the following:</p>
 	              <ul>
@@ -729,7 +907,7 @@
 	            </div>
 	          </details>
 	          <details>
-	            <summary>Q11. Why is part of the timeline dimmed or greyed out?</summary>
+	            <summary>Q16. Why is part of the timeline dimmed or greyed out?</summary>
 	            <div>
 	              <p>
 	                You are probably in Focus Edit Mode. While focus mode is active, only the selected section can be edited and everything outside it is dimmed. Press Esc to return to normal editing.
@@ -737,7 +915,7 @@
 	          </details>
           <details>
             <summary>
-              Q12. I only want to use Lite. Do I need an Extended serial?
+              Q17. I only want to use Lite. Do I need an Extended serial?
             </summary>
             <div>
               <p>
@@ -747,7 +925,7 @@
             </div>
           </details>
           <details>
-            <summary>Q13. I bought an Extended license, but it still shows as Lite</summary>
+            <summary>Q18. I bought an Extended license, but it still shows as Lite</summary>
             <div>
               <p>Please check the following in order:</p>
               <ul>
@@ -761,7 +939,7 @@
                   Then return to “Settings → License” and confirm that the status shows “Extended”.
                 </li>
                 <li>
-                  If both device slots are already in use, deactivate an unused device first and then try again. Note that activating on a second PC requires entering your license key again (see also Q2 and Q9).
+                  If both device slots are already in use, deactivate an unused device first and then try again. Note that activating on a second PC requires entering your license key again (see also Q10 and Q14).
                 </li>
               </ul>
               <p>
@@ -770,7 +948,7 @@
             </div>
           </details>
           <details>
-            <summary>Q14. Will my projects remain compatible after updating?</summary>
+            <summary>Q19. Will my projects remain compatible after updating?</summary>
             <div>
               <p>
                 In principle, updates are backward compatible. In rare cases, your DAW’s
@@ -780,7 +958,7 @@
           </details>
           <details>
             <summary>
-              Q15. Will my settings and presets be lost when updating?
+              Q20. Will my settings and presets be lost when updating?
             </summary>
             <div>
               <p>
@@ -790,7 +968,7 @@
             </div>
           </details>
           <details>
-            <summary>Q16. Can I use Extended in an offline environment?</summary>
+            <summary>Q21. Can I use Extended in an offline environment?</summary>
             <div>
               <p>It works as follows:</p>
               <ul>
@@ -819,6 +997,7 @@
 	            <ul class="mt-2 list-disc ml-5 space-y-1 text-gray-700 dark:text-neutral-300">
 	              <li>macOS: VST3 / AU, with some packages also including AAX</li>
 	              <li>Windows: VST3, with some packages also including AAX</li>
+	              <li>ChordPart (bundled receiver): VST3 (macOS / Windows)</li>
 	            </ul>
 	          </div>
           <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
@@ -879,16 +1058,43 @@
       "name": "Chord Dock",
       "applicationCategory": "MusicProductionSoftware",
       "operatingSystem": "macOS, Windows",
-      "softwareVersion": "1.5.0",
-      "offers": {
-        "@type": "Offer",
-        "price": "39",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"
-      },
-      "description": "Build, transform, and export chord progressions with timeline editing, Reharmo, Arpeggio / Bassline, and MIDI drag export.",
+      "softwareVersion": "2.0.0",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Lite",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Extended",
+          "price": "19",
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-10-01",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Performance",
+          "price": "19",
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-10-01",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Full Bundle",
+          "price": "29",
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-10-01",
+          "availability": "https://schema.org/InStock"
+        }
+      ],
+      "description": "Build, transform, and export chord progressions with timeline editing, Reharmo, and Arpeggio / Bassline — then perform four-part accompaniment with Arranger Mode and route per-part MIDI with the bundled ChordPart plugin.",
       "applicationSuite": "Chord Dock Suite",
-      "screenshot": "https://k2get.github.io/chord-dock-site/assets/%E3%83%AA%E3%83%8F%E3%83%A2%E6%A9%9F%E8%83%BD%E3%81%AE%E5%85%A8%E4%BD%93%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88.png",
+      "screenshot": "https://k2get.github.io/chord-dock-site/assets/performance-view.png",
       "inLanguage": "en"
     }
     </script>

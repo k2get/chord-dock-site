@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chord Dock Performance | The edition that turns progressions into performance</title>
+    <meta
+      name="description"
+      content="Chord Dock Performance unlocks Arranger Mode (four-part accompaniment: Drums / Bass / Arp / Chord Pad), the Performance / Song pages, and per-part MIDI output via the bundled ChordPart plugin."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Instrument+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: 'class' };
+    </script>
+    <script>
+      (function () {
+        var KEY = 'lang';
+        var pref = null;
+        try {
+          pref = localStorage.getItem(KEY);
+        } catch (e) {}
+        if (pref === 'ja') {
+          location.replace('performance.html');
+          return;
+        }
+        if (pref === 'en') {
+          return;
+        }
+        var lang =
+          (navigator.languages && navigator.languages[0]) ||
+          navigator.language ||
+          '';
+        if (/^ja/i.test(lang || '')) {
+          location.replace('performance.html');
+        }
+      })();
+    </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-V3MCR5K6MP"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-V3MCR5K6MP');
+    </script>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Instrument Sans", system-ui, -apple-system, Segoe UI,
+          sans-serif;
+        background:
+          radial-gradient(circle at 12% 18%, rgba(45, 212, 191, 0.15), transparent 24%),
+          radial-gradient(circle at 86% 20%, rgba(99, 102, 241, 0.18), transparent 24%),
+          linear-gradient(180deg, #0a0f1c 0%, #090d18 100%);
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Space Grotesk", "Instrument Sans", sans-serif;
+      }
+      .container {
+        max-width: 1100px;
+      }
+      .badge {
+        border: 1px solid rgb(229 231 235 / 1);
+      }
+      .section {
+        scroll-margin-top: 88px;
+      }
+      p {
+        max-width: 68ch;
+      }
+    </style>
+    <meta
+      property="og:title"
+      content="Chord Dock Performance | The edition that turns progressions into performance"
+    />
+    <meta
+      property="og:description"
+      content="Unlock Arranger Mode (four-part accompaniment with pads), the Performance / Song pages, and per-part MIDI output via the bundled ChordPart plugin."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://k2get.github.io/chord-dock-site/performance.en.html"
+    />
+    <meta
+      property="og:image"
+      content="https://k2get.github.io/chord-dock-site/assets/performance-view.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body
+    class="bg-white text-gray-900 dark:bg-neutral-950 dark:text-neutral-100"
+  >
+    <header
+      class="sticky top-0 z-40 border-b border-gray-200/60 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:border-neutral-800 dark:bg-neutral-950/80"
+    >
+      <nav
+        class="container mx-auto flex items-center justify-between px-4 py-3"
+      >
+        <a
+          href="index.en.html"
+          class="flex items-center gap-2 text-xl font-extrabold tracking-tight"
+        >
+          <span class="inline-block h-6 w-6 rounded-lg bg-indigo-600"></span>
+          Chord Dock
+        </a>
+        <div class="hidden items-center gap-3 text-sm sm:flex">
+          <a href="index.en.html" class="hover:opacity-80">Home</a>
+          <a href="editions.en.html" class="hover:opacity-80">Editions</a>
+          <a href="extended.en.html" class="hover:opacity-80">Extended Details</a>
+          <a href="comparison.en.html" class="hover:opacity-80">Comparison</a>
+          <a href="manual.en.html" class="hover:opacity-80">Manual</a>
+          <a href="daw-guides.en.html" class="hover:opacity-80">DAW Guides</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <a
+            id="langJP"
+            href="performance.html"
+            class="inline-flex items-center rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-medium hover:bg-gray-50 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+            >日本語</a
+          >
+          <a
+            href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-3.5 py-2 text-sm font-semibold text-white shadow hover:bg-indigo-500"
+            >Start Free</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container mx-auto px-4 py-16 sm:py-20">
+          <div class="grid items-center gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+            <div>
+              <span
+                class="badge inline-flex rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-teal-200"
+                >Edition Detail</span
+              >
+              <h1
+                class="mt-5 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl"
+              >
+                Build accompaniment on your progression,<br />
+                <span class="text-teal-400">and play it with pads</span>
+              </h1>
+              <p class="mt-5 text-lg text-gray-600 dark:text-neutral-300">
+                Chord Dock Performance turns the progression you built on the timeline into four-part accompaniment — Drums / Bass / Arp / Chord Pad — that you perform with pads. Your progression becomes the backing for live sets and structure sketching.
+              </p>
+              <div class="mt-7 flex flex-wrap items-center gap-4">
+                <a
+                  href="https://buy.stripe.com/9B67sEdzOelA33GbZ07N604"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center rounded-xl bg-indigo-600 px-5 py-3 text-base font-semibold text-white shadow hover:bg-indigo-500"
+                  >Buy Performance</a
+                >
+                <span class="flex items-baseline gap-2">
+                  <span class="text-sm text-gray-500 dark:text-neutral-500 line-through">$29</span>
+                  <span class="text-2xl font-extrabold text-teal-300">$19</span>
+                  <span class="text-xs text-gray-500 dark:text-neutral-400">Limited-time price · until October 1</span>
+                </span>
+              </div>
+              <p class="mt-4 text-sm text-red-600 dark:text-red-300">
+                All editions share the same installer. Enter the license key issued after purchase to unlock the features. Each license covers up to 2 devices per account.
+              </p>
+              <p class="mt-3 text-sm text-teal-200/90">
+                Before buying, you can try the Arranger Mode demo in Lite / Extended (90 seconds of playback, Pads 1–3 per part).
+              </p>
+              <div class="mt-4 flex flex-wrap gap-4 text-sm">
+                <a
+                  href="editions.en.html"
+                  class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200"
+                  >Back to Editions</a
+                >
+                <a
+                  href="comparison.en.html"
+                  class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200"
+                  >See the Full Comparison Table</a
+                >
+              </div>
+            </div>
+            <div
+              class="rounded-[28px] border border-teal-400/25 bg-white/70 p-6 shadow-2xl shadow-teal-950/20 dark:bg-neutral-900/75"
+            >
+              <div class="flex items-center justify-between gap-3">
+                <h2 class="text-xl font-extrabold">What Performance adds</h2>
+                <span class="rounded-full bg-teal-500/15 px-3 py-1 text-xs font-semibold text-teal-200 ring-1 ring-teal-400/30">NEW in 2.0</span>
+              </div>
+              <div class="mt-5 space-y-3 text-sm text-gray-700 dark:text-neutral-200">
+                <div class="rounded-2xl bg-neutral-950/80 px-4 py-3 ring-1 ring-white/10">
+                  Arranger Mode with 4 parts × 8 pads × 2 pattern sets
+                </div>
+                <div class="rounded-2xl bg-neutral-950/80 px-4 py-3 ring-1 ring-white/10">
+                  Section Launcher queued by click, number keys, or MIDI
+                </div>
+                <div class="rounded-2xl bg-neutral-950/80 px-4 py-3 ring-1 ring-white/10">
+                  Performance page (32 pads) and Song page (song order)
+                </div>
+                <div class="rounded-2xl bg-neutral-950/80 px-4 py-3 ring-1 ring-white/10">
+                  Per-part MIDI via ChordPart and Arranger MIDI export
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <div
+            class="rounded-3xl border border-gray-200/70 bg-white/70 p-6 dark:border-neutral-800 dark:bg-neutral-900/70 sm:p-8"
+          >
+            <h2 class="text-2xl font-extrabold sm:text-3xl">Overview Video</h2>
+            <div class="mt-6 mx-auto max-w-3xl">
+              <div class="aspect-video overflow-hidden rounded-2xl ring-1 ring-gray-200 shadow bg-black dark:ring-neutral-700">
+                <iframe
+                  class="h-full w-full"
+                  width="815"
+                  height="458"
+                  src="https://www.youtube.com/embed/cPSGmZ-3fxU"
+                  title="Chord Dock 2.0 Overview | Arranger Mode &amp; Chord Track Plugin"
+                  frameborder="0"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p class="mt-2 text-xs text-gray-500">
+                Chord Dock 2.0 overview, including Arranger Mode (English).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <h2 class="text-2xl font-extrabold sm:text-3xl">What you can do with Performance</h2>
+
+          <!-- Arranger Mode -->
+          <div
+            class="grid items-center mt-8 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:minmax(0,1fr)_auto]"
+          >
+            <div class="md:ml-auto max-w-xl">
+              <h3 class="text-xl font-semibold">Arranger Mode — build four parts per section</h3>
+              <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">
+                Create patterns for Drums / Bass / Arp / Chord Pad per section and assign them to pads (8 pads × 2 pattern sets per part). Role-based patterns follow chord changes automatically, and per-part style presets plus random generation get you a solid starting point fast.
+              </p>
+            </div>
+            <div
+              class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72"
+            >
+              <img
+                src="assets/arranger-setup.png"
+                alt="Arranger Mode (Setup page) screenshot"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <!-- Pattern editors -->
+          <div
+            class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:auto_minmax(0,1fr)]"
+          >
+            <div
+              class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72"
+            >
+              <img
+                src="assets/drum-editor.png"
+                alt="Lane-based Drums step editor screenshot"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold">Dedicated pattern editors per part</h3>
+              <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">
+                Drums uses a lane-based step editor (GM defaults, remappable). Bass offers two ways to edit — a Chord-Role Sequencer and a full MIDI Roll — while Arp / Chord Pad use role-lane editing. Every pattern can be dragged out as MIDI.
+              </p>
+            </div>
+          </div>
+
+          <!-- Section Launcher -->
+          <div
+            class="mt-12 rounded-3xl border border-gray-200/70 bg-white/70 p-6 dark:border-neutral-800 dark:bg-neutral-900/70 sm:p-8"
+          >
+            <h3 class="text-xl font-semibold">Section Launcher and reservation-based switching</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">
+              Queue sections with a click, number keys 1–8, or MIDI notes. Sections switch with Launch Quantize (Next Bar / Section End); pads have their own switch timing (Next Bar / Pattern End) and playback position (Bar Lock / Restart). Auto Advance and Standby Pad 1 are included, and Sync Mode (Host / Plugin) lets you follow the DAW timeline or let Chord Dock lead.
+            </p>
+            <div class="mt-5 space-y-3">
+              <img
+                src="assets/section-launcher.png"
+                alt="Section Launcher (8 slots) screenshot"
+                class="w-full rounded-lg ring-1 ring-gray-200 dark:ring-neutral-700"
+              />
+              <img
+                src="assets/arranger-middle-panel.png"
+                alt="Arranger middle panel screenshot"
+                class="w-full rounded-lg ring-1 ring-gray-200 dark:ring-neutral-700"
+              />
+            </div>
+          </div>
+
+          <!-- Performance page -->
+          <div
+            class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:minmax(0,1fr)_auto]"
+          >
+            <div class="md:ml-auto max-w-xl">
+              <h3 class="text-xl font-semibold">Performance page — focus on playing with 32 pads</h3>
+              <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">
+                A dedicated performing view with all 4 parts × 8 pads (32 pads) on one screen. Queue sections while shaping the arrangement with pad combinations — for live sets and structure experiments alike.
+              </p>
+            </div>
+            <div
+              class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72"
+            >
+              <img
+                src="assets/performance-view.png"
+                alt="Performance page (4 parts × 8 pads) screenshot"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <!-- Song page -->
+          <div
+            class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:auto_minmax(0,1fr)]"
+          >
+            <div
+              class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72"
+            >
+              <img
+                src="assets/song-page.png"
+                alt="Song page (patterns in song order) screenshot"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold">Song page — lay patterns out and hear the whole song</h3>
+              <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">
+                Arrange pad patterns along the song order and check the song end to end — with internal playback while the DAW is stopped, or following host playback. Clip editing is fully undoable.
+              </p>
+            </div>
+          </div>
+
+          <!-- ChordPart -->
+          <div
+            class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:auto_minmax(0,1fr)]"
+          >
+            <div
+              class="rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl p-8 flex items-center justify-center"
+            >
+              <img
+                src="assets/chordpart-ui.png"
+                alt="ChordPart plugin screenshot"
+                class="rounded-lg"
+                width="292"
+              />
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold">ChordPart — every part to its own track, any instrument</h3>
+              <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">
+                Drop the bundled ChordPart plugin (VST3) on a receiving track and it connects to the main plugin automatically — no wiring. Assign any instrument per part, regardless of how your host routes plugin MIDI. Added latency is constant, at most one audio buffer (128–256 samples recommended).
+              </p>
+              <img
+                src="assets/part-send-chip.png"
+                alt="Part Send chip on the main plugin"
+                class="mt-4 rounded-lg ring-1 ring-gray-200 dark:ring-neutral-700 max-w-full"
+                width="592"
+              />
+              <p class="mt-3 text-sm">
+                <a
+                  href="ableton-live.en.html"
+                  class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200"
+                  >See the Ableton Live routing guide</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <div
+            class="rounded-3xl border border-gray-200/70 bg-white/70 p-6 dark:border-neutral-800 dark:bg-neutral-900/70 sm:p-8"
+          >
+            <h2 class="text-2xl font-extrabold sm:text-3xl">Who it&#39;s for</h2>
+            <div class="mt-6 grid gap-6 md:grid-cols-3">
+              <article class="rounded-3xl border border-gray-200/80 bg-white/80 p-5 dark:border-neutral-800 dark:bg-neutral-900/80">
+                <h3 class="text-lg font-extrabold">Running accompaniment live</h3>
+                <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                  The Section Launcher and reservation-based switching move you safely to the next section, right on the bar.
+                </p>
+              </article>
+              <article class="rounded-3xl border border-gray-200/80 bg-white/80 p-5 dark:border-neutral-800 dark:bg-neutral-900/80">
+                <h3 class="text-lg font-extrabold">Sketching structure with pads</h3>
+                <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                  Even while the DAW loops a short region, Plugin sync lets pad actions advance the song — ideal for arrangement experiments.
+                </p>
+              </article>
+              <article class="rounded-3xl border border-gray-200/80 bg-white/80 p-5 dark:border-neutral-800 dark:bg-neutral-900/80">
+                <h3 class="text-lg font-extrabold">One instrument per part</h3>
+                <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                  ChordPart sends each part to its own track, so every part can use any instrument — including your DAW&#39;s built-in ones.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <div class="grid gap-6 lg:grid-cols-2">
+            <article
+              class="rounded-3xl border border-teal-400/30 bg-teal-500/10 p-6"
+            >
+              <h2 class="text-2xl font-extrabold">What Performance unlocks</h2>
+              <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                <div class="rounded-2xl bg-neutral-950/80 p-4 ring-1 ring-white/10">
+                  <h3 class="font-semibold">Arranger Mode</h3>
+                  <p class="mt-2 text-sm text-neutral-300">
+                    Perform four-part accompaniment with all 8 pads × 2 pattern sets.
+                  </p>
+                </div>
+                <div class="rounded-2xl bg-neutral-950/80 p-4 ring-1 ring-white/10">
+                  <h3 class="font-semibold">Performance / Song pages</h3>
+                  <p class="mt-2 text-sm text-neutral-300">
+                    A 32-pad performing view and a song-order overview.
+                  </p>
+                </div>
+                <div class="rounded-2xl bg-neutral-950/80 p-4 ring-1 ring-white/10">
+                  <h3 class="font-semibold">ChordPart</h3>
+                  <p class="mt-2 text-sm text-neutral-300">
+                    The bundled plugin delivers each part&#39;s MIDI to its own DAW track.
+                  </p>
+                </div>
+                <div class="rounded-2xl bg-neutral-950/80 p-4 ring-1 ring-white/10">
+                  <h3 class="font-semibold">Arranger MIDI Export</h3>
+                  <p class="mt-2 text-sm text-neutral-300">
+                    Drag any Arranger pattern out of the plugin as MIDI.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="rounded-3xl border border-gray-200/70 bg-white/70 p-6 dark:border-neutral-800 dark:bg-neutral-900/70"
+            >
+              <h2 class="text-2xl font-extrabold">Demo vs. Performance</h2>
+              <div class="mt-6 space-y-5 text-sm">
+                <div>
+                  <h3 class="font-semibold text-gray-900 dark:text-neutral-100">What the demo (Lite / Extended) allows</h3>
+                  <ul class="mt-3 space-y-2 text-gray-600 dark:text-neutral-300">
+                    <li>Open the Setup / Performance / Song pages</li>
+                    <li>90 seconds of actual playback in total</li>
+                    <li>Pads 1–3 per part (Pads 4–8 visible only)</li>
+                    <li>No Arranger MIDI export</li>
+                  </ul>
+                </div>
+                <div class="border-t border-gray-200/70 pt-5 dark:border-neutral-800">
+                  <h3 class="font-semibold text-gray-900 dark:text-neutral-100">What Performance unlocks</h3>
+                  <ul class="mt-3 space-y-2 text-gray-600 dark:text-neutral-300">
+                    <li>Unlimited playback time</li>
+                    <li>All 8 pads × 2 pattern sets per part</li>
+                    <li>Arranger pattern MIDI drag / export</li>
+                    <li>Per-part MIDI output via ChordPart</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <div
+            class="rounded-3xl border border-gray-200/70 bg-white/70 p-6 dark:border-neutral-800 dark:bg-neutral-900/70 sm:p-8"
+          >
+            <h2 class="text-2xl font-extrabold sm:text-3xl">Install and activate</h2>
+            <div class="mt-6 grid gap-6 md:grid-cols-3">
+              <div class="rounded-2xl border border-gray-200/80 bg-white/80 p-5 dark:border-neutral-800 dark:bg-neutral-900/80">
+                <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 text-sm font-bold text-white">1</span>
+                <h3 class="mt-4 text-lg font-extrabold">Install Lite</h3>
+                <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                  All editions share the same installer, which also installs ChordPart alongside the main plugin. Confirm it launches in your usual environment.
+                </p>
+              </div>
+              <div class="rounded-2xl border border-gray-200/80 bg-white/80 p-5 dark:border-neutral-800 dark:bg-neutral-900/80">
+                <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 text-sm font-bold text-white">2</span>
+                <h3 class="mt-4 text-lg font-extrabold">Buy a license</h3>
+                <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                  You receive a license key after purchase. Each license covers up to 2 devices per account.
+                </p>
+              </div>
+              <div class="rounded-2xl border border-gray-200/80 bg-white/80 p-5 dark:border-neutral-800 dark:bg-neutral-900/80">
+                <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 text-sm font-bold text-white">3</span>
+                <h3 class="mt-4 text-lg font-extrabold">Activate in the plugin</h3>
+                <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                  Enter the key from the settings menu in the top-right of the plugin, approve the device in your browser, and the Performance features unlock.
+                </p>
+              </div>
+            </div>
+            <p class="mt-6 text-sm text-gray-500 dark:text-neutral-400">
+              ChordPart has no license controls of its own — it follows the main plugin&#39;s edition. Keep the main plugin and ChordPart at the same version. For an illustrated walkthrough, see the
+              <a
+                href="index.en.html#activation"
+                class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200"
+                >activation guide on the home page</a
+              >
+              and the FAQ.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-12">
+          <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            <a
+              href="editions.en.html"
+              class="rounded-3xl border border-gray-200/70 bg-white/70 p-5 transition hover:-translate-y-0.5 hover:border-teal-400/40 dark:border-neutral-800 dark:bg-neutral-900/70"
+            >
+              <h2 class="text-lg font-extrabold">Editions Hub</h2>
+              <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                Back to the full Lite / Extended / Performance / Full Bundle lineup.
+              </p>
+            </a>
+            <a
+              href="comparison.en.html"
+              class="rounded-3xl border border-gray-200/70 bg-white/70 p-5 transition hover:-translate-y-0.5 hover:border-teal-400/40 dark:border-neutral-800 dark:bg-neutral-900/70"
+            >
+              <h2 class="text-lg font-extrabold">Full Comparison Table</h2>
+              <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                Every feature difference across all editions on one page.
+              </p>
+            </a>
+            <a
+              href="manual.en.html"
+              class="rounded-3xl border border-gray-200/70 bg-white/70 p-5 transition hover:-translate-y-0.5 hover:border-teal-400/40 dark:border-neutral-800 dark:bg-neutral-900/70"
+            >
+              <h2 class="text-lg font-extrabold">Online Manual</h2>
+              <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                Detailed steps and feature reference.
+              </p>
+            </a>
+            <a
+              href="daw-guides.en.html"
+              class="rounded-3xl border border-gray-200/70 bg-white/70 p-5 transition hover:-translate-y-0.5 hover:border-teal-400/40 dark:border-neutral-800 dark:bg-neutral-900/70"
+            >
+              <h2 class="text-lg font-extrabold">DAW Guides</h2>
+              <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+                Setup and routing, host by host.
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-gray-200 dark:border-neutral-800">
+      <div
+        class="container mx-auto px-4 py-10 text-sm text-gray-600 dark:text-neutral-400"
+      >
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <p>© <span id="y"></span> Chord Dock — All rights reserved.</p>
+          <div class="flex items-center gap-3">
+            <a href="terms.html" class="hover:opacity-80">Terms</a>
+            <span aria-hidden>•</span>
+            <a href="privacy.html" class="hover:opacity-80">Privacy</a>
+            <span aria-hidden>•</span>
+            <a href="tokushoho.html" class="hover:opacity-80">Legal Notice (Japan)</a>
+            <span aria-hidden>•</span>
+            <a
+              href="https://forms.gle/ttEAX9dSLEk7Pr5X7"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:opacity-80"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear();
+      (function () {
+        var jp = document.getElementById('langJP');
+        if (jp) {
+          jp.addEventListener('click', function () {
+            try {
+              localStorage.setItem('lang', 'ja');
+            } catch (e) {}
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

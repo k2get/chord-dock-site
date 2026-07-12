@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chord Dock Edition Comparison (Full) | Lite / Extended / Performance / Full Bundle</title>
+    <meta
+      name="description"
+      content="The complete, category-by-category feature comparison of all Chord Dock v2.0 editions: Lite, Extended, Performance, and Full Bundle."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Instrument+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: 'class' };
+    </script>
+    <script>
+      (function () {
+        var KEY = 'lang';
+        var pref = null;
+        try {
+          pref = localStorage.getItem(KEY);
+        } catch (e) {}
+        if (pref === 'ja') {
+          location.replace('comparison.html');
+          return;
+        }
+        if (pref === 'en') {
+          return;
+        }
+        var lang =
+          (navigator.languages && navigator.languages[0]) ||
+          navigator.language ||
+          '';
+        if (/^ja/i.test(lang || '')) {
+          location.replace('comparison.html');
+        }
+      })();
+    </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-V3MCR5K6MP"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-V3MCR5K6MP');
+    </script>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Instrument Sans", system-ui, -apple-system, Segoe UI,
+          sans-serif;
+        background:
+          radial-gradient(circle at 12% 18%, rgba(99, 102, 241, 0.18), transparent 24%),
+          radial-gradient(circle at 86% 20%, rgba(45, 212, 191, 0.15), transparent 24%),
+          linear-gradient(180deg, #0a0f1c 0%, #090d18 100%);
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Space Grotesk", "Instrument Sans", sans-serif;
+      }
+      .container {
+        max-width: 1100px;
+      }
+      .badge {
+        border: 1px solid rgb(229 231 235 / 1);
+      }
+      .section {
+        scroll-margin-top: 88px;
+      }
+      p {
+        max-width: 68ch;
+      }
+      table th:first-child,
+      table td:first-child {
+        min-width: 16rem;
+      }
+    </style>
+    <meta
+      property="og:title"
+      content="Chord Dock Edition Comparison (Full)"
+    />
+    <meta
+      property="og:description"
+      content="Every feature difference across Lite / Extended / Performance / Full Bundle, category by category."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://k2get.github.io/chord-dock-site/comparison.en.html"
+    />
+    <meta
+      property="og:image"
+      content="https://k2get.github.io/chord-dock-site/assets/performance-view.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body
+    class="bg-white text-gray-900 dark:bg-neutral-950 dark:text-neutral-100"
+  >
+    <header
+      class="sticky top-0 z-40 border-b border-gray-200/60 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:border-neutral-800 dark:bg-neutral-950/80"
+    >
+      <nav
+        class="container mx-auto flex items-center justify-between px-4 py-3"
+      >
+        <a
+          href="index.en.html"
+          class="flex items-center gap-2 text-xl font-extrabold tracking-tight"
+        >
+          <span class="inline-block h-6 w-6 rounded-lg bg-indigo-600"></span>
+          Chord Dock
+        </a>
+        <div class="hidden items-center gap-3 text-sm sm:flex">
+          <a href="index.en.html" class="hover:opacity-80">Home</a>
+          <a href="editions.en.html" class="hover:opacity-80">Editions</a>
+          <a href="extended.en.html" class="hover:opacity-80">Extended Details</a>
+          <a href="performance.en.html" class="hover:opacity-80">Performance Details</a>
+          <a href="manual.en.html" class="hover:opacity-80">Manual</a>
+          <a href="daw-guides.en.html" class="hover:opacity-80">DAW Guides</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <a
+            id="langJP"
+            href="comparison.html"
+            class="inline-flex items-center rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-medium hover:bg-gray-50 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+            >日本語</a
+          >
+          <a
+            href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-3.5 py-2 text-sm font-semibold text-white shadow hover:bg-indigo-500"
+            >Start Free</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container mx-auto px-4 py-14 sm:py-16">
+          <span
+            class="badge inline-flex rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-200"
+            >Edition Comparison</span
+          >
+          <h1
+            class="mt-5 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl"
+          >
+            Edition Comparison (Full)
+          </h1>
+          <p class="mt-5 text-lg text-gray-600 dark:text-neutral-300">
+            Chord Dock v2.0 comes in three editions — Lite, Extended, and Performance — plus a Full Bundle that combines Extended and Performance. Full Bundle includes every feature marked ✔ under Extended or Performance.
+          </p>
+          <p class="mt-3 text-sm text-gray-500 dark:text-neutral-400">
+            Legend: ✔ = included · — = not included · <span class="text-indigo-300 font-semibold">Demo</span> = usable as the Arranger Mode demo (limited — see notes below).
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 pb-6">
+          <h2 class="text-2xl font-extrabold sm:text-3xl">Core (all editions)</h2>
+          <div class="mt-4 overflow-x-auto rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800">
+            <table class="min-w-full text-sm">
+              <thead class="bg-gray-50 dark:bg-neutral-900">
+                <tr>
+                  <th class="p-3 text-left font-semibold">Feature</th>
+                  <th class="p-3 text-center font-semibold">Lite</th>
+                  <th class="p-3 text-center font-semibold">Extended</th>
+                  <th class="p-3 text-center font-semibold">Performance</th>
+                  <th class="p-3 text-center font-semibold">Full Bundle</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 dark:divide-neutral-800">
+                <tr>
+                  <td class="p-3">Timeline-based chord editor</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Resize, move, duplicate, invert chords</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Sections / section-based arranging / Focus Edit</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Degree View / Timeline-Only layout</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Major / Minor chords</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">7th family (maj7 / m7 / mMaj7 / m7b5 / dim / dim7)</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">9th-notation chords (add9 / M9 / m9 / 7(9))</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Meter-aware timeline (time-signature changes)</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Chord progression MIDI export</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Chord progression file export</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Built-in progression presets</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Chord-derived MIDI drag into the DAW</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <h2 class="text-2xl font-extrabold sm:text-3xl">Harmony expansion (Extended)</h2>
+          <div class="mt-4 overflow-x-auto rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800">
+            <table class="min-w-full text-sm">
+              <thead class="bg-gray-50 dark:bg-neutral-900">
+                <tr>
+                  <th class="p-3 text-left font-semibold">Feature</th>
+                  <th class="p-3 text-center font-semibold">Lite</th>
+                  <th class="p-3 text-center font-semibold">Extended</th>
+                  <th class="p-3 text-center font-semibold">Performance</th>
+                  <th class="p-3 text-center font-semibold">Full Bundle</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 dark:divide-neutral-800">
+                <tr>
+                  <td class="p-3">Tension menu (9 / b9 / #9 / 11 / 13)</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Slash chords (custom bass)</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">aug / b5 / 6th modifiers</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Circle of Fifths helper view</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Extended Snap values (16th / triplet / 32nd / 64th grid)</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Extended Length values (sub-beat length editing)</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">User preset bank (save your own progressions)</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <h2 class="text-2xl font-extrabold sm:text-3xl">Note generation — Arpeggio / Bassline (Extended &amp; Performance)</h2>
+          <div class="mt-4 overflow-x-auto rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800">
+            <table class="min-w-full text-sm">
+              <thead class="bg-gray-50 dark:bg-neutral-900">
+                <tr>
+                  <th class="p-3 text-left font-semibold">Feature</th>
+                  <th class="p-3 text-center font-semibold">Lite</th>
+                  <th class="p-3 text-center font-semibold">Extended</th>
+                  <th class="p-3 text-center font-semibold">Performance</th>
+                  <th class="p-3 text-center font-semibold">Full Bundle</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 dark:divide-neutral-800">
+                <tr>
+                  <td class="p-3">Arpeggio / Bassline generation</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Detailed parameters (Range / Spread / Density / Grid / Notes / Tension / Order / Syncopation / Rest / Style)</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Arpeggio note edit window</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Generated-note MIDI drag export (Arp / Bassline)</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <h2 class="text-2xl font-extrabold sm:text-3xl">Reharmonization (Extended)</h2>
+          <div class="mt-4 overflow-x-auto rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800">
+            <table class="min-w-full text-sm">
+              <thead class="bg-gray-50 dark:bg-neutral-900">
+                <tr>
+                  <th class="p-3 text-left font-semibold">Feature</th>
+                  <th class="p-3 text-center font-semibold">Lite</th>
+                  <th class="p-3 text-center font-semibold">Extended</th>
+                  <th class="p-3 text-center font-semibold">Performance</th>
+                  <th class="p-3 text-center font-semibold">Full Bundle</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 dark:divide-neutral-800">
+                <tr>
+                  <td class="p-3">Reharmonization workflow</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Comparison &amp; apply tools (Applied Codes · Core / Enrich / Rebuild · Show Original · chord locks)</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Reharmo edit window</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Reharmo preview MIDI drag export</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <h2 class="text-2xl font-extrabold sm:text-3xl">Arranger Mode &amp; live performance (Performance) — new in v2.0</h2>
+          <div class="mt-4 overflow-x-auto rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800">
+            <table class="min-w-full text-sm">
+              <thead class="bg-gray-50 dark:bg-neutral-900">
+                <tr>
+                  <th class="p-3 text-left font-semibold">Feature</th>
+                  <th class="p-3 text-center font-semibold">Lite</th>
+                  <th class="p-3 text-center font-semibold">Extended</th>
+                  <th class="p-3 text-center font-semibold">Performance</th>
+                  <th class="p-3 text-center font-semibold">Full Bundle</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 dark:divide-neutral-800">
+                <tr>
+                  <td class="p-3">Arranger Mode (4-part pad accompaniment: Drums / Bass / Arp / Chord Pad)</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Per-part pattern editors (Drums lane editor · Bass role-lane / MIDI roll · Arp · Chord Pad)</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Section Launcher (8 slots, PC-key / MIDI trigger)</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Performance page (4 parts × 8 pads at a glance)</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Song page (lay out patterns in song order)</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Reservation-based switching (Launch Quantize · Sync Mode · Auto Advance)</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">All 8 pads × 2 pattern sets per part</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Arranger pattern MIDI drag / export</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">Per-part MIDI output via ChordPart (bundled receiver plugin)</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mt-4 rounded-2xl ring-1 ring-indigo-400/30 bg-indigo-500/10 px-5 py-4 text-sm text-gray-700 dark:text-neutral-200">
+            <p class="font-semibold">Arranger Mode Demo (Lite / Extended)</p>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">
+              Open Arranger Mode and try the Setup / Performance / Song pages with limits — 90 seconds of actual playback total, Pads 1–3 only per part (Pads 4–8 shown but locked), and no Arranger MIDI export. Remaining demo time is not saved with the project and resets to 90 seconds when the project is reopened. Performance / Full Bundle removes all limits.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <h2 class="text-2xl font-extrabold sm:text-3xl">Summary</h2>
+          <div class="mt-4 overflow-x-auto rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800">
+            <table class="min-w-full text-sm">
+              <thead class="bg-gray-50 dark:bg-neutral-900">
+                <tr>
+                  <th class="p-3 text-left font-semibold"></th>
+                  <th class="p-3 text-center font-semibold">Lite</th>
+                  <th class="p-3 text-center font-semibold">Extended</th>
+                  <th class="p-3 text-center font-semibold">Performance</th>
+                  <th class="p-3 text-center font-semibold">Full Bundle</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 dark:divide-neutral-800">
+                <tr>
+                  <td class="p-3">Additional style / color / theme options</td>
+                  <td class="p-3 text-center">Limited</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-semibold">Best suited for</td>
+                  <td class="p-3">Core progression writing and arrangement</td>
+                  <td class="p-3">Deep harmony work, note generation, and reharmonization</td>
+                  <td class="p-3">Live accompaniment, pad performance, and per-part MIDI</td>
+                  <td class="p-3">Everything — Extended + Performance combined</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-4 text-xs text-gray-500 dark:text-neutral-400">
+            Depending on your edition and license state, features outside your edition appear locked or disabled. ChordPart has no separate license and follows the main plugin&#39;s edition.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-10">
+          <div class="rounded-3xl border border-indigo-400/30 bg-indigo-500/10 p-6 sm:p-8">
+            <h2 class="text-2xl font-extrabold">Download / Buy</h2>
+            <p class="mt-2 text-sm text-gray-600 dark:text-neutral-300">
+              <span class="font-semibold text-indigo-300">v2.0 launch:</span>
+              Limited-time pricing until October 1 (Extended $19 / Performance $19 / Full Bundle $29).
+            </p>
+            <div class="mt-5 flex flex-wrap gap-3">
+              <a
+                href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500"
+                >Download Lite Free</a
+              >
+              <a
+                href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex rounded-xl px-4 py-2 border border-indigo-400/40 text-indigo-100 font-semibold hover:bg-indigo-500/10"
+                >Buy Extended</a
+              >
+              <a
+                href="https://buy.stripe.com/9B67sEdzOelA33GbZ07N604"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex rounded-xl px-4 py-2 border border-teal-400/40 text-teal-100 font-semibold hover:bg-teal-500/10"
+                >Buy Performance</a
+              >
+              <a
+                href="https://buy.stripe.com/eVqdR27bq6T86fS1km7N605"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500"
+                >Buy Full Bundle</a
+              >
+            </div>
+            <div class="mt-4 flex flex-wrap gap-4 text-sm">
+              <a
+                href="extended.en.html"
+                class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200"
+                >See Extended Details</a
+              >
+              <a
+                href="performance.en.html"
+                class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200"
+                >See Performance Details</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-gray-200 dark:border-neutral-800">
+      <div
+        class="container mx-auto px-4 py-10 text-sm text-gray-600 dark:text-neutral-400"
+      >
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <p>© <span id="y"></span> Chord Dock — All rights reserved.</p>
+          <div class="flex items-center gap-3">
+            <a href="terms.html" class="hover:opacity-80">Terms</a>
+            <span aria-hidden>•</span>
+            <a href="privacy.html" class="hover:opacity-80">Privacy</a>
+            <span aria-hidden>•</span>
+            <a href="tokushoho.html" class="hover:opacity-80">Legal Notice (Japan)</a>
+            <span aria-hidden>•</span>
+            <a
+              href="https://forms.gle/ttEAX9dSLEk7Pr5X7"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:opacity-80"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear();
+      (function () {
+        var jp = document.getElementById('langJP');
+        if (jp) {
+          jp.addEventListener('click', function () {
+            try {
+              localStorage.setItem('lang', 'ja');
+            } catch (e) {}
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

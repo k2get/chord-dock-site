@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ja" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chord Dock エディション比較表（完全版） | Lite / Extended / Performance / Full Bundle</title>
+    <meta
+      name="description"
+      content="Chord Dock v2.0 の全エディション（Lite / Extended / Performance / Full Bundle）の機能差分を、カテゴリ別の完全版比較表で確認できます。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: 'class' };
+    </script>
+    <script>
+      (function () {
+        var KEY = 'lang';
+        var pref = null;
+        try {
+          pref = localStorage.getItem(KEY);
+        } catch (e) {}
+        if (pref === 'en') {
+          location.replace('comparison.en.html');
+          return;
+        }
+        if (pref === 'ja') {
+          return;
+        }
+        var lang =
+          (navigator.languages && navigator.languages[0]) ||
+          navigator.language ||
+          '';
+        if (!/^ja/i.test(lang || '')) {
+          location.replace('comparison.en.html');
+        }
+      })();
+    </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-V3MCR5K6MP"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-V3MCR5K6MP');
+    </script>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Noto Sans JP", system-ui, -apple-system, Segoe UI,
+          sans-serif;
+        background:
+          radial-gradient(circle at 12% 18%, rgba(99, 102, 241, 0.18), transparent 24%),
+          radial-gradient(circle at 86% 20%, rgba(45, 212, 191, 0.15), transparent 24%),
+          linear-gradient(180deg, #0a0f1c 0%, #090d18 100%);
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Space Grotesk", "Noto Sans JP", sans-serif;
+      }
+      .container {
+        max-width: 1100px;
+      }
+      .badge {
+        border: 1px solid rgb(229 231 235 / 1);
+      }
+      .section {
+        scroll-margin-top: 88px;
+      }
+      p {
+        max-width: 68ch;
+      }
+      table th:first-child,
+      table td:first-child {
+        min-width: 16rem;
+      }
+    </style>
+    <meta
+      property="og:title"
+      content="Chord Dock エディション比較表（完全版）"
+    />
+    <meta
+      property="og:description"
+      content="Lite / Extended / Performance / Full Bundle の機能差分をカテゴリ別に一覧できます。"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://k2get.github.io/chord-dock-site/comparison.html"
+    />
+    <meta
+      property="og:image"
+      content="https://k2get.github.io/chord-dock-site/assets/performance-view.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body
+    class="bg-white text-gray-900 dark:bg-neutral-950 dark:text-neutral-100"
+  >
+    <header
+      class="sticky top-0 z-40 border-b border-gray-200/60 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:border-neutral-800 dark:bg-neutral-950/80"
+    >
+      <nav
+        class="container mx-auto flex items-center justify-between px-4 py-3"
+      >
+        <a
+          href="index.html"
+          class="flex items-center gap-2 text-xl font-extrabold tracking-tight"
+        >
+          <span class="inline-block h-6 w-6 rounded-lg bg-indigo-600"></span>
+          Chord Dock
+        </a>
+        <div class="hidden items-center gap-3 text-sm sm:flex">
+          <a href="index.html" class="hover:opacity-80">トップ</a>
+          <a href="editions.html" class="hover:opacity-80">エディション</a>
+          <a href="extended.html" class="hover:opacity-80">Extended 詳細</a>
+          <a href="performance.html" class="hover:opacity-80">Performance 詳細</a>
+          <a href="manual.html" class="hover:opacity-80">オンラインマニュアル</a>
+          <a href="daw-guides.html" class="hover:opacity-80">DAW別ガイド</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <a
+            id="langEN"
+            href="comparison.en.html"
+            class="inline-flex items-center rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-medium hover:bg-gray-50 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+            >English</a
+          >
+          <a
+            href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-3.5 py-2 text-sm font-semibold text-white shadow hover:bg-indigo-500"
+            >Lite を無料で試す</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container mx-auto px-4 py-14 sm:py-16">
+          <span
+            class="badge inline-flex rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-200"
+            >Edition Comparison</span
+          >
+          <h1
+            class="mt-5 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl"
+          >
+            エディション比較表（完全版）
+          </h1>
+          <p class="mt-5 text-lg text-gray-600 dark:text-neutral-300">
+            Chord Dock v2.0 には 3 つのエディション（Lite / Extended / Performance）と、Extended と Performance をまとめた Full Bundle があります。Full Bundle は、Extended または Performance のいずれかで ✔ が付いた機能をすべて含みます。
+          </p>
+          <p class="mt-3 text-sm text-gray-500 dark:text-neutral-400">
+            凡例: ✔ = 収録 ・ — = 非対応 ・ <span class="text-indigo-300 font-semibold">Demo</span> = アレンジャーモードのデモとして試用可（制限あり／下記参照）。
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 pb-6">
+          <h2 class="text-2xl font-extrabold sm:text-3xl">基本機能（全エディション）</h2>
+          <div class="mt-4 overflow-x-auto rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800">
+            <table class="min-w-full text-sm">
+              <thead class="bg-gray-50 dark:bg-neutral-900">
+                <tr>
+                  <th class="p-3 text-left font-semibold">機能</th>
+                  <th class="p-3 text-center font-semibold">Lite</th>
+                  <th class="p-3 text-center font-semibold">Extended</th>
+                  <th class="p-3 text-center font-semibold">Performance</th>
+                  <th class="p-3 text-center font-semibold">Full Bundle</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 dark:divide-neutral-800">
+                <tr>
+                  <td class="p-3">タイムライン式コードエディター</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">コードのリサイズ・移動・複製・転回</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">セクション（セクション単位のアレンジ／フォーカス編集）</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">ディグリー表示 / タイムラインのみ表示</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">メジャー / マイナーコード</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">7th系（maj7 / m7 / mMaj7 / m7b5 / dim / dim7）</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">9th表記コード（add9 / M9 / m9 / 7(9)）</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">拍子変化対応タイムライン</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">コード進行の MIDI エクスポート</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">コード進行のファイル書き出し</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">内蔵プログレッションプリセット</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">コード由来 MIDI の DAW へのドラッグ</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <h2 class="text-2xl font-extrabold sm:text-3xl">ハーモニー拡張（Extended）</h2>
+          <div class="mt-4 overflow-x-auto rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800">
+            <table class="min-w-full text-sm">
+              <thead class="bg-gray-50 dark:bg-neutral-900">
+                <tr>
+                  <th class="p-3 text-left font-semibold">機能</th>
+                  <th class="p-3 text-center font-semibold">Lite</th>
+                  <th class="p-3 text-center font-semibold">Extended</th>
+                  <th class="p-3 text-center font-semibold">Performance</th>
+                  <th class="p-3 text-center font-semibold">Full Bundle</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 dark:divide-neutral-800">
+                <tr>
+                  <td class="p-3">テンションメニュー（9 / b9 / #9 / 11 / 13）</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">スラッシュコード（任意のベース音）</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">aug / b5 / 6th モディファイア</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">五度圏ビュー</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">拡張スナップ値（16分 / 3連 / 32分 / 64分グリッド）</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">拡張レングス値（拍未満の長さ編集）</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">ユーザープリセットバンク（自作進行の保存）</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <h2 class="text-2xl font-extrabold sm:text-3xl">ノート生成 — アルペジオ / ベースライン（Extended・Performance）</h2>
+          <div class="mt-4 overflow-x-auto rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800">
+            <table class="min-w-full text-sm">
+              <thead class="bg-gray-50 dark:bg-neutral-900">
+                <tr>
+                  <th class="p-3 text-left font-semibold">機能</th>
+                  <th class="p-3 text-center font-semibold">Lite</th>
+                  <th class="p-3 text-center font-semibold">Extended</th>
+                  <th class="p-3 text-center font-semibold">Performance</th>
+                  <th class="p-3 text-center font-semibold">Full Bundle</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 dark:divide-neutral-800">
+                <tr>
+                  <td class="p-3">アルペジオ / ベースライン生成</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">詳細パラメーター（Range / Spread / Density / Grid / Notes / Tension / Order / Syncopation / Rest / Style）</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">アルペジオのノート編集ウィンドウ</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">生成ノートの MIDI ドラッグエクスポート（アルペジオ / ベースライン）</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <h2 class="text-2xl font-extrabold sm:text-3xl">リハーモナイゼーション（Extended）</h2>
+          <div class="mt-4 overflow-x-auto rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800">
+            <table class="min-w-full text-sm">
+              <thead class="bg-gray-50 dark:bg-neutral-900">
+                <tr>
+                  <th class="p-3 text-left font-semibold">機能</th>
+                  <th class="p-3 text-center font-semibold">Lite</th>
+                  <th class="p-3 text-center font-semibold">Extended</th>
+                  <th class="p-3 text-center font-semibold">Performance</th>
+                  <th class="p-3 text-center font-semibold">Full Bundle</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 dark:divide-neutral-800">
+                <tr>
+                  <td class="p-3">リハモワークフロー</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">比較・適用ツール（Applied Codes・Core / Enrich / Rebuild・Show Original・コードロック）</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">リハモ編集ウィンドウ</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">リハモプレビューの MIDI ドラッグエクスポート</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <h2 class="text-2xl font-extrabold sm:text-3xl">アレンジャーモード &amp; ライブ演奏（Performance）— v2.0 新機能</h2>
+          <div class="mt-4 overflow-x-auto rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800">
+            <table class="min-w-full text-sm">
+              <thead class="bg-gray-50 dark:bg-neutral-900">
+                <tr>
+                  <th class="p-3 text-left font-semibold">機能</th>
+                  <th class="p-3 text-center font-semibold">Lite</th>
+                  <th class="p-3 text-center font-semibold">Extended</th>
+                  <th class="p-3 text-center font-semibold">Performance</th>
+                  <th class="p-3 text-center font-semibold">Full Bundle</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 dark:divide-neutral-800">
+                <tr>
+                  <td class="p-3">アレンジャーモード（4パートのパッド伴奏: Drums / Bass / Arp / Chord Pad）</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">パート別パターンエディター（Drums レーン式・Bass ロールレーン / MIDIロール・Arp・Chord Pad）</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">セクションランチャー（8スロット、PCキー / MIDI トリガー）</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">パフォーマンスページ（4パート × 8パッドを一望）</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">ソングページ（パターンを曲順に配置）</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">予約ベースの切り替え（Launch Quantize・Sync Mode・Auto Advance）</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">全 8 パッド × 2 パターンセット（パートごと）</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">アレンジャーパターンの MIDI ドラッグ / エクスポート</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3">ChordPart（同梱レシーバープラグイン）によるパート別 MIDI 出力</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">—</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mt-4 rounded-2xl ring-1 ring-indigo-400/30 bg-indigo-500/10 px-5 py-4 text-sm text-gray-700 dark:text-neutral-200">
+            <p class="font-semibold">アレンジャーモード デモ（Lite / Extended）</p>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">
+              Setup / Performance / SONG の各ページを開いて試せますが、制限があります — 実演奏の合計時間は90秒まで、各パート Pad 1–3 のみ（Pad 4–8 は表示されるが使用不可）、アレンジャーの MIDI エクスポートは不可。残りデモ時間はプロジェクトに保存されず、プロジェクトを開き直すと90秒にリセットされます。Performance / Full Bundle では制限がすべて解除されます。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-6">
+          <h2 class="text-2xl font-extrabold sm:text-3xl">まとめ</h2>
+          <div class="mt-4 overflow-x-auto rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800">
+            <table class="min-w-full text-sm">
+              <thead class="bg-gray-50 dark:bg-neutral-900">
+                <tr>
+                  <th class="p-3 text-left font-semibold"></th>
+                  <th class="p-3 text-center font-semibold">Lite</th>
+                  <th class="p-3 text-center font-semibold">Extended</th>
+                  <th class="p-3 text-center font-semibold">Performance</th>
+                  <th class="p-3 text-center font-semibold">Full Bundle</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 dark:divide-neutral-800">
+                <tr>
+                  <td class="p-3">スタイル / カラー / テーマの追加オプション</td>
+                  <td class="p-3 text-center">一部</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                  <td class="p-3 text-center">✔</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-semibold">おすすめ用途</td>
+                  <td class="p-3">コード進行づくりとアレンジの基本</td>
+                  <td class="p-3">深いハーモニー作業・ノート生成・リハモ</td>
+                  <td class="p-3">ライブ伴奏・パッド演奏・パート別 MIDI</td>
+                  <td class="p-3">すべて — Extended + Performance を統合</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-4 text-xs text-gray-500 dark:text-neutral-400">
+            エディションとライセンス状態に応じて、対象外の機能はロック／無効表示になります。ChordPart は独自のライセンス操作を持たず、本体プラグインのエディションに従います。
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container mx-auto px-4 py-10">
+          <div class="rounded-3xl border border-indigo-400/30 bg-indigo-500/10 p-6 sm:p-8">
+            <h2 class="text-2xl font-extrabold">ダウンロード / 購入</h2>
+            <p class="mt-2 text-sm text-gray-600 dark:text-neutral-300">
+              <span class="font-semibold text-indigo-300">v2.0 リリース記念:</span>
+              10月1日まで、期間限定価格で提供中です（Extended $19 / Performance $19 / Full Bundle $29）。
+            </p>
+            <div class="mt-5 flex flex-wrap gap-3">
+              <a
+                href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500"
+                >Lite を無料でダウンロード</a
+              >
+              <a
+                href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex rounded-xl px-4 py-2 border border-indigo-400/40 text-indigo-100 font-semibold hover:bg-indigo-500/10"
+                >Extended を購入</a
+              >
+              <a
+                href="https://buy.stripe.com/9B67sEdzOelA33GbZ07N604"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex rounded-xl px-4 py-2 border border-teal-400/40 text-teal-100 font-semibold hover:bg-teal-500/10"
+                >Performance を購入</a
+              >
+              <a
+                href="https://buy.stripe.com/eVqdR27bq6T86fS1km7N605"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500"
+                >Full Bundle を購入</a
+              >
+            </div>
+            <div class="mt-4 flex flex-wrap gap-4 text-sm">
+              <a
+                href="extended.html"
+                class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200"
+                >Extended の詳細を見る</a
+              >
+              <a
+                href="performance.html"
+                class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200"
+                >Performance の詳細を見る</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-gray-200 dark:border-neutral-800">
+      <div
+        class="container mx-auto px-4 py-10 text-sm text-gray-600 dark:text-neutral-400"
+      >
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <p>© <span id="y"></span> Chord Dock — All rights reserved.</p>
+          <div class="flex items-center gap-3">
+            <a href="terms.html" class="hover:opacity-80">利用規約</a>
+            <span aria-hidden>•</span>
+            <a href="privacy.html" class="hover:opacity-80">プライバシー</a>
+            <span aria-hidden>•</span>
+            <a href="tokushoho.html" class="hover:opacity-80">特定商取引法に基づく表記</a>
+            <span aria-hidden>•</span>
+            <a
+              href="https://forms.gle/WPgiSCxY9Mp3v9nc6"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:opacity-80"
+              >お問い合わせ</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear();
+      (function () {
+        var en = document.getElementById('langEN');
+        if (en) {
+          en.addEventListener('click', function () {
+            try {
+              localStorage.setItem('lang', 'en');
+            } catch (e) {}
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

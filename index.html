@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Chord Dock v1.5 — タイムラインでコード進行を可視化、リハーモナイズ、生成</title>
+    <title>Chord Dock v2.0 — タイムラインでコード進行を可視化、リハーモナイズ、そして演奏</title>
     <meta
       name="description"
-      content="Chord Dock v1.5 は、コードトラックのように進行全体を見渡しながら編集し、リハーモナイズやアルペジオ / ベースライン生成まで行えるコード進行制作プラグインです。"
+      content="Chord Dock v2.0 は、コードトラックのように進行全体を見渡しながら編集し、リハーモナイズやアルペジオ / ベースライン生成、4パート伴奏のパッド演奏（アレンジャーモード）、ChordPart によるパート別MIDI出力まで行えるコード進行制作プラグインです。"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -131,11 +131,11 @@
     <!-- Open Graph -->
     <meta
       property="og:title"
-      content="Chord Dock v1.5 — タイムラインでコード進行を可視化、リハーモナイズ、生成"
+      content="Chord Dock v2.0 — タイムラインでコード進行を可視化、リハーモナイズ、そして演奏"
     />
 	    <meta
       property="og:description"
-      content="コードトラックのように進行全体を見渡しながら編集し、リハーモナイズやアルペジオ / ベースライン生成まで行えるコード進行制作プラグイン。"
+      content="コード進行をタイムラインで編集し、リハーモナイズ、アルペジオ生成から、4パート伴奏のパッド演奏（アレンジャーモード）とパート別MIDI出力までひとつのフローで。"
     />
     <meta property="og:type" content="website" />
     <meta
@@ -144,7 +144,7 @@
     />
     <meta
       property="og:image"
-      content="https://k2get.github.io/chord-dock-site/assets/%E3%83%AA%E3%83%8F%E3%83%A2%E6%A9%9F%E8%83%BD%E3%81%AE%E5%85%A8%E4%BD%93%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88.png"
+      content="https://k2get.github.io/chord-dock-site/assets/performance-view.png"
     />
     <meta name="twitter:card" content="summary_large_image" />
   </head>
@@ -204,18 +204,14 @@
             <h1
               class="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight"
             >
-              コード進行を<span class="text-indigo-400">組み、可視化し、共有。</span><br />
-              <span class="text-indigo-400">リハーモナイズ</span>までつながる コードトラックプラグイン
+              コード進行を<span class="text-indigo-400">組み、可視化し、──演奏する。</span><br />
+              リハーモナイズから<span class="text-indigo-400">4パート伴奏</span>までつながる コードトラックプラグイン
             </h1>
             <p class="mt-5 text-lg text-gray-600 dark:text-neutral-300">
-              Chord Dock v1.5 は、タイムライン編集を土台に、五度圏、リハーモナイズ、アルペジオ / ベースライン、拍子変更、MIDIドラッグまでをひとつの制作フローにまとめた作曲支援プラグインです。
+              Chord Dock v2.0 は、タイムライン編集を土台に、五度圏、リハーモナイズ、アルペジオ / ベースライン生成、そして Drums / Bass / Arp / Chord Pad の4パート伴奏をパッドで演奏する「アレンジャーモード」までをひとつの制作フローにまとめた作曲支援プラグインです。
             </p>
             <p class="mt-4 text-sm text-gray-500 dark:text-neutral-400">
-              Lite / Extended は共通インストーラーです。まずは Lite を無料で試し、必要に応じて
-              <span class="align-middle badge rounded-lg px-2 py-1 text-xs"
-                >Extended</span
-              >
-              の機能をそのまま解放できます。
+              エディションは Lite（無料）/ Extended / Performance / Full Bundle。すべて共通インストーラーで、まずは Lite を無料で試し、ライセンスキーで必要な方向の機能をそのまま解放できます。
             </p>
             <div class="mt-6 flex flex-wrap gap-3">
               <a
@@ -228,25 +224,27 @@
               <a
                 href="#start-free"
                 class="rounded-xl px-5 py-3 text-base font-semibold border border-indigo-400/40 text-indigo-100 shadow hover:bg-indigo-500/10"
-                >Extendedで広がる機能</a
+                >広がる2つの方向を見る</a
               >
             </div>
             <p class="mt-4 text-sm text-gray-500 dark:text-neutral-400">
-              最初から拡張機能を使いたい場合は
+              最初から解放して使いたい場合は
               <a
-href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorrycheckout05140531"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#download"
                 class="font-semibold text-indigo-300 hover:text-indigo-200 underline underline-offset-4"
-                >Extended ライセンスを購入</a
+                >Extended / Performance / Full Bundle のライセンスを購入</a
               >し、購入後に発行されるライセンスキーで機能を有効化できます。
+            </p>
+            <p class="mt-3 text-sm text-indigo-200/90">
+              Lite / Extended でも、アレンジャーモードのデモ（実再生90秒・各パート Pad 1–3）を体験できます。
             </p>
             <div
               class="mt-4 flex flex-wrap gap-2 text-xs text-gray-600 dark:text-neutral-400"
             >
               <span class="badge rounded-lg px-2 py-1">Liteはシリアル不要</span>
               <span class="badge rounded-lg px-2 py-1">共通インストーラー</span>
-              <span class="badge rounded-lg px-2 py-1">後からアップグレード</span>
+              <span class="badge rounded-lg px-2 py-1">ライセンスキーで機能解放</span>
+              <span class="badge rounded-lg px-2 py-1">ChordPart 同梱</span>
               <span class="badge rounded-lg px-2 py-1">VST3 / AU</span>
               <span class="badge rounded-lg px-2 py-1">macOS / Windows</span>
             </div>
@@ -259,8 +257,8 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
                 class="w-full h-full"
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed/gw9yzKjosrs"
-                title="Chord Dock 1.5 紹介｜コードトラックプラグイン"
+                src="https://www.youtube.com/embed/XS7teZi2VOY"
+                title="Chord Dock 2.0 紹介｜コードトラックプラグイン"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin"
@@ -268,7 +266,7 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
               ></iframe>
             </div>
             <p class="mt-2 text-xs text-gray-500">
-              ※ Chord Dock の概要紹介動画です。
+              ※ Chord Dock 2.0 の概要紹介動画です。
             </p>
           </div>
         </div>
@@ -281,51 +279,77 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
           class="rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800 bg-white/70 dark:bg-neutral-900/70 p-6 sm:p-8"
         >
           <h2 class="text-2xl sm:text-3xl font-extrabold">
-            Liteで試せて、Extendedで広がる
+            Liteで試して、2つの方向へ広げる
           </h2>
           <p class="mt-3 text-gray-600 dark:text-neutral-300">
-            Lite でワークフローと DAW での使い勝手を確認し、制作をさらに進めたくなったタイミングで、Extended の発展機能をそのまま解放できます。
+            Lite でワークフローと DAW での使い勝手を確認したら、進めたい方向のライセンスキーで機能を解放できます。Extended はハーモニーを深く、Performance は進行を演奏に。どちらが上位ということはなく、解放する方向が違う同列のエディションです。
           </p>
-          <div class="mt-6 grid gap-6 md:grid-cols-2 text-sm">
+          <div class="mt-6 grid gap-6 md:grid-cols-3 text-sm">
             <div
-              class="rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 p-6"
+              class="rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 p-6 flex flex-col"
             >
               <h3 class="text-lg font-semibold">Lite: 基本ワークフローを無料で</h3>
-              <ul class="mt-3 list-disc ml-5 space-y-2 text-gray-700 dark:text-neutral-300">
+              <ul class="mt-3 mb-5 list-disc ml-5 space-y-2 text-gray-700 dark:text-neutral-300">
                 <li>タイムラインでコード進行を作成</li>
                 <li>Sections / Focus Edit で構成を整理</li>
                 <li>MIDI をドラッグしてそのまま書き出し</li>
-                <li>進行データを保存・再利用</li>
+                <li>アレンジャーモードのデモを体験（実再生90秒・各パート Pad 1–3）</li>
               </ul>
               <a
                 href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="mt-5 inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500"
+                class="mt-auto self-start inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500"
                 >無料版をダウンロード</a
               >
             </div>
             <div
-              class="rounded-2xl ring-2 ring-indigo-400/40 dark:ring-indigo-400/40 bg-white/60 dark:bg-neutral-900/60 p-6"
+              class="rounded-2xl ring-2 ring-indigo-400/40 dark:ring-indigo-400/40 bg-white/60 dark:bg-neutral-900/60 p-6 flex flex-col"
             >
-              <h3 class="text-lg font-semibold">Extended: 発展と変形まで一気に</h3>
-              <ul class="mt-3 list-disc ml-5 space-y-2 text-gray-700 dark:text-neutral-300">
+              <h3 class="text-lg font-semibold">Extended: ハーモニーを深く</h3>
+              <ul class="mt-3 mb-5 list-disc ml-5 space-y-2 text-gray-700 dark:text-neutral-300">
                 <li>リハーモナイズで候補を比較しながら適用</li>
                 <li>選択セクションからアルペジオ / ベースラインを生成</li>
                 <li>テンション、スラッシュ、五度圏ツールを解放</li>
                 <li>細かい Snap / Length で詰めた編集が可能</li>
               </ul>
-              <div class="mt-4 text-xs text-red-600 dark:text-red-300">
-                ※ Lite / Extended は共通インストーラーです。Liteをインストール後、購入したライセンスキーで Extended 機能を有効化します。
-              </div>
               <a
-href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorrycheckout05140531"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="mt-5 inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500"
-                >Extended ライセンスを購入</a
+                href="extended.html"
+                class="mt-auto self-start inline-flex rounded-xl px-4 py-2 border border-indigo-400/40 text-indigo-100 font-semibold hover:bg-indigo-500/10"
+                >Extended の詳細を見る</a
               >
             </div>
+            <div
+              class="rounded-2xl ring-2 ring-teal-400/40 dark:ring-teal-400/40 bg-white/60 dark:bg-neutral-900/60 p-6 flex flex-col"
+            >
+              <h3 class="text-lg font-semibold">Performance: 進行を演奏に</h3>
+              <ul class="mt-3 mb-5 list-disc ml-5 space-y-2 text-gray-700 dark:text-neutral-300">
+                <li>アレンジャーモードで4パートの伴奏を演奏</li>
+                <li>セクションランチャーで予約切り替え</li>
+                <li>Performance / SONG ページで俯瞰</li>
+                <li>ChordPart でパート別MIDIを別トラックへ</li>
+              </ul>
+              <a
+                href="performance.html"
+                class="mt-auto self-start inline-flex rounded-xl px-4 py-2 border border-teal-400/40 text-teal-100 font-semibold hover:bg-teal-500/10"
+                >Performance の詳細を見る</a
+              >
+            </div>
+          </div>
+          <div
+            class="mt-6 rounded-2xl ring-2 ring-indigo-400/50 bg-indigo-500/10 p-6 flex flex-wrap items-center justify-between gap-4"
+          >
+            <div>
+              <h3 class="text-lg font-semibold">Full Bundle: 両方まとめて解放</h3>
+              <p class="mt-1 text-sm text-gray-600 dark:text-neutral-300">
+                Extended と Performance のすべての機能を、ひとつのライセンスキーで。
+              </p>
+            </div>
+            <a
+              href="#download"
+              class="inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500"
+              >価格を見る</a
+            >
           </div>
         </div>
       </div>
@@ -364,15 +388,16 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
           >
             <h3 class="font-semibold">進行編集から MIDI 書き出しまで一画面</h3>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
-              タイムライン編集、試聴、ドラッグエクスポートを短いループで回し、DAW を跨いでも同じ進行を持ち運べます。
+              タイムライン編集、試聴、ドラッグエクスポートを短いループで回せます。五度圏や拍子変更にも対応し、DAW を跨いでも同じ進行を持ち運べます。
             </p>
           </div>
           <div
-            class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto"
+            class="p-6 rounded-2xl ring-2 ring-indigo-400/50 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto"
           >
-            <h3 class="font-semibold">タイムライン編集 × 五度圏 × 拍子変更</h3>
+            <span class="inline-flex items-center rounded-full bg-indigo-500/15 px-2 py-0.5 text-[11px] font-bold tracking-wide text-indigo-300 ring-1 ring-indigo-400/40">NEW in 2.0</span>
+            <h3 class="mt-2 font-semibold">アレンジャーモードで、進行を演奏</h3>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
-              ドラッグ/移動/リサイズに加え、拍子変更も反映。進行の骨格とハーモニーの見通しを同時に整えられます。
+              進行の上に Drums / Bass / Arp / Chord Pad の伴奏パターンを組み、パッドで演奏。予約ベースの切り替えで、ライブでも構成スケッチでも。
             </p>
           </div>
           <div
@@ -400,11 +425,12 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
             </p>
           </div>
           <div
-            class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto"
+            class="p-6 rounded-2xl ring-2 ring-indigo-400/50 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto"
           >
-            <h3 class="font-semibold">共通インストーラーで段階解放</h3>
+            <span class="inline-flex items-center rounded-full bg-indigo-500/15 px-2 py-0.5 text-[11px] font-bold tracking-wide text-indigo-300 ring-1 ring-indigo-400/40">NEW in 2.0</span>
+            <h3 class="mt-2 font-semibold">ChordPart でパート別MIDI出力</h3>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
-              Lite は編集と書き出しの土台、Extended はテンション、スラッシュ、リハーモナイズ、アルペジオ、保存系機能まで広げる構成です。
+              同梱の小型プラグイン ChordPart が、各パートの MIDI を DAW の別トラックへ。ホスト側の MIDI ルーティング仕様に関わらず、パートごとに好きな音源を鳴らせます。
             </p>
           </div>
         </div>
@@ -449,7 +475,7 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
             <p
               class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed"
             >
-              v1.5 の大きな軸がリハーモナイズです。候補を比較し、元の進行を残したままプレビューし、必要なタイミングでだけ Apply できます。Chord Unit / Progression Unit の切り替えにも対応します。
+              リハーモナイズでは、候補を比較し、元の進行を残したままプレビューし、必要なタイミングでだけ Apply できます。Chord Unit / Progression Unit の切り替えにも対応します。
             </p>
           </div>
           <div
@@ -534,6 +560,111 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
             </p>
           </div>
         </div>
+
+        <!-- Row 6: テキスト左 / 画像右（NEW: アレンジャーモード） -->
+        <div
+          class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:minmax(0,1fr)_auto]"
+          id="arranger"
+        >
+          <div class="md:ml-auto max-w-xl">
+            <span class="inline-flex items-center rounded-full bg-indigo-500/15 px-2 py-0.5 text-[11px] font-bold tracking-wide text-indigo-300 ring-1 ring-indigo-400/40">NEW in 2.0</span>
+            <h3 class="mt-2 text-xl font-semibold">アレンジャーモードで、進行がそのまま伴奏になる</h3>
+            <p
+              class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed"
+            >
+              セクションごとに Drums / Bass / Arp / Chord Pad のパターンを組み、パッドで呼び出して演奏（各パート8パッド×2セット）。役割ベースのパターンはコード進行の変更に自動で追従します。Launch Quantize による予約切り替えで、小節に合わせて次の展開へ。
+            </p>
+          </div>
+          <div
+            class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72"
+          >
+            <img
+              src="assets/arranger-setup.png"
+              alt="アレンジャーモード（Setup ページ）の画面"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Row 7: 画像左 / テキスト右（NEW: Performance ページ） -->
+        <div
+          class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:auto_minmax(0,1fr)]"
+        >
+          <div
+            class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72"
+          >
+            <img
+              src="assets/performance-view.png"
+              alt="Performance ページ（4パート×8パッド）の画面"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div>
+            <span class="inline-flex items-center rounded-full bg-indigo-500/15 px-2 py-0.5 text-[11px] font-bold tracking-wide text-indigo-300 ring-1 ring-indigo-400/40">NEW in 2.0</span>
+            <h3 class="mt-2 text-xl font-semibold">Performance ページ — 32パッドを1画面で</h3>
+            <p
+              class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed"
+            >
+              4パート×8パッド＝32パッドを一望する演奏用ページ。クリック、数字キー、MIDI ノートでセクションを予約しながら、パッドの組み合わせで展開を作れます。Sync Mode（Host / Plugin）で、DAW 追従でもプラグイン主導でも。
+            </p>
+          </div>
+        </div>
+
+        <!-- Row 8: テキスト左 / 画像右（NEW: SONG ページ） -->
+        <div
+          class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:minmax(0,1fr)_auto]"
+        >
+          <div class="md:ml-auto max-w-xl">
+            <span class="inline-flex items-center rounded-full bg-indigo-500/15 px-2 py-0.5 text-[11px] font-bold tracking-wide text-indigo-300 ring-1 ring-indigo-400/40">NEW in 2.0</span>
+            <h3 class="mt-2 text-xl font-semibold">SONG ページ — パターンを曲順に並べる</h3>
+            <p
+              class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed"
+            >
+              パッドパターンを曲順に配置して、曲全体を通しで確認。DAW 停止中の内部再生にも、ホスト再生への追従にも対応します。クリップ編集は Undo 対応。仕上げたパターンは MIDI としてドラッグ書き出しできます。
+            </p>
+          </div>
+          <div
+            class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72"
+          >
+            <img
+              src="assets/song-page.png"
+              alt="SONG ページ（曲順にパターンを配置）の画面"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Row 9: 画像左 / テキスト右（NEW: ChordPart） -->
+        <div
+          class="grid items-center mt-12 gap-y-8 gap-x-2 md:gap-x-3 md:[grid-template-columns:auto_minmax(0,1fr)]"
+          id="chordpart"
+        >
+          <div
+            class="rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl p-8 flex items-center justify-center"
+          >
+            <img
+              src="assets/chordpart-ui.png"
+              alt="ChordPart プラグインの画面"
+              class="rounded-lg"
+              width="292"
+            />
+          </div>
+          <div>
+            <span class="inline-flex items-center rounded-full bg-indigo-500/15 px-2 py-0.5 text-[11px] font-bold tracking-wide text-indigo-300 ring-1 ring-indigo-400/40">NEW in 2.0</span>
+            <h3 class="mt-2 text-xl font-semibold">ChordPart — 各パートを、別トラックの好きな音源へ</h3>
+            <p
+              class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed"
+            >
+              同梱の小型プラグイン ChordPart を受け側トラックに挿すだけで、アレンジャー各パートの MIDI を配線不要の自動接続で受け取れます。ホスト側の MIDI ルーティング仕様に関わらず、パートごとに音源を割り当て可能。本体側の Part Send チップで接続状態もひと目で確認できます。
+            </p>
+            <img
+              src="assets/part-send-chip.png"
+              alt="本体側 Part Send チップの表示例"
+              class="mt-4 rounded-lg ring-1 ring-gray-200 dark:ring-neutral-700 max-w-full"
+              width="592"
+            />
+          </div>
+        </div>
       </div>
     </section>
 
@@ -541,10 +672,10 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
 	    <section class="section" id="edition-comparison">
 	      <div class="container mx-auto px-4 py-12">
 	        <h2 class="text-2xl sm:text-3xl font-extrabold">
-	          Lite / Extended の違い
+	          エディション比較（要約）
 	        </h2>
         <p class="mt-2 text-sm text-gray-600 dark:text-neutral-300">
-          Lite と Extended で共通するコア機能と、Extended で追加される機能の違いです。
+          Lite / Extended / Performance / Full Bundle の違いの要点です。すべての機能を網羅した詳細は「完全版の比較表」をご覧ください。
         </p>
         <div
           class="mt-6 overflow-x-auto rounded-2xl ring-1 ring-gray-200 dark:ring-neutral-800"
@@ -552,86 +683,69 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
           <table class="min-w-full text-sm">
             <thead class="bg-gray-50 dark:bg-neutral-900">
               <tr>
-                <th class="p-3 text-left font-semibold">機能カテゴリ</th>
-                <th class="p-3 text-left font-semibold">Lite（無料）</th>
-                <th class="p-3 text-left font-semibold">Extended（有料）</th>
+                <th class="p-3 text-left font-semibold">機能</th>
+                <th class="p-3 text-center font-semibold">Lite（無料）</th>
+                <th class="p-3 text-center font-semibold">Extended</th>
+                <th class="p-3 text-center font-semibold">Performance</th>
+                <th class="p-3 text-center font-semibold">Full Bundle</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-200 dark:divide-neutral-800">
               <tr>
-                <td class="p-3">タイムライン型コードエディタ</td>
-                <td class="p-3">✔</td>
-                <td class="p-3">✔</td>
+                <td class="p-3">タイムライン編集・セクション・MIDIドラッグ書き出し</td>
+                <td class="p-3 text-center">✔</td>
+                <td class="p-3 text-center">✔</td>
+                <td class="p-3 text-center">✔</td>
+                <td class="p-3 text-center">✔</td>
               </tr>
               <tr>
-                <td class="p-3">コードのリサイズ / 移動 / 複製 / 転回</td>
-                <td class="p-3">✔</td>
-                <td class="p-3">✔</td>
+                <td class="p-3">テンション / スラッシュコード / 五度圏</td>
+                <td class="p-3 text-center">—</td>
+                <td class="p-3 text-center">✔</td>
+                <td class="p-3 text-center">—</td>
+                <td class="p-3 text-center">✔</td>
               </tr>
               <tr>
-                <td class="p-3">セクション（Section Clip / Focus Edit）</td>
-                <td class="p-3">✔</td>
-                <td class="p-3">✔</td>
+                <td class="p-3">リハーモナイズ</td>
+                <td class="p-3 text-center">—</td>
+                <td class="p-3 text-center">✔</td>
+                <td class="p-3 text-center">—</td>
+                <td class="p-3 text-center">✔</td>
               </tr>
               <tr>
-                <td class="p-3">Progression の書き出し / 読み込み</td>
-                <td class="p-3">✔</td>
-                <td class="p-3">✔</td>
+                <td class="p-3">アルペジオ / ベースライン生成</td>
+                <td class="p-3 text-center">—</td>
+                <td class="p-3 text-center">✔</td>
+                <td class="p-3 text-center">✔</td>
+                <td class="p-3 text-center">✔</td>
               </tr>
               <tr>
-                <td class="p-3">ドラッグ&amp;ドロップ MIDI 書き出し</td>
-                <td class="p-3">✔</td>
-                <td class="p-3">✔</td>
+                <td class="p-3">アレンジャーモード（4パート伴奏・パッド演奏）</td>
+                <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                <td class="p-3 text-center">✔</td>
+                <td class="p-3 text-center">✔</td>
               </tr>
               <tr>
-                <td class="p-3">五度圏の表示</td>
-                <td class="p-3">—</td>
-                <td class="p-3">✔</td>
+                <td class="p-3">Performance / SONG ページ</td>
+                <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                <td class="p-3 text-center text-indigo-300 font-semibold">Demo</td>
+                <td class="p-3 text-center">✔</td>
+                <td class="p-3 text-center">✔</td>
               </tr>
               <tr>
-                <td class="p-3">五度圏のインタラクティブ操作</td>
-                <td class="p-3">—</td>
-                <td class="p-3">✔</td>
+                <td class="p-3">ChordPart（パート別MIDI出力）</td>
+                <td class="p-3 text-center">—</td>
+                <td class="p-3 text-center">—</td>
+                <td class="p-3 text-center">✔</td>
+                <td class="p-3 text-center">✔</td>
               </tr>
               <tr>
-                <td class="p-3">テンション（9 / 11 / 13）</td>
-                <td class="p-3">—</td>
-                <td class="p-3">✔</td>
-              </tr>
-              <tr>
-                <td class="p-3">スラッシュコード（任意ベース）</td>
-                <td class="p-3">—</td>
-                <td class="p-3">✔</td>
-              </tr>
-              <tr>
-                <td class="p-3">アルペジオ / ベースライン モード</td>
-                <td class="p-3">—</td>
-                <td class="p-3">✔</td>
-              </tr>
-              <tr>
-                <td class="p-3">Arpeggio の詳細パラメータ / ノート編集</td>
-                <td class="p-3">—</td>
-                <td class="p-3">✔</td>
-              </tr>
-              <tr>
-                <td class="p-3">リハーモナイズモード</td>
-                <td class="p-3">—</td>
-                <td class="p-3">✔</td>
-              </tr>
-              <tr>
-                <td class="p-3">リハーモナイズの詳細パラメータ / ノート編集</td>
-                <td class="p-3">—</td>
-                <td class="p-3">✔</td>
-              </tr>
-              <tr>
-                <td class="p-3">ユーザープリセット保存</td>
-                <td class="p-3">—</td>
-                <td class="p-3">✔</td>
-              </tr>
-              <tr>
-                <td class="p-3">セクション色の変更 / カスタムテーマ</td>
-                <td class="p-3">—</td>
-                <td class="p-3">✔</td>
+                <td class="p-3">アレンジャーパターンの MIDI 書き出し</td>
+                <td class="p-3 text-center">—</td>
+                <td class="p-3 text-center">—</td>
+                <td class="p-3 text-center">✔</td>
+                <td class="p-3 text-center">✔</td>
               </tr>
               <tr>
                 <td class="p-3">おすすめの用途</td>
@@ -639,11 +753,27 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
                   進行の下書き、書き出し、共有
                 </td>
                 <td class="p-3">
-                  変形、生成、細部調整まで含む本制作
+                  ハーモニーの深掘り、生成、リハモ
+                </td>
+                <td class="p-3">
+                  ライブ伴奏、パッド演奏、パート別MIDI
+                </td>
+                <td class="p-3">
+                  すべて — Extended + Performance
                 </td>
               </tr>
             </tbody>
           </table>
+        </div>
+        <p class="mt-3 text-xs text-gray-500 dark:text-neutral-400">
+          Demo = アレンジャーモードのデモとして試用可（実再生90秒・各パート Pad 1–3・アレンジャーの MIDI 書き出し不可）。
+        </p>
+        <div class="mt-4">
+          <a
+            href="comparison.html"
+            class="inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500"
+            >完全版の比較表を見る</a
+          >
         </div>
 	      </div>
 	    </section>
@@ -664,6 +794,7 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
 	            <li>タイムライン編集（コードイベントを素早く配置・移動・リサイズ）</li>
 	            <li>一目で構造を把握（五度圏、テンション、スラッシュコード）</li>
 	            <li>好きな音源で鳴らす（Chord Dock の MIDI をお好みの VST/AU にルーティング）</li>
+	            <li>進行の上に伴奏を組んで演奏（アレンジャーモード + ChordPart によるパート別MIDI出力）</li>
 	          </ul>
 	          <div class="mt-4 text-xs text-gray-500 dark:text-neutral-400">
 	            注: Chord Dock はコード検出ツールではありません。音声/MIDI からのコード認識が必要な場合は、専用の解析ツールと併用してください。
@@ -708,19 +839,30 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
     <!-- Download / Buy -->
     <section class="section" id="download">
       <div class="container mx-auto px-4 py-12">
-        <h2 class="text-2xl sm:text-3xl font-extrabold">ダウンロード</h2>
-        <div class="mt-6 grid md:grid-cols-2 gap-6 text-sm">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">ダウンロード / 購入</h2>
+        <div
+          class="mt-4 rounded-2xl ring-1 ring-indigo-400/40 bg-indigo-500/10 px-5 py-3 text-sm text-gray-700 dark:text-neutral-200"
+        >
+          <p>
+            <span class="font-semibold text-indigo-300">v2.0 リリース記念:</span>
+            10月1日まで、期間限定価格で提供中です。
+          </p>
+        </div>
+        <div class="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-4 text-sm" id="buy">
           <div
-            class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto h-full min-h-[16rem] flex flex-col w-full md:w-96"
+            class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 h-full flex flex-col"
           >
-            <h3 class="text-lg md:text-xl font-semibold">Lite（無料）</h3>
+            <h3 class="text-lg font-semibold">Lite</h3>
+            <p class="mt-1 text-xs text-gray-500 dark:text-neutral-400 font-semibold">基本ワークフロー</p>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
               タイムライン編集
               <br />Progression の書き出し / 読み込み
               <br />MIDIドラッグ&ドロップ
-              <br />五度圏の表示
-              <br />コード進行の下書きと共有に必要な基礎機能
+              <br />アレンジャーモードのデモ体験
             </p>
+            <div class="mt-3 flex items-baseline gap-2">
+              <span class="text-2xl font-extrabold">Free</span>
+            </div>
             <a
               href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0"
               target="_blank"
@@ -730,30 +872,81 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
             >
           </div>
           <div
-            class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mr-auto h-full min-h-[16rem] flex flex-col w-full md:w-96"
-            id="buy"
+            class="p-6 rounded-2xl ring-2 ring-indigo-400/40 bg-white/60 dark:bg-neutral-900/60 h-full flex flex-col"
           >
-            <h3 class="text-lg md:text-xl font-semibold">Extended（有料）</h3>
+            <h3 class="text-lg font-semibold">Extended</h3>
+            <p class="mt-1 text-xs text-indigo-300 font-semibold">ハーモニーを深く</p>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
-              テンション / スラッシュ / インタラクティブ五度圏を解放
-              <br />アルペジオ / ベースライン、リハーモナイズ、詳細パラメータを解放
-              <br />ユーザープリセット保存、色変更、カスタムテーマに対応
+              テンション / スラッシュ / 五度圏
+              <br />リハーモナイズ
+              <br />アルペジオ / ベースライン生成
+              <br />ユーザープリセット保存・テーマ
             </p>
-            <div class="mt-1 text-xs text-red-600 dark:text-red-300">
-              ライセンス：1アカウント2台まで。
-              <br />
-              ※ Lite / Extended は共通インストーラーです。Liteをインストール後、購入したライセンスキーで Extended 機能を有効化します。
-              <br />
-              不要な端末のアクティベーションを解除すると、別端末で有効化できます。
+            <div class="mt-3 flex items-baseline gap-2">
+              <span class="text-sm text-gray-500 dark:text-neutral-500 line-through">$24</span>
+              <span class="text-2xl font-extrabold text-indigo-300">$19</span>
             </div>
-		            <a
-href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorrycheckout05140531"
-		              target="_blank"
-		              rel="noopener noreferrer"
-		              class="mt-auto self-start inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500"
-		              >Extended ライセンスを購入</a
-	            >
+            <p class="text-xs text-gray-500 dark:text-neutral-400">期間限定価格・10月1日まで</p>
+            <a
+              href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-auto self-start inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500"
+              >Extended を購入</a
+            >
           </div>
+          <div
+            class="p-6 rounded-2xl ring-2 ring-teal-400/40 bg-white/60 dark:bg-neutral-900/60 h-full flex flex-col"
+          >
+            <h3 class="text-lg font-semibold">Performance</h3>
+            <p class="mt-1 text-xs text-teal-300 font-semibold">進行を演奏に</p>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">
+              アレンジャーモード（8パッド×2セット）
+              <br />Performance / SONG ページ
+              <br />ChordPart（パート別MIDI出力）
+              <br />アレンジャーMIDI書き出し
+            </p>
+            <div class="mt-3 flex items-baseline gap-2">
+              <span class="text-sm text-gray-500 dark:text-neutral-500 line-through">$29</span>
+              <span class="text-2xl font-extrabold text-teal-300">$19</span>
+            </div>
+            <p class="text-xs text-gray-500 dark:text-neutral-400">期間限定価格・10月1日まで</p>
+            <a
+              href="https://buy.stripe.com/9B67sEdzOelA33GbZ07N604"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-auto self-start inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500"
+              >Performance を購入</a
+            >
+          </div>
+          <div
+            class="p-6 rounded-2xl ring-2 ring-indigo-400/60 bg-indigo-500/10 dark:bg-indigo-500/10 h-full flex flex-col"
+          >
+            <h3 class="text-lg font-semibold">Full Bundle</h3>
+            <p class="mt-1 text-xs text-indigo-300 font-semibold">両方まとめて</p>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">
+              Extended と Performance の
+              <br />すべての機能を
+              <br />ひとつのライセンスキーで解放
+            </p>
+            <div class="mt-3 flex items-baseline gap-2">
+              <span class="text-sm text-gray-500 dark:text-neutral-500 line-through">$39</span>
+              <span class="text-2xl font-extrabold text-indigo-300">$29</span>
+            </div>
+            <p class="text-xs text-gray-500 dark:text-neutral-400">期間限定価格・10月1日まで</p>
+            <a
+              href="https://buy.stripe.com/eVqdR27bq6T86fS1km7N605"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-auto self-start inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500"
+              >Full Bundle を購入</a
+            >
+          </div>
+        </div>
+        <div class="mt-4 text-xs text-red-600 dark:text-red-300">
+          ライセンス：1アカウント2台まで。不要な端末のアクティベーションを解除すると、別端末で有効化できます。
+          <br />
+          ※ すべてのエディションは共通インストーラーです。インストール後、購入したライセンスキーで機能を有効化します。ChordPart は本体と同じバージョンのセットでご利用ください。
         </div>
         <div
           class="mt-6 rounded-2xl ring-1 ring-indigo-400/30 bg-indigo-500/10 px-5 py-4 text-sm text-gray-700 dark:text-neutral-200"
@@ -784,7 +977,7 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
           >
             <div class="text-sm text-gray-700 dark:text-neutral-300 space-y-3 md:ml-auto max-w-xl">
               <p>
-                ChordDock Extended は、購入後に発行されるライセンスキーでアクティベートします。
+                Chord Dock の有料エディション（Extended / Performance / Full Bundle）は、購入後に発行されるライセンスキーでアクティベートします。
               </p>
               <p>
                 プラグイン右上の設定メニュー（ギアアイコン）から「ライセンス入力…」を開きます。
@@ -831,19 +1024,90 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
         <div class="mt-6 max-w-3xl details-box">
           <details>
             <summary>
-              Q1. v1.5 で何が増えましたか？
+              Q1. v2.0 で何が増えましたか？
             </summary>
             <div>
               <p>
-                v1.5 では、従来のタイムライン編集に加えて、リハーモナイズ、アルペジオ / ベースライン、
-                セクション管理、フォーカス編集、拍子変更連動、生成ノートのドラッグエクスポートが
-                制作フローとしてまとまりました。
+                最大の追加は、進行の上に Drums / Bass / Arp / Chord Pad の4パート伴奏を組み、
+                パッドで演奏できる「アレンジャーモード」です（Performance エディション）。
+                あわせて、32パッドを一望する Performance ページ、パターンを曲順に並べる SONG ページ、
+                各パートの MIDI を DAW の別トラックへ届ける同梱プラグイン ChordPart が加わりました。
+                エディションには Performance と Full Bundle が追加され、Lite / Extended でも
+                アレンジャーモードのデモを体験できます。
               </p>
             </div>
           </details>
           <details>
             <summary>
-              Q2. オーディオやMIDIから自動検出はできますか？
+              Q2. アレンジャーモードのデモにはどんな制限がありますか？
+            </summary>
+            <div>
+              <p>
+                Lite / Extended では、Setup / Performance / SONG の各ページを開いて試せますが、次の制限があります：
+              </p>
+              <ul>
+                <li>実演奏の合計時間は90秒まで</li>
+                <li>各パート Pad 1–3 のみ（Pad 4–8 は表示されるが使用不可）</li>
+                <li>アレンジャーの MIDI 書き出しは不可</li>
+              </ul>
+              <p>
+                残りデモ時間はプロジェクトに保存されず、プロジェクトを開き直すと90秒にリセットされます。
+                Performance / Full Bundle では制限がすべて解除されます。
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              Q3. ChordPart とは何ですか？ どうインストールしますか？
+            </summary>
+            <div>
+              <p>
+                アレンジャー各パートの MIDI を DAW の別トラックへ届ける、同梱の小型プラグイン（VST3）です。
+                同じプロジェクト内なら配線不要で本体と自動接続します。
+              </p>
+              <ul>
+                <li>macOS：インストーラーが本体と一緒にインストールします</li>
+                <li>Windows（ZIP配布）：Chord Dock.vst3 と ChordPart.vst3 の両方を C:\Program Files\Common Files\VST3\ へコピーしてください</li>
+              </ul>
+            </div>
+          </details>
+          <details>
+            <summary>
+              Q4. ChordPart に「Version mismatch」と表示されます
+            </summary>
+            <div>
+              <p>
+                本体プラグインと ChordPart のバージョンが一致していないため、安全のため送受信を停止した状態です。
+                本体と ChordPart は必ず同じバージョンのセットで更新してください。
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              Q5. アレンジャーモードでセクションが使えません
+            </summary>
+            <div>
+              <p>
+                アレンジャーモードで使用するセクションは、小節線で始まり小節線で終わる必要があります（最低1小節）。
+                セクションの開始・終了位置を小節線に合わせてください。
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              Q6. Ableton Live でパートごとに MIDI を分けられますか？
+            </summary>
+            <div>
+              <p>
+                可能です。受け側トラックに ChordPart を挿すと、ホスト側の MIDI ルーティング仕様に
+                関わらず、パートごとに好きな音源を鳴らせます。
+                手順は <a href="ableton-live.html" class="text-indigo-300 underline underline-offset-4 hover:text-indigo-200">Ableton Live 向けガイド</a> をご覧ください。
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              Q7. オーディオやMIDIから自動検出はできますか？
             </summary>
             <div>
               <p>
@@ -853,7 +1117,7 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
           </details>
           <details>
             <summary>
-              Q3. ライセンスは何台まで使えますか？
+              Q8. ライセンスは何台まで使えますか？
             </summary>
             <div>
               <p>
@@ -865,7 +1129,7 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
           </details>
           <details>
             <summary>
-              Q4. リハーモナイズやアルペジオの UI が無効です
+              Q9. リハーモナイズやアルペジオの UI が無効です
             </summary>
             <div>
               <p>次を確認してください：</p>
@@ -878,7 +1142,7 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
           </details>
 	          <details>
 	            <summary>
-	              Q5. 対応フォーマットは？
+	              Q10. 対応フォーマットは？
 	            </summary>
 	            <div>
 	              <p>
@@ -887,7 +1151,7 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
 	            </div>
 	          </details>
           <details>
-            <summary>Q6. 2台目の PC で Extended を使うには？</summary>
+            <summary>Q11. 2台目の PC で Extended を使うには？</summary>
             <div>
               <p>手順は次のとおりです：</p>
               <ul>
@@ -901,7 +1165,7 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
             </div>
           </details>
           <details>
-            <summary>Q7. ライセンスキーが見つかりません / 忘れました</summary>
+            <summary>Q12. ライセンスキーが見つかりません / 忘れました</summary>
             <div>
               <p>
                 Chord Dock の「設定 → オンライン認証」を開き、ログインしてください。そこで以下が確認できます：
@@ -917,7 +1181,7 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
             </div>
           </details>
           <details>
-            <summary>Q8. Extended ライセンスキーを入力したのに認証されません</summary>
+            <summary>Q13. Extended ライセンスキーを入力したのに認証されません</summary>
             <div>
               <p>以下をご確認ください：</p>
               <ul>
@@ -931,7 +1195,7 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
             </div>
           </details>
           <details>
-            <summary>Q9. 古い PC / 使わなくなった PC の認証を解除したい</summary>
+            <summary>Q14. 古い PC / 使わなくなった PC の認証を解除したい</summary>
             <div>
               <p>
                 「設定 → オンライン認証」でデバイス一覧が表示されます。不要なデバイスを解除することで、新しい PC で認証できます。
@@ -939,7 +1203,7 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
             </div>
           </details>
 	          <details>
-	            <summary>Q10. インストール後に DAW にプラグインが表示されません</summary>
+	            <summary>Q15. インストール後に DAW にプラグインが表示されません</summary>
 	            <div>
 	              <p>以下を確認してください：</p>
 	              <ul>
@@ -955,7 +1219,7 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
 	            </div>
 	          </details>
 	          <details>
-	            <summary>Q11. タイムラインの一部がグレーアウトしています</summary>
+	            <summary>Q16. タイムラインの一部がグレーアウトしています</summary>
 	            <div>
 	              <p>
 	                Focus Edit Mode に入っている可能性があります。フォーカス中は対象セクション内だけ編集可能で、外側は暗く表示されます。Esc で通常表示に戻れます。
@@ -963,7 +1227,7 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
 	            </div>
 	          </details>
           <details>
-            <summary>Q12. Lite として使いたいのですが、Extended シリアルは必要ですか？</summary>
+            <summary>Q17. Lite として使いたいのですが、Extended シリアルは必要ですか？</summary>
             <div>
               <p>
                 必要ありません。ライセンスキー未入力時は自動的に Lite として動作します。
@@ -971,7 +1235,7 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
             </div>
           </details>
           <details>
-            <summary>Q13. Extended ライセンスを購入したのに Lite のままです</summary>
+            <summary>Q18. Extended ライセンスを購入したのに Lite のままです</summary>
             <div>
               <p>次の点を順に確認してください：</p>
               <ul>
@@ -979,7 +1243,7 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
                 <li>ライセンスキー入力後に開くブラウザで、Chord Dock アカウントにログインまたは新規登録し、この PC の承認まで完了したか</li>
                 <li>その後、「設定 → ライセンス」でステータスが「Extended」になっているか</li>
                 <li>
-                  すでに2台とも認証済みの場合は、不要なデバイスの認証を解除してから再度お試しください。また、2台目のアクティベーションには再度ライセンスキーが必要になります。（Q2, Q9 も参照）
+                  すでに2台とも認証済みの場合は、不要なデバイスの認証を解除してから再度お試しください。また、2台目のアクティベーションには再度ライセンスキーが必要になります。（Q11, Q14 も参照）
                 </li>
               </ul>
               <p>
@@ -988,7 +1252,7 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
             </div>
           </details>
           <details>
-            <summary>Q14. アップデート後、プロジェクトとの互換性は大丈夫ですか？</summary>
+            <summary>Q19. アップデート後、プロジェクトとの互換性は大丈夫ですか？</summary>
             <div>
               <p>
                 基本的に後方互換です。まれに DAW 側のキャッシュの影響で、プラグインの再スキャンが必要な場合があります。
@@ -996,7 +1260,7 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
             </div>
           </details>
           <details>
-            <summary>Q15. 設定やプリセットはアップデートで消えますか？</summary>
+            <summary>Q20. 設定やプリセットはアップデートで消えますか？</summary>
             <div>
               <p>
                 消えません。ユーザー設定・プリセットは OS のユーザーデータ領域に保存されています。
@@ -1004,7 +1268,7 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
             </div>
           </details>
           <details>
-            <summary>Q16. Extended はオフライン環境で使えますか？</summary>
+            <summary>Q21. Extended はオフライン環境で使えますか？</summary>
             <div>
               <p>以下のような扱いになります：</p>
               <ul>
@@ -1037,6 +1301,7 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
 	            >
 	              <li>macOS：VST3 / AU（AAX は準備中）</li>
 	              <li>Windows：VST3（AAX は準備中）</li>
+	              <li>ChordPart（同梱レシーバー）：VST3（macOS / Windows）</li>
 	            </ul>
 	          </div>
           <div
@@ -1106,16 +1371,43 @@ href="https://buy.stripe.com/bJedR253i7XceMo2oq7N601?prefilled_promo_code=sorryc
         "name": "Chord Dock",
         "applicationCategory": "MusicProductionSoftware",
         "operatingSystem": "macOS, Windows",
-        "softwareVersion": "1.5.0",
-        "offers": {
-          "@type": "Offer",
-          "price": "39",
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock"
-        },
-        "description": "タイムライン編集、五度圏、リハーモナイズ、アルペジオ / ベースライン、MIDIドラッグを書き出しまでつないだコード進行制作プラグイン。",
+        "softwareVersion": "2.0.0",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Lite",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Extended",
+            "price": "19",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2026-10-01",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Performance",
+            "price": "19",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2026-10-01",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Full Bundle",
+            "price": "29",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2026-10-01",
+            "availability": "https://schema.org/InStock"
+          }
+        ],
+        "description": "タイムライン編集、五度圏、リハーモナイズ、アルペジオ / ベースライン生成に加え、4パート伴奏のアレンジャーモードと ChordPart によるパート別MIDI出力までつないだコード進行制作プラグイン。",
         "applicationSuite": "Chord Dock Suite",
-        "screenshot": "https://k2get.github.io/chord-dock-site/assets/%E3%83%AA%E3%83%8F%E3%83%A2%E6%A9%9F%E8%83%BD%E3%81%AE%E5%85%A8%E4%BD%93%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88.png"
+        "screenshot": "https://k2get.github.io/chord-dock-site/assets/performance-view.png"
       }
     </script>
   </body>
