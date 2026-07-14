@@ -3,17 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chord Dock Online Manual (English)</title>
-  <meta
-    name="description"
-    content="Online manual for Chord Dock / Chord Dock Extended. Covers overview, editions, quick start, activation, UI layout, FAQ, and support information."
-  />
+  <title>Chord Dock User Manual v2.0</title>
+  <meta name="description" content="Online manual for Chord Dock v2.0.1 covering timeline chord editing, sections, Arpeggio / Bassline generation, reharmonization, Arranger Mode, ChordPart, MIDI export, and licensing." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { darkMode: 'class' };
@@ -26,7 +20,6 @@
       dataLayer.push(arguments);
     }
     gtag('js', new Date());
-
     gtag('config', 'G-V3MCR5K6MP');
   </script>
   <style>
@@ -43,11 +36,12 @@
     }
     .manual-hero h1 {
       margin: 0 0 0.4rem;
-      font-size: 1.9rem;
+      font-size: clamp(1.7rem, 4vw, 2.3rem);
+      line-height: 1.25;
     }
     .manual-hero p {
       margin: 0.25rem 0;
-      max-width: 760px;
+      max-width: 860px;
       color: #c6c9d3;
       font-size: 0.95rem;
     }
@@ -57,7 +51,7 @@
       color: #a5a9bc;
     }
     main {
-      max-width: 980px;
+      max-width: 1040px;
       margin: 0 auto;
       padding: 1.5rem;
     }
@@ -75,6 +69,7 @@
       justify-content: space-between;
       gap: 1rem;
       margin-bottom: 0.35rem;
+      flex-wrap: wrap;
     }
     .toc-header h2 {
       margin: 0;
@@ -84,15 +79,16 @@
       list-style: none;
       margin: 0.2rem 0 0;
       padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem 1.4rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.35rem 1.2rem;
     }
     nav.toc a {
       color: #d7defc;
       text-decoration: none;
     }
-    nav.toc a:hover {
+    nav.toc a:hover,
+    a.inline-link:hover {
       text-decoration: underline;
     }
     section {
@@ -105,121 +101,130 @@
       padding-bottom: 0.5rem;
     }
     section h2 {
-      margin: 0 0 0.5rem;
+      margin: 0 0 0.6rem;
       font-size: 1.35rem;
+      line-height: 1.35;
     }
     section h3 {
-      margin: 1.4rem 0 0.3rem;
+      margin: 1.5rem 0 0.35rem;
       font-size: 1.05rem;
+      line-height: 1.4;
+    }
+    section h4 {
+      margin: 1rem 0 0.3rem;
+      font-size: 0.98rem;
+      line-height: 1.4;
     }
     p {
-      margin: 0.4rem 0;
+      margin: 0.45rem 0;
       font-size: 0.95rem;
       color: #e2e5f0;
     }
     ul, ol {
-      margin: 0.3rem 0 0.6rem;
-      padding-left: 1.4rem;
+      margin: 0.35rem 0 0.75rem;
+      padding-left: 1.45rem;
       font-size: 0.95rem;
       color: #e2e5f0;
     }
     li {
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.22rem;
     }
-    .tagline {
-      font-size: 0.9rem;
-      color: #b5b9ca;
-      margin-bottom: 0.8rem;
-    }
-    .badge {
-      display: inline-block;
-      padding: 0.1rem 0.45rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      font-size: 0.75rem;
-      color: #e4e7f5;
-      background: rgba(20, 24, 40, 0.95);
-    }
-    .details-box details {
-      margin-bottom: 0.6rem;
-      border-radius: 0.6rem;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      background: rgba(9, 11, 20, 0.95);
-      padding: 0.55rem 0.8rem;
-    }
-    .details-box summary {
-      cursor: pointer;
-      list-style: none;
-      font-size: 0.9rem;
-    }
-    .details-box details[open] {
-      border-color: rgba(143, 157, 255, 0.8);
-    }
-    .details-box summary::before {
-      content: '▶';
-      display: inline-block;
-      margin-right: 0.45rem;
-      font-size: 0.7rem;
-      transform: translateY(-1px);
-    }
-    .details-box details[open] summary::before {
-      content: '▼';
-    }
-    .details-box details > div {
-      margin-top: 0.4rem;
-      font-size: 0.85rem;
-      color: #d3d6e3;
-    }
-    .activation-grid {
-      display: grid;
-      gap: 1.2rem;
-      margin: 0.8rem 0 1.4rem;
-    }
-    .activation-grid figure {
-      margin: 0;
-    }
-    .activation-grid img {
-      width: 100%;
-      max-width: 420px;
-      border-radius: 0.75rem;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-      display: block;
-    }
-    .activation-grid figcaption {
-      margin-top: 0.35rem;
-      font-size: 0.8rem;
-      color: #aeb3c7;
-    }
-    @media (min-width: 720px) {
-      .activation-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        align-items: start;
-      }
+    strong {
+      color: #ffffff;
+      font-weight: 700;
     }
     code {
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
       font-size: 0.9em;
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.06);
       padding: 0.05rem 0.25rem;
       border-radius: 0.25rem;
+    }
+    pre {
+      overflow-x: auto;
+      padding: 0.8rem 1rem;
+      border-radius: 0.75rem;
+      background: rgba(4, 7, 18, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    pre code {
+      background: transparent;
+      padding: 0;
+    }
+    blockquote {
+      margin: 0.9rem 0;
+      padding: 0.75rem 1rem;
+      border-left: 3px solid rgba(129, 140, 248, 0.85);
+      background: rgba(99, 102, 241, 0.10);
+      border-radius: 0.55rem;
+    }
+    blockquote p {
+      margin: 0.15rem 0;
+      color: #dfe4ff;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      margin: 0.8rem 0 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: 0.75rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 560px;
+      background: rgba(9, 11, 20, 0.72);
+      font-size: 0.9rem;
+    }
+    th, td {
+      padding: 0.55rem 0.7rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      vertical-align: top;
+      color: #e2e5f0;
+    }
+    th {
+      color: #ffffff;
+      text-align: left;
+      background: rgba(255, 255, 255, 0.05);
+      font-weight: 700;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    .manual-figure {
+      margin: 1rem 0 1.4rem;
+    }
+    .manual-figure img {
+      width: 100%;
+      max-width: 920px;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      display: block;
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .manual-figure figcaption {
+      margin-top: 0.35rem;
+      font-size: 0.8rem;
+      color: #aeb3c7;
+    }
+    hr {
+      border: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin: 1.4rem 0;
     }
     a.inline-link {
       color: #c6d3ff;
       text-decoration: none;
     }
-    a.inline-link:hover {
-      text-decoration: underline;
-    }
     footer {
-      max-width: 980px;
+      max-width: 1040px;
       margin: 0 auto;
       padding: 0 1.5rem 2rem;
       font-size: 0.8rem;
       color: #8e93a5;
     }
     .lang-switch {
-      margin-top: 0.4rem;
+      margin: 0;
       font-size: 0.8rem;
       color: #b5b9ca;
     }
@@ -247,47 +252,29 @@
   <header
     class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 dark:bg-neutral-950/80 border-b border-gray-200/60 dark:border-neutral-800"
   >
-    <nav
-      class="container mx-auto px-4 py-3 flex items-center justify-between"
-    >
-      <a
-        href="index.en.html"
-        class="flex items-center gap-2 font-extrabold text-xl tracking-tight"
-      >
+    <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.en.html" class="flex items-center gap-2 font-extrabold text-xl tracking-tight">
         <span class="inline-block w-6 h-6 rounded-lg bg-indigo-600"></span>
         Chord Dock
       </a>
       <div class="hidden sm:flex items-center gap-4 text-sm">
         <a href="index.en.html#features" class="hover:opacity-80">Features</a>
-        <a href="index.en.html#comparison" class="hover:opacity-80">Comparison</a>
+        <a href="index.en.html#edition-comparison" class="hover:opacity-80">Compare</a>
         <a href="index.en.html#requirements" class="hover:opacity-80">System Requirements</a>
-        <a href="index.en.html#daw" class="hover:opacity-80">DAW Support</a>
         <a href="index.en.html#download" class="hover:opacity-80">Download</a>
-        <a href="index.en.html#activation" class="hover:opacity-80">Activation</a>
         <a href="index.en.html#faq" class="hover:opacity-80">FAQ</a>
+        <a href="index.en.html#support" class="hover:opacity-80">Support</a>
       </div>
-      <!-- Invisible spacer to keep header layout consistent with index.en.html -->
       <div class="hidden sm:flex items-center gap-2 opacity-0 pointer-events-none select-none" aria-hidden="true">
-        <a
-          class="inline-flex items-center rounded-xl px-3 py-2 text-sm font-medium border border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-900"
-        >JP</a>
-        <a
-          class="inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-sm font-semibold bg-indigo-600 text-white"
-        >
-          Try Now
-        </a>
+        <span class="inline-flex items-center rounded-xl px-3 py-2 text-sm font-medium border border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-900">JP</span>
+        <span class="inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-sm font-semibold bg-indigo-600 text-white">Try Now</span>
       </div>
     </nav>
   </header>
   <div class="manual-hero">
-    <h1>Chord Dock Online Manual</h1>
-    <p>
-      This page is the online manual for Chord Dock / Chord Dock Extended. It covers basic usage,
-      setup including activation, and common troubleshooting tips.
-    </p>
-    <p class="meta">
-      Target version: v1.0 series / Language: English
-    </p>
+    <h1>Chord Dock User Manual v2.0</h1>
+    <p>A v2.0 guide covering timeline chord editing, section workflows, Arpeggio / Bassline generation, reharmonization, live accompaniment with Arranger Mode, and per-part MIDI output through the bundled ChordPart receiver.</p>
+    <p class="meta">Applies to product version: v2.0.1 / Manual: v2.0 / Last updated: 2026-07-14</p>
   </div>
   <main>
     <nav class="toc">
@@ -295,334 +282,1156 @@
         <h2>Contents</h2>
         <p class="lang-switch">
           <span class="lang-switch-label">Language:</span>
-          <a class="lang-pill" href="manual.html">日本語</a>
-          <span class="lang-pill active">English</span>
+          <a class="lang-pill" href="manual.html">日本語</a> <span class="lang-pill active">English</span>
         </p>
       </div>
       <ul>
-        <li><a href="#overview">1. Overview</a></li>
-        <li><a href="#editions">2. Editions &amp; Licensing</a></li>
-        <li><a href="#quickstart">3. Quick Start</a></li>
-        <li><a href="#activation">4. Activation Steps</a></li>
-        <li><a href="#ui">5. UI Layout</a></li>
-        <li><a href="#faq">6. FAQ (Excerpt)</a></li>
-        <li><a href="#support">7. Support / Contact</a></li>
+          <li><a href="#section-1">1. Introduction</a></li>
+          <li><a href="#section-2">2. System Requirements</a></li>
+          <li><a href="#section-3">3. Installation</a></li>
+          <li><a href="#section-4">4. Initial Setup in the DAW</a></li>
+          <li><a href="#section-5">5. Main Window Overview</a></li>
+          <li><a href="#section-6">6. Top Toolbar</a></li>
+          <li><a href="#section-7">7. Timeline Editing</a></li>
+          <li><a href="#section-8">8. Sections</a></li>
+          <li><a href="#section-9">9. Middle Panel</a></li>
+          <li><a href="#section-10">10. Chord Palette</a></li>
+          <li><a href="#section-11">11. Right-Side Panel</a></li>
+          <li><a href="#section-12">12. Circle of Fifths</a></li>
+          <li><a href="#section-13">13. Arpeggio / Bassline</a></li>
+          <li><a href="#section-14">14. Reharmonization</a></li>
+          <li><a href="#section-15">15. Arranger Mode: Setup and Pattern Editing</a></li>
+          <li><a href="#section-16">16. Arranger Mode: Performing</a></li>
+          <li><a href="#section-17">17. ChordPart — Bundled MIDI Receiver</a></li>
+          <li><a href="#section-18">18. MIDI Export and Drag Workflow</a></li>
+          <li><a href="#section-19">19. Licensing and Editions</a></li>
+          <li><a href="#section-20">20. FAQ / Troubleshooting</a></li>
+          <li><a href="#section-21">21. Support / Contact</a></li>
       </ul>
     </nav>
 
-    <section id="overview">
-      <h2>1. Product Overview</h2>
-      <p class="tagline">
-        Chord Dock is a composition helper plugin that lets you edit chord progressions on a timeline
-        while using a Circle of Fifths guide in parallel.
-      </p>
-      <ul>
-        <li>Timeline editor specialized for a chord track</li>
-        <li>Circle of Fifths view for key / functional harmony guidance (Extended)</li>
-        <li>Save and reuse chord progressions as presets</li>
-        <li>Export as MIDI to any DAW track via drag-and-drop</li>
-      </ul>
-      <p>
-        Lite and Extended share the same installer. Extended features are unlocked by entering a serial key
-        and completing online activation.
-      </p>
+    <section id="manual-info">
+      <h2>Manual Information</h2>
+<p>A v2.0 guide covering timeline chord editing, section workflows, Arpeggio / Bassline generation, reharmonization, live accompaniment with Arranger Mode, and per-part MIDI output through the bundled ChordPart receiver.</p>
+<div class="table-wrap">
+<table>
+<thead><tr>
+<th>Item</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Product</td>
+<td>Chord Dock (Lite / Extended / Performance)</td>
+</tr>
+<tr>
+<td>Bundled plugins</td>
+<td>Chord Dock (main) / ChordPart (receiver)</td>
+</tr>
+<tr>
+<td>Plugin formats covered</td>
+<td>VST3 / AAX / AU (ChordPart is VST3 only)</td>
+</tr>
+<tr>
+<td>Applies to product version</td>
+<td>v2.0.1</td>
+</tr>
+<tr>
+<td>Manual version</td>
+<td>v2.0</td>
+</tr>
+<tr>
+<td>Last updated</td>
+<td>2026-07-14</td>
+</tr>
+</tbody></table></div>
     </section>
 
-    <section id="editions">
-      <h2>2. Editions &amp; Licensing</h2>
-
-      <h3>2.1 Lite (Free)</h3>
-      <p>
-        The Lite edition is a free version that can be used without a serial key.
-      </p>
-      <ul>
-        <li>Basic chord editing on the timeline</li>
-        <li>Chord palette with transposition, inversions, and octave changes</li>
-        <li>MIDI drag-and-drop to your DAW</li>
-        <li>Roughly 10 editable factory presets</li>
-      </ul>
-      <p>If you do not enter a serial key, Chord Dock runs as Lite.</p>
-
-      <h3>2.2 Extended (Paid)</h3>
-      <p>
-        The Extended edition is an upgraded, paid version unlocked by activation.
-      </p>
-      <ul>
-        <li>All Lite features</li>
-        <li>Circle of Fifths view</li>
-        <li>Tensions (9 / 11 / 13), slash chords, extended notation</li>
-        <li>User presets and import/export of progression files</li>
-        <li>Additional UI options such as Extended snap, etc.</li>
-      </ul>
-
-      <h3>2.3 License &amp; device count</h3>
-      <ul>
-        <li>You can activate on up to 2 devices per account at the same time.</li>
-        <li>From the license management page you can view and deactivate registered devices.</li>
-        <li>If you have already used 2 devices, deactivate an old one before activating on a new machine.</li>
-      </ul>
-    </section>
-
-    <section id="quickstart">
-      <h2>3. Quick Start (First 10 Minutes)</h2>
-      <p class="tagline">
-        This section walks you from first launch to exporting a chord progression as MIDI into your DAW.
-      </p>
-
-      <h3>3.1 Install and load the plugin</h3>
-      <ol>
-        <li>Run the installer and install VST3 / AU as appropriate for your OS (AAX / Pro Tools is coming soon).</li>
-        <li>Launch your DAW and perform a plugin scan.</li>
-        <li>Insert Chord Dock on an instrument track or MIDI effect slot.</li>
-      </ol>
-
-      <h3>3.2 Understand the basic layout</h3>
-      <ul>
-        <li><strong>Top: Toolbar</strong> — Undo / Redo, time signature, save, export, settings (gear icon), etc.</li>
-        <li><strong>Center: Timeline Editor</strong> — Place chord events along bars and beats.</li>
-        <li><strong>Bottom: Chord palette / right side panel</strong> — chord types, tensions / slash, voicing, presets, and more.</li>
-      </ul>
-
-      <h3>3.3 Enter a chord progression</h3>
-      <ol>
-        <li>Click on the bar where you want to place a chord; this moves the timeline indicator.</li>
-        <li>Choose a chord type (e.g., C, Am7) from the chord palette and double-click to insert it.</li>
-        <li>On the timeline, drag the right edge of a chord event to adjust its length in bars / beats.</li>
-        <li>Repeat to build a few bars of progression (e.g., C – Am – F – G).</li>
-      </ol>
-
-      <h3>3.4 Audition</h3>
-      <ol>
-        <li>Start playback in your DAW; Chord Dock syncs and plays chords via its internal synth.</li>
-        <li>Click chords in the chord palette to preview their sound.</li>
-        <li>Use the speaker icon in the toolbar to mute / enable the internal audio.</li>
-      </ol>
-
-      <h3>3.5 Drag &amp; drop MIDI to your DAW</h3>
-      <ol>
-        <li>
-          Select chord events on the timeline. You can:
-          <ul>
-            <li>Ctrl (Cmd on macOS) + click to add or remove events from the selection.</li>
-            <li>Drag to create a selection box and select multiple events at once.</li>
-          </ul>
-        </li>
-        <li>
-          Click and drag from the “MIDI Drag” area at the right edge of the timeline onto a DAW track.
-          The selected progression is dropped as a MIDI clip.
-        </li>
-      </ol>
-
-      <h3>3.6 Try Extended features (if available)</h3>
-      <ul>
-        <li>
-          Open the Circle of Fifths view from the middle panel and choose chords from any key.
-          <ul>
-            <li>Right-click to open the context menu, then drag and drop to replace chords in the chord palette.</li>
-            <li>You cannot place chords directly from the Circle of Fifths onto the timeline.</li>
-          </ul>
-        </li>
-        <li>Use the chord palette context menu to add tensions (9 / 11 / 13) and slash chords.</li>
-        <li>Save frequently used progressions as user presets and reuse them in other projects.</li>
-      </ul>
-    </section>
-
-    <section id="activation">
-      <h2>4. Activation Steps (Extended)</h2>
-
-      <div class="activation-grid">
-        <figure>
-          <img
-            src="assets/設定ウィンドウアイコン.png"
-            alt="Opening the settings window from the gear icon"
-          />
-          <figcaption>Open the settings window from the gear icon in the top-right of the plugin.</figcaption>
-        </figure>
-        <figure>
-          <img
-            src="assets/設定ウィンドウ英語.png"
-            alt="License input and online activation screen"
-          />
-          <figcaption>Use “Enter license…” in the settings window to enter the serial key and run online activation.</figcaption>
-        </figure>
-      </div>
-
-      <h3>4.1 First activation</h3>
-      <ol>
-        <li>After purchasing Extended, you receive a serial key.</li>
-        <li>Launch Chord Dock and open the settings window from the gear icon in the top-right.</li>
-        <li>Click the <q>Enter license…</q> button and enter your serial key.</li>
-        <li>If the key is valid, your browser opens automatically.</li>
-        <li>Sign in to your Chord Dock account in the browser and approve this machine as an authorized device.</li>
-        <li>Return to the plugin; after a short delay Extended features become available (you may need to restart the DAW).</li>
-      </ol>
-
-      <h3>4.2 Activating on a second machine</h3>
-      <ol>
-        <li>Install Chord Dock on the second machine.</li>
-        <li>On the second machine, open the settings window and click <q>Enter license…</q>, then enter the same serial key.</li>
-        <li>When the browser opens, log in with the same account and authorize the device.</li>
-        <li>If you have already activated 2 devices, deactivate an old device on the license management page before trying again.</li>
-      </ol>
-
-      <h3>4.3 Offline use</h3>
-      <ul>
-        <li>Online connection is required only for activation and device management.</li>
-        <li>Once activation is complete, editing, playback, and MIDI export work offline.</li>
-        <li>New machine activation, device removal, and serial key recovery require going online again.</li>
-      </ul>
-    </section>
-
-    <section id="ui">
-      <h2>5. Main UI Components</h2>
-
-      <h3>5.1 Top toolbar</h3>
-      <ul>
-        <li>Undo / Redo: revert or reapply recent actions.</li>
-        <li>Time signature: insert time signature change events at a bar.</li>
-        <li>Center: scroll so the playhead is centered.</li>
-        <li>Progression: save / load chord progressions.</li>
-        <li>Export: export the entire timeline as MIDI.</li>
-        <li>Internal audio: toggle the internal synth on / off (MIDI out continues).</li>
-        <li>Settings (gear): open the settings window (license, online activation, etc.).</li>
-        <li>Degree View: toggle degree notation view.</li>
-        <li>Timeline Only: switch to a timeline-only layout.</li>
-        <li>Section View: toggle “Reveal Contents” for all sections.</li>
-      </ul>
-
-      <h3>5.2 Timeline editor</h3>
-      <ul>
-        <li>Horizontal chord track where time flows from left to right.</li>
-        <li>Bar grid and beat subdivision are shown for alignment.</li>
-        <li>Chord blocks can be moved, stretched, and copied by dragging.</li>
-        <li>Snap settings let you switch between bar, beat, and Extended snap.</li>
-      </ul>
-
-      <h3>5.3 Chord palette</h3>
-      <ul>
-        <li>Shows chord suggestions based on the current key / scale.</li>
-        <li>Basic triads and 7th chords are available in Lite; tensions and slash chords are unlocked in Extended.</li>
-        <li>Click to select a chord type and place it on the timeline.</li>
-      </ul>
-
-      <h3>5.4 Preset browser (Extended)</h3>
-      <ul>
-        <li>Manage typical chord progressions as presets.</li>
-        <li>Save progressions as presets and reuse them across projects and DAWs.</li>
-        <li>Import and export preset files for backup and sharing.</li>
-      </ul>
-
-      <h3>5.5 Settings window</h3>
-      <p>
-        The settings window shows your current license state (Lite / Extended), registered devices,
-        and links to the license management page.
-      </p>
-
-      <h3>5.6 Sections (Section Clips)</h3>
-      <p>
-        Group a part of your song (Verse/Chorus, etc.) into a colored clip and treat it as a unit.
-      </p>
-      <ul>
-        <li>Create: select multiple chord blocks and run <code>Create Section</code>.</li>
-        <li>Move: drag the clip—its contents move by the same amount.</li>
-        <li>Constraint (normal mode): the section range is treated as occupied, so you can’t place chords inside.</li>
-        <li>Duplicate-drag: hold the modifier key (Windows: Ctrl / macOS: Option ⌥) while dragging.</li>
-        <li>Focus Edit: double‑click the clip to enter Focus Edit Mode. Everything outside is greyed out (Esc to exit).</li>
-        <li>Reveal Contents: in normal mode, you can show the section’s chords as ghost items (not editable).</li>
-        <li>Dissolve: remove the clip and return the chords to normal display.</li>
-        <li>Change color: Extended only (Lite shows an upgrade prompt).</li>
-      </ul>
-    </section>
-
-    <section id="faq">
-      <h2>6. FAQ (Excerpt)</h2>
-      <div class="details-box">
-        <details>
-          <summary>Q1. How many machines can I activate?</summary>
-          <div>
-            <p>You can activate up to 2 machines per account at the same time.</p>
-            <p>Deactivate old machines to free up slots for new ones.</p>
-          </div>
-        </details>
-        <details>
-          <summary>Q2. I purchased Extended but it still shows Lite.</summary>
-          <div>
-            <p>Check the following in order:</p>
-            <ul>
-              <li>Open the settings window and click “Enter license…” to re-enter your serial key.</li>
-              <li>In the browser, log in and confirm that this PC is listed as an authorized device.</li>
-              <li>Confirm that the status in the settings window shows Extended.</li>
-              <li>If you have reached the 2-device limit, deactivate an unused machine and try again.</li>
-              <li>If it still does not switch, fully quit and restart your DAW.</li>
-            </ul>
-          </div>
-        </details>
-        <details>
-          <summary>Q3. Can I use Extended offline?</summary>
-          <div>
-            <p>
-              Yes. Only activation and device management require an online connection.
-              Day-to-day use is offline.
-            </p>
-          </div>
-        </details>
-        <details>
-          <summary>Q4. I only want to use Lite. Do I need a serial key?</summary>
-          <div>
-            <p>No. Without a serial key, Chord Dock automatically runs as Lite.</p>
-          </div>
-        </details>
-        <details>
-          <summary>Q5. The plugin does not appear in my DAW.</summary>
-          <div>
-            <p>Please check the following:</p>
-            <ul>
-              <li>Rescan plugins in your DAW.</li>
-              <li>Restart the DAW completely.</li>
-              <li>Confirm that the formats you need (VST3 / AU) were installed to the correct locations (AAX is coming soon).</li>
-            </ul>
-            <p>If the issue persists, please contact us via the form below.</p>
-          </div>
-        </details>
-      </div>
-    </section>
-
-    <section id="support">
-      <h2>7. Support / Contact</h2>
-      <p>
-        For the latest product information, updates, and details about licensing, please also refer to:
-      </p>
-      <ul>
-        <li>
-          Product site / landing page:
-          <a class="inline-link" href="index.en.html">Chord Dock LP (English)</a>
-        </li>
-        <li>
-          Contact form:
-          <a
-            class="inline-link"
-            href="https://forms.gle/ttEAX9dSLEk7Pr5X7"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Google Form</a>
-        </li>
-        <!-- <li>
-          Contact by email:
-          <a class="inline-link" href="mailto:hitori.unicorn@gmail.com">hitori.unicorn@gmail.com</a>
-        </li> -->
-      </ul>
-      <p>
-        When reporting bugs or requesting features, including your OS, DAW, plugin format (VST3 / AU),
-        and reproduction steps helps us respond more quickly.
-      </p>
-      <p>
-        If you prefer Japanese, you can also refer to the
-        <a class="inline-link" href="manual.html">Japanese online manual</a>.
-      </p>
-    </section>
+<section id="section-1">
+<h2>1. Introduction</h2>
+<p>Chord Dock is a plugin for building, editing, auditioning, transforming, and exporting chord-based MIDI material within a DAW — and, in version 2.0, for performing accompaniment built on top of that chord progression.</p>
+<p>Version 2.0 adds the following major elements:</p>
+<ul>
+<li><strong>Arranger Mode</strong>: the core of the Performance edition. Build accompaniment patterns for four parts (Drums / Bass / Arp / Chord Pad) per section, then perform and queue them with pads as the song moves forward.</li>
+<li><strong>Performance Page / Song Page</strong>: a dedicated screen to perform all four parts at a glance, and a screen to lay out patterns in song order.</li>
+<li><strong>ChordPart (bundled receiver plugin)</strong>: a small plugin that delivers per-part MIDI directly to separate DAW tracks. Even on DAWs that cannot split a plugin&#39;s MIDI output by channel (such as Ableton Live), you can drive any instrument — including the DAW&#39;s built-in instruments — for each part.</li>
+</ul>
+<p>The main features carried over from earlier versions are:</p>
+<ul>
+<li>timeline-based chord progression editing</li>
+<li>section management and Focus Edit workflows</li>
+<li>chord palette editing</li>
+<li>Arpeggio / Bassline generation</li>
+<li>reharmonization with preview, comparison, and apply</li>
+<li>MIDI drag export for generated note material</li>
+</ul>
+<p>This manual is intended for:</p>
+<ul>
+<li>Windows or macOS DAW users</li>
+<li>composers, arrangers, and producers working with chord-first workflows</li>
+<li>users who build MIDI clips first and assign instruments later</li>
+<li>users who want to build accompaniment quickly from a chord progression and perform it with pads</li>
+</ul>
+<hr />
+</section>
+<section id="section-2">
+<h2>2. System Requirements</h2>
+<h3 id="section-2-1">2.1 Supported Operating Systems</h3>
+<ul>
+<li>Windows 10 or later (64-bit)</li>
+<li>macOS 10.15 or later (64-bit)</li>
+</ul>
+<p>32-bit systems are not supported.</p>
+<h3 id="section-2-2">2.2 Supported Plugin Formats</h3>
+<ul>
+<li>Windows: VST3 / AAX</li>
+<li>macOS: VST3 / AU / AAX</li>
+</ul>
+<p>The bundled <strong>ChordPart</strong> is <strong>VST3 only</strong> on both Windows and macOS (there is no standalone version). Availability may differ depending on the distributed package.</p>
+<h3 id="section-2-3">2.3 Supported Hosts / DAWs</h3>
+<p>Chord Dock is designed for common VST3 / AU / AAX-compatible DAWs, including:</p>
+<ul>
+<li>Cubase / Nuendo</li>
+<li>Studio One</li>
+<li>Ableton Live</li>
+<li>Bitwig Studio</li>
+<li>Logic Pro</li>
+<li>Pro Tools</li>
+<li>Reaper</li>
+</ul>
+<p>Host-specific behavior may differ. Per-part routing with ChordPart assumes the main plugin and ChordPart run inside the same DAW project (see Chapter 17).</p>
+<hr />
+</section>
+<section id="section-3">
+<h2>3. Installation</h2>
+<h3 id="section-3-1">3.1 Distribution Formats</h3>
+<p>The v2.0.1 packages are:</p>
+<ul>
+<li>Windows: <code>Chord_Dock_2.0.1_windows.zip</code>, a ZIP bundle containing the user manual and related files. The plugin binaries are <code>Chord Dock.vst3</code> and <code>ChordPart.vst3</code>.</li>
+<li>macOS: <code>Chord_Dock_2.0.1_mac.pkg</code>, an installer package that installs both the main plugin and ChordPart.</li>
+</ul>
+<p>On Windows, Chord Dock is distributed as a ZIP package rather than a dedicated installer. The ZIP may include the manual and other bundled documentation.</p>
+<h3 id="section-3-2">3.2 Before Installing</h3>
+<ul>
+<li>Quit all DAWs before copying or installing files.</li>
+<li>For the Windows ZIP distribution, manually copy the <code>.vst3</code> files into the VST3 folder. Copy both <code>Chord Dock.vst3</code> and <code>ChordPart.vst3</code>.</li>
+<li>If Chord Dock is already installed, updating it usually means replacing the existing plugin file with the newer one.</li>
+<li><strong>Always update the main plugin and ChordPart together, as a matching-version set.</strong> If the versions differ, ChordPart stops for safety (see Chapter 17).</li>
+<li>Administrator permissions may be required.</li>
+</ul>
+<h3 id="section-3-3">3.3 Typical Install Locations</h3>
+<ul>
+<li>Windows VST3: <code>C:\Program Files\Common Files\VST3\</code></li>
+<li>Windows AAX: <code>C:\Program Files\Common Files\Avid\Audio\Plug-Ins\</code></li>
+<li>macOS VST3: <code>/Library/Audio/Plug-Ins/VST3/</code></li>
+<li>macOS AU: <code>/Library/Audio/Plug-Ins/Components/</code></li>
+<li>macOS AAX: <code>/Library/Application Support/Avid/Audio/Plug-Ins/</code></li>
+</ul>
+<p>For the Windows ZIP distribution, place <code>Chord Dock.vst3</code> and <code>ChordPart.vst3</code> in <code>C:\Program Files\Common Files\VST3\</code>.</p>
+<h3 id="section-3-4">3.4 Uninstall Policy</h3>
+<ul>
+<li>On Windows ZIP installations, uninstall by removing the copied <code>.vst3</code> files (both the main plugin and ChordPart).</li>
+<li>On macOS, use a dedicated uninstaller if provided, or remove the plugin files manually.</li>
+</ul>
+<hr />
+</section>
+<section id="section-4">
+<h2>4. Initial Setup in the DAW</h2>
+<h3 id="section-4-1">4.1 Plugin Scan</h3>
+<p>If Chord Dock does not appear in your DAW:</p>
+<ol>
+<li>Confirm installation completed successfully.</li>
+<li>On Windows, confirm the <code>.vst3</code> files were copied into the expected standard folder.</li>
+<li>Run the DAW&#39;s plugin scan or rescan.</li>
+</ol>
+<p>After scanning, both <code>Chord Dock</code> and <code>ChordPart</code> appear in your DAW&#39;s plugin list.</p>
+<h3 id="section-4-2">4.2 Basic Routing</h3>
+<p>Chord Dock is commonly used in one of these ways:</p>
+<ul>
+<li>as a MIDI-generating plugin routed into another instrument track</li>
+<li>as a planning and export tool that creates MIDI clips for later editing</li>
+</ul>
+<p>Typical setup:</p>
+<ol>
+<li>Insert Chord Dock on a MIDI or instrument track.</li>
+<li>Insert a software instrument on another track.</li>
+<li>Route MIDI from Chord Dock to that instrument.</li>
+</ol>
+<p>To distribute the four Arranger parts (Drums / Bass / Arp / Chord Pad) to multiple instruments, you have two options:</p>
+<ul>
+<li>Use the DAW&#39;s MIDI routing to split Chord Dock&#39;s output by channel (for DAWs with a channel filter).</li>
+<li>Use the bundled <strong>ChordPart</strong> to create a MIDI track entry point per part (for DAWs such as Ableton Live that cannot separate by channel — see Chapter 17).</li>
+</ul>
+<h3 id="section-4-3">4.3 Project Recall</h3>
+<p>Chord Dock state is generally restored with the DAW project. The same applies to Arranger patterns, pad assignments, and ChordPart settings.</p>
+<hr />
+</section>
+<section id="section-5">
+<h2>5. Main Window Overview</h2>
+<p>The main window is organized into these areas:</p>
+<ul>
+<li>top toolbar</li>
+<li>timeline</li>
+<li>middle panel</li>
+<li>right-side panel</li>
+<li>chord palette</li>
+<li>keyboard bar</li>
+<li>optional helper windows such as Circle of Fifths, Arpeggio Note Edit, and the Reharmo Editor</li>
+</ul>
+<p>When Arranger Mode is enabled, the lower area switches to a dedicated Arranger screen with three pages (Setup / Performance / Song — see Chapters 15 and 16).</p>
+<hr />
+</section>
+<section id="section-6">
+<h2>6. Top Toolbar</h2>
+<figure class="manual-figure">
+<img src="assets/%E3%83%84%E3%83%BC%E3%83%AB%E3%83%90%E3%83%BC.png" alt="Top toolbar" loading="lazy" />
+<figcaption>Figure: Top toolbar</figcaption>
+</figure>
+<p>The top toolbar contains controls that affect the plugin as a whole.</p>
+<p>Common controls include:</p>
+<ul>
+<li>Undo / Redo</li>
+<li>meter change</li>
+<li>center / scroll helpers</li>
+<li>progression menu</li>
+<li>MIDI export</li>
+<li>degree view toggle</li>
+<li>timeline-only layout toggle</li>
+<li>section display controls</li>
+<li>internal audio toggle</li>
+<li>settings / license access</li>
+</ul>
+<p>The exact button order or wording may vary slightly by build.</p>
+<hr />
+</section>
+<section id="section-7">
+<h2>7. Timeline Editing</h2>
+<h3 id="section-7-1">7.1 Chord Events</h3>
+<figure class="manual-figure">
+<img src="assets/%E3%82%BF%E3%82%A4%E3%83%A0%E3%83%A9%E3%82%A4%E3%83%B3.png" alt="Timeline chord editing" loading="lazy" />
+<figcaption>Figure: Timeline chord editing</figcaption>
+</figure>
+<p>The timeline is the main chord editing area.</p>
+<ul>
+<li>chord blocks are arranged on the time axis</li>
+<li>drag to move a chord</li>
+<li>drag edges to resize</li>
+<li>click to place the cursor</li>
+<li>insertion follows the current snap setting</li>
+</ul>
+<h3 id="section-7-2">7.2 Meter Changes</h3>
+<p>Time signature changes can be placed from the ruler area. Chord Dock supports meter-aware timeline behavior and propagates that information into the Arpeggio, Reharmo, and Arranger views.</p>
+<h3 id="section-7-3">7.3 Timeline Context Editing</h3>
+<figure class="manual-figure">
+<img src="assets/%E3%82%B3%E3%83%B3%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC.png" alt="Timeline context menu" loading="lazy" />
+<figcaption>Figure: Timeline context menu</figcaption>
+</figure>
+<p>Chord events can be edited directly on the timeline through context menus. You can currently edit:</p>
+<ul>
+<li>chord type</li>
+<li>inversion</li>
+<li>octave</li>
+<li>slash chords</li>
+<li>chord modifiers</li>
+<li>tensions</li>
+</ul>
+<p><code>Chord Modifiers</code> is a submenu used for:</p>
+<ul>
+<li><code>omit</code></li>
+<li><code>sus</code></li>
+<li><code>9th</code></li>
+<li><code>b5</code></li>
+<li><code>aug</code></li>
+<li><code>6th</code></li>
+</ul>
+<p>These settings are independent from the chord palette state. What is shared is only the symbol and mask calculation logic, not the storage target.</p>
+<hr />
+</section>
+<section id="section-8">
+<h2>8. Sections</h2>
+<h3 id="section-8-1">8.1 What Sections Are</h3>
+<p>Sections group multiple chord events into a single named clip, such as a Verse, Chorus, or Bridge.</p>
+<h3 id="section-8-2">8.2 Creating a Section</h3>
+<figure class="manual-figure">
+<img src="assets/%E3%82%BB%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E4%BD%9C%E6%88%90%E3%82%92%E9%81%B8%E3%81%B6.png" alt="Section creation command" loading="lazy" />
+<figcaption>Figure: Section creation command</figcaption>
+</figure>
+<ol>
+<li>Select multiple chord blocks on the timeline.</li>
+<li>Run the section creation command.</li>
+<li>Enter a section name and confirm.</li>
+</ol>
+<h3 id="section-8-3">8.3 Normal Mode</h3>
+<figure class="manual-figure">
+<img src="assets/%E3%82%BB%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3.png" alt="Section display" loading="lazy" />
+<figcaption>Figure: Section display</figcaption>
+</figure>
+<p>In normal mode:</p>
+<ul>
+<li>a section behaves like a single occupied block</li>
+<li>you can move or duplicate the section</li>
+<li>you can rename it, recolor it, or dissolve it</li>
+<li>you can reveal contents for reference without entering edit mode</li>
+</ul>
+<h3 id="section-8-4">8.4 Focus Edit Mode</h3>
+<figure class="manual-figure">
+<img src="assets/%E3%83%95%E3%82%A9%E3%83%BC%E3%82%AB%E3%82%B9%E7%B7%A8%E9%9B%86.png" alt="Focus Edit Mode" loading="lazy" />
+<figcaption>Figure: Focus Edit Mode</figcaption>
+</figure>
+<figure class="manual-figure">
+<img src="assets/%E3%83%95%E3%82%A9%E3%83%BC%E3%82%AB%E3%82%B9%E3%81%AE%E4%B8%AD%E8%BA%AB%E3%83%A2%E3%83%BC%E3%83%89.png" alt="Focused section editing" loading="lazy" />
+<figcaption>Figure: Focused section editing</figcaption>
+</figure>
+<p>Double-click a section to enter Focus Edit Mode.</p>
+<p>In this mode:</p>
+<ul>
+<li>only the selected section is editable</li>
+<li>outside areas are dimmed</li>
+<li>Esc exits focus mode</li>
+</ul>
+<h3 id="section-8-5">8.5 Sections and Performance Features</h3>
+<p>Arpeggio, Reharmo, and Arranger Mode all operate on the currently selected section.</p>
+<p>Sections used for performance in Arranger Mode have an additional requirement:</p>
+<ul>
+<li>the section must <strong>start at a bar line and end at a bar line (the next downbeat)</strong></li>
+<li>it must be at least one bar long</li>
+</ul>
+<p>Sections that do not meet these conditions are still registered but treated as unusable in Arranger Mode, and appear grayed out in the Section Launcher. Align the section&#39;s start and end to bar boundaries on the timeline to make it usable.</p>
+<hr />
+</section>
+<section id="section-9">
+<h2>9. Middle Panel</h2>
+<figure class="manual-figure">
+<img src="assets/%E4%B8%AD%E6%AE%B5%E3%83%91%E3%83%8D%E3%83%AB.png" alt="Middle panel" loading="lazy" />
+<figcaption>Figure: Middle panel</figcaption>
+</figure>
+<p>The middle panel groups timeline-related controls such as:</p>
+<ul>
+<li>chord insertion length</li>
+<li>snap / grid</li>
+<li>center-on-cursor / center-on-host</li>
+<li>language</li>
+<li>entry points for the Arpeggio, Reharmo, and Arranger modes</li>
+</ul>
+<p>When you enter Arpeggio or Reharmo mode, some middle-panel controls are repurposed for that mode.</p>
+<p>While Arranger Mode is active, the middle panel switches to a performance strip with items such as (see Chapters 15 and 16):</p>
+<ul>
+<li><code>Arranger</code>: turn Arranger Mode on / off</li>
+<li>page switches: <code>Perform</code> / <code>Song</code></li>
+<li><code>MIDI</code> chip: trigger input channel</li>
+<li><code>Sync Mode</code> chip: Host / Plugin</li>
+<li><code>Launch</code> chip: Launch Quantize</li>
+<li><code>Auto</code> chip: section / pad auto advance</li>
+<li><code>Part Send</code> chip: send to ChordPart (Chapter 17)</li>
+<li><code>Current</code> / <code>Queued</code> cards: playing and reserved section</li>
+<li><code>Run Settings</code> menu: a single window that gathers the above</li>
+<li><code>Back</code>: return from Arranger Mode to the normal view</li>
+</ul>
+<hr />
+</section>
+<section id="section-10">
+<h2>10. Chord Palette</h2>
+<p>The chord palette is the row of chord bubbles used to audition and insert chords based on the current key and scale.</p>
+<p>Typical actions:</p>
+<ul>
+<li>single click: audition a chord</li>
+<li>double click: insert at the cursor</li>
+<li>right click: open the chord edit menu</li>
+</ul>
+<p>Each chord bubble supports settings such as:</p>
+<ul>
+<li>chord quality</li>
+<li>inversion</li>
+<li>octave</li>
+<li>slash chord</li>
+<li>omit / sus / add9 / 9th-related handling / b5 / aug / 6th</li>
+<li>tensions</li>
+</ul>
+<p>These settings are stored with the bubble itself and affect newly inserted timeline events.</p>
+<hr />
+</section>
+<section id="section-11">
+<h2>11. Right-Side Panel</h2>
+<figure class="manual-figure">
+<img src="assets/%E5%8F%B3%E3%82%B5%E3%82%A4%E3%83%89%E3%83%91%E3%83%8D%E3%83%AB.png" alt="Right-side panel" loading="lazy" />
+<figcaption>Figure: Right-side panel</figcaption>
+</figure>
+<figure class="manual-figure">
+<img src="assets/%E3%82%B9%E3%82%B1%E3%83%BC%E3%83%AB%E9%81%B8%E6%8A%9E.png" alt="Key and scale selection" loading="lazy" />
+<figcaption>Figure: Key and scale selection</figcaption>
+</figure>
+<figure class="manual-figure">
+<img src="assets/%E3%83%97%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88.png" alt="Preset menu" loading="lazy" />
+<figcaption>Figure: Preset menu</figcaption>
+</figure>
+<p>The right-side panel contains global harmonic controls.</p>
+<p>Typical items include:</p>
+<ul>
+<li>Key</li>
+<li>Scale</li>
+<li>triad- or tetrad-oriented display behavior</li>
+<li>global octave offset</li>
+<li>progression presets</li>
+<li>color / theme controls</li>
+</ul>
+<p>Changing key or scale updates the chord palette and Circle of Fifths view.</p>
+<hr />
+</section>
+<section id="section-12">
+<h2>12. Circle of Fifths</h2>
+<figure class="manual-figure">
+<img src="assets/%E4%BA%94%E5%BA%A6%E5%9C%8F.png" alt="Circle of Fifths window" loading="lazy" />
+<figcaption>Figure: Circle of Fifths window</figcaption>
+</figure>
+<blockquote>
+<p><strong>Edition:</strong> Extended (see Chapter 19)</p>
+</blockquote>
+<p>The Circle of Fifths window is a helper view for harmonic overview.</p>
+<p>You can use it to:</p>
+<ul>
+<li>inspect related chords visually</li>
+<li>understand tonal proximity</li>
+<li>reflect ideas back into the chord palette when needed</li>
+</ul>
+<p>It is not used as a direct timeline placement area.</p>
+<hr />
+</section>
+<section id="section-13">
+<h2>13. Arpeggio / Bassline</h2>
+<h3 id="section-13-1">13.1 Overview</h3>
+<figure class="manual-figure">
+<img src="assets/%E3%82%A2%E3%83%AB%E3%83%9A%E3%82%B8%E3%82%AA%E6%A9%9F%E8%83%BD%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88.png" alt="Arpeggio layout" loading="lazy" />
+<figcaption>Figure: Arpeggio layout</figcaption>
+</figure>
+<figure class="manual-figure">
+<img src="assets/%E3%82%A2%E3%83%AB%E3%83%9A%E3%82%B8%E3%82%AA%E3%83%93%E3%83%A5%E3%83%BC.png" alt="Arpeggio view" loading="lazy" />
+<figcaption>Figure: Arpeggio view</figcaption>
+</figure>
+<blockquote>
+<p><strong>Edition:</strong> Extended / Performance (see Chapter 19)</p>
+</blockquote>
+<p>Arpeggio mode generates note events from the chord progression in the selected section.</p>
+<p>It has two modes:</p>
+<ul>
+<li><code>Arpeggio</code></li>
+<li><code>Bassline</code></li>
+</ul>
+<p>Both use the same underlying note-generation system, but differ in range handling, presets, and presentation.</p>
+<h3 id="section-13-2">13.2 Section Rules</h3>
+<ul>
+<li>Arpeggio always works on the selected section</li>
+<li>the entire selected section is the target range</li>
+<li>sections longer than 16 bars cannot be loaded into Arpeggio mode</li>
+</ul>
+<h3 id="section-13-3">13.3 Main Parameters</h3>
+<p>Current Arpeggio parameters include:</p>
+<ul>
+<li><code>Range</code> / <code>Spread</code> / <code>Density</code> / <code>Grid</code> / <code>Notes</code> / <code>Tension</code> / <code>Order</code> / <code>Syncopation</code> / <code>Rest</code> / <code>Style</code></li>
+</ul>
+<h3 id="section-13-4">13.4 Range and Spread</h3>
+<p><code>Range</code> chooses the base pitch band. <code>Spread Up</code> and <code>Spread Down</code> widen the allowed pitch range above or below that base range.</p>
+<p>Bassline mode uses a different low-end range table than standard Arpeggio mode.</p>
+<h3 id="section-13-5">13.5 Notes and Tensions</h3>
+<p>The <code>Notes</code> popup lets you choose pitch-role masks such as:</p>
+<ul>
+<li>Root / 2nd / 3rd / 4th / 5th / 6th / 7th / 9th / Octave</li>
+</ul>
+<p>The Tension setting can be:</p>
+<ul>
+<li><code>Off</code> / <code>On</code> / <code>Only</code></li>
+</ul>
+<h3 id="section-13-6">13.6 Order</h3>
+<p>Arpeggio mode exposes:</p>
+<ul>
+<li><code>Up</code> / <code>Down</code> / <code>Up-Down</code> / <code>Random</code></li>
+</ul>
+<p><code>Random</code> is still deterministic. The same input produces the same result.</p>
+<p>In Bassline mode, <code>Order</code> is hidden from the main UI.</p>
+<h3 id="section-13-7">13.7 Syncopation</h3>
+<p>Syncopation is a mask-based timing feature, not a humanize engine.</p>
+<p>It supports:</p>
+<ul>
+<li>enable / disable</li>
+<li>bar mask / beat mask / sub-step mask</li>
+<li>direction: <code>Ahead</code> or <code>Behind</code></li>
+</ul>
+<p><code>Ahead</code> shifts selected notes earlier according to the mask. <code>Behind</code> keeps the note start in place and extends the note length later.</p>
+<h3 id="section-13-8">13.8 Rest</h3>
+<p>Rest is also mask-based. It suppresses note generation at selected bars, beats, or sub-steps.</p>
+<h3 id="section-13-9">13.9 Styles</h3>
+<p>Current Arpeggio style presets:</p>
+<ul>
+<li>Default / Pulse 16 / Up-Down / Wide / Tight / Random Spark / Custom</li>
+</ul>
+<p>Current Bassline style presets:</p>
+<ul>
+<li>Default / Root 1/4 / Octave Pulse / Walking / Syncopated / Drone / Custom</li>
+</ul>
+<p>If the current parameter set does not exactly match a preset, the style display switches to <code>Custom</code>.</p>
+<h3 id="section-13-10">13.10 Note Edit Window</h3>
+<figure class="manual-figure">
+<img src="assets/%E3%82%A2%E3%83%AB%E3%83%9A%E3%82%B8%E3%82%AA%E3%81%AE%E3%83%8E%E3%83%BC%E3%83%88%E7%B7%A8%E9%9B%86%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6.png" alt="Arpeggio note edit window" loading="lazy" />
+<figcaption>Figure: Arpeggio note edit window</figcaption>
+</figure>
+<p>Arpeggio mode includes a note edit window for direct piano-roll editing.</p>
+<p>You can:</p>
+<ul>
+<li>edit note timing and length</li>
+<li>zoom and scroll</li>
+<li>preview playback</li>
+<li>save edited notes</li>
+<li>reset to the regenerated notes</li>
+</ul>
+<p>If you change parameters or apply another style, edited notes are cleared and the pattern is regenerated.</p>
+<h3 id="section-13-11">13.11 Drag Export</h3>
+<p>Generated Arpeggio or Bassline notes can be dragged directly into the DAW as MIDI.</p>
+<hr />
+</section>
+<section id="section-14">
+<h2>14. Reharmonization</h2>
+<h3 id="section-14-1">14.1 Overview</h3>
+<figure class="manual-figure">
+<img src="assets/%E3%83%AA%E3%83%8F%E3%83%A2%E6%A9%9F%E8%83%BD%E3%81%AE%E5%85%A8%E4%BD%93%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88.png" alt="Reharmonization layout" loading="lazy" />
+<figcaption>Figure: Reharmonization layout</figcaption>
+</figure>
+<blockquote>
+<p><strong>Edition:</strong> Extended (see Chapter 19)</p>
+</blockquote>
+<p>Reharmonization mode is a section-based chord transformation workflow built around preview, comparison, and selective application.</p>
+<h3 id="section-14-2">14.2 Section Rules</h3>
+<ul>
+<li>Reharmo works on the selected section</li>
+<li>the section itself may be up to 16 bars long</li>
+<li>inside that section, the active reharmo range may span up to 8 bars</li>
+<li>up to 8 target chords can be applied</li>
+</ul>
+<h3 id="section-14-3">14.3 Main Workflow</h3>
+<ol>
+<li>Select a section.</li>
+<li>Choose a reharmo range within that section.</li>
+<li>Set <code>Applied Codes</code>.</li>
+<li>Choose <code>Core</code>, <code>Enrich</code>, or <code>Rebuild</code>.</li>
+<li>Preview candidate rows.</li>
+<li>Lock chords if needed.</li>
+<li>Compare against <code>Show Original</code>.</li>
+<li>Confirm with <code>Apply</code>.</li>
+</ol>
+<h3 id="section-14-4">14.4 Range and Applied Codes</h3>
+<ul>
+<li>the range is selected with a two-handle slider</li>
+<li>maximum reharmo span is 8 bars</li>
+<li><code>Applied Codes</code> means the first N chord events inside the selected range</li>
+<li>the maximum applied-code count is 8</li>
+</ul>
+<h3 id="section-14-5">14.5 Modes</h3>
+<p><code>Core</code>: conservative; chord-level candidate handling; synchronous generation.</p>
+<p><code>Enrich</code>: adds color and expansion; supports both <code>Chord Unit</code> and <code>Progression Unit</code>.</p>
+<p><code>Rebuild</code>: more radical redesign; progression-oriented; <code>T/S/D Fidelity</code> is internally forced off.</p>
+<h3 id="section-14-6">14.6 Show Original</h3>
+<p><code>Show Original</code> is not a variation mode. It is a comparison toggle.</p>
+<ul>
+<li>ON shows the original progression and preview notes derived from it</li>
+<li>OFF returns to the current reharmo preview</li>
+<li>applying while <code>Show Original</code> is active keeps the original progression and discards pending preview changes</li>
+</ul>
+<h3 id="section-14-7">14.7 Candidate Preview</h3>
+<p>Candidates are first applied to preview data, not directly to the timeline.</p>
+<p>This means:</p>
+<ul>
+<li>the original timeline is not overwritten immediately</li>
+<li><code>Apply</code> becomes enabled only when a real preview change exists</li>
+<li>split candidates can create two events from a single source event</li>
+<li>until you press <code>Apply</code>, new candidate generation still uses the original target progression as its source</li>
+<li>pending preview substitutions do not become the basis for recursive reharmonization before confirmation</li>
+</ul>
+<h3 id="section-14-8">14.8 Chord Locks</h3>
+<p>Reharmo supports locking individual target chords by persistent ID.</p>
+<p>Locked chords:</p>
+<ul>
+<li>stay fixed during candidate recomputation</li>
+<li>preserve the current preview state for those positions</li>
+</ul>
+<h3 id="section-14-9">14.9 Edit Window</h3>
+<figure class="manual-figure">
+<img src="assets/%E3%83%AA%E3%83%8F%E3%83%A2%E7%B7%A8%E9%9B%86%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6%E3%82%B3%E3%83%BC%E3%83%89%E5%8D%98%E4%BD%8D%E7%94%9F%E6%88%90.png" alt="Reharmonization editor: chord-unit generation" loading="lazy" />
+<figcaption>Figure: Reharmonization editor (chord-unit generation)</figcaption>
+</figure>
+<figure class="manual-figure">
+<img src="assets/%E3%83%AA%E3%83%8F%E3%83%A2%E7%B7%A8%E9%9B%86%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6%E3%81%AE%E9%80%B2%E8%A1%8C%E5%8D%98%E4%BD%8D%E7%94%9F%E6%88%90.png" alt="Reharmonization editor: progression-unit generation" loading="lazy" />
+<figcaption>Figure: Reharmonization editor (progression-unit generation)</figcaption>
+</figure>
+<p>The Reharmo edit window provides detailed controls such as:</p>
+<ul>
+<li>Key / Scale display</li>
+<li>play / stop, save / reset</li>
+<li><code>Show Original</code>, <code>Core / Enrich / Rebuild</code>, <code>Generation Unit</code></li>
+<li>loop toggle, <code>T/S/D Fidelity</code>, variation-related filters, intent controls</li>
+<li>candidate explanation cards, seed information, mini timeline editing</li>
+</ul>
+<p>Current playback behavior:</p>
+<ul>
+<li>starting DAW playback stops the Reharmo preview audio</li>
+<li>however, unapplied Reharmo preview chords remain visible in the edit window</li>
+<li>simply pressing play in the DAW does not revert a pending Reharmo preview back to the original progression</li>
+</ul>
+<h3 id="section-14-10">14.10 Apply and Undo</h3>
+<p>Applying Reharmo:</p>
+<ul>
+<li>asks for confirmation</li>
+<li>updates only the selected applied range</li>
+<li>may replace existing events or add split events</li>
+<li>rebuilds event notes</li>
+<li>records the change as <code>Reharmo Apply</code> in the Undo history</li>
+</ul>
+<hr />
+</section>
+<section id="section-15">
+<h2>15. Arranger Mode: Setup and Pattern Editing</h2>
+<h3 id="section-15-1">15.1 Overview</h3>
+<figure class="manual-figure">
+<img src="assets/arranger-setup.png" alt="Arranger Mode setup page" loading="lazy" />
+<figcaption>Figure: Arranger Mode (Setup page)</figcaption>
+</figure>
+<blockquote>
+<p><strong>Edition:</strong> Performance (see Chapter 19)</p>
+</blockquote>
+<p>Arranger Mode turns the chord progression on the timeline into performable accompaniment. Build accompaniment patterns for four parts (Drums / Bass / Arp / Chord Pad) per section, then call them up with pads as the song moves forward.</p>
+<p><strong>How pattern generation works</strong></p>
+<p>Arranger Mode is primarily a pattern-authoring system: you create and edit the accompaniment patterns yourself.</p>
+<p>Arranger Mode does <strong>not</strong> use AI generation, cloud-based generation, or purely random playback. A pattern is a user-editable rhythmic and musical template stored on a pad. Presets and randomize commands only create starting points; you can then edit the result like any other pattern.</p>
+<p>When Chord Dock previews, performs, or exports Bass / Arp / Chord Pad material, it reads the selected section&#39;s chord progression and converts the pattern&#39;s timing and chord roles into concrete MIDI notes. If you reuse the same pattern on a different chord progression, the rhythm and role choices stay the same while the resulting pitches follow the new chords.</p>
+<p>The overall workflow:</p>
+<ol>
+<li>Build a chord progression on the timeline and group it into sections (Chapter 8).</li>
+<li>Turn Arranger Mode on.</li>
+<li>Create a pattern per part and assign it to a pad (this chapter).</li>
+<li>Perform with the Section Launcher and pads. Optionally arrange them in song order on the Song page (Chapter 16).</li>
+<li>Drag the finished patterns into the DAW as MIDI.</li>
+</ol>
+<h3 id="section-15-2">15.2 Editions and Demo</h3>
+<ul>
+<li>Arranger Mode is a <strong>Performance</strong> edition feature.</li>
+<li>Editions without Performance, such as Lite and Extended, can still try the basics as <strong>Arranger Mode Demo</strong> (with limits, below).</li>
+<li>Performance / Full Bundle removes the limits, enabling all pads and MIDI export.</li>
+<li>Performing requires sections. A section must <strong>start on a bar line and end on a bar line</strong> (Section 8.5).</li>
+<li>If you select a section that does not meet the condition, you are prompted to align its start and end to bar boundaries.</li>
+</ul>
+<p><strong>What the demo lets you try</strong></p>
+<ul>
+<li>open Arranger Mode and use the Setup / Performance / Song pages</li>
+<li>inspect and select sections, and operate the Section Launcher</li>
+<li>create, edit, preview, and randomize starting-point patterns on Pad 1–3 of each part</li>
+<li>place and play patterns on the Song page using Pad 1–3</li>
+</ul>
+<p><strong>Demo limits</strong></p>
+<ul>
+<li><strong>Actual playback time is capped at 90 seconds total.</strong> Only the time the Arranger is actually playing / outputting is counted; simply having the screen open or editing does not consume it.</li>
+<li>each part can use only <strong>Pad 1–Pad 3</strong>. <strong>Pad 4–Pad 8</strong> are shown but cannot be used (this is by design, not a bug).</li>
+<li>Arranger <strong>MIDI export / drag export is not available</strong>.</li>
+<li>as the remaining time runs low, a warning appears (e.g. <code>Arranger Demo - 00:15 left</code>), and when it reaches 0, Arranger playback, triggering, editing, and MIDI output are locked.</li>
+</ul>
+<p><strong>About the remaining demo time</strong></p>
+<ul>
+<li>the remaining demo time is not saved with the project. Reopening the DAW project or re-inserting the plugin resets it to 90 seconds.</li>
+<li>existing data on Pad 4–8 is never deleted by the demo limit. Open in Performance / Full Bundle to use all pads.</li>
+</ul>
+<h3 id="section-15-3">15.3 Entering Arranger Mode and the Three Pages</h3>
+<p>Use the <code>Arranger</code> button in the middle panel to enter Arranger Mode. The lower area switches to a dedicated Arranger screen, and you can move between three pages:</p>
+<ul>
+<li><strong>Setup page</strong>: manage parts and pads, and open pattern editing. This is the page shown right after Arranger turns on.</li>
+<li><strong>Performance page</strong>: the play-oriented screen opened with <code>Perform</code>. Shows 4 parts × 8 pads at once (Section 16.8).</li>
+<li><strong>Song page</strong>: the song-structure screen opened with <code>Song</code>. Lay out patterns in song order (Section 16.9).</li>
+</ul>
+<p>From each page you can return with the <code>Back</code> button or the Esc key. While Arranger Mode is active, the PC keyboard number keys 1–8 are mapped to the Section Launcher (Section 16.1).</p>
+<h3 id="section-15-4">15.4 Parts and MIDI Channels</h3>
+<p>Arranger Mode has four parts:</p>
+<ul>
+<li><code>Drums</code>: default Ch10. Uses fixed drum lanes mapped to MIDI notes.</li>
+<li><code>Bass</code>: default Ch14. Can use chord-relative role patterns or an absolute-pitch MIDI roll, depending on the edit method.</li>
+<li><code>Arp</code>: default Ch15. Uses chord-tone role patterns intended for broken-chord phrases.</li>
+<li><code>Chord Pad</code>: default Ch16. Uses chord-tone role patterns intended for sustained or rhythmic chord voicings.</li>
+</ul>
+<p>Each part&#39;s MIDI channel can be changed from <code>MIDI Channel</code> inside the pattern editor. Preview, drag export, and live playback all follow this setting.</p>
+<p>There are two ways to drive each part with a different instrument:</p>
+<ul>
+<li>split by channel with the DAW&#39;s MIDI routing</li>
+<li>use the bundled ChordPart (Chapter 17). In this case, make sure the parts do not share the same channel</li>
+</ul>
+<h3 id="section-15-5">15.5 Pads and Pattern Sets</h3>
+<p>Each part has 8 pads. Pad 1–7 are the primary pads; Pad 8 is treated as an extra pad.</p>
+<p>Each part also has a <code>Pattern Set</code> (<code>Set A</code> / <code>Set B</code>), so you can switch between 8 pads × 2 sets.</p>
+<p>The selected pad&#39;s information appears in the <strong>Pad Inspector</strong>, where you can:</p>
+<ul>
+<li><code>Edit</code>: open the pattern editor in a separate window (creates a new pattern for an empty pad)</li>
+<li><code>Copy</code> / <code>Paste</code>: duplicate a pattern between pads (with an overwrite confirmation)</li>
+<li><code>Clear</code>: remove the pad&#39;s assignment</li>
+<li><code>Stop</code>: stop that part&#39;s playback</li>
+<li><code>Set to Standby</code>: put the pad on standby silently</li>
+</ul>
+<p>The same actions are available from the pad&#39;s right-click menu.</p>
+<p>The <code>Standby Pad 1</code> button puts Pad 1 of every part that has an assigned pattern on standby silently, all at once. Press it before starting DAW playback when you want the accompaniment to sound from the very first beat.</p>
+<p>In the demo, each part can use only Pad 1–3 (Section 15.2). Pad 4–8 are shown but cannot be selected.</p>
+<h3 id="section-15-6">15.6 Common Pattern Editor Controls</h3>
+<p>Pattern editing is done in a <strong>separate window</strong> per part. Display and preview are based on the currently selected section.</p>
+<p>Common settings and controls:</p>
+<ul>
+<li><code>Pattern Name</code>: the name shown on the pad</li>
+<li><code>Preset</code>: recall a style template (Section 15.10)</li>
+<li><code>Length</code>: specified in beats. Patterns shorter than the section loop to follow along</li>
+<li><code>Grid</code>: snap / guide resolution (1/4, 1/8, 1/8T, 1/16, 1/16T, 1/32). Note lengths are preserved</li>
+<li><code>Zoom</code> / horizontal scroll: edit long patterns without squashing them</li>
+<li>Play / Stop: in-editor preview playback</li>
+<li><code>Preview Loop</code>: loop range is chosen from &quot;section&quot; or &quot;pattern&quot;</li>
+<li><code>MIDI Channel</code>: this part&#39;s output channel (Section 15.4)</li>
+</ul>
+<p>Basic grid-cell editing:</p>
+<ul>
+<li>click to place a note, left-drag to place continuously</li>
+<li>right-click to erase, right-drag to erase continuously</li>
+<li>drag a note&#39;s right edge to extend its length</li>
+<li>empty cell = rest, horizontal continuation = a longer note (there is no separate rest / tie row)</li>
+</ul>
+<p>The upper area shows the section&#39;s chord ribbon and bar / beat guides, and follows meter changes.</p>
+<h3 id="section-15-7">15.7 Drums Editor</h3>
+<figure class="manual-figure">
+<img src="assets/drum-editor.png" alt="Drums pattern editor" loading="lazy" />
+<figcaption>Figure: Drums pattern editor</figcaption>
+</figure>
+<p>Drums is a lane-based step editor. Percussion lanes such as kick and snare are stacked vertically, and you build the pattern on a lane × grid layout.</p>
+<ul>
+<li>each lane maps to a MIDI note (initial values follow a GM layout)</li>
+<li>click a lane name to change that lane&#39;s MIDI note assignment</li>
+<li>use <code>Reset</code> to return the note assignments to their defaults</li>
+</ul>
+<p>If your drum instrument uses a mapping other than GM, adjust the lane assignments to match your instrument.</p>
+<h3 id="section-15-8">15.8 Bass Editor</h3>
+<figure class="manual-figure">
+<img src="assets/bass-editor-rolelane.png" alt="Bass pattern editor (Chord-Role Sequencer)" loading="lazy" />
+<figcaption>Figure: Bass pattern editor (Chord-Role Sequencer)</figcaption>
+</figure>
+<figure class="manual-figure">
+<img src="assets/bass-editor-midiroll.png" alt="Bass pattern editor (MIDI Roll)" loading="lazy" />
+<figcaption>Figure: Bass pattern editor (MIDI Roll)</figcaption>
+</figure>
+<p>The Bass editor lets you choose one of two <code>edit methods</code> (pattern types). Switching rebuilds the pattern from scratch, so a confirmation dialog appears.</p>
+<p><strong>Chord-Role Sequencer</strong></p>
+<ul>
+<li>a sequencer whose vertical axis is &quot;role relative to the chord&quot;. Rows run from Root, 3rd, 5th … Octave from the bottom up, and also cover 11th / 13th / SlashBass</li>
+<li>the same pattern reused on a section with a different chord progression is re-read into the correct notes for each chord</li>
+<li><code>Role Mode</code>: <code>Chord Tone</code> (only chord tones can be entered; non-chord-tone cells are blocked) / <code>Chromatic</code> (free entry by semitone)</li>
+<li>a long note that crosses a chord boundary keeps the actual pitch decided by the chord at its start</li>
+</ul>
+<p><strong>MIDI Roll (piano roll)</strong></p>
+<ul>
+<li>a DAW-like piano roll entered by absolute pitch</li>
+<li>supports note move, duplicate-drag, multi-select (marquee), group move / resize, and copy / cut / paste / duplicate. Pasting where it does not fit shows a failure banner</li>
+<li><code>Edit Range</code> (low / high, off to +3oct) widens the pitch range you can view and enter, above or below. When you narrow the range and notes fall outside it, a delete confirmation appears</li>
+</ul>
+<h3 id="section-15-9">15.9 Arp / Chord Pad Editors</h3>
+<p>Arp and Chord Pad use the same role-lane editor as Bass. The main differences are:</p>
+<ul>
+<li>Arp and Chord Pad handle <strong>only the chord tones within the section&#39;s chords</strong> (chord-tone fixed)</li>
+<li>Arp ships with defaults and presets aimed at broken-chord phrases; Chord Pad at sustained / rhythmic chord voicings</li>
+</ul>
+<p>Because they are built on role lanes just like Bass, patterns carry over even when the chord progression changes.</p>
+<h3 id="section-15-10">15.10 Presets and Drag Export</h3>
+<p>Each editor&#39;s <code>Preset</code> menu recalls per-part style templates. After recall, you can edit them freely as normal patterns.</p>
+<p>From the drag area in the editor, you can drag a pattern into the DAW as MIDI. The exported range follows the <code>Preview Loop</code> selection (section / pattern), and the export content is shown on screen.</p>
+<p>In the demo, drag export and Arranger MIDI export are not available (Section 15.2).</p>
+<hr />
+</section>
+<section id="section-16">
+<h2>16. Arranger Mode: Performing</h2>
+<h3 id="section-16-1">16.1 Section Launcher</h3>
+<figure class="manual-figure">
+<img src="assets/section-launcher.png" alt="Section Launcher" loading="lazy" />
+<figcaption>Figure: Section Launcher</figcaption>
+</figure>
+<p>The <strong>Section Launcher</strong> below the timeline lays out sections in 8 slots.</p>
+<ul>
+<li>reserve a section&#39;s playback with a click, a PC number key 1–8 (numpad works too), or a MIDI note</li>
+<li>slots can be reordered by dragging (the right-click menu also offers &quot;move left / move right / to first / to last&quot;). The order is saved with the project</li>
+<li>sections that fail the bar-boundary condition (Section 8.5) appear grayed out and cannot be selected or performed</li>
+</ul>
+<p>Number keys with Ctrl / Cmd / Alt are ignored. If your DAW intercepts a number key before the plugin, launcher handling for that key cannot be guaranteed.</p>
+<h3 id="section-16-2">16.2 Current / Queued (Reservation-Based Switching)</h3>
+<figure class="manual-figure">
+<img src="assets/arranger-middle-panel.png" alt="Middle panel during Arranger Mode" loading="lazy" />
+<figcaption>Figure: Middle panel during Arranger Mode</figcaption>
+</figure>
+<p>Performance in Arranger Mode is <strong>reservation-based</strong>. Pressing a section or pad does not switch immediately; it is first reserved as &quot;queued&quot; and switches at the timing you set.</p>
+<ul>
+<li>the middle panel&#39;s <code>Current</code> / <code>Queued</code> cards show the playing section and the reserved section (with section color)</li>
+<li>pad display: playing = highlighted, queued = dimly highlighted</li>
+<li>while the DAW is stopped, switching is not reservation-based; pressing a pad <strong>auditions immediately</strong> (looping by pattern length). Pressing the same pad again stops it</li>
+<li>clicking the current pad again during playback stops that part&#39;s playback. Stopping does not clear an already queued pad; it still launches on schedule</li>
+</ul>
+<h3 id="section-16-3">16.3 Launch Quantize</h3>
+<p><code>Launch Quantize</code> decides when a section reservation is confirmed.</p>
+<ul>
+<li><code>Next Bar</code>: switch at the next downbeat</li>
+<li><code>Section End</code>: play the current section to the end, then switch</li>
+</ul>
+<p>Change it from the <code>Launch</code> chip in the middle panel, or from the <code>Run Settings</code> menu.</p>
+<h3 id="section-16-4">16.4 Sync Mode (Host / Plugin)</h3>
+<p><code>Sync Mode</code> decides who manages the song position.</p>
+<ul>
+<li><code>Host</code>: fully follows the DAW playback position. If the DAW loops a short region, Chord Dock repeats the same region too. Suited to workflows where the whole song lives on the DAW timeline</li>
+<li><code>Plugin</code>: receives only playback / tempo from the DAW, and manages section progression inside Chord Dock. Even when the DAW loops a short region, you can move the song forward (Verse → Chorus → …) with pad actions. Suited to live performance and structure sketching</li>
+</ul>
+<p>During <code>Plugin</code> progression, the timeline playhead reflects the internal progression position.</p>
+<h3 id="section-16-5">16.5 Pad Switching (Timing / Playback Position)</h3>
+<p>Switching pads (patterns) within the same part is governed by two settings.</p>
+<p><strong>Timing</strong> — when to switch:</p>
+<ul>
+<li><code>Next Bar</code>: switch at the next downbeat</li>
+<li><code>Pattern End</code>: play the current pattern to the end, then switch</li>
+</ul>
+<p><strong>Playback position</strong> — where to start after switching:</p>
+<ul>
+<li><code>Bar Lock</code>: switch while keeping the bar position within the section (e.g. switching on bar 4 makes the new pattern sound from the same bar position)</li>
+<li><code>Restart</code>: treat the switch point as the head and play the pattern from the beginning</li>
+</ul>
+<h3 id="section-16-6">16.6 Auto Advance</h3>
+<p>With <code>Auto</code> enabled, the accompaniment advances on its own without holding down pads. <code>Section</code> and <code>Pad</code> are independent toggles, so you can choose either one, both, or neither.</p>
+<ul>
+<li><code>Section</code>: when the current section reaches its end, the next section on the timeline is reserved and advanced automatically. A manual reservation takes priority</li>
+<li><code>Pad</code>: when the current pattern reaches its end, the next assigned pad in the same part is reserved automatically. Build pads in order and the pattern unfolds on its own</li>
+</ul>
+<p>Auto reservations are cleared when the DAW stops.</p>
+<h3 id="section-16-7">16.7 MIDI Trigger (Input and Note Map)</h3>
+<p>The Section Launcher and pads can also be operated with MIDI notes, for performing from an external keyboard or pad controller.</p>
+<ul>
+<li><code>MIDI</code> chip (input): choose the input channel monitored for triggers. <code>Omni</code> (default) responds to all channels</li>
+<li>trigger notes are signals to call up pads and are never passed through as sounding notes</li>
+</ul>
+<p>Trigger note assignments:</p>
+<ul>
+<li>Section Launcher Slot 1–8: <code>C0 D0 E0 F0 G0 A0 B0 A#0</code> (note numbers 12, 14, 16, 17, 19, 21, 23, 22)</li>
+<li>Drums Pad 1–8: <code>C1–B1</code> + <code>A#1</code> (24, 26, 28, 29, 31, 33, 35, 34)</li>
+<li>Bass Pad 1–8: <code>C2–B2</code> + <code>A#2</code> (36, 38, 40, 41, 43, 45, 47, 46)</li>
+<li>Arp Pad 1–8: <code>C3–B3</code> + <code>A#3</code> (48, 50, 52, 53, 55, 57, 59, 58)</li>
+<li>Chord Pad Pad 1–8: <code>C4–B4</code> + <code>A#4</code> (60, 62, 64, 65, 67, 69, 71, 70)</li>
+</ul>
+<p>Note names use &quot;note number 60 = C4&quot;. Some DAWs display the same note number one octave off (60 = C3), so we recommend checking by note number.</p>
+<h3 id="section-16-8">16.8 Performance Page</h3>
+<figure class="manual-figure">
+<img src="assets/performance-view.png" alt="Performance page" loading="lazy" />
+<figcaption>Figure: Performance page</figcaption>
+</figure>
+<p>The Performance page, opened with <code>Perform</code>, is the screen for focused playing.</p>
+<ul>
+<li>shows 4 parts × 8 pads = 32 pads at once</li>
+<li>each part row shows the part name, MIDI channel, and <code>Set A / Set B</code> on the left, and the assigned pattern on the right</li>
+<li>a compact timeline at the top keeps you oriented in the song</li>
+<li>the Section Launcher, number keys, and MIDI triggers all work on this page</li>
+<li>return to the Setup page with <code>Back to Setup</code> or Esc</li>
+</ul>
+<h3 id="section-16-9">16.9 Song Page</h3>
+<figure class="manual-figure">
+<img src="assets/song-page.png" alt="Song page" loading="lazy" />
+<figcaption>Figure: Song page</figcaption>
+</figure>
+<p>On the Song page, opened with <code>Song</code>, you lay out pad patterns along the song order and build &quot;which pattern sounds in which section&quot; on a single screen.</p>
+<p>Screen layout:</p>
+<ul>
+<li>top: a full-song overview (the section order on the timeline becomes the song order)</li>
+<li>middle: the section&#39;s chord display and four lanes for Drums / Bass / Arp / Chord Pad (the pad-clip placement area)</li>
+<li>bottom: the pad list (here it is not for performing, but the source of patterns to place)</li>
+</ul>
+<p>Editing pad clips:</p>
+<ul>
+<li>select a pad at the bottom and click the corresponding part lane to place it, or drag and drop from a pad to a lane</li>
+<li>drag a clip to move it, drag its right edge to change length, Delete / Backspace to remove, right-click menu to duplicate / delete</li>
+<li>clips do not overlap within a lane (length is adjusted automatically to fit the gap)</li>
+<li>placement / move / resize / duplicate / delete can all be undone and redone</li>
+</ul>
+<p>Playback:</p>
+<ul>
+<li>while the DAW is stopped, use the header Play / Stop to preview the Song layout internally. Play after Stop resumes from the stopped position</li>
+<li>while the DAW is playing, the Song layout sounds automatically along the host playback position (the header Play is disabled during this)</li>
+<li>Song playback does not loop. It is intended for checking the song through from the top</li>
+</ul>
+<h3 id="section-16-10">16.10 Save / Recall and Undo</h3>
+<ul>
+<li>pad assignments, pattern content, pattern set selection, launcher order, Song page layout, and performance settings such as sync mode are all saved and restored with the DAW project</li>
+<li>pad assignment changes, pattern edits, and Song clip edits are undoable</li>
+<li>transient performance operations (reservations, playback position) are not undoable and not saved. When you reopen the project, it starts from a stopped state</li>
+</ul>
+<hr />
+</section>
+<section id="section-17">
+<h2>17. ChordPart — Bundled MIDI Receiver</h2>
+<h3 id="section-17-1">17.1 When to Use It</h3>
+<p>Chord Dock outputs the four Arranger parts on separate MIDI channels, but some DAWs cannot wire &quot;the plugin&#39;s MIDI output split by channel and sent to instruments on other tracks&quot; (a well-known example is Ableton Live).</p>
+<p><strong>ChordPart</strong> is a small plugin that works around this limitation. It receives per-part MIDI directly from the Chord Dock main plugin and passes it out as the MIDI output of the track it sits on. This lets you use each part as a normal MIDI track entry point, and drive any instrument — including the DAW&#39;s built-in instruments — per part.</p>
+<ul>
+<li>if real-time performance is not needed, you can instead create per-part tracks with MIDI drag / export</li>
+<li>if your DAW has MIDI routing with a channel filter, you can split parts without ChordPart</li>
+</ul>
+<h3 id="section-17-2">17.2 How It Works and Latency</h3>
+<p>The main plugin and ChordPart are linked by an internal bus that does not pass through the DAW&#39;s track wiring. As long as both are loaded in the same DAW project, they connect with no extra wiring.</p>
+<ul>
+<li>the added latency is at most one audio buffer, and the amount is constant (no jitter)</li>
+<li><strong>the recommended buffer size is 128–256 samples</strong>. Within this range, the offset from the main plugin&#39;s direct sound stays in a practically unnoticeable range (about 3–6 ms)</li>
+<li>512 samples also works, but is not recommended, since the offset can reach about 11 ms in some cases</li>
+</ul>
+<h3 id="section-17-3">17.3 Setup Steps</h3>
+<figure class="manual-figure">
+<img src="assets/live12-routing.png" alt="Routing example in Ableton Live 12" loading="lazy" />
+<figcaption>Figure: Routing example in Ableton Live 12</figcaption>
+</figure>
+<p>Basic steps using Ableton Live 12 as an example (the idea is the same on other DAWs).</p>
+<ol>
+<li>Insert the Chord Dock main plugin on Track A, and click the <code>Part Send</code> chip in the middle panel to turn it on (the <code>Send to ChordPart</code> item in the <code>Run Settings</code> menu does the same).</li>
+<li>Insert one ChordPart on each of Tracks B1–B4, and set each instance&#39;s <code>Part</code> to Drums / Bass / Arp / Chord Pad.</li>
+<li>Place any instrument (Live&#39;s built-in instruments are fine) on instrument tracks C1–C4, set <code>MIDI From</code> to the corresponding B track (ChordPart), and set <code>Monitor = In</code>.</li>
+<li>When you perform in Arranger Mode, each part sounds on its corresponding instrument track.</li>
+<li>Arm and record the C tracks to capture per-part MIDI clips.</li>
+</ol>
+<p>You can set up only the parts you use (for example, just Drums and Bass).</p>
+<h3 id="section-17-4">17.4 The ChordPart Window</h3>
+<figure class="manual-figure">
+<img src="assets/chordpart-ui.png" alt="The ChordPart window" loading="lazy" />
+<figcaption>Figure: The ChordPart window</figcaption>
+</figure>
+<p>ChordPart is a compact single-screen plugin (full name: ChordDock Part Receiver).</p>
+<ul>
+<li><code>Part</code>: the part to receive (Drums / Bass / Arp / Chord Pad)</li>
+<li><code>Out Ch</code>: the MIDI channel output to this track (1–16, default 1)</li>
+<li><code>MIDI Thru</code>: when on, mixes MIDI arriving at this track from the host into the part output (default off)</li>
+<li>status: <code>Not connected</code> / <code>Connected (idle)</code> / <code>Connected (active)</code> / <code>Engine stopped</code> / <code>Version mismatch</code>. The indicator blinks while receiving</li>
+<li>the EN / JA button on the title row switches the display language (initially auto-detected from the OS language)</li>
+</ul>
+<p>All of these settings are saved with the DAW project.</p>
+<h3 id="section-17-5">17.5 Status on the Main Plugin</h3>
+<figure class="manual-figure">
+<img src="assets/part-send-chip.png" alt="Part Send chip status" loading="lazy" />
+<figcaption>Figure: Part Send chip status</figcaption>
+</figure>
+<p>The <code>Part Send</code> chip in the main plugin&#39;s middle panel toggles sending on click, and also shows status with color and text.</p>
+<ul>
+<li><code>OFF</code> (neutral): not sending</li>
+<li><code>Waiting</code> (gold): another Chord Dock instance is using the bus, so this one is waiting</li>
+<li><code>Sending</code> (green): sending per-part MIDI</li>
+<li><code>Ch conflict!</code> (red): multiple parts are set to the same MIDI channel. Those parts cannot be distinguished, so separate the channels (a toast warning also appears)</li>
+<li><code>Version mismatch!</code> (red): the main plugin and ChordPart versions do not match. Update both to the same version</li>
+</ul>
+<p>The <code>Run Settings</code> menu has the same toggle and status line.</p>
+<h3 id="section-17-6">17.6 Notes and Limitations</h3>
+<ul>
+<li>make sure the parts (and the main plugin&#39;s chord-track playback) do not share the same MIDI channel. With the defaults (10 / 14 / 15 / 16), there is no overlap</li>
+<li>the same part can be received by multiple ChordPart instances (for layering)</li>
+<li>if two or more Chord Dock main plugins are placed in the same project, only the one that started sending first can send. The others show &quot;Waiting&quot;</li>
+<li>use ChordPart <strong>within the same DAW project</strong> as the main plugin. Separately launched DAWs do not connect</li>
+<li>when performing live in real time, the offset is practically unnoticeable at the recommended buffer size (128–256 samples — see Section 17.2). The offset only matters when you record the performance in the DAW in real time; in that case it is captured shifted back by a constant amount (at most one buffer)</li>
+<li>to capture the timing precisely, drag the pattern in from the pattern editor&#39;s drag export instead of recording in real time (this method introduces no offset at all). If an already-recorded offset bothers you, the amount is constant, so you can fix it by shifting all notes forward at once or by quantizing (for material with fine placement such as rolls or swing, shifting all notes at once is recommended)</li>
+</ul>
+<hr />
+</section>
+<section id="section-18">
+<h2>18. MIDI Export and Drag Workflow</h2>
+<p>Chord Dock supports several export workflows:</p>
+<ul>
+<li>export the whole timeline progression</li>
+<li>drag chord-derived MIDI material into the DAW</li>
+<li>drag Arpeggio / Bassline generated notes</li>
+<li>drag Reharmo-generated preview notes</li>
+<li>drag a pattern from the Arranger pattern editor (Section 15.10)</li>
+</ul>
+<p>The exact drag targets available depend on the current mode.</p>
+<hr />
+</section>
+<section id="section-19">
+<h2>19. Licensing and Editions</h2>
+<figure class="manual-figure">
+<img src="assets/%E8%A8%AD%E5%AE%9A%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6%E8%8B%B1%E8%AA%9E.png" alt="Settings and licensing window" loading="lazy" />
+<figcaption>Figure: Settings and licensing window</figcaption>
+</figure>
+<h3 id="section-19-1">19.1 Edition Lineup</h3>
+<p>Chord Dock comes in three editions:</p>
+<ul>
+<li><strong>Lite</strong>: the base edition, ideal for creating chord progressions</li>
+<li><strong>Extended</strong>: an edition for expanding harmony, with tensions, slash chords, the Circle of Fifths, and reharmonization</li>
+<li><strong>Performance</strong>: an edition for performance, accompaniment, and live operation, centered on Arranger Mode</li>
+</ul>
+<div class="table-wrap">
+<table>
+<thead><tr>
+<th>Feature</th>
+<th>Lite</th>
+<th>Extended</th>
+<th>Performance</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Timeline chord editing / Sections</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>Chord progression MIDI export / progression presets</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>9th-notation chords (add9 / M9 / m9 / 7(9))</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>Tension menu (9 / b9 / #9 / 11 / 13)</td>
+<td>—</td>
+<td>✔</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Slash chords / aug / b5 / 6th</td>
+<td>—</td>
+<td>✔</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Circle of Fifths</td>
+<td>—</td>
+<td>✔</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Extended snap / extended length</td>
+<td>—</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>User preset bank</td>
+<td>—</td>
+<td>✔</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Arpeggio / Bassline generation (incl. note editing)</td>
+<td>—</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>Reharmonization</td>
+<td>—</td>
+<td>✔</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Arranger Mode (pad performance / Perform / Song)</td>
+<td>—</td>
+<td>—</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>Per-part MIDI output via ChordPart</td>
+<td>—</td>
+<td>—</td>
+<td>✔</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p><strong>About Full Bundle:</strong> a bundle that includes both Extended and Performance. Its features are the union of both editions (everything marked ✔ under Extended or Performance is available).</p>
+</blockquote>
+<blockquote>
+<p><strong>Arranger Mode Demo:</strong> Lite and Extended can try Arranger Mode as a demo — 90 seconds of actual playback total, Pad 1–3 per part, and no MIDI export. See Section 15.2 for details.</p>
+</blockquote>
+<p>Depending on the edition and license state, features outside your edition appear locked or disabled.</p>
+<h3 id="section-19-2">19.2 Activation Flow</h3>
+<ol>
+<li>Open Settings.</li>
+<li>Enter your serial key.</li>
+<li>Complete browser-based online activation if required.</li>
+<li>Return to the plugin and let it refresh license status.</li>
+</ol>
+<p>ChordPart itself has no license operation (it follows the main plugin&#39;s edition).</p>
+<h3 id="section-19-3">19.3 If Activation Does Not Refresh</h3>
+<ul>
+<li>reopen Settings</li>
+<li>use the online verification refresh option if provided</li>
+<li>confirm the browser-side registration completed successfully</li>
+</ul>
+<p>An internet connection is required for initial activation.</p>
+<hr />
+</section>
+<section id="section-20">
+<h2>20. FAQ / Troubleshooting</h2>
+<h3 id="section-20-1">20.1 The plugin does not appear in my DAW</h3>
+<p>Check the following:</p>
+<ol>
+<li>Installation completed successfully.</li>
+<li>On Windows, the <code>.vst3</code> files (both the main plugin and ChordPart) were copied into the correct folder.</li>
+<li>Your DAW has rescanned plugins.</li>
+</ol>
+<h3 id="section-20-2">20.2 I hear no sound</h3>
+<p>Check:</p>
+<ol>
+<li>MIDI routing</li>
+<li>target instrument assignment</li>
+<li>track mute / solo</li>
+<li>audio device settings in the DAW</li>
+<li>Chord Dock&#39;s internal preview audio toggle if you expect onboard preview sound</li>
+</ol>
+<h3 id="section-20-3">20.3 I cannot edit inside a section</h3>
+<p>You may still be in normal section mode. Enter Focus Edit Mode by double-clicking the section.</p>
+<h3 id="section-20-4">20.4 Part of the timeline is grayed out</h3>
+<p>You are likely in Focus Edit Mode or another mode that intentionally narrows the editable range.</p>
+<h3 id="section-20-5">20.5 Reharmo does not load my section</h3>
+<p>Check section length. Reharmo only accepts sections up to 16 bars.</p>
+<h3 id="section-20-6">20.6 Arpeggio / Reharmo / Arranger controls look disabled</h3>
+<p>That usually means the feature is not unlocked for your edition or license (Chapter 19). Arpeggio is Extended / Performance, Reharmo is Extended, and Arranger Mode is a Performance feature.</p>
+<h3 id="section-20-7">20.7 I cannot select a section in Arranger / the launcher is grayed out</h3>
+<p>That section probably does not meet the bar-boundary condition. Sections used in Arranger Mode must start on a bar line and end on a bar line (at least one bar). Align the start and end to bar boundaries on the timeline.</p>
+<h3 id="section-20-8">20.8 Pressing a pad does not switch immediately</h3>
+<p>This is by design. Switching in Arranger Mode is reservation-based and waits until the position set by <code>Launch Quantize</code> (section) or <code>Timing</code> (pad) before switching. The queued pad is shown dimly highlighted. If you want an immediate switch, set it to <code>Next Bar</code>.</p>
+<h3 id="section-20-9">20.9 The Arranger accompaniment does not sound when I play the DAW</h3>
+<p>No pad may be chosen to sound at the moment playback starts. Check the following:</p>
+<ol>
+<li>Whether the pad has an assigned pattern.</li>
+<li>Whether a pad is on standby. Before playback, use <code>Standby Pad 1</code> to put Pad 1 of each part on standby together, or press a pad to reserve it before playing. To put a pad other than Pad 1 on standby, choose <code>Set to Standby</code> from that pad&#39;s right-click menu.</li>
+<li>Whether routing to the DAW tracks is correct. For MIDI routing to instrument tracks and receiving-instrument settings, see 20.2 &quot;I hear no sound&quot;. If you use ChordPart, also check Chapter 17.</li>
+</ol>
+<h3 id="section-20-10">20.10 The Song page Play button is disabled</h3>
+<p>While the DAW is playing, Song internal playback is unavailable (it switches to sounding the Song layout along the host position). Stop the DAW, then press Play.</p>
+<h3 id="section-20-11">20.11 ChordPart stays &quot;Not connected&quot;</h3>
+<p>Check the following:</p>
+<ol>
+<li>Whether the Chord Dock main plugin is loaded in the same DAW project.</li>
+<li>Whether the main plugin&#39;s <code>Part Send</code> chip is on (Sending).</li>
+<li>Whether the main plugin and ChordPart versions match.</li>
+</ol>
+<h3 id="section-20-12">20.12 Sound through ChordPart is offset</h3>
+<p>When performing live, the offset is practically unnoticeable with an audio buffer size of 128–256 samples (Section 17.2). A recorded MIDI offset is constant, so it can be aligned by shifting all notes at once or by quantizing. To capture the timing precisely, use the pattern editor&#39;s drag export instead of real-time recording (Section 17.6).</p>
+<h3 id="section-20-13">20.13 It shows &quot;Version mismatch&quot;</h3>
+<p>The main plugin and ChordPart versions differ. Sending / receiving is stopped for safety. Update both plugins as a matching-version set.</p>
+<h3 id="section-20-14">20.14 I cannot use Arranger Pad 4–8</h3>
+<p>If your edition runs as Arranger Mode Demo, each part can only use Pad 1–3. Pad 4–8 are shown but cannot be used (this is not a bug). Performance or Full Bundle is required to use all pads (Section 15.2).</p>
+<h3 id="section-20-15">20.15 Arranger stopped responding / it says the demo has ended</h3>
+<p>When Arranger Mode Demo uses up its playback time (90 seconds total), Arranger playback, triggering, editing, and MIDI output are locked. The remaining demo time is not saved with the project, so reopening the DAW project or re-inserting the plugin resets it to 90 seconds. Performance or Full Bundle is required to use it without limits.</p>
+<h3 id="section-20-16">20.16 Are Bass, Arp, and Chord Pad patterns AI-generated or random?</h3>
+<p>No. Arranger Mode does not use AI generation, cloud-based generation, or purely random playback. Presets and randomize commands can create starting points, but the pattern itself remains an editable pad pattern.</p>
+<p>For Bass / Arp / Chord Pad, the generated MIDI notes come from the selected section&#39;s chord progression plus the pattern&#39;s timing and chord-role settings. This means the same pattern can follow different chord progressions while keeping its musical shape.</p>
+<hr />
+</section>
+<section id="section-21">
+<h2>21. Support / Contact</h2>
+<p>For release notes, downloads, product information, tutorial videos, and support information, please refer to the official landing page and YouTube channel.</p>
+<ul>
+<li>Official landing page: <a class="inline-link" href="https://k2get.github.io/chord-dock-site/index.en.html" target="_blank" rel="noopener noreferrer">https://k2get.github.io/chord-dock-site/index.en.html</a></li>
+<li>YouTube channel: <a class="inline-link" href="https://www.youtube.com/@k2get" target="_blank" rel="noopener noreferrer">https://www.youtube.com/@k2get</a></li>
+</ul>
+<p>For support or pre-sales questions, please use the contact form linked from the official landing page.</p>
+</section>
   </main>
   <footer>
-    <p>© Chord Dock — Online Manual (English).</p>
+    © 2026 Chord Dock. This online manual is generated from the v2.0 source manual.
   </footer>
 </body>
 </html>

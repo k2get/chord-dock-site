@@ -3,14 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chord Dock オンラインマニュアル</title>
-  <meta name="description" content="Chord Dock / Chord Dock Extended のオンラインマニュアルです。製品概要、エディションの違い、クイックスタート、アクティベーション手順、画面の各部名称、よくある質問などをまとめています。" />
+  <title>Chord Dock ユーザーズマニュアル v2.0</title>
+  <meta name="description" content="Chord Dock v2.0.1 のオンラインマニュアルです。コード進行編集、セクション、アルペジオ / ベースライン生成、リハモ、アレンジャーモード、ChordPart、MIDI 出力、ライセンスをまとめています。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { darkMode: 'class' };
@@ -23,7 +20,6 @@
       dataLayer.push(arguments);
     }
     gtag('js', new Date());
-
     gtag('config', 'G-V3MCR5K6MP');
   </script>
   <style>
@@ -40,11 +36,12 @@
     }
     .manual-hero h1 {
       margin: 0 0 0.4rem;
-      font-size: 1.9rem;
+      font-size: clamp(1.7rem, 4vw, 2.3rem);
+      line-height: 1.25;
     }
     .manual-hero p {
       margin: 0.25rem 0;
-      max-width: 760px;
+      max-width: 860px;
       color: #c6c9d3;
       font-size: 0.95rem;
     }
@@ -54,7 +51,7 @@
       color: #a5a9bc;
     }
     main {
-      max-width: 980px;
+      max-width: 1040px;
       margin: 0 auto;
       padding: 1.5rem;
     }
@@ -72,6 +69,7 @@
       justify-content: space-between;
       gap: 1rem;
       margin-bottom: 0.35rem;
+      flex-wrap: wrap;
     }
     .toc-header h2 {
       margin: 0;
@@ -81,15 +79,16 @@
       list-style: none;
       margin: 0.2rem 0 0;
       padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem 1.4rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.35rem 1.2rem;
     }
     nav.toc a {
       color: #d7defc;
       text-decoration: none;
     }
-    nav.toc a:hover {
+    nav.toc a:hover,
+    a.inline-link:hover {
       text-decoration: underline;
     }
     section {
@@ -102,121 +101,130 @@
       padding-bottom: 0.5rem;
     }
     section h2 {
-      margin: 0 0 0.5rem;
+      margin: 0 0 0.6rem;
       font-size: 1.35rem;
+      line-height: 1.35;
     }
     section h3 {
-      margin: 1.4rem 0 0.3rem;
+      margin: 1.5rem 0 0.35rem;
       font-size: 1.05rem;
+      line-height: 1.4;
+    }
+    section h4 {
+      margin: 1rem 0 0.3rem;
+      font-size: 0.98rem;
+      line-height: 1.4;
     }
     p {
-      margin: 0.4rem 0;
+      margin: 0.45rem 0;
       font-size: 0.95rem;
       color: #e2e5f0;
     }
     ul, ol {
-      margin: 0.3rem 0 0.6rem;
-      padding-left: 1.4rem;
+      margin: 0.35rem 0 0.75rem;
+      padding-left: 1.45rem;
       font-size: 0.95rem;
       color: #e2e5f0;
     }
     li {
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.22rem;
     }
-    .tagline {
-      font-size: 0.9rem;
-      color: #b5b9ca;
-      margin-bottom: 0.8rem;
-    }
-    .badge {
-      display: inline-block;
-      padding: 0.1rem 0.45rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      font-size: 0.75rem;
-      color: #e4e7f5;
-      background: rgba(20, 24, 40, 0.95);
-    }
-    .details-box details {
-      margin-bottom: 0.6rem;
-      border-radius: 0.6rem;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      background: rgba(9, 11, 20, 0.95);
-      padding: 0.55rem 0.8rem;
-    }
-    .details-box summary {
-      cursor: pointer;
-      list-style: none;
-      font-size: 0.9rem;
-    }
-    .details-box details[open] {
-      border-color: rgba(143, 157, 255, 0.8);
-    }
-    .details-box summary::before {
-      content: '▶';
-      display: inline-block;
-      margin-right: 0.45rem;
-      font-size: 0.7rem;
-      transform: translateY(-1px);
-    }
-    .details-box details[open] summary::before {
-      content: '▼';
-    }
-    .details-box details > div {
-      margin-top: 0.4rem;
-      font-size: 0.85rem;
-      color: #d3d6e3;
-    }
-    .activation-grid {
-      display: grid;
-      gap: 1.2rem;
-      margin: 0.8rem 0 1.4rem;
-    }
-    .activation-grid figure {
-      margin: 0;
-    }
-    .activation-grid img {
-      width: 100%;
-      max-width: 420px;
-      border-radius: 0.75rem;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-      display: block;
-    }
-    .activation-grid figcaption {
-      margin-top: 0.35rem;
-      font-size: 0.8rem;
-      color: #aeb3c7;
-    }
-    @media (min-width: 720px) {
-      .activation-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        align-items: start;
-      }
+    strong {
+      color: #ffffff;
+      font-weight: 700;
     }
     code {
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
       font-size: 0.9em;
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.06);
       padding: 0.05rem 0.25rem;
       border-radius: 0.25rem;
+    }
+    pre {
+      overflow-x: auto;
+      padding: 0.8rem 1rem;
+      border-radius: 0.75rem;
+      background: rgba(4, 7, 18, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    pre code {
+      background: transparent;
+      padding: 0;
+    }
+    blockquote {
+      margin: 0.9rem 0;
+      padding: 0.75rem 1rem;
+      border-left: 3px solid rgba(129, 140, 248, 0.85);
+      background: rgba(99, 102, 241, 0.10);
+      border-radius: 0.55rem;
+    }
+    blockquote p {
+      margin: 0.15rem 0;
+      color: #dfe4ff;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      margin: 0.8rem 0 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: 0.75rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 560px;
+      background: rgba(9, 11, 20, 0.72);
+      font-size: 0.9rem;
+    }
+    th, td {
+      padding: 0.55rem 0.7rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      vertical-align: top;
+      color: #e2e5f0;
+    }
+    th {
+      color: #ffffff;
+      text-align: left;
+      background: rgba(255, 255, 255, 0.05);
+      font-weight: 700;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    .manual-figure {
+      margin: 1rem 0 1.4rem;
+    }
+    .manual-figure img {
+      width: 100%;
+      max-width: 920px;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      display: block;
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .manual-figure figcaption {
+      margin-top: 0.35rem;
+      font-size: 0.8rem;
+      color: #aeb3c7;
+    }
+    hr {
+      border: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin: 1.4rem 0;
     }
     a.inline-link {
       color: #c6d3ff;
       text-decoration: none;
     }
-    a.inline-link:hover {
-      text-decoration: underline;
-    }
     footer {
-      max-width: 980px;
+      max-width: 1040px;
       margin: 0 auto;
       padding: 0 1.5rem 2rem;
       font-size: 0.8rem;
       color: #8e93a5;
     }
     .lang-switch {
-      margin-top: 0.4rem;
+      margin: 0;
       font-size: 0.8rem;
       color: #b5b9ca;
     }
@@ -244,47 +252,29 @@
   <header
     class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 dark:bg-neutral-950/80 border-b border-gray-200/60 dark:border-neutral-800"
   >
-    <nav
-      class="container mx-auto px-4 py-3 flex items-center justify-between"
-    >
-      <a
-        href="index.html"
-        class="flex items-center gap-2 font-extrabold text-xl tracking-tight"
-      >
+    <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 font-extrabold text-xl tracking-tight">
         <span class="inline-block w-6 h-6 rounded-lg bg-indigo-600"></span>
         Chord Dock
       </a>
       <div class="hidden sm:flex items-center gap-4 text-sm">
         <a href="index.html#features" class="hover:opacity-80">機能</a>
-        <a href="index.html#comparison" class="hover:opacity-80">比較</a>
+        <a href="index.html#edition-comparison" class="hover:opacity-80">比較</a>
         <a href="index.html#requirements" class="hover:opacity-80">動作環境</a>
-        <a href="index.html#daw" class="hover:opacity-80">対応DAW</a>
         <a href="index.html#download" class="hover:opacity-80">ダウンロード</a>
-        <a href="index.html#activation" class="hover:opacity-80">アクティベーション</a>
         <a href="index.html#faq" class="hover:opacity-80">FAQ</a>
+        <a href="index.html#support" class="hover:opacity-80">お問い合わせ</a>
       </div>
-      <!-- Invisible spacer to keep header layout consistent with index.html -->
       <div class="hidden sm:flex items-center gap-2 opacity-0 pointer-events-none select-none" aria-hidden="true">
-        <a
-          class="inline-flex items-center rounded-xl px-3 py-2 text-sm font-medium border border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-900"
-        >EN</a>
-        <a
-          class="inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-sm font-semibold bg-indigo-600 text-white"
-        >
-          今すぐ試す
-        </a>
+        <span class="inline-flex items-center rounded-xl px-3 py-2 text-sm font-medium border border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-900">EN</span>
+        <span class="inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-sm font-semibold bg-indigo-600 text-white">今すぐ試す</span>
       </div>
     </nav>
   </header>
   <div class="manual-hero">
-    <h1>Chord Dock オンラインマニュアル</h1>
-    <p>
-      このページは、Chord Dock / Chord Dock Extended の基本的な使い方と、
-      アクティベーションを含むセットアップ手順をまとめたオンラインマニュアルです。
-    </p>
-    <p class="meta">
-      対象バージョン: v1.0 系 / 表示言語: 日本語
-    </p>
+    <h1>Chord Dock ユーザーズマニュアル v2.0</h1>
+    <p>DAW 上でのコード進行編集、セクション管理、アルペジオ / ベースライン生成、リハモ、アレンジャーモードによる伴奏演奏、ChordPart によるパート別 MIDI 出力までをまとめた v2.0 対応マニュアルです。</p>
+    <p class="meta">対象バージョン: v2.0.1 / マニュアル: v2.0 / 最終更新日: 2026-07-14</p>
   </div>
   <main>
     <nav class="toc">
@@ -292,320 +282,1157 @@
         <h2>目次</h2>
         <p class="lang-switch">
           <span class="lang-switch-label">表示言語:</span>
-          <span class="lang-pill active">日本語</span>
-          <a class="lang-pill" href="manual.en.html">English</a>
+          <span class="lang-pill active">日本語</span> <a class="lang-pill" href="manual.en.html">English</a>
         </p>
       </div>
       <ul>
-        <li><a href="#overview">1. 製品概要</a></li>
-        <li><a href="#editions">2. エディションとライセンス</a></li>
-        <li><a href="#quickstart">3. クイックスタート</a></li>
-        <li><a href="#activation">4. アクティベーション手順</a></li>
-        <li><a href="#ui">5. 画面構成</a></li>
-        <li><a href="#faq">6. よくある質問（抜粋）</a></li>
-        <li><a href="#support">7. サポート / 連絡先</a></li>
+          <li><a href="#section-1">1. はじめに</a></li>
+          <li><a href="#section-2">2. 対応環境</a></li>
+          <li><a href="#section-3">3. インストール</a></li>
+          <li><a href="#section-4">4. DAW 側の初期設定</a></li>
+          <li><a href="#section-5">5. メイン画面の全体像</a></li>
+          <li><a href="#section-6">6. トップツールバー</a></li>
+          <li><a href="#section-7">7. タイムライン編集</a></li>
+          <li><a href="#section-8">8. セクション</a></li>
+          <li><a href="#section-9">9. 中段パネル</a></li>
+          <li><a href="#section-10">10. コードパレット</a></li>
+          <li><a href="#section-11">11. 右サイドパネル</a></li>
+          <li><a href="#section-12">12. 五度圏</a></li>
+          <li><a href="#section-13">13. アルペジオ / ベースライン</a></li>
+          <li><a href="#section-14">14. リハモ</a></li>
+          <li><a href="#section-15">15. アレンジャーモード：セットアップとパターン編集</a></li>
+          <li><a href="#section-16">16. アレンジャーモード：演奏</a></li>
+          <li><a href="#section-17">17. ChordPart — 付属 MIDI レシーバー</a></li>
+          <li><a href="#section-18">18. MIDI エクスポートとドラッグ</a></li>
+          <li><a href="#section-19">19. ライセンスとエディション</a></li>
+          <li><a href="#section-20">20. よくある質問 / トラブルシューティング</a></li>
+          <li><a href="#section-21">21. サポート / お問い合わせ</a></li>
       </ul>
     </nav>
 
-    <section id="overview">
-      <h2>1. 製品概要</h2>
-      <p class="tagline">
-        Chord Dock は「コード進行をタイムラインとして編集し、五度圏ガイドを併用しながら設計できる」作曲支援プラグインです。
-      </p>
-      <ul>
-        <li>コードトラック専用のタイムラインエディタ</li>
-        <li>五度圏ビューによるキー / 機能和声ガイド（Extended）</li>
-        <li>コード進行をプリセットとして保存・再利用</li>
-        <li>MIDI ドラッグ&amp;ドロップで DAW トラックへ書き出し</li>
-      </ul>
-      <p>
-        Lite / Extended は共通インストーラーからインストールされ、
-        入力したシリアルキーとオンライン認証によって Extended 版の機能が解放されます。
-      </p>
+    <section id="manual-info">
+      <h2>マニュアル情報</h2>
+<p>DAW 上でのコード進行編集、セクション管理、アルペジオ / ベースライン生成、リハモ、アレンジャーモードによる伴奏演奏、付属レシーバー ChordPart によるパート別 MIDI 出力までをまとめた v2.0 対応マニュアルです。</p>
+<div class="table-wrap">
+<table>
+<thead><tr>
+<th>項目</th>
+<th>内容</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>製品</td>
+<td>Chord Dock（Lite / Extended / Performance）</td>
+</tr>
+<tr>
+<td>同梱プラグイン</td>
+<td>Chord Dock 本体 / ChordPart（レシーバー）</td>
+</tr>
+<tr>
+<td>本マニュアルの対象フォーマット</td>
+<td>VST3 / AAX / AU（ChordPart は VST3 のみ）</td>
+</tr>
+<tr>
+<td>対象バージョン</td>
+<td>v2.0.1</td>
+</tr>
+<tr>
+<td>マニュアルバージョン</td>
+<td>v2.0</td>
+</tr>
+<tr>
+<td>最終更新日</td>
+<td>2026-07-14</td>
+</tr>
+</tbody></table></div>
     </section>
 
-    <section id="editions">
-      <h2>2. エディションとライセンス</h2>
-
-      <h3>2.1 Lite（無料版）</h3>
-      <p>
-        Lite 版はシリアルキーなしで利用できる無償エディションです。
-      </p>
-      <ul>
-        <li>タイムライン上での基本的なコード編集</li>
-        <li>移調・転回・オクターブ変更が可能なコードパレット</li>
-        <li>MIDI ドラッグ&amp;ドロップ</li>
-        <li>編集可能なファクトリープリセット（約 10 種）</li>
-      </ul>
-      <p>シリアルキーを入力しない場合、Chord Dock は自動的に Lite として動作します。</p>
-
-      <h3>2.2 Extended（有料版）</h3>
-      <p>
-        Extended 版は、有料ライセンスをアクティベートすることで利用できる上位版です。
-      </p>
-      <ul>
-        <li>Lite 版のすべての機能</li>
-        <li>五度圏ビュー</li>
-        <li>テンション（9 / 11 / 13）、スラッシュコード、拡張表記</li>
-        <li>ユーザープリセット保存とプリセットの書き出し / 読み込み</li>
-        <li>一部 UI の拡張（Extended 専用スナップなど）</li>
-      </ul>
-
-      <h3>2.3 ライセンスと台数</h3>
-      <ul>
-        <li>1 アカウントにつき 2 台まで同時にアクティベーション可能です。</li>
-        <li><code>設定 → ライセンス管理ページを開く</code> から、認証済みデバイスの確認・解除が行えます。</li>
-        <li>2 台とも埋まっている状態で新しい PC を認証する場合は、不要なデバイスの認証を解除してから再度アクティベーションしてください。</li>
-      </ul>
-    </section>
-
-    <section id="quickstart">
-      <h2>3. クイックスタート（最初の 10 分）</h2>
-      <p class="tagline">
-        初回起動から「コード進行を作り、MIDI を DAW に貼り付ける」までの最短ルートです。
-      </p>
-
-      <h3>3.1 インストールとプラグイン読み込み</h3>
-      <ol>
-	        <li>インストーラーを実行し、OS に応じて VST3 / AU をインストールします（AAX / Pro Tools は準備中）。</li>
-        <li>使用する DAW を起動し、プラグインスキャンを実行します。</li>
-        <li>インストルメントトラックまたは MIDI エフェクトスロットに Chord Dock を挿入します。</li>
-      </ol>
-
-      <h3>3.2 基本レイアウトを把握する</h3>
-      <ul>
-        <li><strong>上部: トップツールバー</strong> — Undo / Redo / 拍子設定 / 保存 / エクスポート / 設定（ギアアイコン）など</li>
-        <li><strong>中央: タイムラインエディタ</strong> — 小節・拍に沿ってコードイベントを並べるエリア</li>
-        <li><strong>下部:コードパレット/右サイドパネル</strong> — コードタイプ、テンション / スラッシュ、ボイシング、プリセット など</li>
-      </ul>
-
-      <h3>3.3 コード進行を入力する</h3>
-      <ol>
-        <li>タイムライン上で、コードを置きたい小節位置をクリックしてインジケーターを移動します。</li>
-        <li>コードパレットからコード種別（例: C, Am7 など）を選択し、ダブルクリックで挿入します。</li>
-        <li>タイムライン上に配置されたコードイベントの右端をクリック＆ドラッグで長さ（小節数 / 拍数）を伸縮できます。</li>
-        <li>同じ要領で数小節分の進行（例: C – Am – F – G）を並べます。</li>
-      </ol>
-
-      <h3>3.4 試聴する</h3>
-      <ol>
-        <li>DAW 側の再生を開始すると同期して内部シンセでコードが再生されます。</li>
-        <li>コードパレットをクリックする事でそのコードの響きをプレビューできます。</li>
-        <li>トップツールバーのスピーカーアイコンで、内部オーディオをミュート / 有効化できます。</li>
-      </ol>
-
-      <h3>3.5 MIDI を DAW へドラッグ&amp;ドロップ</h3>
-      <ol>
-        <li>
-          タイムライン上でコードイベントを選択します。選択方法は以下の通りです。
-          <ul>
-            <li>Ctrl（Mac は ⌘）＋クリック：複数のイベントを追加選択／解除</li>
-            <li>ドラッグで範囲選択：囲んだイベントをまとめて選択（ボックス選択）</li>
-          </ul>
-        </li>
-        <li>
-          タイムライン右端の「MIDI ドラッグ」エリアをクリックしそのままドラッグするとコード進行が
-          DAW トラック上に MIDI クリップとして貼り付けられます。
-        </li>
-      </ol>
-
-      <h3>3.6 Extended 機能を試す（お持ちの場合）</h3>
-      <ul>
-        <li>
-          中段パネルから五度圏ビューを開き、任意のキーからコードを切り替える。
-          <ul>
-            <li>右クリックしてコンテキストメニューを開き、ドラッグ&amp;ドロップでコードパレットのコードを差し替えます。</li>
-            <li>タイムラインに直接配置する事はできません。</li>
-          </ul>
-        </li>
-        <li>コードパレットのコンテキストメニューからテンション（9 / 11 / 13）やスラッシュコードを追加する。</li>
-        <li>ユーザープリセットとして進行を保存し、別プロジェクトで再利用する。</li>
-      </ul>
-    </section>
-
-    <section id="activation">
-      <h2>4. アクティベーション手順（Extended）</h2>
-
-      <div class="activation-grid">
-        <figure>
-          <img
-            src="assets/設定ウィンドウアイコン.png"
-            alt="Chord Dock の設定メニューから設定ウィンドウを開く例"
-          />
-          <figcaption>プラグイン右上のギアアイコンから設定ウィンドウを開きます。</figcaption>
-        </figure>
-        <figure>
-          <img
-            src="assets/設定ウィンドウ日本語.png"
-            alt="Chord Dock のライセンス入力とオンライン認証画面の例"
-          />
-          <figcaption>設定ウィンドウ内の「ライセンス入力…」からシリアル入力とオンライン認証を行います。</figcaption>
-        </figure>
-      </div>
-
-      <h3>4.1 1 台目のアクティベーション</h3>
-      <ol>
-        <li>Extended を購入すると、シリアルキーが発行されます。</li>
-        <li>Chord Dock を起動し、右上のギアアイコンから設定ウィンドウを開きます。</li>
-        <li><q>ライセンス入力…</q> ボタンを押し、表示された入力画面にシリアルキーを入力します。</li>
-        <li>入力が正しい場合、ブラウザが自動で起動します。</li>
-        <li>ブラウザ上で Chord Dock アカウントにログインし、その PC を「認証済みデバイス」として承認します。</li>
-        <li>プラグインに戻り、数秒待つと Extended 機能が有効になります（必要に応じて DAW の再起動を行ってください）。</li>
-      </ol>
-
-      <h3>4.2 2 台目以降のアクティベーション</h3>
-      <ol>
-        <li>2 台目の PC に Chord Dock をインストールします。</li>
-        <li>2 台目でも 設定ウィンドウで <q>ライセンス入力…</q> ボタンを押し、同じシリアルキーを入力します。</li>
-        <li>ブラウザが開いたら、同じアカウントでログインし、その PC を認証します。</li>
-        <li>すでに 2 台とも認証済みの場合は、ライセンス管理ページで不要なデバイスを解除してから再度アクティベーションしてください。</li>
-      </ol>
-
-      <h3>4.3 オフライン利用について</h3>
-      <ul>
-        <li>アクティベーションとデバイス管理時のみオンライン接続が必要です。</li>
-        <li>一度認証が完了した環境では、通常の編集・再生・MIDI エクスポートはオフラインでも利用できます。</li>
-        <li>新しい PC での認証や、デバイス解除、シリアルキーの再取得には再度オンライン接続が必要です。</li>
-      </ul>
-    </section>
-
-    <section id="ui">
-      <h2>5. メイン画面の各部名称</h2>
-
-      <h3>5.1 トップツールバー</h3>
-      <ul>
-        <li>Undo / Redo: 直前の操作を取り消し / やり直し</li>
-        <li>拍子変更: 指定小節に拍子変更イベントを挿入</li>
-        <li>Center: 再生カーソル位置が中央に来るようスクロール</li>
-        <li>Progression: コード進行の保存 / 読み込み</li>
-        <li>Export: タイムライン全体を一括で MIDI エクスポート</li>
-        <li>内部オーディオ: 内部シンセのオン / オフ（MIDI 出力は継続）</li>
-        <li>Settings（ギア）: 設定ウィンドウ（ライセンス・オンライン認証など）を開く</li>
-        <li>Degree View: ディグリービューのオン / オフ</li>
-        <li>Timeline Only: タイムラインのみ表示モードの切り替え</li>
-        <li>一括セクション表示: 全セクションの「中身を表示」を一括で切り替え</li>
-      </ul>
-
-      <h3>5.2 タイムラインエディタ</h3>
-      <ul>
-        <li>水平方向に時間が流れるコードトラックです。</li>
-        <li>小節ごとにメジャーグリッド、拍ごとにサブグリッドが表示されます。</li>
-        <li>コードブロックはドラッグで移動・伸縮・コピーが可能です。</li>
-        <li>スナップ設定で、1 小節単位 / 拍単位 / Extended スナップなどを切り替えられます。</li>
-      </ul>
-
-      <h3>5.3 コードパレット</h3>
-      <ul>
-        <li>現在のキー / スケールに応じたコード候補を一覧表示します。</li>
-        <li>基本コード（トライアド / セブンス）は Lite でも利用でき、テンション / スラッシュなどの拡張は Extended で解放されます。</li>
-        <li>クリックでコードタイプを選択し、タイムラインに配置します。</li>
-      </ul>
-
-      <h3>5.4 プリセットブラウザ（Extended）</h3>
-      <ul>
-        <li>典型的なコード進行をまとめたプリセットを管理します。</li>
-        <li>進行をプリセットとして保存し、他プロジェクトや他 DAW への移行に利用できます。</li>
-        <li>外部ファイルとして書き出し / 取り込みが可能です。</li>
-      </ul>
-
-      <h3>5.5 設定ウィンドウ</h3>
-      <p>
-        <code>設定 → ライセンス</code> では、現在のライセンス状態（Lite / Extended）や、
-        認証済みデバイス、ライセンス管理ページへのリンクなどを確認できます。
-      </p>
-
-      <h3>5.6 セクション（Section Clip）</h3>
-      <p>
-        Verse / Chorus など曲の一部区間を、色付きクリップとしてまとめて扱える機能です。
-      </p>
-      <ul>
-        <li>作成: 複数のコードブロックを選択して <code>Create Section</code> を実行します。</li>
-        <li>移動: クリップをドラッグすると、中身（子コード）も同じ量だけ移動します。</li>
-        <li>制約（通常モード）: セクション範囲内は占有扱いのため、コードを置けません。</li>
-        <li>複製ドラッグ: 修飾キー（Windows: Ctrl / macOS: Option ⌥）を押しながらドラッグします。</li>
-        <li>フォーカス編集: クリップをダブルクリックで Focus Edit Mode に入り、範囲外はグレーアウトして操作できません（Esc で終了）。</li>
-        <li>中身を表示（Reveal Contents）: 通常モードでもセクション内のコードをゴースト表示できます（編集は不可）。</li>
-        <li>解除（Dissolve）: クリップ表示を解除し、中身のコードを通常表示に戻します。</li>
-        <li>色の変更: Extended のみ変更可能です（Lite は購入導線が表示されます）。</li>
-      </ul>
-    </section>
-
-    <section id="faq">
-      <h2>6. よくある質問（抜粋）</h2>
-      <div class="details-box">
-        <details>
-          <summary>Q1. ライセンスは何台まで使えますか？</summary>
-          <div>
-            <p>1 アカウントにつき 2 台まで同時にアクティベーションできます。</p>
-            <p>不要になった PC の認証を解除すると、新しい PC で Extended として利用できます。</p>
-          </div>
-        </details>
-        <details>
-          <summary>Q2. Extended を購入したのに Lite のままです。</summary>
-          <div>
-            <p>次の順番で確認してください。</p>
-            <ul>
-              <li>設定ウィンドウを開き、「ライセンス入力…」からシリアルを再入力したか</li>
-              <li>ブラウザでログインして、この PC が「認証済みデバイス」になっているか</li>
-              <li>設定ウィンドウ上のステータスが Extended になっているか</li>
-              <li>2台上限に達している場合は、不要な端末を解除してから再試行したか</li>
-              <li>それでも駄目な場合、DAW を完全終了→再起動しているか</li>
-            </ul>
-          </div>
-        </details>
-        <details>
-          <summary>Q3. Extended はオフライン環境でも使えますか？</summary>
-          <div>
-            <p>はい。初回アクティベーションとデバイス管理のみオンラインが必要で、通常利用はオフラインで行えます。</p>
-          </div>
-        </details>
-        <details>
-          <summary>Q4. Lite としてだけ使いたいのですが、Extended のシリアルは必要ですか？</summary>
-          <div>
-            <p>必要ありません。シリアル未入力時は自動的に Lite として動作します。</p>
-          </div>
-        </details>
-        <details>
-          <summary>Q5. インストール後に DAW にプラグインが表示されません。</summary>
-          <div>
-            <p>以下を確認してください。</p>
-            <ul>
-              <li>DAW のプラグイン再スキャン</li>
-              <li>DAW の再起動</li>
-	              <li>対応フォーマット（VST3 / AU）が正しくインストールされているか（AAX は準備中）</li>
-            </ul>
-            <p>それでも解消しない場合は、お問い合わせフォームからご連絡ください。</p>
-          </div>
-        </details>
-      </div>
-    </section>
-
-    <section id="support">
-      <h2>7. サポート / 連絡先</h2>
-      <p>
-        製品サイトやアップデート情報、ライセンスに関する詳細は、以下のページもあわせてご覧ください。
-      </p>
-      <ul>
-        <li>
-          製品サイト / ランディングページ:
-          <a class="inline-link" href="index.html">Chord Dock LP（日本語）</a>
-        </li>
-        <li>
-          お問い合わせフォーム:
-          <a class="inline-link" href="https://forms.gle/WPgiSCxY9Mp3v9nc6" target="_blank" rel="noopener noreferrer">Google フォーム</a>
-        </li>
-        <!-- <li>
-          メールでのお問い合わせ:
-          <a class="inline-link" href="mailto:hitori.unicorn@gmail.com">hitori.unicorn@gmail.com</a>
-        </li> -->
-      </ul>
-      <p>
-	        バグ報告や機能要望は、再現手順とご利用の OS / DAW / プラグイン形式（VST3 / AU）を添えてご連絡いただけると助かります（AAX は準備中）。
-      </p>
-    </section>
+<section id="section-1">
+<h2>1. はじめに</h2>
+<p>Chord Dock は、DAW 上でコード進行を作成・編集・試聴・変形・MIDI 出力し、さらにそのコード進行を土台に伴奏を演奏するためのプラグインです。</p>
+<p>バージョン 2.0 では、従来のコード編集系の機能に加えて、次の要素が追加されました。</p>
+<ul>
+<li><strong>アレンジャーモード</strong>: セクションごとに Drums / Bass / Arp / Chord Pad の伴奏パターンを作成し、パッドで演奏・予約しながら曲を進められる Performance エディションの中核機能</li>
+<li><strong>パフォーマンスページ / Song ページ</strong>: 4 パートを俯瞰して演奏する画面と、パターンを曲順に並べて確認する画面</li>
+<li><strong>ChordPart（付属レシーバープラグイン）</strong>: パート別の MIDI を DAW の別トラックへ直接届ける小型プラグイン。プラグイン出力 MIDI をチャンネルで振り分けられない DAW（Ableton Live など）でも、パートごとに好きな音源を鳴らせます</li>
+</ul>
+<p>従来からの主な機能は次のとおりです。</p>
+<ul>
+<li>タイムライン上でのコード進行編集</li>
+<li>セクション管理とフォーカス編集</li>
+<li>コードパレット上のコード編集</li>
+<li>アルペジオ / ベースライン生成</li>
+<li>リハモ候補の比較、プレビュー、適用</li>
+<li>生成ノートのドラッグエクスポート</li>
+</ul>
+<p>このマニュアルは、次のユーザーを想定しています。</p>
+<ul>
+<li>Windows / macOS の DAW ユーザー</li>
+<li>コード先行で作曲 / 編曲したい方</li>
+<li>MIDI クリップを中心に制作する方</li>
+<li>コード進行から伴奏を素早く組み立て、パッドで操作したい方</li>
+</ul>
+<hr />
+</section>
+<section id="section-2">
+<h2>2. 対応環境</h2>
+<h3 id="section-2-1">2.1 対応 OS</h3>
+<ul>
+<li>Windows 10 以降（64-bit）</li>
+<li>macOS 10.15 以降（64-bit）</li>
+</ul>
+<p>32-bit OS には対応していません。</p>
+<h3 id="section-2-2">2.2 対応プラグイン形式</h3>
+<ul>
+<li>Windows: VST3 / AAX</li>
+<li>macOS: VST3 / AU / AAX</li>
+</ul>
+<p>付属の <strong>ChordPart</strong> は、Windows / macOS とも <strong>VST3 のみ</strong>です（Standalone はありません）。実際の同梱形式は配布パッケージに従ってください。</p>
+<h3 id="section-2-3">2.3 対応ホスト / DAW の目安</h3>
+<p>一般的な VST3 / AU / AAX 対応 DAW を想定しています。例:</p>
+<ul>
+<li>Cubase / Nuendo</li>
+<li>Studio One</li>
+<li>Ableton Live</li>
+<li>Bitwig Studio</li>
+<li>Logic Pro</li>
+<li>Pro Tools</li>
+<li>Reaper</li>
+</ul>
+<p>DAW 固有の仕様により、一部挙動が異なる場合があります。ChordPart を使ったパート別ルーティングは、本体と ChordPart を同じ DAW プロジェクト内で使うことが前提です（第 17 章）。</p>
+<hr />
+</section>
+<section id="section-3">
+<h2>3. インストール</h2>
+<h3 id="section-3-1">3.1 配布形式</h3>
+<p>v2.0.1 の配布ファイル:</p>
+<ul>
+<li>Windows: <code>Chord_Dock_2.0.1_windows.zip</code>。ユーザーマニュアル等を同梱した ZIP で、プラグイン本体として <code>Chord Dock.vst3</code> と <code>ChordPart.vst3</code> の 2 つが含まれます</li>
+<li>macOS: <code>Chord_Dock_2.0.1_mac.pkg</code>。本体と ChordPart の両方をインストールするパッケージです</li>
+</ul>
+<p>Windows 版では、インストーラーではなく ZIP 配布を前提とします。ZIP にはマニュアルや付属案内が含まれる場合があります。</p>
+<h3 id="section-3-2">3.2 インストール前の注意</h3>
+<ul>
+<li>すべての DAW を終了してから配置またはインストールを行ってください。</li>
+<li>Windows の ZIP 配布では、<code>.vst3</code> を手動で VST3 フォルダへコピーします。<code>Chord Dock.vst3</code> と <code>ChordPart.vst3</code> の両方をコピーしてください。</li>
+<li>既に Chord Dock が入っている場合は、通常は上書き更新になります。</li>
+<li><strong>本体と ChordPart は必ず同じバージョンのセットで更新してください</strong>（バージョンが異なると ChordPart 側が安全のため停止します。第 17 章）。</li>
+<li>管理者権限が必要になることがあります。</li>
+</ul>
+<h3 id="section-3-3">3.3 代表的なインストール先</h3>
+<ul>
+<li>Windows VST3: <code>C:\Program Files\Common Files\VST3\</code></li>
+<li>Windows AAX: <code>C:\Program Files\Common Files\Avid\Audio\Plug-Ins\</code></li>
+<li>macOS VST3: <code>/Library/Audio/Plug-Ins/VST3/</code></li>
+<li>macOS AU: <code>/Library/Audio/Plug-Ins/Components/</code></li>
+<li>macOS AAX: <code>/Library/Application Support/Avid/Audio/Plug-Ins/</code></li>
+</ul>
+<p>Windows の ZIP 配布を使う場合は、<code>Chord Dock.vst3</code> と <code>ChordPart.vst3</code> を <code>C:\Program Files\Common Files\VST3\</code> へ配置してください。</p>
+<h3 id="section-3-4">3.4 アンインストール方針</h3>
+<ul>
+<li>Windows の ZIP 配布では、配置した <code>.vst3</code>（本体と ChordPart の両方）を削除してアンインストールします。</li>
+<li>macOS では専用アンインストーラーがあればそれを使い、なければプラグインファイルを手動削除します。</li>
+</ul>
+<hr />
+</section>
+<section id="section-4">
+<h2>4. DAW 側の初期設定</h2>
+<h3 id="section-4-1">4.1 プラグインスキャン</h3>
+<p>DAW に Chord Dock が出ない場合は、次を確認してください。</p>
+<ol>
+<li>インストールが正常終了しているか</li>
+<li>Windows では <code>.vst3</code> を標準フォルダへ正しくコピーしたか</li>
+<li>DAW 側で再スキャンしたか</li>
+</ol>
+<p>スキャン後は、<code>Chord Dock</code> と <code>ChordPart</code> の 2 つが DAW のプラグイン一覧に表示されます。</p>
+<h3 id="section-4-2">4.2 基本的なルーティング</h3>
+<p>Chord Dock は主に次のどちらかの使い方を想定しています。</p>
+<ul>
+<li>MIDI を別音源へ送る生成プラグインとして使う</li>
+<li>MIDI を作って書き出す作業台として使う</li>
+</ul>
+<p>基本構成:</p>
+<ol>
+<li>MIDI トラックまたはインストゥルメントトラックに Chord Dock を挿す</li>
+<li>別トラックにソフト音源を挿す</li>
+<li>DAW 側で MIDI をルーティングする</li>
+</ol>
+<p>アレンジャーモードのパート別出力（Drums / Bass / Arp / Chord Pad）を複数の音源へ配る場合は、次の 2 通りがあります。</p>
+<ul>
+<li>DAW の MIDI ルーティングで、Chord Dock の出力をチャンネル別に振り分ける（チャンネルフィルタを持つ DAW 向け）</li>
+<li>付属の <strong>ChordPart</strong> を使って、パートごとに MIDI トラックの入口を作る（Ableton Live などチャンネル分離ができない DAW 向け。第 17 章）</li>
+</ul>
+<h3 id="section-4-3">4.3 プロジェクト保存</h3>
+<p>通常は、Chord Dock の状態は DAW プロジェクトと一緒に保存 / 復元されます。アレンジャーモードのパターンやパッド割当、ChordPart の設定も同様です。</p>
+<hr />
+</section>
+<section id="section-5">
+<h2>5. メイン画面の全体像</h2>
+<p>メイン画面は、主に次のエリアで構成されています。</p>
+<ul>
+<li>トップツールバー</li>
+<li>タイムライン</li>
+<li>中段パネル</li>
+<li>右サイドパネル</li>
+<li>コードパレット</li>
+<li>鍵盤バー</li>
+<li>五度圏、アルペジオ編集、リハモ編集などの補助ウィンドウ</li>
+</ul>
+<p>アレンジャーモードを有効にすると、画面下段はアレンジャー専用の画面（セットアップ / パフォーマンス / Song の 3 ページ）に切り替わります（第 15 章・第 16 章）。</p>
+<hr />
+</section>
+<section id="section-6">
+<h2>6. トップツールバー</h2>
+<figure class="manual-figure">
+<img src="assets/%E3%83%84%E3%83%BC%E3%83%AB%E3%83%90%E3%83%BC.png" alt="トップツールバー" loading="lazy" />
+<figcaption>図: トップツールバー</figcaption>
+</figure>
+<p>トップツールバーには、Chord Dock 全体に関わる操作があります。</p>
+<p>主な項目:</p>
+<ul>
+<li>Undo / Redo</li>
+<li>拍子変更</li>
+<li>センター移動</li>
+<li>Progression メニュー</li>
+<li>MIDI エクスポート</li>
+<li>Degree View</li>
+<li>Timeline Only</li>
+<li>セクション表示切替</li>
+<li>内部オーディオ切替</li>
+<li>Settings / ライセンス</li>
+</ul>
+<p>ビルドによって、配置や文言が少し異なることがあります。</p>
+<hr />
+</section>
+<section id="section-7">
+<h2>7. タイムライン編集</h2>
+<h3 id="section-7-1">7.1 コードイベント</h3>
+<figure class="manual-figure">
+<img src="assets/%E3%82%BF%E3%82%A4%E3%83%A0%E3%83%A9%E3%82%A4%E3%83%B3.png" alt="タイムライン上のコード進行編集" loading="lazy" />
+<figcaption>図: タイムライン上のコード進行編集</figcaption>
+</figure>
+<p>タイムラインは、コード進行を時間軸に沿って編集する中心エリアです。</p>
+<ul>
+<li>コードブロックを配置する</li>
+<li>ドラッグで移動する</li>
+<li>端をドラッグして長さを変える</li>
+<li>クリック位置をカーソルにする</li>
+<li>スナップ設定に従って配置する</li>
+</ul>
+<h3 id="section-7-2">7.2 拍子変更</h3>
+<p>ルーラーから拍子変更を配置できます。変拍子情報は、アルペジオ、リハモ、アレンジャーモードの各画面にも反映されます。</p>
+<h3 id="section-7-3">7.3 タイムライン上のコード編集</h3>
+<figure class="manual-figure">
+<img src="assets/%E3%82%B3%E3%83%B3%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC.png" alt="コードイベントのコンテキストメニュー" loading="lazy" />
+<figcaption>図: コードイベントのコンテキストメニュー</figcaption>
+</figure>
+<p>タイムライン上のコードイベントは、右クリックメニューから直接編集できます。</p>
+<p>現行の編集項目には、次が含まれます。</p>
+<ul>
+<li>コードタイプ</li>
+<li>転回形</li>
+<li>オクターブ</li>
+<li>オンコード</li>
+<li>コード修飾</li>
+<li>テンション</li>
+</ul>
+<p><code>コード修飾</code> サブメニューでは、次を扱います。</p>
+<ul>
+<li><code>omit</code></li>
+<li><code>sus</code></li>
+<li><code>9th</code></li>
+<li><code>b5</code></li>
+<li><code>aug</code></li>
+<li><code>6th</code></li>
+</ul>
+<p>これらはコードパレットと同じ計算ロジックを共有しますが、保存先の状態は独立しています。</p>
+<hr />
+</section>
+<section id="section-8">
+<h2>8. セクション</h2>
+<h3 id="section-8-1">8.1 セクションとは</h3>
+<p>セクションは、複数のコードイベントを Verse / Chorus などのまとまりとして扱うための機能です。</p>
+<h3 id="section-8-2">8.2 セクションの作成</h3>
+<figure class="manual-figure">
+<img src="assets/%E3%82%BB%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E4%BD%9C%E6%88%90%E3%82%92%E9%81%B8%E3%81%B6.png" alt="セクション作成コマンド" loading="lazy" />
+<figcaption>図: セクション作成コマンド</figcaption>
+</figure>
+<ol>
+<li>タイムラインで複数のコードを選択する</li>
+<li>セクション作成コマンドを実行する</li>
+<li>セクション名を入力して確定する</li>
+</ol>
+<h3 id="section-8-3">8.3 通常モード</h3>
+<figure class="manual-figure">
+<img src="assets/%E3%82%BB%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3.png" alt="セクション表示" loading="lazy" />
+<figcaption>図: セクション表示</figcaption>
+</figure>
+<p>通常モードでは:</p>
+<ul>
+<li>セクションは 1 つのまとまりとして扱われる</li>
+<li>移動や複製ができる</li>
+<li>名前変更、色変更、解除ができる</li>
+<li>中身を参照用に表示できる</li>
+</ul>
+<h3 id="section-8-4">8.4 フォーカス編集モード</h3>
+<figure class="manual-figure">
+<img src="assets/%E3%83%95%E3%82%A9%E3%83%BC%E3%82%AB%E3%82%B9%E7%B7%A8%E9%9B%86.png" alt="フォーカス編集モード" loading="lazy" />
+<figcaption>図: フォーカス編集モード</figcaption>
+</figure>
+<figure class="manual-figure">
+<img src="assets/%E3%83%95%E3%82%A9%E3%83%BC%E3%82%AB%E3%82%B9%E3%81%AE%E4%B8%AD%E8%BA%AB%E3%83%A2%E3%83%BC%E3%83%89.png" alt="セクション内部のフォーカス編集" loading="lazy" />
+<figcaption>図: セクション内部のフォーカス編集</figcaption>
+</figure>
+<p>セクションをダブルクリックすると、フォーカス編集モードに入ります。</p>
+<p>このモードでは:</p>
+<ul>
+<li>選択したセクションだけを編集できる</li>
+<li>外側は暗く表示される</li>
+<li>Esc で終了できる</li>
+</ul>
+<h3 id="section-8-5">8.5 セクションと演奏機能</h3>
+<p>アルペジオ、リハモ、アレンジャーモードは、いずれも「選択中のセクション」を単位として動作します。</p>
+<p>アレンジャーモードで演奏に使うセクションには、追加の条件があります。</p>
+<ul>
+<li>セクションが<strong>小節頭から始まり、小節の終端（次の小節頭）で終わる</strong>こと</li>
+<li>長さが 1 小節以上あること</li>
+</ul>
+<p>条件を満たさないセクションは、アレンジャーモードでは「登録はされるが使用不可」として扱われ、セクションランチャー上でグレー表示になります。タイムラインでセクションの開始位置と終了位置を小節境界に揃えると使えるようになります。</p>
+<hr />
+</section>
+<section id="section-9">
+<h2>9. 中段パネル</h2>
+<figure class="manual-figure">
+<img src="assets/%E4%B8%AD%E6%AE%B5%E3%83%91%E3%83%8D%E3%83%AB.png" alt="中段パネル" loading="lazy" />
+<figcaption>図: 中段パネル</figcaption>
+</figure>
+<p>中段パネルには、次のようなタイムライン関連の操作があります。</p>
+<ul>
+<li>挿入長さ</li>
+<li>snap / grid</li>
+<li>センター移動</li>
+<li>言語切替</li>
+<li>アルペジオ / リハモ / アレンジャーの各モードへの入口</li>
+</ul>
+<p>アルペジオモードやリハモモードに入ると、中段パネルの一部はそのモード専用 UI に切り替わります。</p>
+<p>アレンジャーモード中は、中段パネルが演奏用の帯に切り替わり、次のような項目が並びます（詳細は第 15 章・第 16 章）。</p>
+<ul>
+<li><code>アレンジャー</code>: アレンジャーモードの ON / OFF</li>
+<li>ページ切替: <code>Perform</code> / <code>Song</code></li>
+<li><code>MIDI</code> チップ: トリガー入力チャンネル（MIDI 入力）</li>
+<li><code>同期モード</code> チップ: ホスト / プラグイン</li>
+<li><code>Launch</code> チップ: Launch Quantize</li>
+<li><code>自動進行</code> チップ: Auto（セクション / パッドの自動進行）</li>
+<li><code>Part送信</code> チップ: ChordPart への送信（第 17 章）</li>
+<li><code>現在</code> / <code>次回</code> カード: 再生中セクションと予約セクション</li>
+<li><code>演奏設定</code> メニュー: 上記のまとめ窓口</li>
+<li><code>戻る</code>: アレンジャーモードから通常表示へ</li>
+</ul>
+<hr />
+</section>
+<section id="section-10">
+<h2>10. コードパレット</h2>
+<p>コードパレットは、現在の Key / Scale に基づいてコードバブルを並べるエリアです。</p>
+<p>主な操作:</p>
+<ul>
+<li>シングルクリック: 試聴</li>
+<li>ダブルクリック: カーソル位置へ挿入</li>
+<li>右クリック: コード編集メニュー</li>
+</ul>
+<p>コードバブルでは、次のような編集ができます。</p>
+<ul>
+<li>コードタイプ変更</li>
+<li>転回形</li>
+<li>オクターブ</li>
+<li>オンコード</li>
+<li>omit / sus / add9・9th 関連 / b5 / aug / 6th</li>
+<li>テンション</li>
+</ul>
+<p>これらの設定は、そのバブルから新規挿入されるコードへ反映されます。</p>
+<hr />
+</section>
+<section id="section-11">
+<h2>11. 右サイドパネル</h2>
+<figure class="manual-figure">
+<img src="assets/%E5%8F%B3%E3%82%B5%E3%82%A4%E3%83%89%E3%83%91%E3%83%8D%E3%83%AB.png" alt="右サイドパネル" loading="lazy" />
+<figcaption>図: 右サイドパネル</figcaption>
+</figure>
+<figure class="manual-figure">
+<img src="assets/%E3%82%B9%E3%82%B1%E3%83%BC%E3%83%AB%E9%81%B8%E6%8A%9E.png" alt="Key / Scale の選択" loading="lazy" />
+<figcaption>図: Key / Scale の選択</figcaption>
+</figure>
+<figure class="manual-figure">
+<img src="assets/%E3%83%97%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88.png" alt="プリセットメニュー" loading="lazy" />
+<figcaption>図: プリセットメニュー</figcaption>
+</figure>
+<p>右サイドパネルには、全体の和声設定があります。</p>
+<p>主な項目:</p>
+<ul>
+<li>Key</li>
+<li>Scale</li>
+<li>トライアド / テトラッド寄りの表示や振る舞い</li>
+<li>グローバルオクターブ</li>
+<li>プリセット進行</li>
+<li>色 / テーマ設定</li>
+</ul>
+<p>Key や Scale を変えると、コードパレットや五度圏表示も更新されます。</p>
+<hr />
+</section>
+<section id="section-12">
+<h2>12. 五度圏</h2>
+<figure class="manual-figure">
+<img src="assets/%E4%BA%94%E5%BA%A6%E5%9C%8F.png" alt="五度圏ウィンドウ" loading="lazy" />
+<figcaption>図: 五度圏ウィンドウ</figcaption>
+</figure>
+<blockquote>
+<p><strong>対象エディション:</strong> Extended（第 19 章参照）</p>
+</blockquote>
+<p>五度圏ウィンドウは、近親和音や調性感を視覚的に確認するための補助画面です。</p>
+<p>主な使い方:</p>
+<ul>
+<li>関連するコードを見渡す</li>
+<li>調の近さを把握する</li>
+<li>必要に応じてコードパレット側へ反映する</li>
+</ul>
+<p>タイムラインへの直接配置面ではありません。</p>
+<hr />
+</section>
+<section id="section-13">
+<h2>13. アルペジオ / ベースライン</h2>
+<h3 id="section-13-1">13.1 概要</h3>
+<figure class="manual-figure">
+<img src="assets/%E3%82%A2%E3%83%AB%E3%83%9A%E3%82%B8%E3%82%AA%E6%A9%9F%E8%83%BD%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88.png" alt="アルペジオ機能の全体レイアウト" loading="lazy" />
+<figcaption>図: アルペジオ機能の全体レイアウト</figcaption>
+</figure>
+<figure class="manual-figure">
+<img src="assets/%E3%82%A2%E3%83%AB%E3%83%9A%E3%82%B8%E3%82%AA%E3%83%93%E3%83%A5%E3%83%BC.png" alt="アルペジオビュー" loading="lazy" />
+<figcaption>図: アルペジオビュー</figcaption>
+</figure>
+<blockquote>
+<p><strong>対象エディション:</strong> Extended / Performance（第 19 章参照）</p>
+</blockquote>
+<p>アルペジオ機能は、選択セクションのコード進行からノート列を生成するモードです。</p>
+<p>モードは 2 種類あります。</p>
+<ul>
+<li><code>Arpeggio</code></li>
+<li><code>Bassline</code></li>
+</ul>
+<p>どちらも同じ生成基盤を使いますが、音域テーブル、プリセット、見せ方が異なります。</p>
+<h3 id="section-13-2">13.2 セクション制約</h3>
+<ul>
+<li>必ず選択セクションを対象にする</li>
+<li>対象はセクション全体</li>
+<li>16 小節を超えるセクションは読み込めない</li>
+</ul>
+<h3 id="section-13-3">13.3 主なパラメータ</h3>
+<p>現行の主パラメータ:</p>
+<ul>
+<li><code>Range</code> / <code>Spread</code> / <code>Density</code> / <code>Grid</code> / <code>Notes</code> / <code>Tension</code> / <code>Order</code> / <code>Syncopation</code> / <code>Rest</code> / <code>Style</code></li>
+</ul>
+<h3 id="section-13-4">13.4 Range と Spread</h3>
+<p><code>Range</code> は基準音域を選ぶ機能です。<code>Spread Up / Down</code> は、その基準帯域から上下へ許容音域を広げます。</p>
+<p>Bassline では低域側の音域テーブルが通常 Arpeggio と異なります。</p>
+<h3 id="section-13-5">13.5 Notes と Tension</h3>
+<p><code>Notes</code> ポップアップでは、次のような音の役割を選べます。</p>
+<ul>
+<li>Root / 2nd / 3rd / 4th / 5th / 6th / 7th / 9th / Oct</li>
+</ul>
+<p>Tension モード:</p>
+<ul>
+<li><code>Off</code> / <code>On</code> / <code>Only</code></li>
+</ul>
+<h3 id="section-13-6">13.6 Order</h3>
+<p>Arpeggio モードでは、次を選べます。</p>
+<ul>
+<li><code>Up</code> / <code>Down</code> / <code>Up-Down</code> / <code>Random</code></li>
+</ul>
+<p><code>Random</code> も完全ランダムではなく、同一入力なら同一結果になります。</p>
+<p>Bassline では、メイン UI に <code>Order</code> は出しません。</p>
+<h3 id="section-13-7">13.7 Syncopation</h3>
+<p>Syncopation はヒューマナイズではなく、マスクベースの食い機能です。</p>
+<p>設定できるもの:</p>
+<ul>
+<li>ON / OFF</li>
+<li>bar mask / beat mask / sub-step mask</li>
+<li>方向 <code>Ahead / Behind</code></li>
+</ul>
+<p><code>Ahead</code> は前倒し、<code>Behind</code> は開始位置を動かさず長さを後ろへ伸ばします。</p>
+<h3 id="section-13-8">13.8 Rest</h3>
+<p>Rest もマスクベースです。指定した小節 / 拍 / サブステップの位置ではノートを生成しません。</p>
+<h3 id="section-13-9">13.9 Style</h3>
+<p>Arpeggio の現行スタイル:</p>
+<ul>
+<li>Default / Pulse 16 / Up-Down / Wide / Tight / Random Spark / Custom</li>
+</ul>
+<p>Bassline の現行スタイル:</p>
+<ul>
+<li>Default / Root 1/4 / Octave Pulse / Walking / Syncopated / Drone / Custom</li>
+</ul>
+<p>現在のパラメータがプリセットと一致しない場合、表示は <code>Custom</code> になります。</p>
+<h3 id="section-13-10">13.10 ノート編集ウィンドウ</h3>
+<figure class="manual-figure">
+<img src="assets/%E3%82%A2%E3%83%AB%E3%83%9A%E3%82%B8%E3%82%AA%E3%81%AE%E3%83%8E%E3%83%BC%E3%83%88%E7%B7%A8%E9%9B%86%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6.png" alt="アルペジオのノート編集ウィンドウ" loading="lazy" />
+<figcaption>図: アルペジオのノート編集ウィンドウ</figcaption>
+</figure>
+<p>アルペジオには、ピアノロール上でノートを直接編集するウィンドウがあります。</p>
+<p>できること:</p>
+<ul>
+<li>ノート位置と長さの編集</li>
+<li>ズームとスクロール</li>
+<li>プレビュー再生</li>
+<li>編集結果の保存</li>
+<li>再生成へのリセット</li>
+</ul>
+<p>パラメータ変更やスタイル変更を行うと、編集済みノートはクリアされ、再生成結果へ戻ります。</p>
+<h3 id="section-13-11">13.11 ドラッグエクスポート</h3>
+<p>生成されたアルペジオ / ベースラインノートは、そのまま MIDI として DAW へドラッグできます。</p>
+<hr />
+</section>
+<section id="section-14">
+<h2>14. リハモ</h2>
+<h3 id="section-14-1">14.1 概要</h3>
+<figure class="manual-figure">
+<img src="assets/%E3%83%AA%E3%83%8F%E3%83%A2%E6%A9%9F%E8%83%BD%E3%81%AE%E5%85%A8%E4%BD%93%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88.png" alt="リハモ機能の全体レイアウト" loading="lazy" />
+<figcaption>図: リハモ機能の全体レイアウト</figcaption>
+</figure>
+<blockquote>
+<p><strong>対象エディション:</strong> Extended（第 19 章参照）</p>
+</blockquote>
+<p>リハモ機能は、選択セクションのコード進行を、候補を比較しながら再和声化するためのモードです。</p>
+<h3 id="section-14-2">14.2 セクション制約</h3>
+<ul>
+<li>選択セクションを対象にする</li>
+<li>セクション自体は 16 小節以内</li>
+<li>セクション内で選べるリハモ範囲は最大 8 小節</li>
+<li>実際の適用対象コード数は最大 8</li>
+</ul>
+<h3 id="section-14-3">14.3 基本フロー</h3>
+<ol>
+<li>セクションを選ぶ</li>
+<li>範囲を決める</li>
+<li><code>Applied Codes</code> を決める</li>
+<li><code>Core / Enrich / Rebuild</code> を選ぶ</li>
+<li>候補をプレビューする</li>
+<li>必要ならコードをロックする</li>
+<li><code>Show Original</code> で比較する</li>
+<li><code>Apply</code> で確定する</li>
+</ol>
+<h3 id="section-14-4">14.4 Range と Applied Codes</h3>
+<ul>
+<li>範囲は 2 ハンドルスライダーで選ぶ</li>
+<li>リハモ範囲は最大 8 小節</li>
+<li><code>Applied Codes</code> は、その範囲に入っているコードの先頭 N 個</li>
+<li><code>Applied Codes</code> の最大値は 8</li>
+</ul>
+<h3 id="section-14-5">14.5 モード</h3>
+<p><code>Core</code>: 保守的。コード単位の候補、同期生成。</p>
+<p><code>Enrich</code>: 色味や展開を加える。<code>Chord Unit</code> と <code>Progression Unit</code> を持つ。</p>
+<p><code>Rebuild</code>: より大胆な再設計。進行単位中心。<code>T/S/D Fidelity</code> は内部的に無効固定。</p>
+<h3 id="section-14-6">14.6 Show Original</h3>
+<p><code>Show Original</code> は比較表示用トグルです。</p>
+<ul>
+<li>ON: 元進行を表示し、元進行ベースのノートをプレビューする</li>
+<li>OFF: 現在のリハモプレビューへ戻る</li>
+<li>ON のまま Apply すると、プレビューを破棄して元進行を維持する</li>
+</ul>
+<h3 id="section-14-7">14.7 候補プレビュー</h3>
+<p>候補はまずプレビュー用データへ適用され、いきなりタイムライン本体を書き換えません。</p>
+<p>そのため:</p>
+<ul>
+<li>元のタイムラインは即時上書きされない</li>
+<li>プレビューに実変更があるときだけ <code>Apply</code> が有効になる</li>
+<li>分割候補では 1 つのコードから 2 イベントが作られることがある</li>
+<li><code>Apply</code> で確定するまでは、次の候補生成も元の対象進行を基準に行われる</li>
+<li>まだ未確定のプレビュー結果を土台にして、さらに別のリハモ候補へ連鎖させることはない</li>
+</ul>
+<h3 id="section-14-8">14.8 コードロック</h3>
+<p>リハモでは、対象コードを persistent ID 単位でロックできます。</p>
+<p>ロックしたコードは:</p>
+<ul>
+<li>候補再生成時に保持される</li>
+<li>現在のプレビュー状態を維持したまま扱われる</li>
+</ul>
+<h3 id="section-14-9">14.9 編集ウィンドウ</h3>
+<figure class="manual-figure">
+<img src="assets/%E3%83%AA%E3%83%8F%E3%83%A2%E7%B7%A8%E9%9B%86%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6%E3%82%B3%E3%83%BC%E3%83%89%E5%8D%98%E4%BD%8D%E7%94%9F%E6%88%90.png" alt="リハモ編集ウィンドウ: コード単位生成" loading="lazy" />
+<figcaption>図: リハモ編集ウィンドウ（コード単位生成）</figcaption>
+</figure>
+<figure class="manual-figure">
+<img src="assets/%E3%83%AA%E3%83%8F%E3%83%A2%E7%B7%A8%E9%9B%86%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6%E3%81%AE%E9%80%B2%E8%A1%8C%E5%8D%98%E4%BD%8D%E7%94%9F%E6%88%90.png" alt="リハモ編集ウィンドウ: 進行単位生成" loading="lazy" />
+<figcaption>図: リハモ編集ウィンドウ（進行単位生成）</figcaption>
+</figure>
+<p>リハモ編集ウィンドウでは、次のような詳細操作ができます。</p>
+<ul>
+<li>Key / Scale 表示</li>
+<li>play / stop、save / reset</li>
+<li><code>Show Original</code>、<code>Core / Enrich / Rebuild</code>、<code>Generation Unit</code></li>
+<li>loop、<code>T/S/D Fidelity</code>、各種フィルタ、intent ノブ</li>
+<li>候補説明カード、seed 説明、ミニタイムライン編集</li>
+</ul>
+<p>再生まわりの現在仕様:</p>
+<ul>
+<li>DAW 再生開始時は、リハモのプレビュー再生音は停止する</li>
+<li>ただし、まだ <code>Apply</code> していないリハモ結果は編集ウィンドウ上に保持される</li>
+<li>DAW を再生しただけで、未確定のリハモプレビューが元進行へ戻ることはない</li>
+</ul>
+<h3 id="section-14-10">14.10 Apply と Undo</h3>
+<p>リハモの適用では:</p>
+<ul>
+<li>確認ダイアログを出す</li>
+<li>選択範囲内だけを書き換える</li>
+<li>必要なら既存イベントを置換し、分割イベントを追加する</li>
+<li>ノートを再生成する</li>
+<li>Undo 上では <code>Reharmo Apply</code> として記録する</li>
+</ul>
+<hr />
+</section>
+<section id="section-15">
+<h2>15. アレンジャーモード：セットアップとパターン編集</h2>
+<h3 id="section-15-1">15.1 概要</h3>
+<figure class="manual-figure">
+<img src="assets/arranger-setup.png" alt="アレンジャーモード セットアップページ" loading="lazy" />
+<figcaption>図: アレンジャーモード（セットアップページ）</figcaption>
+</figure>
+<blockquote>
+<p><strong>対象エディション:</strong> Performance（第 19 章参照）</p>
+</blockquote>
+<p>アレンジャーモードは、タイムライン上のコード進行を「演奏できる伴奏」に変える機能です。セクションごとに 4 パート（Drums / Bass / Arp / Chord Pad）の伴奏パターンを作り、パッドで呼び出しながら曲を進められます。</p>
+<p><strong>パターン生成の仕組み</strong></p>
+<p>アレンジャーモードは基本的に、ユーザーが自分で伴奏パターンを作成・編集するための仕組みです。</p>
+<p>アレンジャーモードは、AI 生成、クラウド生成、または完全なランダム再生を行う機能ではありません。パターンは、パッドに保存される編集可能なリズムと音楽的役割のテンプレートです。プリセットやランダム生成コマンドは開始点を作るための機能で、その後は通常のパターンとして自由に編集できます。</p>
+<p>Chord Dock が Bass / Arp / Chord Pad をプレビュー、演奏、または MIDI 書き出しするときは、選択中セクションのコード進行を読み取り、パターン内のタイミングとコードに対する役割を実際の MIDI ノートへ変換します。同じパターンを別のコード進行で使った場合も、リズムと役割は保たれ、実際に鳴る音程だけが新しいコードに追従します。</p>
+<p>全体のワークフロー:</p>
+<ol>
+<li>タイムラインでコード進行を作り、セクションにまとめる（第 8 章）</li>
+<li>アレンジャーモードを ON にする</li>
+<li>パートごとにパターンを作成し、パッドへ割り当てる（本章）</li>
+<li>セクションランチャーやパッドで演奏する。必要に応じて Song ページで曲順に並べる（第 16 章）</li>
+<li>できあがったパターンは MIDI としてドラッグして DAW へ書き出せる</li>
+</ol>
+<h3 id="section-15-2">15.2 対象エディションとデモ版</h3>
+<ul>
+<li>アレンジャーモードは <strong>Performance</strong> エディションの機能です。</li>
+<li>Lite / Extended など Performance を持たないエディションでも、<strong>Arranger Mode Demo</strong> として基本操作を試せます（制限あり。下記）。</li>
+<li>Performance / Full Bundle では制限が解除され、全パッドと MIDI 書き出しが使えます。</li>
+<li>演奏にはセクションが必要です。セクションは<strong>小節頭から始まり、小節の終端で終わる</strong>必要があります（第 8.5 節）。</li>
+<li>条件を満たさないセクションを選ぶと、開始位置と終了位置を小節境界に揃えるよう案内が表示されます。</li>
+</ul>
+<p><strong>デモ版で試せること</strong></p>
+<ul>
+<li>アレンジャーモードを開き、セットアップ / パフォーマンス / Song の各ページを操作する</li>
+<li>セクションの確認・選択、セクションランチャーの操作</li>
+<li>各パートの Pad 1〜3 でパターンを作成・編集・プレビューし、開始点としてのランダム生成も試せる</li>
+<li>Pad 1〜3 を使った Song ページの配置・再生</li>
+</ul>
+<p><strong>デモ版の制限</strong></p>
+<ul>
+<li><strong>実再生時間は累積 90 秒まで</strong>です。アレンジャーが実際に演奏・出力している時間だけがカウントされ、画面を開いているだけ・編集しているだけの時間は消費しません。</li>
+<li>各パートで使えるのは <strong>Pad 1〜Pad 3</strong> までです。<strong>Pad 4〜Pad 8</strong> は表示されますが使用できません（不具合ではなく、デモ版の仕様です）。</li>
+<li>アレンジャー由来の <strong>MIDI 書き出し / ドラッグエクスポートは使用できません</strong>。</li>
+<li>残り時間が少なくなると警告が表示され（例: <code>Arranger Demo - 残り 00:15</code>）、0 になるとアレンジャーの再生・トリガー・編集・MIDI 出力がロックされます。</li>
+</ul>
+<p><strong>デモ残り時間について</strong></p>
+<ul>
+<li>デモ残り時間はプロジェクトに保存されません。DAW プロジェクトを開き直すか、プラグインを挿し直すと 90 秒に戻ります。</li>
+<li>Pad 4〜8 に既存データがあっても、デモ制限で削除されることはありません。Performance / Full Bundle で開けば全パッドが使えます。</li>
+</ul>
+<h3 id="section-15-3">15.3 アレンジャーモードの開始と 3 つのページ</h3>
+<p>中段パネルの <code>アレンジャー</code> ボタンでアレンジャーモードに入ります。画面下段がアレンジャー専用画面に切り替わり、次の 3 ページを行き来できます。</p>
+<ul>
+<li><strong>セットアップページ</strong>: パートとパッドの管理、パターン編集の入口。アレンジャー ON 直後はこのページです。</li>
+<li><strong>パフォーマンスページ</strong>: <code>Perform</code> で開く演奏用画面。4 パート×8 パッドを一覧します（第 16.8 節）。</li>
+<li><strong>Song ページ</strong>: <code>Song</code> で開く曲構成画面。パターンを曲順に配置します（第 16.9 節）。</li>
+</ul>
+<p>各ページからは <code>戻る</code> ボタン、または Esc キーで戻れます。アレンジャーモード中は、PC キーボードの数字キー 1〜8 がセクションランチャーに割り当てられます（第 16.1 節）。</p>
+<h3 id="section-15-4">15.4 パートと MIDI チャンネル</h3>
+<p>アレンジャーモードは、次の 4 パートで構成されます。</p>
+<ul>
+<li><code>Drums</code>: 既定 Ch10。固定のドラムレーンを MIDI ノートへ割り当てて使います。</li>
+<li><code>Bass</code>: 既定 Ch14。編集方式に応じて、コード相対の役割パターン、または絶対音高の MIDI Roll を使えます。</li>
+<li><code>Arp</code>: 既定 Ch15。分散フレーズ向けのコードトーン役割パターンを使います。</li>
+<li><code>Chord Pad</code>: 既定 Ch16。白玉やリズム弾き向けのコードトーン役割パターンを使います。</li>
+</ul>
+<p>各パートの MIDI チャンネルは、パターンエディタ内の <code>MIDIチャンネル</code> から変更できます。プレビュー、ドラッグエクスポート、ライブ再生はすべてこの設定に従います。</p>
+<p>パート別に別々の音源を鳴らす方法は 2 通りあります。</p>
+<ul>
+<li>DAW の MIDI ルーティングでチャンネル別に振り分ける</li>
+<li>付属の ChordPart を使う（第 17 章）。この場合、パート同士のチャンネルが重複しないようにしてください</li>
+</ul>
+<h3 id="section-15-5">15.5 パッドとパターンセット</h3>
+<p>各パートは 8 個のパッドを持ちます。Pad 1〜7 が主要パッド、Pad 8 は補助パッド扱いです。</p>
+<p>さらにパートごとに <code>パターンセット</code>（<code>セットA</code> / <code>セットB</code>）を持ち、パッド 8 個×2 セットを切り替えて使えます。</p>
+<p>選択中パッドの情報は<strong>パッドインスペクター</strong>に表示され、次の操作ができます。</p>
+<ul>
+<li><code>編集</code>: パターンエディタを別ウィンドウで開く（空パッドの場合は新規作成）</li>
+<li><code>コピー</code> / <code>ペースト</code>: パッド間でパターンを複製する（<code>上書き</code> 確認あり）</li>
+<li><code>クリア</code>: パッドの割当を解除する</li>
+<li><code>演奏停止</code>: そのパートの演奏を止める</li>
+<li><code>スタンバイにする</code>: 音を出さずにパッドを待機状態にする</li>
+</ul>
+<p>パッドの右クリックメニューからも同じ操作ができます。</p>
+<p><code>スタンバイ Pad 1</code> ボタンは、パターンが割り当てられている全パートの Pad 1 をまとめて無音で待機させます。DAW を再生した瞬間から伴奏を鳴らしたいときは、再生前にこれを押しておきます。</p>
+<p>デモ版では、各パートで使えるのは Pad 1〜3 までです（第 15.2 節）。Pad 4〜8 は表示されますが選択できません。</p>
+<h3 id="section-15-6">15.6 パターンエディタの共通操作</h3>
+<p>パターン編集は、パートごとの専用エディタを<strong>別ウィンドウ</strong>で開いて行います。表示とプレビューは「選択中セクション」を基準にします。</p>
+<p>共通の設定・操作:</p>
+<ul>
+<li><code>パターン名</code>: パッドに表示される名前</li>
+<li><code>プリセット</code>: スタイルの雛形を呼び出す（第 15.10 節）</li>
+<li><code>パターン長</code>: 拍数で指定。セクションより短いパターンはループして追従します</li>
+<li><code>グリッド</code>: スナップ / ガイド解像度（1/4、1/8、1/8T、1/16、1/16T、1/32）。ノートの実長は保持されます</li>
+<li><code>ズーム</code> / 横スクロール: 長いパターンも潰さずに編集できます</li>
+<li>Play / Stop: エディタ内プレビュー再生</li>
+<li><code>プレビューループ</code>: ループ範囲を「セクション」か「パターン」から選択</li>
+<li><code>MIDIチャンネル</code>: このパートの出力チャンネル（第 15.4 節）</li>
+</ul>
+<p>グリッドセルでの基本編集:</p>
+<ul>
+<li>クリックでノートを配置、左ドラッグで連続配置</li>
+<li>右クリックで削除、右ドラッグで連続削除</li>
+<li>ノート右端のドラッグで長さを延長</li>
+<li>空セル = 休符、横方向の継続 = 長いノート（専用の休符 / タイ行はありません）</li>
+</ul>
+<p>上段にはセクションのコードリボンと小節 / 拍ガイドが表示され、拍子変更にも追従します。</p>
+<h3 id="section-15-7">15.7 Drums エディタ</h3>
+<figure class="manual-figure">
+<img src="assets/drum-editor.png" alt="Drums パターンエディタ" loading="lazy" />
+<figcaption>図: Drums パターンエディタ</figcaption>
+</figure>
+<p>Drums はレーン式のステップエディタです。キック / スネアなどの打楽器レーンを縦に並べ、レーン×グリッドでパターンを組みます。</p>
+<ul>
+<li>各レーンは MIDI ノート（GM 配列準拠の初期値）に対応します</li>
+<li>レーン名をクリックすると、そのレーンの MIDI ノート割り当てを変更できます</li>
+<li><code>初期化</code> でノート割り当てを既定値へ戻せます</li>
+</ul>
+<p>ドラム音源のマッピングが GM と異なる場合は、レーン割り当てを音源側に合わせて調整してください。</p>
+<h3 id="section-15-8">15.8 Bass エディタ</h3>
+<figure class="manual-figure">
+<img src="assets/bass-editor-rolelane.png" alt="Bass パターンエディタ（Chord-Role Sequencer）" loading="lazy" />
+<figcaption>図: Bass パターンエディタ（Chord-Role Sequencer）</figcaption>
+</figure>
+<figure class="manual-figure">
+<img src="assets/bass-editor-midiroll.png" alt="Bass パターンエディタ（MIDI Roll）" loading="lazy" />
+<figcaption>図: Bass パターンエディタ（MIDI Roll）</figcaption>
+</figure>
+<p>Bass エディタは、<code>編集方式</code>（パターン種別）を 2 つから選べます。切り替えるとパターン内容は作り直しになるため、確認ダイアログが表示されます。</p>
+<p><strong>Chord-Role Sequencer</strong></p>
+<ul>
+<li>縦軸が「コードに対する役割」のレーンになったシーケンサーです。下から Root、3rd、5th … Octave の順に並び、11th / 13th / SlashBass などの行も扱えます</li>
+<li>同じパターンを別のコード進行のセクションで使っても、役割どおりの音に読み替えられて鳴ります</li>
+<li><code>Role Mode</code>: <code>Chord Tone</code>（構成音のみ入力可能。非構成音のセルは入力不可）/ <code>Chromatic</code>（半音単位で自由入力）</li>
+<li>コード境界を跨ぐ長いノートは、ノート開始時点のコードで実音が決まり、そのまま保持されます</li>
+</ul>
+<p><strong>MIDI Roll（ピアノロール）</strong></p>
+<ul>
+<li>絶対音高で入力する、DAW に近い操作感のピアノロールです</li>
+<li>ノートの移動、複製ドラッグ、複数選択（範囲選択）、グループ移動 / リサイズ、コピー / カット / ペースト / 複製に対応します。配置できない場所へのペーストは失敗表示が出ます</li>
+<li><code>上下オクターブ</code>（低域 / 高域、なし〜+3oct）で、表示 / 入力できる音域を上下へ広げられます。範囲を狭める際、範囲外にノートがある場合は削除の確認が表示されます</li>
+</ul>
+<h3 id="section-15-9">15.9 Arp / Chord Pad エディタ</h3>
+<p>Arp と Chord Pad は、Bass と同じロールレーン系のエディタを使います。主な違いは次のとおりです。</p>
+<ul>
+<li>Arp / Chord Pad は<strong>セクションコード内の構成音のみ</strong>を扱います（コードトーン固定）</li>
+<li>Arp は分散フレーズ、Chord Pad は和音の白玉 / リズム弾きを想定した初期設定とプリセットを持ちます</li>
+</ul>
+<p>役割レーンで組む点は Bass と同じなので、コード進行を差し替えてもパターンがそのまま流用できます。</p>
+<h3 id="section-15-10">15.10 プリセットとドラッグエクスポート</h3>
+<p>各エディタの <code>プリセット</code> から、パートごとのスタイル雛形を呼び出せます。呼び出した後は通常のパターンとして自由に編集できます。</p>
+<p>エディタ上のドラッグエリアから、パターンを MIDI として DAW へドラッグできます。書き出される範囲は <code>プレビューループ</code> の選択（セクション / パターン）に従い、エクスポート内容は画面上に表示されます。</p>
+<p>デモ版では、ドラッグエクスポートおよびアレンジャー由来の MIDI 書き出しは使用できません（第 15.2 節）。</p>
+<hr />
+</section>
+<section id="section-16">
+<h2>16. アレンジャーモード：演奏</h2>
+<h3 id="section-16-1">16.1 セクションランチャー</h3>
+<figure class="manual-figure">
+<img src="assets/section-launcher.png" alt="セクションランチャー" loading="lazy" />
+<figcaption>図: セクションランチャー</figcaption>
+</figure>
+<p>タイムライン下部の<strong>セクションランチャー</strong>には、セクションが 8 スロット並びます。</p>
+<ul>
+<li>クリック / PC キーボードの数字キー 1〜8（テンキー可）/ MIDI ノートで、そのセクションの演奏を予約できます</li>
+<li>スロットはドラッグで並び替えできます（右クリックメニューで「左へ移動 / 右へ移動 / 先頭へ / 末尾へ」も可能）。並び順はプロジェクトに保存されます</li>
+<li>小節境界の条件（第 8.5 節）を満たさないセクションはグレー表示になり、選択・演奏できません</li>
+</ul>
+<p>Ctrl / Cmd / Alt を押しながらの数字キーは対象外です。DAW 側が数字キーを先に受け取る設定になっている場合は、プラグイン側での動作を保証できないことがあります。</p>
+<h3 id="section-16-2">16.2 現在 / 次回（予約制の切り替え）</h3>
+<figure class="manual-figure">
+<img src="assets/arranger-middle-panel.png" alt="アレンジャーモード中の中段パネル" loading="lazy" />
+<figcaption>図: アレンジャーモード中の中段パネル</figcaption>
+</figure>
+<p>アレンジャーモードの演奏は<strong>予約制</strong>です。セクションやパッドを押しても即座には切り替わらず、いったん「次回」として予約され、設定したタイミングで切り替わります。</p>
+<ul>
+<li>中段パネルの <code>現在</code> / <code>次回</code> カードに、再生中のセクションと予約中のセクションが表示されます（セクション色付き）</li>
+<li>パッド表示は、再生中 = ハイライト、予約中 = 薄いハイライトです</li>
+<li>DAW が停止中の場合は予約制ではなく、パッドを押すと<strong>即時に試聴再生</strong>されます（パターン長でループ）。同じパッドをもう一度押すと止まります</li>
+<li>再生中に現在のパッドをもう一度クリックすると、そのパートの演奏を停止します。停止しても予約済みパッドは残り、予定どおり切り替わります</li>
+</ul>
+<h3 id="section-16-3">16.3 Launch Quantize</h3>
+<p><code>Launch Quantize</code> は、セクション予約が確定するタイミングを決めます。</p>
+<ul>
+<li><code>次の小節</code>: 次の小節頭で切り替わる</li>
+<li><code>セクション終端</code>: 現在のセクションを最後まで演奏してから切り替わる</li>
+</ul>
+<p>中段パネルの <code>Launch</code> チップ、または <code>演奏設定</code> メニューから変更できます。</p>
+<h3 id="section-16-4">16.4 同期モード（ホスト / プラグイン）</h3>
+<p><code>同期モード</code> は、曲の進行位置を誰が管理するかを決めます。</p>
+<ul>
+<li><code>ホスト</code>: DAW の再生位置に完全追従します。DAW が短い区間をループしていれば、Chord Dock も同じ区間を繰り返します。DAW のタイムラインで曲全体を管理するワークフロー向けです</li>
+<li><code>プラグイン</code>: DAW の再生 / テンポだけを受け取り、セクションの進行は Chord Dock 内部で管理します。DAW 側が短い区間をループしていても、パッド操作で Verse → Chorus → … と曲を進められます。ライブ演奏や構成の試作向けです</li>
+</ul>
+<p><code>プラグイン</code> 進行中のタイムライン再生ヘッドは、内部進行上の位置を表示します。</p>
+<h3 id="section-16-5">16.5 パッド切り替え（タイミング / 再生位置）</h3>
+<p>同じパート内でパッド（パターン）を切り替えるときの挙動は、2 つの設定で決まります。</p>
+<p><strong>タイミング</strong> — いつ切り替えるか:</p>
+<ul>
+<li><code>次の小節</code>: 次の小節頭で切り替える</li>
+<li><code>パターン終端</code>: 現在のパターンを最後まで演奏してから切り替える</li>
+</ul>
+<p><strong>再生位置</strong> — 切り替え後にどこから鳴らすか:</p>
+<ul>
+<li><code>Bar Lock</code>: セクション内の小節位置を保ったまま切り替える（例: 4 小節目で切り替えたら、新しいパターンも同じ小節位置から鳴る）</li>
+<li><code>Restart</code>: 切り替えた時点を頭として、パターンを頭出しで再生する</li>
+</ul>
+<h3 id="section-16-6">16.6 自動進行（Auto）</h3>
+<p><code>自動進行</code> を有効にすると、パッドを押し続けなくても伴奏が自動で進みます。<code>セクション</code> と <code>パッド</code> はそれぞれ独立したトグルで、片方だけ / 両方 / どちらもオフ、を自由に選べます。</p>
+<ul>
+<li><code>セクション</code>: 現在のセクションが終端に達すると、タイムライン上の次のセクションを自動で予約して進みます。手動で予約した場合はそちらが優先されます</li>
+<li><code>パッド</code>: 現在のパターンが終端に達すると、同じパートの次の割当済みパッドを自動で予約します。パッドを順番に作っておくと、パターンが自動で展開していきます</li>
+</ul>
+<p>自動予約は DAW を停止するとクリアされます。</p>
+<h3 id="section-16-7">16.7 MIDI トリガー（MIDI 入力とノートマップ）</h3>
+<p>セクションランチャーとパッドは、MIDI ノートでも操作できます。外部キーボードやパッドコントローラーからの演奏に使えます。</p>
+<ul>
+<li><code>MIDI</code> チップ（MIDI 入力）: トリガーとして監視する入力チャンネルを選びます。<code>Omni</code>（既定）はすべてのチャンネルに反応します</li>
+<li>トリガーノートはパッドを呼び出すための信号で、そのまま音として出力されることはありません</li>
+</ul>
+<p>トリガーノートの割り当て:</p>
+<ul>
+<li>セクションランチャー Slot 1〜8: <code>C0 D0 E0 F0 G0 A0 B0 A#0</code>（ノート番号 12, 14, 16, 17, 19, 21, 23, 22）</li>
+<li>Drums Pad 1〜8: <code>C1〜B1</code> + <code>A#1</code>（24, 26, 28, 29, 31, 33, 35, 34）</li>
+<li>Bass Pad 1〜8: <code>C2〜B2</code> + <code>A#2</code>（36, 38, 40, 41, 43, 45, 47, 46）</li>
+<li>Arp Pad 1〜8: <code>C3〜B3</code> + <code>A#3</code>（48, 50, 52, 53, 55, 57, 59, 58）</li>
+<li>Chord Pad Pad 1〜8: <code>C4〜B4</code> + <code>A#4</code>（60, 62, 64, 65, 67, 69, 71, 70）</li>
+</ul>
+<p>音名は「ノート番号 60 = C4」の表記です。DAW によっては同じノート番号を 1 オクターブ違う音名（60 = C3 など）で表示するため、ノート番号での確認をおすすめします。</p>
+<h3 id="section-16-8">16.8 パフォーマンスページ</h3>
+<figure class="manual-figure">
+<img src="assets/performance-view.png" alt="パフォーマンスページ" loading="lazy" />
+<figcaption>図: パフォーマンスページ</figcaption>
+</figure>
+<p><code>Perform</code> で開くパフォーマンスページは、演奏に集中するための画面です。</p>
+<ul>
+<li>4 パート×8 パッド = 32 パッドを同時に表示します</li>
+<li>各パート行の左側にパート名・MIDI チャンネル・<code>セットA / セットB</code>、右側に割当パターンの表示があります</li>
+<li>上部にはコンパクトなタイムラインが表示され、曲のどこを演奏しているかを見失いません</li>
+<li>セクションランチャー、数字キー、MIDI トリガーはこのページでも有効です</li>
+<li><code>セットアップへ戻る</code> または Esc でセットアップページへ戻ります</li>
+</ul>
+<h3 id="section-16-9">16.9 Song ページ</h3>
+<figure class="manual-figure">
+<img src="assets/song-page.png" alt="Song ページ" loading="lazy" />
+<figcaption>図: Song ページ</figcaption>
+</figure>
+<p><code>Song</code> で開く Song ページでは、パッドのパターンを曲順に沿って並べ、「どのセクションでどのパターンを鳴らすか」を 1 枚の画面で組み立てられます。</p>
+<p>画面構成:</p>
+<ul>
+<li>上段: 曲全体の俯瞰（タイムラインのセクション並びがそのまま曲順になります）</li>
+<li>中段: セクションのコード表示と、Drums / Bass / Arp / Chord Pad の 4 レーン（パッドクリップ配置エリア）</li>
+<li>下段: パッド一覧（このページでは演奏用ではなく、配置するパターンの選択元です）</li>
+</ul>
+<p>パッドクリップの編集:</p>
+<ul>
+<li>下段でパッドを選び、対応するパートのレーンをクリックして配置。またはパッドからレーンへドラッグ＆ドロップ</li>
+<li>クリップはドラッグで移動、右端ドラッグで長さ変更、Delete / Backspace で削除、右クリックメニューで複製 / 削除</li>
+<li>同じレーン内でクリップは重なりません（空きに合わせて自動的に長さが調整されます）</li>
+<li>配置 / 移動 / 伸縮 / 複製 / 削除はすべて Undo / Redo できます</li>
+</ul>
+<p>再生:</p>
+<ul>
+<li>DAW 停止中は、ヘッダーの Play / Stop で Song 配置を内部再生できます。Stop 後の Play は停止位置から再開します</li>
+<li>DAW 再生中は、ホストの再生位置に合わせて Song 配置が自動的に鳴ります（このときヘッダーの Play は無効表示になります）</li>
+<li>Song 再生はループしません。曲を頭から通して確認する用途を想定しています</li>
+</ul>
+<h3 id="section-16-10">16.10 保存・復元と Undo</h3>
+<ul>
+<li>パッド割当、パターン内容、パターンセット選択、ランチャーの並び順、Song ページの配置、同期モードなどの演奏設定は、DAW プロジェクトと一緒に保存 / 復元されます</li>
+<li>パッド割当の変更、パターン編集、Song のクリップ編集は Undo 対象です</li>
+<li>演奏中の一時的な操作（予約、再生位置など）は Undo 対象ではなく、保存もされません。プロジェクトを開き直したときは停止状態から始まります</li>
+</ul>
+<hr />
+</section>
+<section id="section-17">
+<h2>17. ChordPart — 付属 MIDI レシーバー</h2>
+<h3 id="section-17-1">17.1 どんなときに使うか</h3>
+<p>Chord Dock はアレンジャーの 4 パートをパート別の MIDI チャンネルで出力しますが、DAW によっては「プラグインが出力する MIDI をチャンネルで振り分けて別トラックの音源に送る」配線ができません（代表例: Ableton Live）。</p>
+<p><strong>ChordPart</strong> は、この制約を回避するための小型プラグインです。Chord Dock 本体からパート別 MIDI を直接受け取り、置いたトラックの MIDI 出力として渡します。これにより、各パートを普通の MIDI トラックの入口として使い、DAW 内蔵音源を含む任意の音源をパートごとに鳴らせます。</p>
+<ul>
+<li>リアルタイム演奏が不要な場合は、MIDI ドラッグ / エクスポートでパート別トラックを作る方法でも代用できます</li>
+<li>DAW がチャンネルフィルタ付きの MIDI ルーティングを持つ場合は、ChordPart を使わずに振り分けることもできます</li>
+</ul>
+<h3 id="section-17-2">17.2 仕組みと遅延</h3>
+<p>本体と ChordPart は、DAW のトラック配線を通らない内部バスで直結されます。同じ DAW プロジェクト内に両方が読み込まれていれば、追加の配線なしで接続されます。</p>
+<ul>
+<li>追加の遅延は最大でもオーディオバッファ 1 個分で、量は一定です（揺れません）</li>
+<li><strong>推奨バッファサイズは 128〜256 サンプル</strong>です。この範囲なら、本体直系の音とのずれは実用上気にならない範囲（約 3〜6ms）に収まります</li>
+<li>512 サンプルでも動作しますが、推奨しません。場合によっては最大約 11ms のずれになるためです</li>
+</ul>
+<h3 id="section-17-3">17.3 セットアップ手順</h3>
+<figure class="manual-figure">
+<img src="assets/live12-routing.png" alt="Ableton Live 12 でのルーティング例" loading="lazy" />
+<figcaption>図: Ableton Live 12 でのルーティング例</figcaption>
+</figure>
+<p>Ableton Live 12 を例にした基本手順です（他の DAW でも考え方は同じです）。</p>
+<ol>
+<li>トラック A に Chord Dock 本体を挿し、中段パネルの <code>Part送信</code> チップをクリックして ON にする（<code>演奏設定</code> メニューの <code>ChordPart へ送信</code> でも同じです）</li>
+<li>トラック B1〜B4 に ChordPart を 1 つずつ挿し、各インスタンスの <code>Part</code> を Drums / Bass / Arp / Chord Pad に設定する</li>
+<li>音源トラック C1〜C4 に任意の音源（Live 内蔵音源も可）を置き、<code>MIDI From</code> で対応する B トラック（ChordPart）を選び、<code>Monitor = In</code> にする</li>
+<li>アレンジャーモードで演奏すると、各パートが対応する音源トラックで鳴ります</li>
+<li>C トラックをアームして録音すれば、パート別の MIDI クリップとして記録できます</li>
+</ol>
+<p>使うパートだけセットアップしてもかまいません（例: Drums と Bass の 2 パートだけ）。</p>
+<h3 id="section-17-4">17.4 ChordPart の画面</h3>
+<figure class="manual-figure">
+<img src="assets/chordpart-ui.png" alt="ChordPart の画面" loading="lazy" />
+<figcaption>図: ChordPart の画面</figcaption>
+</figure>
+<p>ChordPart はコンパクトな 1 画面のプラグインです（正式名称: ChordDock Part Receiver）。</p>
+<ul>
+<li><code>Part</code>: 受け取るパート（Drums / Bass / Arp / Chord Pad）</li>
+<li><code>出力Ch</code>: このトラックへ出力する MIDI チャンネル（1〜16、既定 1）</li>
+<li><code>MIDI Thru</code>: ON にすると、ホストからこのトラックに入ってくる MIDI 入力をパート出力に混ぜます（既定 OFF）</li>
+<li>状態表示: <code>未接続</code> / <code>接続（待機）</code> / <code>接続（稼働中）</code> / <code>接続（エンジン停止中）</code> / <code>バージョン不一致</code>。受信中はインジケータが点滅します</li>
+<li>タイトル行の EN / JA ボタンで表示言語を切り替えられます（初回は OS の言語で自動判定）</li>
+</ul>
+<p>これらの設定はすべて DAW プロジェクトに保存されます。</p>
+<h3 id="section-17-5">17.5 本体側の状態表示</h3>
+<figure class="manual-figure">
+<img src="assets/part-send-chip.png" alt="Part送信チップの状態表示" loading="lazy" />
+<figcaption>図: Part送信チップの状態表示</figcaption>
+</figure>
+<p>本体の中段パネルにある <code>Part送信</code> チップは、クリックで送信を切り替えつつ、色と文字で状態を示します。</p>
+<ul>
+<li><code>OFF</code>（無彩色）: 送信していません</li>
+<li><code>待機</code>（金色）: 別の Chord Dock インスタンスがバスを使用中のため、待機しています</li>
+<li><code>送信中</code>（緑）: パート別 MIDI を送信しています</li>
+<li><code>ch重複!</code>（赤）: 複数パートが同じ MIDI チャンネルに設定されています。該当パートを区別できないため、チャンネルを分けてください（トースト警告も表示されます）</li>
+<li><code>版不一致!</code>（赤）: 本体と ChordPart のバージョンが一致していません。両方を同じ版に更新してください</li>
+</ul>
+<p><code>演奏設定</code> メニューにも同じトグルと状態行があります。</p>
+<h3 id="section-17-6">17.6 注意と制約</h3>
+<ul>
+<li>パート同士（および本体のコードトラック再生）の MIDI チャンネルが重複しないようにしてください。既定値（10 / 14 / 15 / 16）のままなら重複しません</li>
+<li>同じパートを複数の ChordPart で受けることはできます（レイヤー用途）</li>
+<li>Chord Dock 本体を同じプロジェクトに 2 つ以上置いた場合、送信できるのは先に送信を始めた 1 つだけです。他は「待機」表示になります</li>
+<li>ChordPart は本体と<strong>同じ DAW プロジェクト内</strong>で使ってください。別々に起動した DAW 同士では接続されません</li>
+<li>ライブ演奏としてリアルタイムに鳴らす分には、推奨バッファ（128〜256 サンプル）であればずれは実用上気になりません（第 17.2 節）。ずれが問題になるのは、演奏を DAW でリアルタイム録音したときだけで、この場合は仕組み上つねに一定量（最大 1 バッファ分）だけ後ろにずれて記録されます</li>
+<li>タイミングを正確に取り込みたいときは、リアルタイム録音ではなく、パターン編集ウィンドウからドラッグエクスポートでパターンを貼り付けるのが確実です（この方法ならずれは生じません）。すでに録音したずれが気になる場合は、量が一定なので、全ノートを一括で前へシフトするか、クオンタイズで解消できます（ロール系やスウィングなど細かい配置を含む場合は一括シフト推奨）</li>
+</ul>
+<hr />
+</section>
+<section id="section-18">
+<h2>18. MIDI エクスポートとドラッグ</h2>
+<p>Chord Dock では、複数の書き出し方法があります。</p>
+<ul>
+<li>タイムライン全体の進行をエクスポートする</li>
+<li>コード由来の MIDI をドラッグする</li>
+<li>Arpeggio / Bassline の生成ノートをドラッグする</li>
+<li>Reharmo プレビュー由来のノートをドラッグする</li>
+<li>アレンジャーモードのパターンエディタから、パターンをドラッグする（第 15.10 節）</li>
+</ul>
+<p>使えるドラッグエリアは、現在のモードによって異なります。</p>
+<hr />
+</section>
+<section id="section-19">
+<h2>19. ライセンスとエディション</h2>
+<figure class="manual-figure">
+<img src="assets/%E8%A8%AD%E5%AE%9A%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6%E6%97%A5%E6%9C%AC%E8%AA%9E.png" alt="設定ウィンドウとライセンス画面" loading="lazy" />
+<figcaption>図: 設定ウィンドウとライセンス画面</figcaption>
+</figure>
+<h3 id="section-19-1">19.1 エディション構成</h3>
+<p>Chord Dock には次の 3 エディションがあります。</p>
+<ul>
+<li><strong>Lite</strong>: コード進行の作成に最適な基本エディション</li>
+<li><strong>Extended</strong>: テンションやオンコード、五度圏、リハモなど、ハーモニー設計を広げるエディション</li>
+<li><strong>Performance</strong>: アレンジャーモードを中心とした、演奏・伴奏・運用のためのエディション</li>
+</ul>
+<div class="table-wrap">
+<table>
+<thead><tr>
+<th>主な機能</th>
+<th>Lite</th>
+<th>Extended</th>
+<th>Performance</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>タイムラインのコード進行編集 / セクション</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>コード進行の MIDI エクスポート / プリセット進行</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>9th 系表記コード（add9 / M9 / m9 / 7(9)）</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>テンションメニュー（9 / b9 / #9 / 11 / 13）</td>
+<td>—</td>
+<td>✔</td>
+<td>—</td>
+</tr>
+<tr>
+<td>オンコード（スラッシュコード）/ aug / b5 / 6th</td>
+<td>—</td>
+<td>✔</td>
+<td>—</td>
+</tr>
+<tr>
+<td>五度圏</td>
+<td>—</td>
+<td>✔</td>
+<td>—</td>
+</tr>
+<tr>
+<td>拡張スナップ / 拡張長さ</td>
+<td>—</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>ユーザープリセットバンク</td>
+<td>—</td>
+<td>✔</td>
+<td>—</td>
+</tr>
+<tr>
+<td>アルペジオ / ベースライン生成（ノート編集含む）</td>
+<td>—</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>リハモ</td>
+<td>—</td>
+<td>✔</td>
+<td>—</td>
+</tr>
+<tr>
+<td>アレンジャーモード（パッド演奏 / Perform / Song）</td>
+<td>—</td>
+<td>—</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>ChordPart によるパート別 MIDI 出力</td>
+<td>—</td>
+<td>—</td>
+<td>✔</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p><strong>Full Bundle について:</strong> Extended と Performance の両方を含むバンドルです。機能は両エディションの和集合になります（比較表で Extended または Performance に ✔ が付く機能はすべて使えます）。</p>
+</blockquote>
+<blockquote>
+<p><strong>Arranger Mode Demo:</strong> Lite / Extended でも、アレンジャーモードを Arranger Mode Demo として試せます。実再生 累積 90 秒、各パート Pad 1〜3 まで、MIDI 書き出しは使用不可、という制限があります。詳細は第 15.2 節を参照してください。</p>
+</blockquote>
+<p>エディションやライセンス状態によって、対象外の機能はロック表示や無効表示になります。</p>
+<h3 id="section-19-2">19.2 一般的なアクティベーション手順</h3>
+<ol>
+<li>Settings を開く</li>
+<li>シリアルキーを入力する</li>
+<li>必要に応じてブラウザ側のオンライン認証を完了する</li>
+<li>プラグインへ戻ってライセンス状態を反映する</li>
+</ol>
+<p>ChordPart 自体にライセンス操作はありません（本体のエディションに従って動作します）。</p>
+<h3 id="section-19-3">19.3 反映されない場合</h3>
+<ul>
+<li>Settings を開き直す</li>
+<li>オンライン認証の再確認を行う</li>
+<li>ブラウザ側の登録完了を確認する</li>
+</ul>
+<p>初回アクティベーションにはインターネット接続が必要です。</p>
+<hr />
+</section>
+<section id="section-20">
+<h2>20. よくある質問 / トラブルシューティング</h2>
+<h3 id="section-20-1">20.1 DAW にプラグインが出ない</h3>
+<p>次を確認してください。</p>
+<ol>
+<li>インストールが正常終了しているか</li>
+<li>Windows では <code>.vst3</code>（本体と ChordPart の両方）を正しいフォルダへコピーしたか</li>
+<li>DAW 側で再スキャンしたか</li>
+</ol>
+<h3 id="section-20-2">20.2 音が出ない</h3>
+<p>次を確認してください。</p>
+<ol>
+<li>MIDI ルーティング</li>
+<li>受け側音源</li>
+<li>mute / solo</li>
+<li>DAW のオーディオ設定</li>
+<li>Chord Dock 内部オーディオを期待している場合は、そのトグル状態</li>
+</ol>
+<h3 id="section-20-3">20.3 セクション内を編集できない</h3>
+<p>通常セクションモードのままかもしれません。セクションをダブルクリックしてフォーカス編集へ入ってください。</p>
+<h3 id="section-20-4">20.4 タイムラインの一部がグレーアウトしている</h3>
+<p>フォーカス編集モード、または編集範囲を絞る別モードに入っている可能性があります。</p>
+<h3 id="section-20-5">20.5 リハモでセクションが読み込めない</h3>
+<p>セクション長を確認してください。リハモは 16 小節以内のセクションだけを対象にします。</p>
+<h3 id="section-20-6">20.6 Arpeggio / Reharmo / アレンジャーの UI が無効に見える</h3>
+<p>ライセンスやエディションでその機能が解放されていない可能性があります（第 19 章）。Arpeggio は Extended / Performance、Reharmo は Extended、アレンジャーモードは Performance の機能です。</p>
+<h3 id="section-20-7">20.7 アレンジャーでセクションが選べない / ランチャーがグレー表示</h3>
+<p>そのセクションが小節境界の条件を満たしていない可能性があります。アレンジャーモードで使うセクションは、小節頭から始まり、小節の終端で終わる必要があります（1 小節以上）。タイムラインで開始位置と終了位置を小節境界に揃えてください。</p>
+<h3 id="section-20-8">20.8 パッドを押してもすぐに切り替わらない</h3>
+<p>仕様どおりの動作です。アレンジャーモードの切り替えは予約制で、<code>Launch Quantize</code>（セクション）や <code>タイミング</code>（パッド）で設定した位置まで待ってから切り替わります。予約中のパッドは薄いハイライト表示になります。すぐに切り替えたい場合は、設定を <code>次の小節</code> にしてください。</p>
+<h3 id="section-20-9">20.9 DAW を再生してもアレンジャーの伴奏が鳴らない</h3>
+<p>再生開始時点で、鳴らすパッドが決まっていない可能性があります。次を確認してください。</p>
+<ol>
+<li>パッドにパターンが割り当てられているか</li>
+<li>鳴らすパッドを待機させてあるか。再生前に <code>スタンバイ Pad 1</code> で各パートの Pad 1 をまとめて待機させるか、パッドを押して予約してから再生します。Pad 1 以外を待機させたい場合は、そのパッドの右クリックメニューから <code>スタンバイにする</code> を選びます</li>
+<li>DAW のトラックへのルーティングが正しくできているか。音源トラックへの MIDI ルーティングや受け側音源の設定は、20.2「音が出ない」を参照してください。ChordPart 経由の場合は第 17 章も確認してください</li>
+</ol>
+<h3 id="section-20-10">20.10 Song ページの Play が押せない</h3>
+<p>DAW が再生中は、Song の内部再生は使えません（ホストの再生位置に合わせて Song 配置が鳴る動作に切り替わります）。DAW を停止してから Play を押してください。</p>
+<h3 id="section-20-11">20.11 ChordPart が「未接続」のまま</h3>
+<p>次を確認してください。</p>
+<ol>
+<li>同じ DAW プロジェクト内に Chord Dock 本体が読み込まれているか</li>
+<li>本体の <code>Part送信</code> チップが ON（送信中）になっているか</li>
+<li>本体と ChordPart のバージョンが一致しているか</li>
+</ol>
+<h3 id="section-20-12">20.12 ChordPart 経由の音がずれる</h3>
+<p>ライブ演奏として鳴らす分には、オーディオバッファサイズが 128〜256 サンプルであればずれは実用上気になりません（第 17.2 節）。録音した MIDI のずれは量が一定なので、一括シフトまたはクオンタイズで揃えられます。タイミングを正確に取り込みたい場合は、リアルタイム録音ではなく、パターン編集ウィンドウからのドラッグエクスポートでパターンを貼り付けてください（第 17.6 節）。</p>
+<h3 id="section-20-13">20.13 「版不一致」と表示される</h3>
+<p>本体と ChordPart のバージョンが異なります。安全のため送信 / 受信は停止しています。両方のプラグインを同じバージョンのセットで更新してください。</p>
+<h3 id="section-20-14">20.14 アレンジャーの Pad 4〜8 が使えない</h3>
+<p>お使いのエディションが Arranger Mode Demo の場合、各パートで使えるのは Pad 1〜3 までです。Pad 4〜8 は表示されますが使用できません（不具合ではありません）。全パッドを使うには Performance または Full Bundle が必要です（第 15.2 節）。</p>
+<h3 id="section-20-15">20.15 アレンジャーが操作できなくなった /「デモ終了」と表示される</h3>
+<p>Arranger Mode Demo の再生時間（累積 90 秒）を使い切ると、アレンジャーの再生・トリガー・編集・MIDI 出力がロックされます。デモ残り時間はプロジェクトに保存されないため、DAW プロジェクトを開き直すか、プラグインを挿し直すと 90 秒に戻ります。制限なしで使うには Performance または Full Bundle が必要です。</p>
+<h3 id="section-20-16">20.16 Bass / Arp / Chord Pad のパターンは AI 生成やランダム生成ですか？</h3>
+<p>いいえ。アレンジャーモードは、AI 生成、クラウド生成、または完全なランダム再生ではありません。プリセットやランダム生成コマンドは開始点を作るためのものですが、パターン自体は編集可能なパッドパターンとして残ります。</p>
+<p>Bass / Arp / Chord Pad の MIDI ノートは、選択中セクションのコード進行と、パターン内のタイミング・コードに対する役割設定から作られます。そのため、同じパターンを別のコード進行に当てても、音楽的な形を保ったままコードに追従します。</p>
+<hr />
+</section>
+<section id="section-21">
+<h2>21. サポート / お問い合わせ</h2>
+<p>最新情報、リリースノート、製品情報、解説動画、サポート情報は、公式ランディングページと YouTube チャンネルを参照してください。</p>
+<ul>
+<li>公式ランディングページ: <a class="inline-link" href="https://k2get.github.io/chord-dock-site/" target="_blank" rel="noopener noreferrer">https://k2get.github.io/chord-dock-site/</a></li>
+<li>YouTube チャンネル: <a class="inline-link" href="https://www.youtube.com/@k2get" target="_blank" rel="noopener noreferrer">https://www.youtube.com/@k2get</a></li>
+</ul>
+<p>サポートや購入前の質問は、公式ランディングページからリンクされているお問い合わせフォームをご利用ください。</p>
+</section>
   </main>
   <footer>
-    <p>© Chord Dock — Online Manual (Japanese).</p>
+    © 2026 Chord Dock. このオンラインマニュアルは v2.0 ソースマニュアルから生成しています。
   </footer>
 </body>
 </html>
