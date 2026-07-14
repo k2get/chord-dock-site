@@ -1019,21 +1019,19 @@
             </div>
           </details>
           <details>
-            <summary>Q22. How does pattern generation work: presets, random, or generative?</summary>
+            <summary>Q22. How are Bass, Arp, and Chord Pad patterns generated?</summary>
             <div>
               <p>
-                It is a local, editable music-pattern workflow, not a cloud AI prompt system.
-                Arpeggio / Bassline generation starts from the selected chord section and uses
-                controls such as Range, Spread, Density, Grid, Notes, Tension, Order, Syncopation,
-                Rest, and Style. Random order is deterministic: the same input produces the same result.
+                Bass, Arp, and Chord Pad patterns are created and edited by the user in
+                Arranger Mode. They are not AI-generated and they are not purely random.
+                The generated notes follow the chord progression according to each pattern's
+                timing and chord-role settings.
               </p>
               <p>
-                Arranger Mode is a pattern-authoring system. Each pad stores an editable rhythmic
-                and musical template; presets and randomize commands only create starting points.
-                Drums use fixed drum lanes. Bass can use chord-relative roles or an absolute-pitch
-                MIDI roll, while Arp and Chord Pad use chord-tone role lanes. For Bass / Arp /
-                Chord Pad, Chord Dock combines the selected section's chord progression with the
-                pattern's timing and chord-role settings to produce concrete MIDI notes.
+                Arranger Mode is a local pattern-authoring system. Each pad stores an editable
+                rhythmic and musical template; presets and randomize commands only create
+                starting points. Drums use independent rhythm patterns and are not generated
+                from the chord progression.
               </p>
             </div>
           </details>
