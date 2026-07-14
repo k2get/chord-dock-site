@@ -174,6 +174,7 @@
 	          <a href="#download" class="hover:opacity-80">ダウンロード</a>
 	          <a href="#activation" class="hover:opacity-80">アクティベーション</a>
           <a href="#faq" class="hover:opacity-80">FAQ</a>
+          <a href="#support" class="hover:opacity-80">お問い合わせ</a>
           <a href="manual.html" class="hover:opacity-80">オンラインマニュアル</a>
 	          <a href="daw-guides.html" class="hover:opacity-80">DAW別ガイド</a>
         </div>
@@ -225,6 +226,11 @@
                 href="#start-free"
                 class="rounded-xl px-5 py-3 text-base font-semibold border border-indigo-400/40 text-indigo-100 shadow hover:bg-indigo-500/10"
                 >広がる2つの方向を見る</a
+              >
+              <a
+                href="#pattern-generation"
+                class="rounded-xl px-5 py-3 text-base font-semibold border border-gray-300/60 dark:border-neutral-700 text-gray-800 dark:text-neutral-100 shadow hover:bg-gray-100 dark:hover:bg-neutral-900"
+                >パターン生成の仕組み</a
               >
             </div>
             <p class="mt-4 text-sm text-gray-500 dark:text-neutral-400">
@@ -397,7 +403,7 @@
             <span class="inline-flex items-center rounded-full bg-indigo-500/15 px-2 py-0.5 text-[11px] font-bold tracking-wide text-indigo-300 ring-1 ring-indigo-400/40">NEW in 2.0</span>
             <h3 class="mt-2 font-semibold">アレンジャーモードで、進行を演奏</h3>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
-              進行の上に Drums / Bass / Arp / Chord Pad の伴奏パターンを組み、パッドで演奏。予約ベースの切り替えで、ライブでも構成スケッチでも。
+              Drums / Bass / Arp / Chord Pad の編集可能なパッドパターンを作成。プリセットやランダム生成コマンドは開始点を作るためのもので、保存されたパターンは自由に編集できます。
             </p>
           </div>
           <div
@@ -421,7 +427,7 @@
           >
             <h3 class="font-semibold">アルペジオ / ベースライン生成</h3>
             <p class="mt-2 text-gray-600 dark:text-neutral-300">
-              選択セクションから生成ノートを作成し、そのまま DAW へドラッグ。必要ならノート編集ウィンドウで追い込めます。
+              選択セクションのコードに対して、グリッド、密度、音域、使う音、順序、休符、食い込みなどの設定からローカルにノートを作ります。
             </p>
           </div>
           <div
@@ -508,7 +514,7 @@
             <p
               class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed"
             >
-              選択セクションから生成ノートを作成し、その場でプレビュー。必要に応じてノート編集ウィンドウで調整し、最終的には MIDI として DAW へドラッグできます。
+              セクションを選び、グリッド / 密度 / 音域 / 使う音 / 順序などを指定すると、現在のコード進行からローカルにノートを生成します。その場でプレビューし、必要に応じてノート編集ウィンドウで調整し、最終的には MIDI として DAW へドラッグできます。
             </p>
           </div>
         </div>
@@ -572,7 +578,7 @@
             <p
               class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed"
             >
-              セクションごとに Drums / Bass / Arp / Chord Pad のパターンを組み、パッドで呼び出して演奏（各パート8パッド×2セット）。役割ベースのパターンはコード進行の変更に自動で追従します。Launch Quantize による予約切り替えで、小節に合わせて次の展開へ。
+              セクションごとに Drums / Bass / Arp / Chord Pad のパターンを組み、パッドで呼び出して演奏（各パート8パッド×2セット）。プリセットやランダム生成コマンドは開始点です。プレビュー、演奏、書き出し時には、Bass / Arp / Chord Pad のタイミングとコードに対する役割設定が、選択中セクションのコード進行に対して具体的なMIDIノートへ変換されます。
             </p>
           </div>
           <div
@@ -665,6 +671,39 @@
             />
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Pattern Generation -->
+    <section class="section" id="pattern-generation">
+      <div class="container mx-auto px-4 py-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">パターン生成の仕組み</h2>
+        <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+          Chord Dock は、コード進行をクラウド AI へ送って伴奏を作る仕組みではありません。パターン関連機能はローカルで動きます。アルペジオ / ベースラインは選択セクションからノートを生成し、アレンジャーモードはパッドに保存されたパターンをプレビュー・演奏・書き出し時に MIDI へ変換します。
+        </p>
+        <div class="mt-6 grid gap-6 md:grid-cols-3 text-sm">
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60">
+            <h3 class="font-semibold">アルペジオ / ベースライン生成</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">
+              選択したコードセクションをもとに、Range、Spread、Density、Grid、Notes、Tension、Order、Syncopation、Rest、Style などの設定からノートを生成します。Order の Random も、同じ入力なら同じ結果になる決定的なバリエーションです。
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60">
+            <h3 class="font-semibold">アレンジャーパターン</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">
+              アレンジャーモードは、AI生成、クラウド生成、完全なランダム再生ではなく、パターン作成・編集の仕組みです。各パッドには編集可能なリズムと音楽的役割のテンプレートが保存され、プリセットやランダム生成コマンドは開始点を作るために使います。
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60">
+            <h3 class="font-semibold">役割ベースの追従</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">
+              Drums は固定のドラムレーンを使います。Bass はコード相対の役割パターンまたは絶対音高の MIDI Roll を選べます。Arp / Chord Pad はコードトーンの役割レーンを使い、リズムと形を保ったまま、選択セクションのコード進行に合わせて音高が決まります。
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 text-xs text-gray-500 dark:text-neutral-400">
+          まとめると、プリセットやランダム生成コマンドはありますが、それらは開始点です。生成・変換された結果は、通常の編集可能な MIDI 素材として扱えます。
+        </p>
       </div>
     </section>
 
@@ -1283,6 +1322,39 @@
               </ul>
             </div>
           </details>
+          <details>
+            <summary>Q22. パターン生成は、プリセット・ランダム・自動生成のどれですか？</summary>
+            <div>
+              <p>
+                クラウド AI にプロンプトを送る方式ではなく、ローカルで動く編集可能な音楽パターン生成です。
+                アルペジオ / ベースライン生成は、選択セクションのコードに対して、Range、Spread、Density、
+                Grid、Notes、Tension、Order、Syncopation、Rest、Style などの設定からノートを作ります。
+                Order の Random も、同じ入力なら同じ結果になる決定的なバリエーションです。
+              </p>
+              <p>
+                アレンジャーモードは、パターン作成・編集の仕組みです。各パッドには編集可能なリズムと
+                音楽的役割のテンプレートが保存され、プリセットやランダム生成コマンドは開始点を作るために使います。
+                Drums は固定のドラムレーンを使います。Bass はコード相対の役割パターンまたは絶対音高の MIDI Roll を選べます。
+                Arp / Chord Pad はコードトーンの役割レーンを使います。Bass / Arp / Chord Pad では、選択中セクションのコード進行と、
+                パターン内のタイミング・コードに対する役割設定から、具体的な MIDI ノートが作られます。
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Q23. お問い合わせフォームが送信できない場合は？</summary>
+            <div>
+              <p>
+                まずはお問い合わせフォームをご利用ください。OS、DAW、バージョン、状況をまとめて確認できるためです。
+                Googleフォームがループする、または送信できない場合は、
+                <a href="tokushoho.html" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-4 hover:text-indigo-200">特定商取引法に基づく表記</a>
+                に記載の連絡先から、「フォームが送信できなかった」旨を添えてご連絡ください。
+              </p>
+              <p>
+                Chord Dock は個人開発プロジェクトのため、お問い合わせ対応はベストエフォートです。ライセンス / アクティベーション、ダウンロード不具合、再現可能な不具合を優先します。
+                機能要望、広範な DAW セットアップ相談、FAQ・マニュアル・DAW別ガイドで確認できる内容については、個別返信できない場合があります。
+              </p>
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -1329,6 +1401,26 @@
       </div>
     </section>
 
+    <!-- Support -->
+    <section class="section" id="support">
+      <div class="container mx-auto px-4 py-12">
+        <div class="rounded-2xl ring-1 ring-indigo-400/30 bg-indigo-500/10 px-6 py-6 sm:px-8 sm:py-7">
+          <h2 class="text-2xl sm:text-3xl font-extrabold">お問い合わせについて（個人開発としての方針）</h2>
+          <p class="mt-3 text-sm text-gray-700 dark:text-neutral-200">
+            まずは FAQ、オンラインマニュアル、DAW別ガイドをご確認ください。購入判断に関わる質問、アクティベーション、ダウンロード不具合、再現可能な不具合は、構造化されたフォームからお送りください。
+          </p>
+          <div class="mt-5 flex flex-wrap gap-3">
+            <a href="https://forms.gle/WPgiSCxY9Mp3v9nc6" target="_blank" rel="noopener noreferrer" class="inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">お問い合わせフォームを開く</a>
+            <a href="manual.html" class="inline-flex rounded-xl px-4 py-2 border border-indigo-400/40 text-indigo-100 font-semibold hover:bg-indigo-500/10">マニュアルを見る</a>
+            <a href="daw-guides.html" class="inline-flex rounded-xl px-4 py-2 border border-indigo-400/40 text-indigo-100 font-semibold hover:bg-indigo-500/10">DAW別ガイド</a>
+          </div>
+          <p class="mt-3 text-xs text-gray-500 dark:text-neutral-400">
+            お問い合わせ対応はベストエフォートです。ライセンス / アクティベーションと再現可能な不具合を優先し、機能要望や環境固有のセットアップ相談は、個別返信ではなく今後の改善材料として扱う場合があります。フォームが送信できない場合は、特定商取引法に基づく表記の連絡先からその旨をお知らせください。
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer class="border-t border-gray-200 dark:border-neutral-800">
       <div
@@ -1343,7 +1435,7 @@
             <span aria-hidden>•</span>
             <a href="tokushoho.html" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">特定商取引法に基づく表記</a>
             <span aria-hidden>•</span>
-            <a href="https://forms.gle/WPgiSCxY9Mp3v9nc6" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">お問い合わせ</a>
+            <a href="#support" class="hover:opacity-80">お問い合わせ</a>
           </div>
         </div>
       </div>

@@ -124,8 +124,9 @@
 	          <a href="#edition-comparison" class="hover:opacity-80">Compare</a>
 	          <a href="#requirements" class="hover:opacity-80">System Requirements</a>
 	          <a href="#download" class="hover:opacity-80">Download</a>
-	          <a href="#activation" class="hover:opacity-80">Activation</a>
+          <a href="#activation" class="hover:opacity-80">Activation</a>
           <a href="#faq" class="hover:opacity-80">FAQ</a>
+          <a href="#support" class="hover:opacity-80">Support</a>
           <a href="manual.en.html" class="hover:opacity-80">Manual</a>
 	          <a href="daw-guides.en.html" class="hover:opacity-80">DAW Guides</a>
         </div>
@@ -154,6 +155,7 @@
             <div class="mt-6 flex flex-wrap gap-3">
               <a href="https://k2get.gumroad.com/l/pjtnip?wanted=true&price=0" target="_blank" rel="noopener noreferrer" class="rounded-xl px-5 py-3 text-base font-semibold bg-indigo-600 text-white shadow hover:bg-indigo-500">Start Free with Lite</a>
               <a href="#start-free" class="rounded-xl px-5 py-3 text-base font-semibold border border-indigo-400/40 text-indigo-100 shadow hover:bg-indigo-500/10">See the Two Upgrade Paths</a>
+              <a href="#pattern-generation" class="rounded-xl px-5 py-3 text-base font-semibold border border-gray-300/60 dark:border-neutral-700 text-gray-800 dark:text-neutral-100 shadow hover:bg-gray-100 dark:hover:bg-neutral-900">How patterns are generated</a>
             </div>
             <p class="mt-4 text-sm text-gray-500 dark:text-neutral-400">
               Want everything unlocked from the start?
@@ -282,7 +284,7 @@
           <div class="p-6 rounded-2xl ring-2 ring-indigo-400/50 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
             <span class="inline-flex items-center rounded-full bg-indigo-500/15 px-2 py-0.5 text-[11px] font-bold tracking-wide text-indigo-300 ring-1 ring-indigo-400/40">NEW in 2.0</span>
             <h3 class="mt-2 font-semibold">Arranger Mode: perform your progression</h3>
-            <p class="mt-2 text-gray-600 dark:text-neutral-300">Build accompaniment patterns for Drums / Bass / Arp / Chord Pad on top of your progression and play them with pads — reservation-based switching works for live sets and structure sketching alike.</p>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">Author editable pad patterns for Drums / Bass / Arp / Chord Pad. Presets and randomize commands create starting points; the saved patterns remain yours to edit.</p>
           </div>
           <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
             <h3 class="font-semibold">Section Clips and Focus Edit</h3>
@@ -294,7 +296,7 @@
           </div>
           <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
             <h3 class="font-semibold">Arpeggio / Bassline generation</h3>
-            <p class="mt-2 text-gray-600 dark:text-neutral-300">Generate note material from a section, refine it if needed, then drag it straight into your DAW.</p>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">A local rule-based generator turns a selected chord section into notes using grid, density, range, note roles, order, rests, and anticipation controls.</p>
           </div>
           <div class="p-6 rounded-2xl ring-2 ring-indigo-400/50 bg-white/60 dark:bg-neutral-900/60 max-w-md mx-auto">
             <span class="inline-flex items-center rounded-full bg-indigo-500/15 px-2 py-0.5 text-[11px] font-bold tracking-wide text-indigo-300 ring-1 ring-indigo-400/40">NEW in 2.0</span>
@@ -339,7 +341,7 @@
           </div>
           <div>
             <h3 class="text-xl font-semibold">Generate Arpeggio / Bassline and drag it out</h3>
-            <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">Generate note material from the selected section, refine it in the note editor when needed, and drag the resulting MIDI straight into your DAW.</p>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">Choose a section, set grid / density / range / note roles / order, then Chord Dock generates notes from the current chords locally. Preview the result, refine it in the note editor when needed, and drag the MIDI straight into your DAW.</p>
           </div>
         </div>
 
@@ -370,7 +372,7 @@
           <div class="md:ml-auto max-w-xl">
             <span class="inline-flex items-center rounded-full bg-indigo-500/15 px-2 py-0.5 text-[11px] font-bold tracking-wide text-indigo-300 ring-1 ring-indigo-400/40">NEW in 2.0</span>
             <h3 class="mt-2 text-xl font-semibold">Arranger Mode — your progression becomes the accompaniment</h3>
-            <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">Build patterns for Drums / Bass / Arp / Chord Pad per section and trigger them with pads (8 pads × 2 pattern sets per part). Role-based patterns follow chord changes automatically, and Launch Quantize switches sections cleanly on the bar.</p>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">Build patterns for Drums / Bass / Arp / Chord Pad per section and trigger them with pads (8 pads × 2 pattern sets per part). Presets and randomize commands are only starting points. During preview, performance, or export, Bass / Arp / Chord Pad patterns are converted from timing and chord-role settings into MIDI notes for the selected section's chords.</p>
           </div>
           <div class="rounded-2xl overflow-hidden ring-2 ring-gray-300 dark:ring-neutral-700 shadow-sm bg-white/70 dark:bg-neutral-900/70 max-w-xl md:h-72">
             <img src="assets/arranger-setup.png" alt="Arranger Mode (Setup page) screenshot" class="w-full h-full object-cover" />
@@ -413,6 +415,39 @@
             <img src="assets/part-send-chip.png" alt="Part Send chip on the main plugin" class="mt-4 rounded-lg ring-1 ring-gray-200 dark:ring-neutral-700 max-w-full" width="592" />
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Pattern Generation -->
+    <section class="section" id="pattern-generation">
+      <div class="container mx-auto px-4 py-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">How Pattern Generation Works</h2>
+        <p class="mt-3 text-sm text-gray-600 dark:text-neutral-300">
+          Chord Dock does not send your progression to a cloud AI system. Its pattern features are local and editable: Arpeggio / Bassline generates notes from a selected section, while Arranger Mode stores pad patterns and turns them into MIDI during preview, performance, or export.
+        </p>
+        <div class="mt-6 grid gap-6 md:grid-cols-3 text-sm">
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60">
+            <h3 class="font-semibold">Arpeggio / Bassline generator</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">
+              Select a chord section, choose controls such as Range, Spread, Density, Grid, Notes, Tension, Order, Syncopation, Rest, and Style, then generate notes from that section's chords. Random order is deterministic: the same input produces the same result.
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60">
+            <h3 class="font-semibold">Arranger patterns</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">
+              Arranger Mode is a pattern-authoring system, not AI generation, cloud generation, or purely random playback. Each pad stores an editable rhythmic and musical template. Presets and randomize commands only create starting points.
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl ring-2 ring-gray-300 dark:ring-neutral-700 bg-white/60 dark:bg-neutral-900/60">
+            <h3 class="font-semibold">Role-based playback</h3>
+            <p class="mt-2 text-gray-600 dark:text-neutral-300">
+              Drums use fixed drum lanes. Bass can use chord-relative roles or an absolute-pitch MIDI roll; Arp and Chord Pad use chord-tone role lanes. Role-based patterns keep their rhythm and musical shape while their pitches follow the selected section's chords.
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 text-xs text-gray-500 dark:text-neutral-400">
+          In short: presets and randomize commands are available, but they are starting points. The result remains ordinary editable MIDI material.
+        </p>
       </div>
     </section>
 
@@ -983,6 +1018,43 @@
               </ul>
             </div>
           </details>
+          <details>
+            <summary>Q22. How does pattern generation work: presets, random, or generative?</summary>
+            <div>
+              <p>
+                It is a local, editable music-pattern workflow, not a cloud AI prompt system.
+                Arpeggio / Bassline generation starts from the selected chord section and uses
+                controls such as Range, Spread, Density, Grid, Notes, Tension, Order, Syncopation,
+                Rest, and Style. Random order is deterministic: the same input produces the same result.
+              </p>
+              <p>
+                Arranger Mode is a pattern-authoring system. Each pad stores an editable rhythmic
+                and musical template; presets and randomize commands only create starting points.
+                Drums use fixed drum lanes. Bass can use chord-relative roles or an absolute-pitch
+                MIDI roll, while Arp and Chord Pad use chord-tone role lanes. For Bass / Arp /
+                Chord Pad, Chord Dock combines the selected section's chord progression with the
+                pattern's timing and chord-role settings to produce concrete MIDI notes.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Q23. The contact form does not submit. How can I reach support?</summary>
+            <div>
+              <p>
+                Please use the contact form first because it keeps OS, DAW, version, and issue
+                details in one structured place. If the Google form loops or will not submit,
+                use the contact address listed in the
+                <a href="tokushoho.html" target="_blank" rel="noopener noreferrer" class="text-indigo-300 underline underline-offset-4 hover:text-indigo-200">Legal Notice</a>
+                and mention that the form failed.
+              </p>
+              <p>
+                Chord Dock is an independent project, so support is best effort. License /
+                activation trouble, download problems, and reproducible bugs are prioritized.
+                Feature requests, broad DAW setup consulting, and questions already covered in
+                the FAQ, manual, or DAW guides may not receive an individual reply.
+              </p>
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -1021,6 +1093,31 @@
       </div>
     </section>
 
+    <!-- Support -->
+    <section class="section" id="support">
+      <div class="container mx-auto px-4 py-12">
+        <div class="rounded-2xl ring-1 ring-indigo-400/30 bg-indigo-500/10 px-6 py-6 sm:px-8 sm:py-7">
+          <h2 class="text-2xl sm:text-3xl font-extrabold">Support for an independent project</h2>
+          <p class="mt-3 text-sm text-gray-700 dark:text-neutral-200">
+            Please check the FAQ, manual, and DAW guides first. For purchase-blocking questions,
+            activation problems, download trouble, or reproducible bugs, use the structured
+            support form.
+          </p>
+          <div class="mt-5 flex flex-wrap gap-3">
+            <a href="https://forms.gle/ttEAX9dSLEk7Pr5X7" target="_blank" rel="noopener noreferrer" class="inline-flex rounded-xl px-4 py-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500">Open Support Form</a>
+            <a href="manual.en.html" class="inline-flex rounded-xl px-4 py-2 border border-indigo-400/40 text-indigo-100 font-semibold hover:bg-indigo-500/10">Read Manual</a>
+            <a href="daw-guides.en.html" class="inline-flex rounded-xl px-4 py-2 border border-indigo-400/40 text-indigo-100 font-semibold hover:bg-indigo-500/10">DAW Guides</a>
+          </div>
+          <p class="mt-3 text-xs text-gray-500 dark:text-neutral-400">
+            Support is best effort. License / activation issues and reproducible bugs are prioritized;
+            feature requests and environment-specific setup consulting may be collected without an
+            individual reply. If the form fails, use the contact address in the Legal Notice and
+            mention that the form failed.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer class="border-t border-gray-200 dark:border-neutral-800">
       <div class="container mx-auto px-4 py-10 text-sm text-gray-600 dark:text-neutral-400">
@@ -1033,7 +1130,7 @@
             <span aria-hidden>•</span>
             <a href="tokushoho.html" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">Legal Notice (Japan)</a>
             <span aria-hidden>•</span>
-            <a href="https://forms.gle/ttEAX9dSLEk7Pr5X7" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">Contact</a>
+            <a href="#support" class="hover:opacity-80">Support</a>
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ChordDock v2.0 アップデートページ</title>
+    <title>ChordDock v2.0.1 アップデートページ</title>
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -339,16 +339,16 @@
   <body>
     <header>
       <h1>
-        <span class="lang-ja">ChordDock v2.0 アップデートページ</span>
-        <span class="lang-en">ChordDock v2.0 Update Page</span>
+        <span class="lang-ja">ChordDock v2.0.1 アップデートページ</span>
+        <span class="lang-en">ChordDock v2.0.1 Update Page</span>
       </h1>
       <p>
         <span class="lang-ja"
           >このページでは、ChordDock
-          v2.0 の最新版パッケージと、アップデート時の注意点をご案内します。</span
+          v2.0.1 の最新版パッケージと、アップデート時の注意点をご案内します。</span
         >
         <span class="lang-en"
-          >On this page you can download the latest ChordDock v2.0 package and
+          >On this page you can download the latest ChordDock v2.0.1 package and
           review update notes.</span
         >
       </p>
@@ -411,12 +411,12 @@
         </h2>
         <p class="tagline">
           <span class="lang-ja"
-            >v2.0 パッケージには、Chord Dock 本体と、パート別 MIDI
+            >v2.0.1 パッケージには、Chord Dock 本体と、パート別 MIDI
             受信用の ChordPart が含まれます。ライセンス状態に応じて Lite /
             Extended / Performance の機能が切り替わります。</span
           >
           <span class="lang-en"
-            >The v2.0 package includes the Chord Dock main plugin and ChordPart,
+            >The v2.0.1 package includes the Chord Dock main plugin and ChordPart,
             the bundled per-part MIDI receiver. Available features depend on
             your Lite / Extended / Performance license.</span
           >
@@ -426,12 +426,12 @@
           <article class="os-card">
             <h3>Windows</h3>
             <div class="version-label">
-              <span class="lang-ja">最新版：ChordDock v2.0</span>
-              <span class="lang-en">Latest: ChordDock v2.0</span>
+              <span class="lang-ja">最新版：ChordDock v2.0.1</span>
+              <span class="lang-en">Latest: ChordDock v2.0.1</span>
             </div>
             <a
               class="download-button"
-              href="https://github.com/k2get/chord-dock-site/releases/latest/download/Chord_Dock_2.0_windows.zip"
+              href="https://github.com/k2get/chord-dock-site/releases/latest/download/Chord_Dock_2.0.1_windows.zip"
             >
               <span class="lang-ja">Windows パッケージをダウンロード</span>
               <span class="lang-en">Download Windows package</span>
@@ -440,12 +440,12 @@
               <span class="lang-ja"
                 >ZIP 内の <code>Chord Dock.vst3</code> と
                 <code>ChordPart.vst3</code> を、どちらも VST3
-                フォルダへコピーしてください。両方を同じ v2.0 として更新する必要があります。</span
+                フォルダへコピーしてください。両方を同じ v2.0.1 として更新する必要があります。</span
               >
               <span class="lang-en"
                 >Copy both <code>Chord Dock.vst3</code> and
                 <code>ChordPart.vst3</code> from the ZIP into your VST3 folder.
-                Both plugins must be updated together to v2.0.</span
+                Both plugins must be updated together to v2.0.1.</span
               >
             </p>
           </article>
@@ -453,12 +453,12 @@
           <article class="os-card">
             <h3>macOS</h3>
             <div class="version-label">
-              <span class="lang-ja">最新版：ChordDock v2.0</span>
-              <span class="lang-en">Latest: ChordDock v2.0</span>
+              <span class="lang-ja">最新版：ChordDock v2.0.1</span>
+              <span class="lang-en">Latest: ChordDock v2.0.1</span>
             </div>
             <a
               class="download-button"
-              href="https://github.com/k2get/chord-dock-site/releases/latest/download/Chord_Dock_2.0_mac.pkg"
+              href="https://github.com/k2get/chord-dock-site/releases/latest/download/Chord_Dock_2.0.1_mac.pkg"
             >
               <span class="lang-ja">macOS インストーラーをダウンロード</span>
               <span class="lang-en">Download macOS installer</span>
@@ -466,11 +466,11 @@
             <p class="note">
               <span class="lang-ja"
                 >インストーラーに従って更新してください。Chord Dock 本体と
-                ChordPart は、同じ v2.0 の組み合わせで使用してください。</span
+                ChordPart は、同じ v2.0.1 の組み合わせで使用してください。</span
               >
               <span class="lang-en"
                 >Run the installer and use the main Chord Dock plugin and
-                ChordPart as a matching v2.0 set.</span
+                ChordPart as a matching v2.0.1 set.</span
               >
             </p>
           </article>
@@ -493,6 +493,32 @@
           <span class="lang-en">Release notes</span>
         </h2>
         <div class="license-box release-notes">
+          <div class="release-item">
+            <h3>ChordDock v2.0.1</h3>
+            <div class="release-date">2026-07-14</div>
+            <ul>
+              <li>
+                <span class="lang-ja"
+                  >ドラムパターン再生で、ループ境界やセクション境界の直後に1拍目のキックなどが重なって発音する場合がある問題を修正しました。境界ちょうどの発音は維持しています。</span
+                >
+                <span class="lang-en"
+                  >Fixed a drum playback issue where first-beat kicks or other
+                  drum hits could be retriggered immediately after loop or
+                  section boundaries. Hits placed exactly on the boundary are
+                  preserved.</span
+                >
+              </li>
+              <li>
+                <span class="lang-ja"
+                  >Progression メニューから「印刷用コード譜を開く…」を実行できるようにしました。</span
+                >
+                <span class="lang-en"
+                  >Added "Open Printable Chord Sheet..." to the Progression
+                  menu.</span
+                >
+              </li>
+            </ul>
+          </div>
           <div class="release-item">
             <h3>ChordDock v2.0</h3>
             <div class="release-date">2026-07</div>
@@ -574,11 +600,11 @@
         <div class="license-box">
           <p>
             <span class="lang-ja"
-              >ChordDock v2.0 は、同じパッケージ内で Lite / Extended /
+              >ChordDock v2.0.1 は、同じパッケージ内で Lite / Extended /
               Performance の機能をライセンス状態に応じて切り替えます。</span
             >
             <span class="lang-en"
-              >ChordDock v2.0 uses one package, and your license state switches
+              >ChordDock v2.0.1 uses one package, and your license state switches
               between Lite / Extended / Performance features.</span
             >
           </p>
@@ -633,12 +659,12 @@
         </h2>
         <p class="note">
           <span class="lang-ja"
-            >アップデート時によくある質問を抜粋しています。詳しい操作手順は、v2.0
+            >アップデート時によくある質問を抜粋しています。詳しい操作手順は、v2.0.1
             パッケージ同梱のユーザーマニュアルをご確認ください。</span
           >
           <span class="lang-en"
             >This section covers update-related questions. For detailed
-            operation steps, see the user manual included in the v2.0
+            operation steps, see the user manual included in the v2.0.1
             package.</span
           >
         </p>
@@ -698,12 +724,12 @@
               <p>
                 <span class="lang-ja"
                   >メインプラグインと ChordPart のバージョンが違うと、ChordPart
-                  は安全のため送受信を停止します。必ず同じ v2.0
+                  は安全のため送受信を停止します。必ず同じ v2.0.1
                   の組み合わせで更新してください。</span
                 >
                 <span class="lang-en"
                   >If the main plugin and ChordPart versions differ, ChordPart
-                  stops for safety. Update both as a matching v2.0 set.</span
+                  stops for safety. Update both as a matching v2.0.1 set.</span
                 >
               </p>
             </div>
@@ -909,11 +935,11 @@
                 </li>
                 <li>
                   <span class="lang-ja"
-                    >Chord Dock 本体と ChordPart が同じ v2.0
+                    >Chord Dock 本体と ChordPart が同じ v2.0.1
                     の組み合わせになっているか</span
                   >
                   <span class="lang-en"
-                    >Whether the main plugin and ChordPart are both v2.0</span
+                    >Whether the main plugin and ChordPart are both v2.0.1</span
                   >
                 </li>
               </ul>
@@ -929,12 +955,12 @@
             <div>
               <p>
                 <span class="lang-ja"
-                  >v2.0 パッケージに同梱されているユーザーマニュアルをご確認ください。Arranger
+                  >v2.0.1 パッケージに同梱されているユーザーマニュアルをご確認ください。Arranger
                   Mode、Performance Page、Song Page、ChordPart
                   の設定手順までまとまっています。</span
                 >
                 <span class="lang-en"
-                  >See the user manual included in the v2.0 package. It covers
+                  >See the user manual included in the v2.0.1 package. It covers
                   Arranger Mode, Performance Page, Song Page, and ChordPart
                   setup steps.</span
                 >
