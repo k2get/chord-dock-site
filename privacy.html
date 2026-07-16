@@ -72,6 +72,7 @@
         <li>メールアドレス</li>
         <li>購入日時・購入経路</li>
         <li>発行されたシリアルキーまたはライセンスコード</li>
+        <li>StripeのCheckout Session ID、Customer ID、PaymentIntent IDおよび返金・紛争状態</li>
       </ul>
 
       <h3 class="mt-4 mb-1 font-semibold">お問い合わせフォーム（Googleフォーム等）を通じて取得する情報</h3>
@@ -130,7 +131,7 @@
         <li>利用目的の達成に必要な範囲内で、個人情報の取り扱いを委託する場合</li>
       </ul>
       <p class="mb-4">
-        決済に関する情報は、決済代行会社である Stripe, Inc. 等に提供され、同社の管理のもと取り扱われます。当方はクレジットカード番号等の決済情報を直接取得・保管しません。Stripe の個人情報の取り扱いについては、Stripe 社のプライバシーポリシーをご確認ください。
+        本製品の一部の決済ではStripe Managed Paymentsを利用し、Sold through Link, LLC（Link）がMerchant of Recordとして、決済、領収書・請求書の発行、取引サポート、返金・紛争対応および対象地域の間接税処理を行います。これらの目的で、Stripe、Linkおよびその関係会社へ注文者情報、注文内容、決済・ライセンス提供に必要な情報が提供されます。当方はクレジットカード番号等の決済情報を直接取得・保管しません。詳細は、<a href="https://link.com/terms" target="_blank" rel="noopener noreferrer" class="underline">Linkの利用規約</a>および<a href="https://link.com/privacy" target="_blank" rel="noopener noreferrer" class="underline">Linkのプライバシーポリシー</a>をご確認ください。
       </p>
 
       <h2 class="mt-6 mb-2 font-semibold">第5条（業務委託・外部サービスの利用）</h2>
@@ -138,7 +139,7 @@
         当方は、本製品および本サイトの運営にあたり、次のような外部サービスを利用することがあります。
       </p>
       <ul class="list-disc ml-6 space-y-1 mb-4">
-        <li>決済サービス：Stripe</li>
+        <li>決済・取引管理サービス：Stripe、Sold through Link, LLC（Link）</li>
         <li>ライセンス管理・バックエンドサービス：Firebase 等のクラウドサービス</li>
         <li>アクセス解析：Google Analytics</li>
         <li>お問い合わせフォーム：Google フォーム 等</li>
@@ -159,6 +160,9 @@
       <p class="mb-4">
         当方は、第3条に定める利用目的を達成するために必要な期間、または法令により保存が求められる期間に限り、個人情報を保持します。これらの期間経過後は、遅滞なく削除または匿名化するよう努めます。
       </p>
+      <p class="mb-4">
+        StripeまたはLinkに対する削除依頼と、当方がFirebase等に保持するデータに対する削除依頼は、それぞれ別に処理されます。StripeまたはLink内のデータが削除された場合でも、当方が保持するライセンス・端末・取引記録が自動的に削除されるとは限りません。
+      </p>
 
       <h2 class="mt-6 mb-2 font-semibold">第8条（開示・訂正・利用停止等の請求）</h2>
       <p class="mb-4">
@@ -166,6 +170,9 @@
       </p>
       <p class="mb-4">
         開示等のご請求に際して、当方が本人確認のための追加情報の提供をお願いする場合があります。法令上認められる範囲で手数料をいただく場合は、事前にお知らせします。
+      </p>
+      <p class="mb-4">
+        当方が保持するデータの削除または匿名化をご希望の場合は、上記窓口へご連絡ください。法令上保存が必要な会計・税務・取引記録、不正利用防止または紛争対応に必要な記録については、削除依頼後も必要な範囲および期間に限り保持する場合があります。StripeまたはLinkが保持するデータについては、各社の案内に従って別途お手続きください。
       </p>
 
       <h2 class="mt-6 mb-2 font-semibold">第9条（Cookie 等の利用）</h2>
@@ -193,6 +200,7 @@
       </p>
 
       <p class="mt-8 text-xs text-gray-500">
+        最終更新日：2026年7月16日<br />
         ※ 本ページを閉じると、元のサイトに戻ります。
       </p>
     </main>
