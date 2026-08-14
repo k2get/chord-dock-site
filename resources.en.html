@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chord Dock Resources</title>
+    <meta name="description" content="Notes, workflows, and practical ideas for making music with Chord Dock." />
+    <link rel="canonical" href="https://k2get.github.io/chord-dock-site/resources.en.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: 'class' };</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V3MCR5K6MP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-V3MCR5K6MP');
+    </script>
+    <script defer src="assets/ga4-events.js"></script>
+    <style>
+      :root { color-scheme: dark; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: "Instrument Sans", system-ui, -apple-system, Segoe UI, sans-serif;
+        background:
+          radial-gradient(circle at 12% 20%, rgba(99, 102, 241, 0.18), transparent 24%),
+          radial-gradient(circle at 84% 18%, rgba(45, 212, 191, 0.15), transparent 24%),
+          linear-gradient(180deg, #0a0f1c 0%, #090d18 100%);
+      }
+      h1, h2 { font-family: "Space Grotesk", "Instrument Sans", sans-serif; }
+      .container { max-width: 1100px; }
+      p { max-width: 68ch; }
+    </style>
+    <meta property="og:title" content="Chord Dock Resources" />
+    <meta property="og:description" content="Notes, workflows, and practical ideas for making music with Chord Dock." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://k2get.github.io/chord-dock-site/resources.en.html" />
+    <meta property="og:image" content="https://k2get.github.io/chord-dock-site/assets/%E3%82%BF%E3%82%A4%E3%83%A0%E3%83%A9%E3%82%A4%E3%83%B3.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body class="bg-white text-gray-900 dark:bg-neutral-950 dark:text-neutral-100">
+    <header class="border-b border-gray-200/60 dark:border-neutral-800">
+      <div class="container mx-auto flex items-center justify-between px-4 py-5">
+        <a href="index.en.html" class="flex items-center gap-2 text-lg font-extrabold tracking-tight">
+          <span class="inline-block h-5 w-5 rounded-md bg-indigo-600"></span>
+          Chord Dock
+        </a>
+        <a href="index.en.html" class="text-sm text-gray-600 hover:text-gray-900 dark:text-neutral-400 dark:hover:text-neutral-100">Official site</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="container mx-auto px-4 py-16 sm:py-20">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-300">Chord Dock</p>
+        <h1 class="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">Resources</h1>
+        <p class="mt-5 text-lg text-gray-600 dark:text-neutral-300">Notes, workflows, and practical ideas for making music with Chord Dock.</p>
+      </section>
+
+      <section class="container mx-auto px-4 pb-16">
+        <article class="rounded-2xl bg-white/70 p-6 ring-1 ring-gray-300 dark:bg-neutral-900/70 dark:ring-neutral-700 sm:p-8">
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-300">Free plugin introduction · August 14, 2026</p>
+          <h2 class="mt-4 text-3xl font-extrabold tracking-tight">A Free Chord Track Plugin for DAWs Without One</h2>
+          <p class="mt-4 text-gray-600 dark:text-neutral-300">An introduction to Chord Dock Lite for producers who want a clearer place to build, hear, organize, and export chord progressions.</p>
+          <a href="free-chord-track-plugin.en.html" class="mt-6 inline-flex rounded-xl bg-indigo-600 px-5 py-3 font-semibold text-white shadow hover:bg-indigo-500">Read the introduction</a>
+        </article>
+      </section>
+    </main>
+
+    <footer class="border-t border-gray-200 dark:border-neutral-800">
+      <div class="container mx-auto flex flex-wrap items-center justify-between gap-4 px-4 py-10 text-sm text-gray-600 dark:text-neutral-400">
+        <p>© <span id="y"></span> Chord Dock — All rights reserved.</p>
+        <div class="flex items-center gap-3">
+          <a href="terms.en.html" class="hover:opacity-80">Terms</a>
+          <span aria-hidden="true">•</span>
+          <a href="privacy.en.html" class="hover:opacity-80">Privacy</a>
+          <span aria-hidden="true">•</span>
+          <a href="https://forms.gle/ttEAX9dSLEk7Pr5X7" target="_blank" rel="noopener noreferrer" class="hover:opacity-80">Contact</a>
+        </div>
+      </div>
+    </footer>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </body>
+</html>
