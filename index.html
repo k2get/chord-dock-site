@@ -198,6 +198,19 @@
       </nav>
     </header>
 
+    <section id="campaign-announcement" class="border-b border-teal-300/20 bg-gradient-to-r from-indigo-600/20 via-teal-400/10 to-indigo-600/20">
+      <div class="container mx-auto flex flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="flex items-center gap-3">
+          <span class="shrink-0 rounded-full bg-teal-300 px-2.5 py-1 text-[11px] font-extrabold uppercase tracking-[0.14em] text-neutral-950">開催中</span>
+          <p class="text-sm font-semibold text-neutral-100">Ableton Liveユーザー向け: Chord Dock Performanceを72時間無料提供中。<span class="whitespace-nowrap font-medium text-teal-100">8月17日 13:00 UTC終了。</span></p>
+        </div>
+        <a href="ableton-performance-giveaway.en.html" class="inline-flex shrink-0 items-center justify-center rounded-xl border border-teal-300/40 bg-teal-300/10 px-4 py-2 text-sm font-bold text-teal-100 transition hover:bg-teal-300/20 hover:text-white">キャンペーンを見る →</a>
+      </div>
+    </section>
+    <script>
+      if (Date.now() >= Date.parse('2026-08-17T13:00:00Z')) document.getElementById('campaign-announcement').hidden = true;
+    </script>
+
     <!-- Hero -->
     <section class="section" id="home">
       <div class="container mx-auto px-4 py-16 sm:py-20">
