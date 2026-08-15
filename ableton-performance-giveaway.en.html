@@ -302,14 +302,15 @@
     <script>
       (function () {
         var start = Date.parse('2026-08-14T13:00:00Z');
-        var end = Date.parse('2026-08-17T13:00:00Z');
+        // Keep the published deadline in the page copy, with a private four-hour grace period for claims.
+        var claimEnd = Date.parse('2026-08-17T17:00:00Z');
         var now = Date.now();
         var status = document.getElementById('campaign-status');
         var ctas = document.querySelectorAll('[data-giveaway-cta]');
 
         if (now < start) {
           status.textContent = 'Giveaway begins August 14, 13:00 UTC';
-        } else if (now >= end) {
+        } else if (now >= claimEnd) {
           status.textContent = 'This giveaway has ended.';
           ctas.forEach(function (cta) {
             cta.setAttribute('aria-disabled', 'true');
